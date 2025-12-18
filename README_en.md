@@ -1,4 +1,4 @@
-English Version | [中文版 →](./README_cn.md)
+English Version | [中文版 →](./README.md)
 
 *> Prefer reading in Chinese? Click the link above!*
 
