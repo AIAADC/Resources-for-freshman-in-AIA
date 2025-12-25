@@ -1,6 +1,9 @@
-中文版 | [English Version →](./README_en.md)
+<div align="center">
+
+中文版 | [English Version →](./README_en.md)  
 > 想看英文版？点击上面的链接跳转！
 
+</div>
 
 # 🎒 AIA 大一新生必存！全科课件合集来啦～✨  
 ### 学长学姐亲自整理 · 真实可用 · 持续更新中！
@@ -85,7 +88,6 @@
 ---
 
 ✨ **愿你学有所乐，学有所得，期末全A！** ✨  
-> 仓库地址：https://github.com/AIAADC/Resources-for-freshman-in-AIA  
-> 最近更新：2025年12月18日  
+> 仓库地址：https://github.com/AIAADC/Resources-for-freshman-in-AIA   
 
 ---
