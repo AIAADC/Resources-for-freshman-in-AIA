@@ -1,8 +1,13 @@
+<div align="center">
+
 English Version | [中文版 →](./README.md)
 
 *> Prefer reading in Chinese? Click the link above!*
 
 ## 🎒 AIA Freshmen Must-Save! Complete Course Materials Collection is Here～✨
+
+</div>
+
 
 ### Compiled by Seniors and Juniors · Actually Useful · Continuously Updated!
 
