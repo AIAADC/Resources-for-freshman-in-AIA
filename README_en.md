@@ -32,6 +32,7 @@ Take a breath. This repository gathers the freshman materials you will probably 
 | Calculus I | Past papers, solutions, mock exams, review topics | [Open](./微积分上) |
 | Calculus II | Midterm papers, final papers | [Open](./微积分下) |
 | Linear Algebra | Past papers, solutions, notes, crash-course slides | [Open](./线性代数) |
+| University Physics | Cross-year slides and review materials | [Open Physics repo](https://github.com/AIAADC/Physics) |
 | Probability and Statistics | Chapter materials and knowledge PDFs | [Open](./概率论与数理统计) |
 | Ideological and Moral Cultivation and Rule of Law | Past papers, key points, memorization notes | [Open](./思想道德与法治) |
 | College English | Listening transcripts and course materials | [Open](./大学英语) |
@@ -47,6 +48,7 @@ Take a breath. This repository gathers the freshman materials you will probably 
 | C Programming | [C-Programming-Language](https://github.com/AIAADC/C-Programming-Language) | Lecture slides, chapter materials, review resources |
 | Calculus | [wjf](https://github.com/AIAADC/wjf) | Calculus slides, exercise sessions, handwritten-note releases |
 | Linear Algebra | [linear-algebra](https://github.com/AIAADC/linear-algebra) | Slides, past papers, crash-course materials, Q&A notes |
+| University Physics | [Physics](https://github.com/AIAADC/Physics) | Physics slides and review materials used across freshman and sophomore years |
 | Probability and Statistics | [Probability-and-Statistics](https://github.com/AIAADC/Probability-and-Statistics) | Chapter materials and probability-statistics notes |
 
 ---
@@ -82,6 +84,14 @@ Includes midterm papers, final papers, and review materials.
 > Work through examples and past papers, and the structure starts to appear.
 
 Includes past papers, answer keys, Q&A notes, crash-course slides, and study notes.
+
+### 🔭 [University Physics](https://github.com/AIAADC/Physics)
+
+> From Newton's apple to Maxwell's fields,  
+> force and light weave the fabric of the world.  
+> This course can appear across freshman and sophomore years, so its materials are maintained in a standalone repository.
+
+University Physics materials are mainly maintained in the standalone [Physics](https://github.com/AIAADC/Physics) repository, including slides and review resources.
 
 ### 📊 [Probability and Statistics](./概率论与数理统计)
 

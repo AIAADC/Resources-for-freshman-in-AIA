@@ -32,6 +32,7 @@
 | 微积分（上） | 历年试题、答案、模拟考试、专题复习 | [进入](./微积分上) |
 | 微积分（下） | 期中试卷、期末真题 | [进入](./微积分下) |
 | 线性代数 | 真题、答案、讲义、速成课、笔记 | [进入](./线性代数) |
+| 大学物理 | 跨年级课件、复习资料 | [进入 Physics 仓](https://github.com/AIAADC/Physics) |
 | 概率论与数理统计 | 章节资料、知识点 PDF | [进入](./概率论与数理统计) |
 | 思想道德与法治 | 试题、知识点、背诵重点、主观题 | [进入](./思想道德与法治) |
 | 大学英语 | 视听说听力原文、课程资料 | [进入](./大学英语) |
@@ -47,6 +48,7 @@
 | C语言程序设计 | [C-Programming-Language](https://github.com/AIAADC/C-Programming-Language) | 课程课件、章节资料、复习内容 |
 | 微积分 | [wjf](https://github.com/AIAADC/wjf) | 微积分课堂课件、习题课、手写笔记 release |
 | 线性代数 | [linear-algebra](https://github.com/AIAADC/linear-algebra) | 课件、真题、速成课、答疑讲义 |
+| 大学物理 | [Physics](https://github.com/AIAADC/Physics) | 大一/大二都会用到的物理课件与复习资料 |
 | 概率论与数理统计 | [Probability-and-Statistics](https://github.com/AIAADC/Probability-and-Statistics) | 章节资料、概率统计知识整理 |
 
 ---
@@ -82,6 +84,14 @@
 > 多看例题，多做真题，会逐渐看到结构。
 
 收录历年试题、答案、答疑讲义、速成课课件和学习笔记。
+
+### 🔭 [大学物理](https://github.com/AIAADC/Physics)
+
+> 从牛顿的苹果到麦克斯韦的场，  
+> 力与光交织成世界的底色。  
+> 这门课横跨大一和大二，适合从独立课程仓统一查找资料。
+
+大学物理资料主要维护在独立课程仓 [Physics](https://github.com/AIAADC/Physics)，收录课件、复习资料等内容。
 
 ### 📊 [概率论与数理统计](./概率论与数理统计)
 
