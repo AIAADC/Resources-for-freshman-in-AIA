@@ -1,72 +1,118 @@
 <div align="center">
 
-English Version | [中文版 →](./README.md)
+English Version | [中文版](./README.md)
 
-*> Prefer reading in Chinese? Click the link above!*
+# 🎒 AIA Freshman Resource Hub
 
-## 🎒 AIA Freshmen Must-Save! Complete Course Materials Collection is Here～✨
+### Compiled by seniors · Actually useful · Continuously updated
+
+New to university, surrounded by thick textbooks and fast-moving slides?  
+Take a breath. This repository gathers the freshman materials you will probably need most.
 
 </div>
 
+---
 
-### Compiled by Seniors and Juniors · Actually Useful · Continuously Updated!
+## 🌟 Why Bookmark This?
 
-Did you just enter university and feel:📚 Textbooks are thick enough to be used for self-defense | Teachers speak as fast as if on double speed | PPTs flip faster than your heartbeat?Don't panic～ You're not alone!🔥
-
-This "Freshman Core Course Resource Pack" carefully compiled by the **AIAADC senior and junior team**helps you master **C language smoothly, understand calculus, make probability no longer mysterious, and get high scores in ideological and political courses**!
-
-No matter if you want to:✅ Pass final exams without failing✅ Get scholarships and improve GPA✅ Preview in advance to lay a foundation✅ Or just find a clear and easy-to-understand note
-
-**It's all here! And all publicly available for free!** 💯
-
-------
-
-## 💡 Why It's Worth Collecting?
-
-- 🌟 **Matching Real Classes**: Materials are from recent teaching resources, highly matching the courses you're taking
-- 🧠 **Key Points Clearly Marked**: High-frequency exam points, error-prone points, and the teacher's "secretly marked key points" are all included
-- 📱 **Viewable on Phones**: PDF + Markdown + mind maps, super convenient for reviewing while commuting!
-- ❤️ **Sincere Advice from Seniors**: Each course comes with study tips to help you avoid detours!
-
-------
-
-## 📚 One-Click to Your Courseware (Click Me! Click Me!)
-
-> 🎯 **It is recommended to bookmark this page + give the corresponding repository a Star for easy access anytime!**
-
-- 💻 **C Language Programming**From `printf` to pointer linked lists, guiding you step by step into programming!👉 [Click to enter C Language materials](https://github.com/AIAADC/C-Programming-Language)
-- ➗ **Calculus (Volume 1)**Limits, derivatives, integrals... Don't let advanced math become a "tall tree" blocking your way!👉 [Click to enter Calculus materials](https://github.com/AIAADC/wjf)
-- 📊 **Probability Theory and Mathematical Statistics**"Probability is not metaphysics, but the art of logic!" —— Attached with comprehensive mind maps + quick exam point checks👉 [Click to enter Probability and Statistics materials](https://github.com/AIAADC/Probability-and-Statistics)
-- 🧮 **Linear Algebra**Vectors, matrices, eigenvalues... Abstract? Not at all! The graphic explanations are super clear～👉 [Click to enter Linear Algebra materials](https://github.com/AIAADC/linear-algebra)
-- 🇨🇳 **Ideology, Morality and the Rule of Law**No more rote memorization! Key outlines + answer templates for easily getting high scores ✨👉 (Materials not yet open-sourced, follow the repository update or check the course group files)
-- 🌍 **College English**Comprehensive strategies for listening, speaking, reading and writing + final exam question type analysis, you can also prepare for CET-4 and CET-6 in advance!👉 (Materials are being compiled, stay tuned～ PR contributions are welcome!)
-
-> 📌 Note: Ideological and political & English materials are being sorted out, welcome to join us in building them together!
-
-------
-
-## 💌 Small Usage Suggestions
-
-1. **Read materials before class**: 10 minutes of preview doubles classroom efficiency!
-2. **Combine with textbooks + exercises**: Just reading without practicing is useless, hands-on practice is the key 💪
-3. **Don't struggle alone when encountering problems**: Raise an Issue / ask seniors / join the course group, we're all here!
-4. **Star + Fork this repository**: Support seniors and juniors, and it's also convenient for you to sync updates!
-
-------
-
-## ❤️ Finally, What We Want to Say
-
-University is not the beginning of "lying flat", but the starting point for you to **design your life with your own hands**.These materials are a "gentle help" we want to give you.
-
-If you find them useful:
-
-- ⭐ **Give a Star** is the greatest encouragement to us!
-- 🤝 **Welcome to PR** to add notes, wrong questions, code or learning experience!
-- 💬 Or just say hi! Let's be sober and hardworking AIA students together～
-
-------
-
-✨ **May you find joy in learning, gain from it, and get all A's in finals!** ✨
+- **Classroom-oriented**: recent course materials, past papers, and review resources where available
+- **Review-friendly**: notes, outlines, and exams gathered around practical study needs
+- **Easy to navigate**: open a course folder first, then find the material type you need
+- **Continuously updated**: missing resources can be added over time
 
 ---
+
+## 📚 Course Materials
+
+> Bookmark this page first, then enter the folder for the course you need.
+
+### 💻 [C Programming](./C语言)
+
+> From `printf` to pointers and linked lists,  
+> from syntax basics to past-paper practice,  
+> this is where the first programming course starts to make sense.
+
+Includes past papers, solutions, pointer notes, and pre-exam problem-solving materials.
+
+### ➗ [Calculus I](./微积分上)
+
+> Limits, derivatives, and integrals  
+> may look like a wall at first,  
+> but concepts and problem types can break it down piece by piece.
+
+Includes past exams, answer keys, mock exams, midterm review materials, and knowledge summaries.
+
+### ∫ [Calculus II](./微积分下)
+
+> Multivariable calculus, series, line and surface integrals:  
+> more content, more structure, and more need for steady review.  
+> Past papers and topic materials help build the map.
+
+Includes midterm papers, final papers, and review materials.
+
+### 🧮 [Linear Algebra](./线性代数)
+
+> Vectors, matrices, eigenvalues:  
+> abstract at first, but full of patterns.  
+> Work through examples and past papers, and the structure starts to appear.
+
+Includes past papers, answer keys, Q&A notes, crash-course slides, and study notes.
+
+### 📊 [Probability and Statistics](./概率论与数理统计)
+
+> Probability is not metaphysics;  
+> it is the logic behind uncertainty.  
+> From events to distributions, from estimation to hypothesis testing, the pieces connect chapter by chapter.
+
+Includes chapter materials covering random events, random variables, numerical characteristics, estimation, and hypothesis testing.
+
+### 🇨🇳 [Ideological and Moral Cultivation and Rule of Law](./思想道德与法治)
+
+> Not only memorization,  
+> but also frameworks, keywords, and question types.  
+> Review outlines and subjective-question summaries can be especially helpful before exams.
+
+Includes past papers, knowledge summaries, memorization highlights, and subjective-question notes.
+
+### 🌍 [College English](./大学英语)
+
+> Listening, speaking, reading, and writing all grow gradually.  
+> Final review still depends on source texts, question types, and class materials.  
+> Small files can be surprisingly useful at the right moment.
+
+Includes listening transcripts and related course materials.
+
+---
+
+## 💡 Study Tips
+
+1. **Preview before class**: even 10 minutes can make lectures easier to follow.
+2. **Use textbooks and exercises together**: materials help, but practice makes them stick.
+3. **Start from past papers before exams**: they reveal question styles and priorities quickly.
+4. **Do not struggle alone**: Issues, classmates, and seniors can all help.
+
+---
+
+## 🤝 Build It Together
+
+- Add better notes, past papers, or review materials
+- Point out broken files, duplicated content, or mistakes
+- Give the repository a Star if it helps you
+
+---
+
+## 📌 Usage Notes
+
+- This repository is shared for learning and non-commercial use only
+- Please respect the original authors, instructors, and course policies
+- If any file should not be public, please contact the maintainers
+
+---
+
+<div align="center">
+
+May you find joy in learning and gain something real from it.  
+May these materials become a small, gentle boost at the beginning of university.
+
+</div>
 
