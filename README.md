@@ -38,6 +38,19 @@
 
 ---
 
+## 🔗 相关独立课程仓
+
+> 年级总仓负责聚合导航，独立课程仓负责长期维护更完整的讲义、课件或专题资料。
+
+| 课程 | 独立课程仓 | 适合查找 |
+| --- | --- | --- |
+| C语言程序设计 | [C-Programming-Language](https://github.com/AIAADC/C-Programming-Language) | 课程课件、章节资料、复习内容 |
+| 微积分 | [wjf](https://github.com/AIAADC/wjf) | 微积分课堂课件、习题课、手写笔记 release |
+| 线性代数 | [linear-algebra](https://github.com/AIAADC/linear-algebra) | 课件、真题、速成课、答疑讲义 |
+| 概率论与数理统计 | [Probability-and-Statistics](https://github.com/AIAADC/Probability-and-Statistics) | 章节资料、概率统计知识整理 |
+
+---
+
 ### 💻 [C语言程序设计](./C语言)
 
 > 从 `printf` 到指针链表，  

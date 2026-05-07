@@ -26,6 +26,31 @@ Take a breath. This repository gathers the freshman materials you will probably 
 
 > Bookmark this page first, then enter the folder for the course you need.
 
+| Course | Main Materials | Entry |
+| --- | --- | --- |
+| C Programming | Past papers, solutions, topic notes, review materials | [Open](./C语言) |
+| Calculus I | Past papers, solutions, mock exams, review topics | [Open](./微积分上) |
+| Calculus II | Midterm papers, final papers | [Open](./微积分下) |
+| Linear Algebra | Past papers, solutions, notes, crash-course slides | [Open](./线性代数) |
+| Probability and Statistics | Chapter materials and knowledge PDFs | [Open](./概率论与数理统计) |
+| Ideological and Moral Cultivation and Rule of Law | Past papers, key points, memorization notes | [Open](./思想道德与法治) |
+| College English | Listening transcripts and course materials | [Open](./大学英语) |
+
+---
+
+## 🔗 Related Course Repositories
+
+> The year-level hub provides navigation, while standalone course repositories maintain fuller lecture materials and long-term course resources.
+
+| Course | Repository | Best For |
+| --- | --- | --- |
+| C Programming | [C-Programming-Language](https://github.com/AIAADC/C-Programming-Language) | Lecture slides, chapter materials, review resources |
+| Calculus | [wjf](https://github.com/AIAADC/wjf) | Calculus slides, exercise sessions, handwritten-note releases |
+| Linear Algebra | [linear-algebra](https://github.com/AIAADC/linear-algebra) | Slides, past papers, crash-course materials, Q&A notes |
+| Probability and Statistics | [Probability-and-Statistics](https://github.com/AIAADC/Probability-and-Statistics) | Chapter materials and probability-statistics notes |
+
+---
+
 ### 💻 [C Programming](./C语言)
 
 > From `printf` to pointers and linked lists,  
