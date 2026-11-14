@@ -1,0 +1,138 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2024～2025 学年第一学期}\\[0.4em]
+  {\Large\bfseries “线性代数”考试试卷（A 卷）}\\[1.0em]
+  {\normalsize
+    考试方式：\underline{\ \ 闭卷\ \ }\quad
+    考试时间：\underline{\ 2025 年 1 月 12 日上午\ }\quad
+    考试时长：\underline{\ 150 分钟\ }
+  }
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、（16 分）判断题（$2\text{ 分}\times 8 = 16\text{ 分}$）（判断题为计算机阅卷，请使用 2B 铅笔规范填涂，填涂区域要丰满、不要使用划线、打勾、打叉等错误填涂方式）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.6em]
+  \item 设 $A, B$ 都是 $n$ 阶实对称矩阵，并且 $A$ 与 $B$ 的特征值均大于 $0$，则 $A+B$ 的特征值也大于 $0$.
+
+  \item 设 $A$ 为 $n$ 阶幂等矩阵，即 $A^2 = A$，则 $\tr(A) = n - \rk(A)$，其中 $\tr(A)$ 为 $A$ 的迹，$\rk$ 表示秩.
+
+  \item 线性方程组 $AX = 0$ 的解都是 $BX = 0$ 的解，且 $\rk(A) = \rk(B)$，则 $AX = 0$ 与 $BX = 0$ 同解.
+
+  \item $2025$ 维向量空间是 $2025$ 个线性无关的 $2025$ 维向量生成的空间.
+
+  \item 若两个同阶可逆阵 $A, B$ 有相同的特征值，则 $A, B$ 相似.
+
+  \item 若线性方程组 $AX = 0$ 中，方程的个数少于未知变量的个数，则方程组 $AX = 0$ 必有非零解.
+
+  \item 设 $n$ 阶方阵 $A$ 的第一行可由其余 $n-1$ 个行向量线性表示，则 $A$ 的伴随矩阵 $A^*$ 的秩不会超过 $1$.
+
+  \item 若矩阵 $A, B, C$ 满足 $A = BC$，且 $\rk(A) = \rk(B)$，则 $A$ 的列向量形成的向量组和 $B$ 的列向量形成的向量组等价.
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{二、（20 分）填空题（$4\text{ 分}\times 5 = 20\text{ 分}$）（请将答案填写在答题卡指定位置上）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=1.2em, topsep=0.6em]
+  \item 设三阶方阵 $A$ 的三个特征值为 $1, 2, 3$，则 $\tr(A + A^{-1}) = \blank$.
+
+  \item 已知将 $3$ 阶可逆阵 $A$ 的第 $1$ 行的 $3$ 倍加到第 $3$ 行得矩阵 $B$，则 $AB^{-1} = \blank$.
+
+  \item $A, B, C$ 均为矩阵，$A = \begin{bmatrix} 0 & 0 & -1 \\ 0 & 1 & 0 \\ 2 & 0 & 0 \end{bmatrix}$，且 $(AC)^{-1} = -(CB)^{-1}$，则 $|B| = \blank$.
+
+  \item 已知空间中两点 $A(1, 0, -1), B(1, -2, 0)$，记 $O$ 为原点，以 $OA, OB$ 为边作平行四边形 $OACB$，则 $|\overrightarrow{OC}|^2 + |\overrightarrow{AB}|^2 = \blank$，其中 $|\cdot|$ 表示向量的长度.
+
+  \item 二次型 $f(x_1, x_2) = x_1^2 + a x_1 x_2 + 4 x_2^2$ 经过正交变换变为 $f(y_1, y_2) = 4 y_1^2 + 4 y_1 y_2 + b y_2^2$，则 $a, b$ 分别为 $\blank$.
+\end{enumerate}
+
+\newpage
+
+\textbf{三、（10 分）}设矩阵 $A = \begin{bmatrix} 2 & 0 & 0 \\ 0 & 1 & -1 \\ 0 & 0 & 1 \end{bmatrix}$，$3$ 阶方阵 $X$ 满足方程 $A^* X = A X + A^{-1} + I_3$，其中 $A^*$ 为 $A$ 的伴随矩阵，求矩阵 $X$.
+
+\vspace{0.8em}
+
+\textbf{四、（10 分）}设向量组 $\alpha_1 = [1, 2, -1, 1]^{\T}$，$\alpha_2 = [2, 3, -2, 0]^{\T}$，$\alpha_3 = [0, 3, 1, 5]^{\T}$，$\alpha_4 = [-1, 4, 1, 11]^{\T}$，求
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 由 $\alpha_1, \alpha_2, \alpha_3, \alpha_4$ 生成的向量空间 $V$ 的维数；
+  \item 在上面向量组中选一组基，并将剩余的向量用你选择的基线性表示.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{五、（12 分）}已知 $\alpha = \begin{bmatrix} 2 \\ k \\ -1 \end{bmatrix}$ 是 $A = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 \end{bmatrix}$ 的逆矩阵 $A^{-1}$ 的特征向量，试求：
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 常数 $k$ 的值；
+  \item 正交变换 $X = CY$，将二次型 $f = X^{\T} A^{-1} X$ 化为标准型.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{六、（12 分）}已知空间直角坐标系中三平面的方程分别为：
+\begin{align*}
+  \pi_1:\ & x + y + z = 1, \\
+  \pi_2:\ & x + \lambda y - z = 3, \\
+  \pi_3:\ & \lambda x + y + z = 2 - \lambda,
+\end{align*}
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 当 $\lambda$ 取何值时，这三个平面交于一点？交于一直线？没有公共交点？
+  \item 当它们交于一直线时，求直线的方程.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{七、（10 分）}设 $A$ 是 $n(n > 1)$ 阶方阵，$\xi_1, \xi_2, \cdots, \xi_n$ 是 $n$ 维列向量. 若
+\[
+  A\xi_1 = \xi_2,\quad A\xi_2 = 2\xi_3,\quad \cdots,\quad A\xi_{n-1} = (n-1)\xi_n,\quad A\xi_n = 0,\quad \xi_n \neq 0.
+\]
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 证明：$\xi_1, \xi_2, \cdots, \xi_n$ 线性无关；
+  \item $A$ 能否相似对角化？说明理由.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{八、（10 分）}设 $D(x) = \begin{vmatrix}
+    x_1 + x & a + x & a + x & \cdots & a + x \\
+    b + x & x_2 + x & a + x & \cdots & a + x \\
+    b + x & b + x & x_3 + x & \cdots & a + x \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    b + x & b + x & b + x & \cdots & x_n + x
+  \end{vmatrix}$，其中 $a, b, x_1, x_2, \cdots, x_n$ 都是给定的实数，且满足 $a \neq b$.
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 证明：$D(x)$ 是关于 $x$ 的不超过一次的多项式；
+  \item 令 $D = \begin{vmatrix}
+    x_1 & a & \cdots & a \\
+    b & x_2 & \cdots & a \\
+    \vdots & \vdots & \ddots & \vdots \\
+    b & b & \cdots & x_n
+  \end{vmatrix}$，$f(x) = (x_1 - x)(x_2 - x)\cdots(x_n - x)$，证明：
+  \[
+    D = \frac{af(b) - bf(a)}{a - b}.
+  \]
+\end{enumerate}
+
+\end{document}

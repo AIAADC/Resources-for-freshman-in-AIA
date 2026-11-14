@@ -1,0 +1,231 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\score}[1]{\hfill$\cdots\text{#1 分}$}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2024～2025 学年第一学期}\\[0.4em]
+  {\Large\bfseries “线性代数”考试试卷（A 卷）参考答案（及评分标准）}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、判断题（每小题 2 分，共 16 分）}
+
+\vspace{0.4em}
+1.\ $\checkmark$\quad
+2.\ $\times$\quad
+3.\ $\checkmark$\quad
+4.\ $\times$\quad
+5.\ $\times$\quad
+6.\ $\checkmark$\quad
+7.\ $\checkmark$\quad
+8.\ $\checkmark$
+
+\vspace{1.0em}
+
+\textbf{二、填空题（5 小题，共 20 分）}
+
+\vspace{0.4em}
+1.\ \underline{\ $7\dfrac{5}{6}$\ }\qquad
+2.\ \underline{\ $\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ -3 & 0 & 1 \end{bmatrix}$\ }\qquad
+3.\ \underline{\ $-2$\ }\qquad
+4.\ \underline{\ $14$\ }\qquad
+5.\ \underline{\ $a = \pm 4,\ b = 1$\ }
+
+\vspace{1.0em}
+
+\textbf{三、（10 分）}
+
+\vspace{0.3em}
+整理得，$X = (|A|I - A^2)^{-1}(I + A)$ \score{5}
+
+\vspace{0.3em}
+其中 $|A| = 2$，$|A|I - A^2 = \begin{bmatrix} -2 & 0 & 0 \\ 0 & 1 & 2 \\ 0 & 0 & 1 \end{bmatrix}$，$(|A|I - A^2)^{-1} = \begin{bmatrix} -1/2 & 0 & 0 \\ 0 & 1 & -2 \\ 0 & 0 & 1 \end{bmatrix}$，
+
+\vspace{0.3em}
+故 $X = \begin{bmatrix} -1/2 & 0 & 0 \\ 0 & 1 & -2 \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} 3 & 0 & 0 \\ 0 & 2 & -1 \\ 0 & 0 & 2 \end{bmatrix} = \begin{bmatrix} -3/2 & 0 & 0 \\ 0 & 2 & -5 \\ 0 & 0 & 2 \end{bmatrix}$. \score{10}
+
+\vspace{1.0em}
+
+\textbf{四、（10 分）}
+
+\vspace{0.3em}
+$[\alpha_1, \alpha_2, \alpha_3, \alpha_4] = \begin{bmatrix} 1 & 2 & 0 & -1 \\ 2 & 3 & 3 & 4 \\ -1 & -2 & 1 & 1 \\ 1 & 0 & 5 & 11 \end{bmatrix} \xrightarrow{\text{行初等变换}} \begin{bmatrix} 1 & 0 & 0 & 11 \\ 0 & 1 & 0 & -6 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$ \score{5}
+
+\vspace{0.3em}
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 故 $\alpha_1, \alpha_2, \alpha_3$ 是一组极大线性无关组，故空间 $V$ 的维数为 $3$. \score{8}
+  \item 比如：$\alpha_1, \alpha_2, \alpha_3$ 是一组基，$\alpha_4 = 11\alpha_1 - 6\alpha_2$. \score{10}
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{五、（12 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.4em, topsep=0.3em]
+  \item 解法 1：
+
+  $\alpha$ 满足 $A\alpha = \lambda\alpha$，即 $(\lambda I - A)\alpha = 0$，
+
+  故 $\begin{bmatrix} \lambda & -1 & -1 \\ -1 & \lambda & -1 \\ -1 & -1 & \lambda \end{bmatrix}\begin{bmatrix} 2 \\ k \\ -1 \end{bmatrix} = 0 \Leftrightarrow \begin{cases} 2\lambda - k + 1 = 0 \\ -2 + k\lambda + 1 = 0 \\ -2 - k - \lambda = 0 \end{cases}$
+
+  解得 $k = -1$，$\lambda = -1$. \score{5}
+
+  \item 令 $0 = |\lambda I - A| = \begin{vmatrix} \lambda & -1 & -1 \\ -1 & \lambda & -1 \\ -1 & -1 & \lambda \end{vmatrix} = (\lambda - 2)(\lambda + 1)^2$，
+
+  故 $\lambda_1 = \lambda_2 = -1$，$\lambda_3 = 2$.
+
+  当 $\lambda_1 = \lambda_2 = -1$，其特征向量为 $(-I - A)X = 0$ 的非零解，
+
+  $-I - A = \begin{bmatrix} -1 & -1 & -1 \\ -1 & -1 & -1 \\ -1 & -1 & -1 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$，基础解系为 $\alpha_1 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}$，$\alpha_2 = \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$.
+
+  注：(1) 解法 2：$k = -1$ 时，$\alpha = -\alpha_1 - \alpha_2 = \begin{bmatrix} 2 \\ -1 \\ -1 \end{bmatrix}$ 是 $A$ 和 $A^{-1}$ 的特征向量.
+
+  当 $\lambda_3 = 2$，其特征向量为 $(2I - A)X = 0$ 的非零解，
+
+  $2I - A = \begin{bmatrix} 2 & -1 & -1 \\ -1 & 2 & -1 \\ -1 & -1 & 2 \end{bmatrix} \to \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix}$，基础解系为 $\alpha_3 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$.
+
+  令 $\beta_1 = \alpha_1 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}$，$\beta_2 = \alpha_2 - \dfrac{(\alpha_2, \beta_1)}{(\beta_1, \beta_1)}\beta_1 = \dfrac{1}{2}\begin{bmatrix} -1 \\ -1 \\ 2 \end{bmatrix}$，$\beta_3 = \alpha_3$.
+
+  令 $\varepsilon_1 = \dfrac{1}{\sqrt{2}}\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}$，$\varepsilon_2 = \dfrac{1}{\sqrt{6}}\begin{bmatrix} -1 \\ -1 \\ 2 \end{bmatrix}$，$\varepsilon_3 = \dfrac{1}{\sqrt{3}}\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$， \score{10}
+
+  令 $C = [\varepsilon_1, \varepsilon_2, \varepsilon_3]$，经过正交变换 $X = CY$，
+
+  $f = X^{\T} A^{-1} X = -y_1^2 - y_2^2 + \dfrac{1}{2}y_3^2$. \score{12}
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{六、（12 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.4em, topsep=0.3em]
+  \item $[A \;\vdots\; b] = \left[\begin{array}{ccc|c} 1 & 1 & 1 & 1 \\ 1 & \lambda & -1 & 3 \\ \lambda & 1 & 1 & 2-\lambda \end{array}\right] \xrightarrow{\text{行初等变换}} \left[\begin{array}{ccc|c} 1 & 1 & 1 & 1 \\ 0 & \lambda-1 & -2 & 2 \\ 0 & 0 & \lambda+1 & 2\lambda-4 \end{array}\right]$
+
+  若 $\rk(A) = \rk([A \;\vdots\; b]) = 3$，即 $\lambda \neq \pm 1$，交于一点；
+
+  若 $\rk(A) = \rk([A \;\vdots\; b]) < 3$，即 $\lambda = 1$，交于一条直线；
+
+  若 $\rk(A) \neq \rk([A \;\vdots\; b])$，即 $\lambda = -1$，没有公共交点； \score{8}
+
+  \item 当 $\lambda = 1$ 时，
+
+  $[A \;\vdots\; b] \xrightarrow{\text{行初等变换}} \left[\begin{array}{ccc|c} 1 & 1 & 1 & 1 \\ 0 & 0 & -2 & 2 \\ 0 & 0 & 2 & -2 \end{array}\right] \to \left[\begin{array}{ccc|c} 1 & 1 & 0 & 2 \\ 0 & 0 & 1 & -1 \\ 0 & 0 & 0 & 0 \end{array}\right]$
+
+  直线方程为 $\begin{cases} x + y = 2 \\ z = -1 \end{cases}$. \score{12}
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{七、（10 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.35em, topsep=0.3em]
+  \item 证明：令 $k_1\xi_1 + k_2\xi_2 + \cdots + k_n\xi_n = 0$，\hfill $(*)$
+
+  则 $A^{n-1}(k_1\xi_1 + k_2\xi_2 + \cdots + k_n\xi_n) = 0$，
+
+  即 $k_1 A^{n-1}\xi_1 + k_2 A^{n-1}\xi_2 + \cdots + k_n A^{n-1}\xi_n = 0$.
+
+  由条件，$A^{n-1}\xi_i = 0,\quad i = 2, \dots, n$，
+
+  则 $k_1 A^{n-1}\xi_1 = 0$，即 $k_1(n-1)!\xi_n = 0$.
+
+  由于 $\xi_n \neq 0$，故 $k_1 = 0$.
+
+  $k_1 = 0$ 代入 $(*)$ 式，得 $k_2\xi_2 + \cdots + k_n\xi_n = 0$.
+
+  类似，$A^{n-2}(k_2\xi_2 + \cdots + k_n\xi_n) = 0$，可得 $k_2 = 0$.
+
+  同理可得 $k_1 = k_2 = \cdots = k_n = 0$，即证 $\xi_1, \xi_2, \cdots, \xi_n$ 线性无关. \score{5}
+
+  \item 由题意，
+
+  $A[\xi_1, \xi_2, \dots, \xi_{n-1}, \xi_n] = [\xi_1, \xi_2, \dots, \xi_{n-1}, \xi_n]\begin{bmatrix} 0 & 0 & \cdots & 0 & 0 \\ 1 & 0 & \cdots & 0 & 0 \\ 0 & 2 & \cdots & 0 & 0 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & \cdots & n-1 & 0 \end{bmatrix}$，
+
+  由 (1) 知，$[\xi_1, \xi_2, \dots, \xi_{n-1}, \xi_n]$ 可逆，
+
+  故 $A$ 相似于 $B = \begin{bmatrix} 0 & 0 & \cdots & 0 & 0 \\ 1 & 0 & \cdots & 0 & 0 \\ 0 & 2 & \cdots & 0 & 0 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & \cdots & n-1 & 0 \end{bmatrix}$，且 $\rk(B) = n - 1$.
+
+  令 $|\lambda I - B| = 0$，得 $\lambda_1 = \cdots = \lambda_n = 0$，
+
+  且 $\dim N(B) = n - \rk(B) = n - (n - 1) = 1$，
+
+  即 $B$ 线性无关的特征向量只有 $1$ 个，没有 $n$ 个，
+
+  故 $B$ 不能相似对角阵，
+
+  故 $A$ 也不能相似对角阵. \score{10}
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{八、（10 分）证明}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.35em, topsep=0.3em]
+  \item 解法 1：
+  \begin{align*}
+    D(x) &= \begin{vmatrix}
+      1 & b+x & b+x & \cdots & b+x \\
+      0 & x_1+x & a+x & \cdots & a+x \\
+      0 & b+x & x_2+x & \cdots & a+x \\
+      \vdots & \vdots & \vdots & \ddots & \vdots \\
+      0 & b+x & b+x & \cdots & x_n+x
+    \end{vmatrix}_{n+1} \\
+    &= \begin{vmatrix}
+      1 & b+x & b+x & \cdots & b+x \\
+      -1 & x_1-b & a-b & \cdots & a-b \\
+      -1 & 0 & x_2-b & \cdots & a-b \\
+      \vdots & \vdots & \vdots & \ddots & \vdots \\
+      -1 & 0 & 0 & \cdots & x_n-b
+    \end{vmatrix}_{n+1}
+  \end{align*}
+  按照第一行展开，即证 $D(x)$ 是关于 $x$ 的不超过一次的多项式.
+
+  另证：
+  \[
+    D(x) = \begin{vmatrix}
+      x_1+x & a+x & a+x & \cdots & a+x \\
+      b-x_1 & x_2-a & 0 & \cdots & 0 \\
+      b-x_1 & b-a & x_3-a & \cdots & 0 \\
+      \vdots & \vdots & \vdots & \ddots & \vdots \\
+      b-x_1 & b-a & b-a & \cdots & x_n-a
+    \end{vmatrix}
+  \]
+  按照第一行展开，即证 $D(x)$ 是关于 $x$ 的不超过一次的多项式. \score{5}
+
+  \item $D(0) = D$，设 $D(x) = D + xc$.
+
+  由 $D(x)$ 表达式，有 $D(-b) = (x_1 - b)(x_2 - b)\cdots(x_n - b) = f(b)$，
+
+  且 $D(-a) = (x_1 - a)(x_2 - a)\cdots(x_n - a) = f(a)$，
+
+  又 $D(-b) = D - bc$，$D(-a) = D - ac$，
+
+  故 $aD(-b) = aD - abc$，且 $bD(-a) = bD - abc$，
+
+  联立上述两式，且由 $a \neq b$，得
+  \[
+    D = \frac{aD(-b) - bD(-a)}{a - b} = \frac{af(b) - bf(a)}{a - b}.
+  \]
+  即证. \score{10}
+\end{enumerate}
+
+\end{document}

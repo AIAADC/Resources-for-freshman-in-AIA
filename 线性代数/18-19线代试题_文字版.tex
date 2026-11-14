@@ -1,0 +1,141 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\R}{\mathrm{R}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学《线性代数》}\\[0.4em]
+  {\Large\bfseries 2018--2019 学年第二学期期末考试 A 卷}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、判断题（每小题 2 分，共 16 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.55em, topsep=0.5em]
+  \item 设 $A, B, C$ 是三个 $n$ 阶非零矩阵，如果 $AB = BA$，则 $A^2 B + ACA = A(B + C)A$.
+
+  \item 若向量 $\alpha_1, \alpha_2, \dots, \alpha_m$ 线性无关，则必有 $\alpha_1 + \alpha_2 + \dots + \alpha_m \neq 0$.
+
+  \item 设 $A, B$ 为满足 $AB = 0$ 的两个非零矩阵，则 $A$ 的列向量组线性相关，$B$ 的列向量组也线性相关.
+
+  \item 设 $A$ 为三阶非零矩阵满足 $A^2 = 0$，则齐次线性方程组 $AX = 0$ 的线性无关的解向量的个数为 $2$.
+
+  \item 设 $A$ 为 $m \times n$ 阶实矩阵，则矩阵 $A^{\T}A$ 与 $A$ 有相同的秩，其中 $A^{\T}$ 是 $A$ 的转置.
+
+  \item 若方阵 $A$ 的各行元素和为 $1$，则 $1$ 必为 $A$ 的一个特征值.
+
+  \item 记 $A^*$ 为方阵 $A$ 的伴随矩阵，若 $A$ 为正定矩阵，则 $A^*$ 也为正定矩阵.
+
+  \item 设 $A$ 是 $n$ 阶实反对称矩阵，即 $A^{\T} = -A$，其中 $A^{\T}$ 是 $A$ 的转置，则对任意的 $n$ 维实向量 $X$，均有 $X^{\T}AX = 0$.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{二、填空题（每小题 4 分，共 20 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 设 $A$ 是 $n$ 阶方阵，$I$ 为 $n$ 阶单位矩阵，且 $A^2 = A$，则 $(A - 2I)^{-1} = \blank$.
+
+  \item 设 $A$ 是 $n$ 阶可逆矩阵，$A$ 的行列式 $|A| = a$，且 $A$ 的各行元素之和均为 $b$，则 $A$ 的第 $1$ 列元素的代数余子式之和 $A_{11} + A_{21} + \dots + A_{n1} = \blank$.
+
+  \item 设 $\alpha_1, \alpha_2, \alpha_3$ 为三个三维（列）向量，记矩阵 $A = (\alpha_1, \alpha_2, \alpha_3)$，已知 $A$ 的行列式 $|A| = 1$，\\
+  记矩阵 $B = (\alpha_1 + \alpha_2 + \alpha_3,\ \alpha_1 + 2\alpha_2 + 4\alpha_3,\ \alpha_1 + 3\alpha_2 + 9\alpha_3)$，则行列式 $|B| = \blank$.
+
+  \item 已知 $f(x_1, x_2, x_3) = x_1^2 + t x_2^2 + t x_3^2 + 2 x_1 x_2 + 4 x_1 x_3$ 为正定二次型，\\
+  则 $t$ 的取值范围为 $\blank$.
+
+  \item 设矩阵 $A = (a_{ij})_{3 \times 3}$ 是正交矩阵，且 $a_{11} = 1$. 设向量 $\beta = (1, 0, 0)^{\T}$，则非齐次线性方程组 $AX = \beta$ 的解 $X = \blank$.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{三、（8 分）}计算 $n$ 阶行列式
+\[
+  D_n = \begin{vmatrix}
+    1 + a_1 & 1 & \cdots & 1 \\
+    1 & 1 + a_2 & \cdots & 1 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    1 & 1 & \cdots & 1 + a_n
+  \end{vmatrix},
+  \quad\text{其中 } a_i \neq 0,\ i = 1, 2, \dots, n.
+\]
+
+\vspace{0.7em}
+
+\textbf{四、（12 分）}设线性方程组为
+\[
+  \begin{cases}
+    x_1 + x_2 - 2x_3 + 3x_4 = 0, \\
+    2x_1 + x_2 - 6x_3 + 4x_4 = -1, \\
+    3x_1 + 2x_2 + a x_3 + 7x_4 = -1, \\
+    x_1 - x_2 - 6x_3 - x_4 = b.
+  \end{cases}
+\]
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 讨论 $a, b$ 为何值时，方程组有解或无解；
+  \item 当有解时，求出方程组的解.
+\end{enumerate}
+
+\vspace{0.7em}
+
+\textbf{五、（10 分）}设矩阵 $A, B$ 满足 $A^* B A = 2BA - 8I$，其中
+\[
+  A = \begin{pmatrix}
+    1 & 2 & -2 \\
+    0 & -2 & 4 \\
+    0 & 0 & 1
+  \end{pmatrix},
+\]
+$A^*$ 表示 $A$ 的伴随矩阵，$I$ 为三阶单位矩阵，求矩阵 $B$.
+
+\vspace{0.7em}
+
+\textbf{六、（12 分）}已知矩阵
+\[
+  A = \begin{pmatrix}
+    a - 1 & -1 & 1 \\
+    -1 & a - 1 & 1 \\
+    1 & 1 & a - 1
+  \end{pmatrix}
+\]
+有特征值 $1$，当 $A$ 的特征值之和最小时，求正交矩阵 $C$，使得 $C^{\T} A C$ 为对角矩阵，并写出此对角矩阵.
+
+\vspace{0.7em}
+
+\textbf{七、（10 分）}已知方阵 $A,\ I - A,\ I - A^{-1}$ 均可逆，其中 $I$ 为单位矩阵，证明：
+\[
+  (I - A)^{-1} + (I - A^{-1})^{-1} = I.
+\]
+
+\vspace{0.7em}
+
+\textbf{八、（12 分）证明题}
+
+设 $A, B$ 为 $n$ 阶方阵，已知 $A$ 可相似对角化，又有 $A^2 + A = 0$，$B^2 + B = I$，且有秩关系 $\R(AB) = 2$.
+证明：
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item $B$ 可逆；
+  \item $|A + 2I| = 2^{n-2}$，其中 $I$ 为 $n$ 阶单位矩阵.
+\end{enumerate}
+
+\end{document}

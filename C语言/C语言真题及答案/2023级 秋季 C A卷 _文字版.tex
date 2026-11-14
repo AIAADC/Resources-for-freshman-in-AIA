@@ -1,0 +1,375 @@
+\documentclass[a4paper,11pt]{ctexart}
+\usepackage[left=1.9cm,right=1.9cm,top=2.0cm,bottom=2.0cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\lstset{
+  language=C,
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  keepspaces=true,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4,
+  aboveskip=3pt,
+  belowskip=3pt,
+  xleftmargin=1.5em,
+  escapeinside={(*@}{@*)},
+  commentstyle=\color{black!70}
+}
+
+\newcommand{\blankline}[1]{\underline{\hspace{#1}}}
+\newcommand{\ansbox}{\hfill(\qquad\quad)}
+\newcommand{\secbox}[2]{%
+  \noindent\begin{tabular}{|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
+    \hline
+    分\quad 数 & \\ \hline
+    评卷人 & \\ \hline
+  \end{tabular}\hspace{0.8em}%
+  \begin{minipage}[c]{\dimexpr\textwidth-4.2cm\relax}
+    \textbf{#1}#2
+  \end{minipage}\par\vspace{0.5em}%
+}
+
+\begin{document}
+
+\begin{center}
+  {\large\textbf{华中科技大学人工智能与自动化学院 2023～2024 学年第一学期}}\\[4pt]
+  {\Large\textbf{“C 语言程序设计”考试试卷（A 卷）}}\\[8pt]
+  考试方式：\underline{\quad 闭卷 \quad}\qquad
+  考试日期：\underline{\quad 2024-01-18 \quad}\qquad
+  考试时长：\underline{\quad 150 \quad} 分钟
+\end{center}
+
+\vspace{4pt}
+\begin{center}
+  \begin{tabular}{|>{\centering\arraybackslash}p{1.6cm}|*{7}{>{\centering\arraybackslash}p{1.5cm}|}}
+    \hline
+    题号 & 一 & 二 & 三 & 四 & 五 & 六 & 总分 \\ \hline
+    分数 & & & & & & & \\[8pt] \hline
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \small 院系：\underline{\hspace{2.3cm}}\quad 班级：\underline{\hspace{2.0cm}}\quad 姓名：\underline{\hspace{2.0cm}}\quad 学号：\underline{\hspace{2.3cm}}\quad 成绩：\underline{\hspace{1.8cm}}
+\end{center}
+\vspace{6pt}
+
+% ==================== 一 ====================
+\secbox{一、判断下列语句或程序段的对错。}{（“$\times$”表示错，“$\checkmark$”表示对）（10 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=3pt]
+  \item \texttt{char x=0, y=x ;} \ansbox
+  \item \texttt{int  xyz-2 = 1;} \ansbox
+  \item \texttt{printf("\%d\textbackslash n",(40,50,60));} \ansbox
+  \item \texttt{float x[10];}\\
+        \texttt{int *p = x;} \ansbox
+  \item \texttt{register int x;}\\
+        \texttt{scanf("\%d",\&x);} \ansbox
+  \item \texttt{char  str[20];}\\
+        \texttt{str="hust aia";} \ansbox
+  \item \texttt{int  *p , a[2][3];}\\
+        \texttt{p = *a+1;} \ansbox
+  \item \texttt{int  s[]= \{5,6,7,8\} ;} \ansbox
+  \item \texttt{char  **pp, a[4][5];}\\
+        \texttt{pp = a;} \ansbox
+  \item \texttt{int x='\textbackslash 107' ;} \ansbox
+\end{enumerate}
+
+\vspace{8pt}
+
+% ==================== 二 ====================
+\secbox{二、计算下列表达式的值}{（10 分）}
+
+\noindent 假设 \texttt{int} 和 \texttt{unsigned int} 类型均为 16 位长度，且各题彼此独立\\
+设 \texttt{unsigned int  a=10, b=17,c=5,d=3;}\\
+\phantom{设 }\texttt{float f ;}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=3pt]
+  \item \texttt{f = b/c;} \ansbox
+  \item \texttt{!(a+b)+c\&\&b+c/2;} \ansbox
+  \item \texttt{(a\^{}b) + ( c >>1|d)} \ansbox
+  \item \texttt{f=(a-b>0?c/d:c\%d);} \ansbox
+  \item \texttt{a=2,b=a* ++b;} \ansbox
+\end{enumerate}
+
+\vspace{8pt}
+
+% ==================== 三 ====================
+\secbox{三、程序改错（10 分）}{要求：不得改变程序框架，不得重写程序，无需文字说明，直接在代码上添加、删除和修改。}
+
+\noindent 1、求 10 个浮点数的最大值和平均值，其中在 \texttt{main()} 函数中完成输入和显示求得的结果，在 \texttt{fun} 函数中求最大值和平均值。
+\begin{lstlisting}
+#include<stdio.h>
+
+void  main()
+{
+    int i;
+    float  x[10], max, average;
+
+    for(i=0;i<10;i++)
+        scanf("%f",x+i);
+    average=fun(x,10,max);
+    pirintf ("max=%f,average=%f\n", max, average) ;
+}
+fun(float *p, int n, int *pmax)
+{
+    float temp;
+    int i;
+
+    for(i=0;i<n;i++)
+    {
+        if (*pmax<p[i])
+            *pmax=p[i];
+        temp+=p[i];
+    }
+    return temp/n;
+}
+\end{lstlisting}
+
+\noindent 2、求 5 个字符串中的最小字符串。
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    char *pstr[5]={"pascal","basic","prolog","cobol","lisp"};
+    char *pmin;
+    pmin=getminstr(*pstr,5);
+    printf("min string=%s\n",pmin)
+}
+char getminstr(char **str, int n)
+{
+    char *temp,i;
+
+    for(i=0;i<n;i++)
+        if(temp>str[i])
+            temp=str[i];
+
+    return temp;
+}
+\end{lstlisting}
+
+\vspace{8pt}
+
+% ==================== 四 ====================
+\secbox{四、程序填空}{（10 分）}
+
+\noindent (1) 求 10--1000 某个闭区间的所有素数并在屏幕上显示，区间由用户从键盘输入。
+\begin{lstlisting}
+#include<stdio.h>
+
+void main()
+{
+    int i,j;
+    int a, b ;
+
+    printf("please input a ,b:");
+    scanf("%d%d", (*@\blankline{4.5cm}@*) );
+
+    for ( (*@\blankline{4.5cm}@*) ;i++)
+    {
+        for (j=2; j<i ; j++)
+        {
+            if( (*@\blankline{4.5cm}@*) )
+                (*@\blankline{3.5cm}@*) ;
+        }
+        if( (*@\blankline{3.5cm}@*) )
+            printf( "%d\n" ,i);
+    }
+}
+\end{lstlisting}
+
+\noindent (2) 将某一个整数转换成对应的字符串.
+\begin{lstlisting}
+#include <stdio.h>
+(*@\blankline{5.5cm}@*)
+void main()
+{
+    int  n,  sign ;
+    char str[10], i, j;
+
+    scanf( "%d" ,&n);
+    if((sign=n)<0)
+        (*@\blankline{5.0cm}@*)
+    i=0;
+    do
+    {
+        (*@\blankline{5.0cm}@*)
+    }(*@\blankline{4.5cm}@*)
+    if(sign<0)
+        str[i++]='-';
+    (*@\blankline{5.0cm}@*)
+    for(i=0,j=strlen(str)-1;i<j;i++,j--)
+        n=str[i],str[i]=str[j],str[j]=n;
+    puts(str);
+}
+\end{lstlisting}
+
+\vspace{8pt}
+
+% ==================== 五 ====================
+\secbox{五、输出程序运行结果}{（25 分，每题 5 分，结果写在题目的右边）}
+
+\noindent 1、
+\begin{lstlisting}
+#include <stdio.h>
+void fun(int *, int);
+void main()
+{
+    int a[5]={1, 2, 3, 4, 5}, i;
+
+    fun(a+1, 3);
+    for(i=1;i<4;i++)
+        printf("%d\n",a[i]);
+}
+void fun(int *b,int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+        b[i]=b[i]*b[i+1];
+    return ;
+}
+\end{lstlisting}
+
+\vspace{4pt}
+\noindent 2、
+\begin{lstlisting}
+#include <stdio.h>
+void main()
+{
+    int i, j, temp;
+    int row=0, column=0;
+    int a[3][3]={{6, 3, 1},{-4, 3, 2},{-9, 4, 7}};
+
+    temp=a[0][0];
+    for(i=0;i<3;i++)
+        for(j=0; j<3; j++)
+        {
+            if(a[i][j]>temp)
+            {
+                temp=a[i][j];
+                row=i+1;
+                column=j+1;
+            }
+        }
+    printf("temp=%d, row=%d, column=%d\n", temp, row, column);
+}
+\end{lstlisting}
+
+\vspace{4pt}
+\noindent 3、
+\begin{lstlisting}
+#include <stdio.h>
+int n;
+void func();
+void main()
+{
+    static int x=3;
+    int y;
+
+    y=n+1;
+    printf("main:x=%d, y=%d, n=%d\n", x, y, n);
+    func();
+    printf("main:x=%d, y=%d, n=%d\n", x, y, n);
+}
+void func()
+{
+    static int x;
+    int y=10;
+    x=x+2;
+    n=n+2;
+    y=y-n;
+    printf("func:x=%d, y=%d, n=%d\n", x, y, n);
+}
+\end{lstlisting}
+
+\vspace{4pt}
+\noindent 4、
+\begin{lstlisting}
+#include <stdio.h>
+#include <string.h>
+struct person
+{
+    char name[20];
+    int count;
+};
+void main()
+{
+    struct person leader[3]={{"li",5},{"zhang",6},{"wang",7}};
+    char name[20],m,n;
+    for(m=0;m<6;m++)
+    {
+        gets(name);
+        for(n=0;n<3;n++)
+            if(!strcmp(name,leader[n].name))
+            {
+                leader[n].count++;
+                break;
+            }
+    }
+    printf("\n");
+    for(m=0;m<3;m++)
+        printf("%s:%d\n",leader[m].name,leader[m].count);
+}
+\end{lstlisting}
+\noindent 当程序运行时，键入情况如下：\\
+\texttt{li}\\
+\texttt{wang}\\
+\texttt{lei}\\
+\texttt{li}\\
+\texttt{wang}\\
+\texttt{zhang}\\
+写出程序的输出结果。
+
+\vspace{6pt}
+\noindent 5、
+\begin{lstlisting}
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+    char str[4][20]={ "capital", "indexing", "larger", "smaller"};
+    int a,b;
+    char temp[20];
+
+    for(a=0;a<3;a++)
+        for(b=0;b<3-a;b++)
+            if(strcmp(str[b],str[b+1])>0)
+            {
+                strcpy(temp,str[b]);
+                strcpy(str[b],str[b+1]);
+                strcpy(str[b+1],temp);
+            }
+    for(a=1;a<3;a++)
+        printf("%s\n",str[a]+a);
+}
+\end{lstlisting}
+
+\vspace{8pt}
+
+% ==================== 六 ====================
+\secbox{六、编程（35 分）}{注意：不得使用全局变量，注意程序结构}
+
+\noindent 1、某门课程最终成绩分别 \texttt{'A'}、\texttt{'B'}、\texttt{'C'}、\texttt{'D'}，90 分以上（含 90 分）为 \texttt{'A'}，70-89 分为 \texttt{'B'}，60-69 分为 \texttt{'C'}，60 分以下为 \texttt{'D'}。现要求从键盘输入成绩的等级，在屏幕上输出该成绩等级对应的成绩范围（8 分）
+
+\vspace{6pt}
+\noindent 2、编写一个函数求一个二维数组列累加和的最大值并返回列号；另编写 \texttt{main} 测试函数完成二维数组数的输入，函数调用，输出列累加和的最大值以及列号。（9 分）
+
+\vspace{6pt}
+\noindent 3、输入一行包含若干单词（假定不超过 10 个）的字符串，单词之间用空格分开，要求删除该行字符串中最大的那个单词（假定最大单词只有一个）形成新的字符串，并显示。（不考虑单词的合法性以及语句的语法）（9 分）
+
+\vspace{6pt}
+\noindent 4、编程处理某班 30 个学生 4 门课的成绩，它们分别是数学、物理、英语和计算机，按编号从小到大的顺序依次输入学生的姓名、性别和四门课的成绩，计算每个学生的平均成绩，并以清晰的格式从低分到高分的顺序打印平均分低于 80 分的学生成绩（9 分）
+
+\end{document}

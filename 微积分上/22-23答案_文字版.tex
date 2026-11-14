@@ -1,0 +1,195 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2022--1 期末试题解答}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、单项选择题}
+
+1. C \quad 2. D \quad 3. D \quad 4. C \quad 5. C \quad 6. C
+
+\vspace{0.8em}
+
+\textbf{二、填空题}
+
+7. $3$ \qquad 8. $y=-\dfrac{2}{3}x$ \qquad 9. $0$ \qquad 10. $\ln(1+\sqrt{2})$
+
+\vspace{0.8em}
+
+\textbf{三、基本计算题}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 曲线 $y=x\arctan x$ 无垂直渐近线。
+  \begin{align*}
+    k &= \lim_{x\to+\infty}\frac{y}{x} = \lim_{x\to+\infty}\frac{x\arctan x}{x} = \lim_{x\to+\infty}\arctan x = \frac{\pi}{2}, \\
+    b &= \lim_{x\to+\infty}(y-kx) = \lim_{x\to+\infty}\frac{\arctan x-\dfrac{\pi}{2}}{\dfrac{1}{x}} = \lim_{x\to+\infty}\frac{\dfrac{1}{1+x^2}}{-\dfrac{1}{x^2}} = -1,
+  \end{align*}
+  所以曲线 $C:y=x\arctan x\ (x>0)$ 仅有斜渐近线 $y=\dfrac{\pi}{2}x-1$。
+
+  \item \textbf{解法 1}：
+  \begin{align*}
+    l &= \lim_{x\to a}\frac{\displaystyle\int_a^x f(t)\dd t-(x-a)}{(x-a)\displaystyle\int_a^x f(t)\dd t}
+       = \lim_{x\to a}\frac{f(x)-1}{\displaystyle\int_a^x f(t)\dd t+(x-a)f(x)} \\
+      &= \lim_{x\to a}\frac{f(x)-1}{(x-a)\bigl(f(\xi)+f(x)\bigr)} \quad (\xi\text{ 介于 }a\text{ 与 }x\text{ 之间}) \\
+      &= \lim_{x\to a}\frac{f(x)-f(a)}{x-a}\cdot\frac{1}{f(\xi)+f(x)} = \frac{f'(a)}{2f(a)} = \frac{1}{2}.
+  \end{align*}
+
+  \textbf{解法 2}：
+  \begin{align*}
+    l &= \lim_{x\to a}\frac{\displaystyle\int_a^x f(t)\dd t-(x-a)}{(x-a)\displaystyle\int_a^x f(t)\dd t}
+       = \lim_{x\to a}\frac{f(x)-1}{\displaystyle\int_a^x f(t)\dd t+(x-a)f(x)} \\
+      &= \lim_{x\to a}\frac{\dfrac{f(x)-f(a)}{x-a}}{\dfrac{\displaystyle\int_a^x f(t)\dd t}{x-a}+f(x)},
+  \end{align*}
+  因 $\displaystyle\lim_{x\to a}\frac{\displaystyle\int_a^x f(t)\dd t}{x-a}=\lim_{x\to a}f(x)=f(a)$，故 $l=\dfrac{f'(a)}{2f(a)}=\dfrac{1}{2}$。
+
+  注：这题不能两次使用洛必达法则，因为 $f'(x)$ 没有连续性这一条件！
+
+  \textbf{解法 3}：记 $F(x)=\displaystyle\int_a^x f(t)\dd t$，则 $F(a)=0,\,F'(a)=F''(a)=1$，
+  \[
+    F(x)=(x-a)+\frac{1}{2}(x-a)^2+o\bigl((x-a)^2\bigr),\quad F(x)\sim x-a\ (x\to a),
+  \]
+  \[
+    l=\lim_{x\to a}\frac{F(x)-(x-a)}{(x-a)F(x)}
+    =\lim_{x\to a}\frac{F(x)-(x-a)}{(x-a)^2}
+    =\lim_{x\to a}\frac{\frac{1}{2}(x-a)^2+o\bigl((x-a)^2\bigr)}{(x-a)^2}=\frac{1}{2}.
+  \]
+
+  \item \textbf{解法 1}：
+  \[
+    I=\int\frac{(x^n+1)-x^n}{x(x^n+1)}\dd x
+    =\int\left(\frac{1}{x}-\frac{x^{n-1}}{x^n+1}\right)\dd x
+    =\ln|x|-\frac{1}{n}\ln|x^n+1|+C.
+  \]
+
+  \textbf{解法 2}：令 $t=x^n$，则 $\dd t=nx^{n-1}\dd x$，$\dfrac{1}{x}\dd x=\dfrac{1}{nt}\dd t$。
+  \[
+    I=\frac{1}{n}\int\frac{1}{t(t+1)}\dd t
+    =\frac{1}{n}\ln\left|\frac{t}{t+1}\right|+C
+    =\frac{1}{n}\ln\left|\frac{x^n}{x^n+1}\right|+C.
+  \]
+
+  \item 方程变形为 $\dfrac{\dd x}{\dd y}-\dfrac{2x}{y}=y^3$。
+
+  由一阶线性非齐次微分方程的通解公式得
+  \[
+    x=\e^{-\int\left(-\frac{2}{y}\right)\dd y}\left(C+\int y^3\cdot\e^{\int\left(-\frac{2}{y}\right)\dd y}\dd y\right)
+    =y^2\left(C+\int y^3\cdot\frac{1}{y^2}\dd y\right)
+    =y^2\left(C+\frac{1}{2}y^2\right).
+  \]
+  另外，$y\equiv 0\ (x\neq 0)$ 也是原方程的解。
+
+  \item $f(1)=0$，$f'(x)=-\sin x^2$。
+  \[
+    I=\left.xf(x)\right|_0^1-\int_0^1 xf'(x)\dd x
+    =\int_0^1 x\sin x^2\dd x
+    =\left.-\frac{1}{2}\cos x^2\right|_0^1
+    =\frac{1}{2}(1-\cos 1).
+  \]
+
+  \item $F'(x)=\e^{-x}\sin x$，令 $F'(x)=0$ 得 $x=0$ 为 $F(x)$ 在 $\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right)$ 内的唯一驻点，
+  \[
+    F''(x)=\e^{-x}(\cos x-\sin x),\quad F''(0)=1>0,
+  \]
+  所以 $x=0$ 为 $F(x)$ 的极小值点。
+  \begin{align*}
+    F(0) &= \int_{-\frac{\pi}{2}}^0 \e^{-t}\sin t\dd t = \left.-\e^{-t}\cos t\right|_{-\frac{\pi}{2}}^0 - \int_{-\frac{\pi}{2}}^0 \e^{-t}\cos t\dd t \\
+         &= -1 - \left(\left.\e^{-t}\sin t\right|_{-\frac{\pi}{2}}^0 + \int_{-\frac{\pi}{2}}^0 \e^{-t}\sin t\dd t\right) = -1 - \e^{\frac{\pi}{2}} - F(0),
+  \end{align*}
+  所以 $F(0)=-\dfrac{1+\e^{\frac{\pi}{2}}}{2}$ 为 $F(x)$ 的极小值，无极大值。
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{四、综合题}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item $f'(x)=\sqrt{1+x^2}-2x\sqrt{1+x^2}=(1-2x)\sqrt{1+x^2}$，
+
+  令 $f'(x)=0$，得 $x=\dfrac{1}{2}$。
+
+  当 $x<\dfrac{1}{2}$ 时，$f'(x)>0$，$f(x)$ 严格单调增，$f(x)=0$ 在 $\left(-\infty,\dfrac{1}{2}\right]$ 至多只有一个实根，
+
+  当 $x>\dfrac{1}{2}$ 时，$f'(x)<0$，$f(x)$ 严格单调减，$f(x)=0$ 在 $\left(\dfrac{1}{2},+\infty\right)$ 至多只有一个实根。
+
+  又 $f(-1)=\displaystyle\int_1^{-1}\sqrt{1+t^2}\dd t=-2\int_0^1\sqrt{1+t^2}\dd t<0$，
+
+  $f(0)=\displaystyle\int_1^0\sqrt{1+t^2}\dd t+\int_0^1\sqrt{1+t}\dd t=\int_0^1\bigl(\sqrt{1+t}-\sqrt{1+t^2}\bigr)\dd t>0$，
+
+  因而在 $(-1,0)$ 内有唯一实根，
+  \[
+    f(1)=\int_1^1\sqrt{1+t^2}\dd t+\int_1^1\sqrt{1+t}\dd t=0,
+  \]
+  故 $f(x)=0$ 在 $\left(-\infty,\dfrac{1}{2}\right]$ 及 $\left(\dfrac{1}{2},+\infty\right)$ 各有唯一的一个实根，从而 $f(x)=0$ 有两个实根。
+
+  \item 令 $u=x-t$，则 $\displaystyle\int_0^x f(t-x)\dd t=\int_0^x f(-u)\dd u$，
+
+  则方程两边关于 $x$ 求导得 $f(-x)=-x^2-2x$，
+
+  因而 $f(x)=-x^2+2x$。
+
+  所求旋转体体积
+  \[
+    V_y = 2\pi\int_0^2 x(-x^2+2x)\dd x = 2\pi\int_0^2(-x^3+2x^2)\dd x
+    = 2\pi\left[-\frac{1}{4}x^4+\frac{2}{3}x^3\right]_0^2 = \frac{8}{3}\pi.
+  \]
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{五、证明题}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item $f(x)$ 在 $[0,1]$ 上连续，则 $f(x)$ 在 $[0,1]$ 上有最大值 $M$ 和最小值 $m$。
+
+  因 $f(x)>0$，所以 $M\ge m>0$。又 $g(x)\ge 0$，故由定积分的比较性质得
+  \[
+    \int_0^1 g(x)\sqrt[n]{m}\dd x \le \int_0^1 g(x)\sqrt[n]{f(x)}\dd x \le \int_0^1 g(x)\sqrt[n]{M}\dd x,
+  \]
+  即
+  \[
+    \sqrt[n]{m}\int_0^1 g(x)\dd x \le \int_0^1 g(x)\sqrt[n]{f(x)}\dd x \le \sqrt[n]{M}\int_0^1 g(x)\dd x.
+  \]
+  因 $\displaystyle\lim_{n\to\infty}\sqrt[n]{m}=1,\,\lim_{n\to\infty}\sqrt[n]{M}=1$，由夹逼准则知 $\displaystyle\lim_{n\to\infty}\int_0^1 g(x)\sqrt[n]{f(x)}\dd x=\int_0^1 g(x)\dd x$。
+
+  \item 注意条件 $f'(0)=f'(2)=0$，将 $f(x)$ 在 $x_0=0$ 和 $x_0=2$ 分别展开成一阶泰勒公式：
+  \begin{align*}
+    f(x) &= f(0)+\frac{1}{2!}f''(\xi_1)x^2,\qquad \xi_1\text{ 介于 }x\text{ 与 }0\text{ 之间} \tag*{(1)}\\
+    f(x) &= f(2)+\frac{1}{2!}f''(\xi_2)(x-2)^2,\quad \xi_2\text{ 介于 }x\text{ 与 }2\text{ 之间} \tag*{(2)}
+  \end{align*}
+  (2)式减去(1)式得
+  \[
+    f(2)-f(0)=\frac{1}{2}f''(\xi_1)x^2-\frac{1}{2}f''(\xi_2)(x-2)^2,
+  \]
+  令 $x=1$ 得
+  \[
+    f(2)-f(0)=\frac{1}{2}f''(\xi_1)-\frac{1}{2}f''(\xi_2),
+  \]
+  从而有
+  \[
+    |f(2)-f(0)|\le\frac{1}{2}\bigl(|f''(\xi_1)|+|f''(\xi_2)|\bigr)\le\max\bigl(|f''(\xi_1)|,|f''(\xi_2)|\bigr)
+  \]
+  取 $|f''(\xi)|=\max\bigl(|f''(\xi_1)|,|f''(\xi_2)|\bigr)$（其中 $\xi\in\{\xi_1,\xi_2\}\subset(0,2)$），即得证。
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,344 @@
+\documentclass[a4paper,11pt]{ctexart}
+\usepackage[left=1.9cm,right=1.9cm,top=2.0cm,bottom=2.0cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\lstset{
+  language=C,
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  keepspaces=true,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4,
+  aboveskip=3pt,
+  belowskip=3pt,
+  xleftmargin=1.5em,
+  escapeinside={(*@}{@*)},
+  commentstyle=\color{black!70}
+}
+
+\newcommand{\blankline}[1]{\underline{\hspace{#1}}}
+\newcommand{\ansbox}{\hfill(\qquad\quad)}
+\newcommand{\secbox}[2]{%
+  \noindent\begin{tabular}{|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
+    \hline
+    分\quad 数 & \\ \hline
+    评卷人 & \\ \hline
+  \end{tabular}\hspace{0.8em}%
+  \begin{minipage}[c]{\dimexpr\textwidth-4.2cm\relax}
+    \textbf{#1}#2
+  \end{minipage}\par\vspace{0.5em}%
+}
+
+\begin{document}
+
+\begin{center}
+  {\large\textbf{华中科技大学人工智能与自动化学院 2021～2022 学年第一学期}}\\[4pt]
+  {\Large\textbf{“C 语言程序设计”考试试卷（A 卷）}}\\[8pt]
+  考试方式：\underline{\quad 闭卷 \quad}\qquad
+  考试日期：\underline{\quad 2022-01-12 \quad}\qquad
+  考试时长：\underline{\quad 150 \quad} 分钟
+\end{center}
+
+\vspace{4pt}
+\begin{center}
+  \begin{tabular}{|>{\centering\arraybackslash}p{1.6cm}|*{7}{>{\centering\arraybackslash}p{1.5cm}|}}
+    \hline
+    题号 & 一 & 二 & 三 & 四 & 五 & 六 & 总分 \\ \hline
+    分数 & & & & & & & \\[8pt] \hline
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \small 院系：\underline{\hspace{2.3cm}}\quad 班级：\underline{\hspace{2.0cm}}\quad 姓名：\underline{\hspace{2.0cm}}\quad 学号：\underline{\hspace{2.3cm}}\quad 成绩：\underline{\hspace{1.8cm}}
+\end{center}
+\vspace{6pt}
+
+% ==================== 一 ====================
+\secbox{一、判断下列语句或程序段的对错。}{（“$\times$”表示错，“$\checkmark$”表示对）（10 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=3pt]
+  \item \texttt{float x=0x1.23;} \ansbox
+  \item \texttt{int a = 0178;} \ansbox
+  \item \texttt{char \_abc= 123;} \ansbox
+  \item \texttt{int  **pa, *p[5];}\\
+        \texttt{p = pa ;} \ansbox
+  \item \texttt{int  (*pa)[5],a[5][5];}\\
+        \texttt{pa=a ;} \ansbox
+  \item \texttt{char  *str;}\\
+        \texttt{scanf("\%s",str);} \ansbox
+  \item \texttt{int x, *p =\&x, a[5][5];}\\
+        \texttt{*p = a[0][0];} \ansbox
+  \item \texttt{int a = (1.5, 0x123a,1234);} \ansbox
+  \item \texttt{char  x = '\textbackslash x181' ;} \ansbox
+  \item \texttt{char *str = "\textbackslash\textbackslash 78\textbackslash x123\textbackslash\textbackslash n";} \ansbox
+\end{enumerate}
+
+\vspace{8pt}
+
+% ==================== 二 ====================
+\secbox{二、计算下列表达式的值}{（10 分）}
+
+\noindent 假设 \texttt{int} 和 \texttt{unsigned} 类型均为 16 位长度，且各题彼此独立\\
+设 \texttt{unsigned  a=2, b=3;}\\
+\phantom{设 }\texttt{int  c=4, d=5;}\\
+\phantom{设 }\texttt{float f;}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=3pt]
+  \item \texttt{f = a>b ? a/b : d/a;} \ansbox
+  \item \texttt{!a || b++ \&\& c;} \ansbox
+  \item \texttt{(a\&b)\^{}( c | d)} \ansbox
+  \item \texttt{f=b - c;} \ansbox
+  \item \texttt{a-c > d - b ? a : b;} \ansbox
+\end{enumerate}
+
+\vspace{8pt}
+
+% ==================== 三 ====================
+\secbox{三、程序改错（10 分）}{要求：不得改变程序框架，不得重写程序，无需文字说明，直接在代码上添加、删除和修改。}
+
+\noindent 1、如下程序已知的 5 个整数，其中在 \texttt{main()} 函数中初始化，在 \texttt{sort} 函数中排序。（5 分）
+\begin{lstlisting}
+#include<stdio.h>
+
+void main()
+{
+    int i;
+    char a[N]={68, 72, 33,55,103};
+    sort(a[N]);
+    for (i=0; i<N; i++)
+    {
+        printf ("%s\n", a[i]);
+    }
+}
+void sort(int  (*p)[])
+{
+    int i, j;
+    int* temp;
+    for(i=0; i<N; i++)
+        for(j=0;j<N-1;j++)
+        {
+            if(p[j] > p[j+1])
+            {
+                *temp = p[j];
+                p[j] = p[j+1];
+                p[j+1] = *temp;
+            }
+        }
+}
+\end{lstlisting}
+
+\noindent 2、统计 $N$ 个字符串中大写字母和数字字符的个数（5 分）
+\begin{lstlisting}
+#include <stdio.h>
+
+#define N  5
+void main()
+{
+    char string[N][80];
+    char i;
+    int Capital_Count,Num_Count;
+    for(i=0;i<=N;i++)
+        scanf("%s",&string[i]);
+    for(i=0;i<N;i++)
+        Capital_Count+=Count(string[i],&Num_Count);
+    printf("Capital count :=%d,numbercount=%d\n" ,\
+            Capital_Count,Num_Count);
+}
+Count(char *str,int *result)
+{
+    int temp,i;
+    for(i=0;i<80;i++)
+    {
+        if(str[i]>='A'&& str[i]<='Z')
+            temp++;
+        if(str[i]>'0'||str[i]<'9')
+            *result++;
+    }
+    return temp;
+}
+\end{lstlisting}
+
+\vspace{8pt}
+
+% ==================== 四 ====================
+\secbox{四、程序填空}{（10 分）}
+
+\noindent 1、求序列：$\dfrac{1}{2}, \dfrac{3}{4}, \dfrac{5}{8}, \dfrac{7}{16}, \dfrac{9}{32} \cdots\cdots$，所有大于等于 $0.000001$ 的数据项之和，显示输出计算的结果。（5 分）
+\begin{lstlisting}
+#include <stdio.h>
+#include <math.h>
+void main ( )
+{
+    (*@\blankline{6.0cm}@*)
+    sum = 0;
+    a = 1;
+    b = 2;
+    while ( (*@\blankline{5.5cm}@*) )
+    {
+        sum = (*@\blankline{5.5cm}@*);
+        a = (*@\blankline{5.5cm}@*);
+        b = (*@\blankline{5.5cm}@*);
+    }
+    printf(" sum = %f",sum);
+}
+\end{lstlisting}
+
+\noindent 2、求 100—999 之间所有的水仙花数，所谓水仙花数就是说数的百位、十位和个位数的立方和恰好等于它本身。（5 分）
+\begin{lstlisting}
+#include<stdio.h>
+void main()
+{
+    int  i,a,b,c;
+    for (i=100; (*@\blankline{4.0cm}@*) ; i++)
+    {
+        a = (*@\blankline{4.5cm}@*);    //求百位数
+        b = (*@\blankline{4.5cm}@*);    //求十位数
+        c = (*@\blankline{4.5cm}@*);    //求个位数
+        if ( (*@\blankline{5.5cm}@*) )
+        {
+            printf("%6d", i);
+        }
+    }
+}
+\end{lstlisting}
+
+\vspace{8pt}
+
+% ==================== 五 ====================
+\secbox{五、输出程序运行结果}{（25 分，每题 5 分，结果写在题目的右边）}
+
+\noindent 1、
+\begin{lstlisting}
+#include<stdio.h>
+void main()
+{
+    int i;
+    for (i=1;i<10;i++)
+    {
+        if(i%2)
+            {putchar('H');
+            }
+        else if (i % 6 == 0) break;
+            else continue;
+        printf("UST\n");
+    }
+    printf(" I   love you");
+}
+\end{lstlisting}
+
+\vspace{4pt}
+\noindent 2、
+\begin{lstlisting}
+#include<stdio.h>
+void func( )
+{
+    int aut= 5;
+    static int st=5;
+    printf("aut=%d,  st=%d \n", aut--, st--);
+}
+void main( )
+{
+    int i;
+    for(i=0;i<5;i++)
+    {
+        func( );
+    }
+}
+\end{lstlisting}
+
+\vspace{4pt}
+\noindent 3、
+\begin{lstlisting}
+#include<stdio.h>
+void main( )
+{
+    char str[3][20]={ "basic",
+     "fortran" ,"c language" };
+    int  i ;
+    for ( i=0 ; i < 3 ; i++)
+    {
+        printf("%s\n", & str[i][i]);
+    }
+}
+\end{lstlisting}
+
+\vspace{4pt}
+\noindent 4、
+\begin{lstlisting}
+#include<stdio.h>
+void main( )
+{
+    char *str[]={"wuhan", "beijing", "fortran", "lisp"};
+    char **p[] = {str+3 , str+2 , str+1 , str};
+    char ***pp = p ;
+    printf("%s---", **++pp);
+    printf("---%s",**++pp+3);
+}
+\end{lstlisting}
+
+\vspace{4pt}
+\noindent 5、
+\begin{lstlisting}
+#include <stdio.h>
+struct student
+{
+    char *name ;
+    int score ;
+};
+void main( )
+{
+    struct student stu[3]={{"hust",99},{"whu", 60}, { "wust" ,18}};
+    struct student  *p;
+    int a;
+    char chr;
+    p=stu;
+    a=++(p->score);
+    printf("%s--",p->name);
+    printf("a=%d\n",a);
+    a=(++p)->score;
+    printf("%s--",p->name);
+    printf("a=%d\n",a);
+}
+\end{lstlisting}
+
+\vspace{8pt}
+
+% ==================== 六 ====================
+\secbox{六、编程（35 分）}{注意：不得使用全局变量，注意程序结构}
+
+\noindent 1、我们在数学中经常遇到下面的计算式，输入一个数值 $x$，请计算结果，编一程序实现其功能。（8 分）
+\[
+y = \begin{cases}
+x + 1 & 0 \le x \le 2 \\
+\sin(x) & 2 < x < 6 \\
+x^2 - 5 & 6 \le x \le 8
+\end{cases}
+\]
+
+\noindent 2、编程计算 $\sin(x) = x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!} + \dfrac{x^9}{9!}\cdots$，并使最后一项的绝对值小于 \texttt{1e-6} 为止，$x$ 从键盘输入。（8 分）
+
+\vspace{4pt}
+\noindent 3、编程序，要求主函数中输入一行英文，被调用的函数返回那行英文中最长的那个单词（假定最长的单词只一个）并在主函数中输出。（10 分）
+
+\vspace{4pt}
+\noindent 4、某班有学生 30 名学生，每名学生信息由姓名、学号、三门课程的成绩组成，试编程要求：（9 分）
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=2pt, topsep=2pt]
+  \item 学生信息由键盘输入；
+  \item 能按学号查找学生信息；
+  \item 按平均分高低顺序输出前 5 名学生信息。
+\end{enumerate}
+（每小题写一函数，通过 \texttt{main} 函数调用实现）
+
+\end{document}

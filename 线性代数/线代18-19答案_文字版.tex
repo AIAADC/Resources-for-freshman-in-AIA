@@ -1,0 +1,343 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{arydshln}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\R}{\mathrm{R}}
+\newcommand{\T}{\mathrm{T}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2018--2019 学年第二学期期末考试 A 卷参考答案}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、判断题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.6em, topsep=0.5em]
+  \item \textbf{【正解】}$\checkmark$
+
+  \textbf{【解析】}由于 $AB = BA$，$A(B + C)A = (AB + AC)A = ABA + ACA = A^2 B + ACA$.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 4——矩阵的概念和基本运算
+
+  \item \textbf{【正解】}$\checkmark$
+
+  \textbf{【解析】}由于线性无关，则 $\alpha_1 + \alpha_2 + \cdots + \alpha_m \neq 0$.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 11——向量组的线性相关和线性表示
+
+  \item \textbf{【正解】}$\times$
+
+  \textbf{【解析】}由题干知：$AB = 0$，且 $A \neq 0, B \neq 0$，则线性齐次方程组 $AX = 0$ 有非零解，则 $A$ 的列向量组线性相关；由 $AB = 0 \to (AB)^{\T} = B^{\T}A^{\T} = 0$，即齐次线性方程组 $B^{\T}Y = 0$ 有非零解，则 $B^{\T}$ 的列向量组线性相关，即 $B$ 的行向量组线性相关.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 16——齐次线性方程组
+
+  \item \textbf{【正解】}$\checkmark$
+
+  \textbf{【解析】}$A_{m \times n} B_{n \times s} = O$，则 $\R(A) + \R(B) \leqslant n$. 故 $\rk(A) + \rk(A) \leqslant 3$，且 $A$ 非零矩阵，$\rk(A) \geqslant 1$. 故 $\rk(A) = 1$，因此 $Ax = 0$ 线性无关解向量个数为 $2$.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 16——齐次线性方程组
+
+  \item \textbf{【正解】}$\checkmark$
+
+  \textbf{【解析】}对于方程组 \textcircled{\small 1} $Ax = 0$，\textcircled{\small 2} $A^{\T}Ax = 0$，其中 \textcircled{\small 1} 的解显然必是 \textcircled{\small 2} 的解，对于 \textcircled{\small 2} 的解若 $A^{\T}Ax = 0 \Rightarrow x^{\T}A^{\T}Ax = 0 \Rightarrow (Ax)^{\T}Ax = 0$，所以 \textcircled{\small 2} 的解显然必是 \textcircled{\small 1} 的解，两方程组同解，故 $\rk(A) = \rk(A^{\T}A)$.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 4——矩阵的概念和基本运算
+
+  \item \textbf{【正解】}$\checkmark$
+
+  \textbf{【解析】}由题可知 $A \begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1 \end{bmatrix}$，故由定义，显然 $1$ 为矩阵的一个特征值.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 19——特征值和特征向量
+
+  \item \textbf{【正解】}$\checkmark$
+
+  \textbf{【解析】}若 $A$ 为正定矩阵，则 $A$ 的特征值都为正数，而 $A^*$ 特征值为 $\dfrac{|A|}{\lambda}$，因此 $A^*$ 特征值也恒正，因此矩阵 $A^*$ 正定.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 24——正定二次型和正定矩阵
+
+  \item \textbf{【正解】}$\checkmark$
+
+  \textbf{【解析】}注意到 $X^{\T}AX$ 是一个数，所以 $X^{\T}AX = (X^{\T}AX)^{\T} = X^{\T}A^{\T}X$.
+
+  又 $\because A^{\T}$ 为反对称矩阵（$A^{\T} = -A$），故 $X^{\T}A^{\T}X = -X^{\T}AX$，即 $X^{\T}AX = 0$.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 4——矩阵的概念和基本运算
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、填空题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.75em, topsep=0.5em]
+  \item \textbf{【正解】}$-\dfrac{1}{2}(A + I)$
+
+  \textbf{【解析】}$A^2 = A \Rightarrow A^2 - A - 2I = -2I \Rightarrow (A - 2I)(A + I) = -2I$，故 $(A - 2I)^{-1} = -\dfrac{1}{2}(A + I)$.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 5——矩阵的逆
+
+  \item \textbf{【正解】}$\dfrac{a}{b}$
+
+  \textbf{【解析】}由题可知 $A \begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1 \end{bmatrix} = \begin{bmatrix} b \\ b \\ \vdots \\ b \end{bmatrix}$，又 $A$ 可逆，因此 $b \neq 0$，因此有
+  \[
+    \begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1 \end{bmatrix}
+    = A^{-1} \begin{bmatrix} b \\ b \\ \vdots \\ b \end{bmatrix}
+    = \frac{1}{|A|} A^* \begin{bmatrix} b \\ b \\ \vdots \\ b \end{bmatrix}
+    = A^* \begin{bmatrix} b/a \\ b/a \\ \vdots \\ b/a \end{bmatrix},
+  \]
+  可得 $(A_{11} + A_{21} + \cdots + A_{n1}) \dfrac{b}{a} = 1$，故 $A_{11} + A_{21} + \cdots + A_{n1} = \dfrac{a}{b}$.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 5——矩阵的逆
+
+  \item \textbf{【正解】}$2$
+
+  \textbf{【解析】}$B = (\alpha_1, \alpha_2, \alpha_3) \begin{pmatrix} 1 & 1 & 1 \\ 1 & 2 & 3 \\ 1 & 4 & 9 \end{pmatrix}$，故 $|B| = |A| \begin{vmatrix} 1 & 1 & 1 \\ 1 & 2 & 3 \\ 1 & 4 & 9 \end{vmatrix} = 1 \times 2 = 2$.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 4——矩阵的概念和基本运算
+
+  \item \textbf{【正解】}$t > 5$
+
+  \textbf{【解析】}二次型对应矩阵为 $\begin{pmatrix} 1 & 1 & 2 \\ 1 & t & 0 \\ 2 & 0 & t \end{pmatrix}$，为正定矩阵，故顺序主子式大于零，故
+  \[
+    \begin{vmatrix} 1 & 1 \\ 1 & t \end{vmatrix} > 0,\qquad
+    \begin{vmatrix} 1 & 1 & 2 \\ 1 & t & 0 \\ 2 & 0 & t \end{vmatrix} > 0,
+  \]
+  故 $t > 5$.
+
+  \textbf{【考点延伸】}《考试宝典》知识点 24——正定二次型和正定矩阵
+
+  \item \textbf{【正解】}$\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$
+
+  \textbf{【解析】}由于矩阵 $A = (a_{ij})_{3 \times 3}$ 为正交矩阵，其行向量与列向量均为单位向量，故 $a_{11}^2 + a_{12}^2 + a_{13}^2 = 1$ 且 $a_{11}^2 + a_{21}^2 + a_{31}^2 = 1$. 又 $a_{11} = 1$，因此 $a_{12} = a_{13} = a_{21} = a_{31} = 0$，即 $A$ 的第一列为 $(1, 0, 0)^{\T} = \beta$（亦可由 $X = A^{-1}\beta = A^{\T}\beta$ 等于 $A$ 第一行的转置），故 $AX = \beta$ 的解为 $X = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、【解析】}（利用加边法）
+\begin{align*}
+  D_n &= \begin{vmatrix}
+    1 & 0 & 0 & \cdots & 0 \\
+    1 & 1 + a_1 & 1 & \cdots & 1 \\
+    1 & 1 & 1 + a_2 & \cdots & 1 \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    1 & 1 & 1 & \cdots & 1 + a_n
+  \end{vmatrix}
+  = \begin{vmatrix}
+    1 & -1 & -1 & \cdots & -1 \\
+    1 & a_1 & 0 & \cdots & 0 \\
+    1 & 0 & a_2 & \cdots & 0 \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    1 & 0 & 0 & \cdots & a_n
+  \end{vmatrix} \quad\text{（爪型行列式）} \\
+  &= \left(1 + \sum_{i=1}^n \frac{1}{a_i}\right)\left(\prod_{i=1}^n a_i\right).
+\end{align*}
+
+\textbf{【考点延伸】}《考试宝典》知识点 1——行列式的概念及其性质
+
+\vspace{0.8em}
+
+\textbf{四、【解析】}1. 对增广矩阵作初等行变换：
+\[
+  \left(\begin{array}{cccc:c}
+    1 & 1 & -2 & 3 & 0 \\
+    2 & 1 & -6 & 4 & -1 \\
+    3 & 2 & a & 7 & -1 \\
+    1 & -1 & -6 & -1 & b
+  \end{array}\right)
+  \longrightarrow \left(\begin{array}{cccc:c}
+    1 & 1 & -2 & 3 & 0 \\
+    0 & -1 & -2 & -2 & -1 \\
+    0 & 0 & a + 8 & 0 & 0 \\
+    0 & 0 & 0 & 0 & b + 2
+  \end{array}\right).
+\]
+当 $b \neq -2$ 时，方程无解；当 $b = -2$ 时，方程有解.
+
+2. 当 $b = -2$，$a \neq -8$ 时，$\rk(A) = \rk(A \mid \beta) = 3$，因此通解为
+\[
+  X = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}
+  = k \begin{bmatrix} -1 \\ -2 \\ 0 \\ 1 \end{bmatrix} + \begin{bmatrix} -1 \\ 1 \\ 0 \\ 0 \end{bmatrix},\quad k \in \mathbb{R}.
+\]
+当 $b = -2$，$a = -8$ 时，$\rk(A) = \rk(A \mid \beta) = 2$，因此通解为
+\[
+  X = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}
+  = k_1 \begin{bmatrix} 4 \\ -2 \\ 1 \\ 0 \end{bmatrix} + k_2 \begin{bmatrix} -1 \\ -2 \\ 0 \\ 1 \end{bmatrix} + \begin{bmatrix} -1 \\ 1 \\ 0 \\ 0 \end{bmatrix},\quad k_1, k_2 \in \mathbb{R}.
+\]
+
+\textbf{【考点延伸】}《考试宝典》知识点 17——非齐次线性方程组
+
+\vspace{0.8em}
+
+\textbf{五、【解析】}$A^* B A = 2BA - 8I$，而 $|A| = -2$，因此 $A$ 可逆，$|A|A^{-1}BA = 2BA - 8I$.
+\[
+  |A|A^{-1}B = 2B - 8A^{-1} \Rightarrow |A|B = 2AB - 8I \Rightarrow 8I = (2A - |A|I)B.
+\]
+\[
+  B = 8(2A - |A|I)^{-1} = 8 \begin{bmatrix} 4 & 4 & -4 \\ 0 & -2 & 8 \\ 0 & 0 & 4 \end{bmatrix}^{-1}.
+\]
+\begin{align*}
+  \left[\begin{array}{ccc:ccc}
+    4 & 4 & -4 & 1 & 0 & 0 \\
+    0 & -2 & 8 & 0 & 1 & 0 \\
+    0 & 0 & 4 & 0 & 0 & 1
+  \end{array}\right]
+  &\longrightarrow \left[\begin{array}{ccc:ccc}
+    4 & 0 & 0 & 1 & 2 & -3 \\
+    0 & -2 & 0 & 0 & 1 & -2 \\
+    0 & 0 & 4 & 0 & 0 & 1
+  \end{array}\right] \\
+  &\longrightarrow \left[\begin{array}{ccc:ccc}
+    1 & 0 & 0 & \frac{1}{4} & \frac{1}{2} & -\frac{3}{4} \\
+    0 & 1 & 0 & 0 & -\frac{1}{2} & 1 \\
+    0 & 0 & 1 & 0 & 0 & \frac{1}{4}
+  \end{array}\right].
+\end{align*}
+\[
+  B = 8 \begin{bmatrix}
+    \frac{1}{4} & \frac{1}{2} & -\frac{3}{4} \\[0.3em]
+    0 & -\frac{1}{2} & 1 \\[0.3em]
+    0 & 0 & \frac{1}{4}
+  \end{bmatrix}
+  = \begin{bmatrix}
+    2 & 4 & -6 \\
+    0 & -4 & 8 \\
+    0 & 0 & 2
+  \end{bmatrix}.
+\]
+
+\textbf{【考点延伸】}《考试宝典》知识点 5——矩阵的逆
+
+\vspace{0.8em}
+
+\textbf{六、【解析】}
+\begin{align*}
+  |E - A| &= \begin{vmatrix}
+    2 - a & 1 & -1 \\
+    1 & 2 - a & -1 \\
+    -1 & -1 & 2 - a
+  \end{vmatrix}
+  = \begin{vmatrix}
+    2 - a & 1 & -2 \\
+    0 & 1 - a & 0 \\
+    -1 & -1 & 3 - a
+  \end{vmatrix} \\
+  &= (1 - a) \begin{vmatrix} 2 - a & -2 \\ -1 & 3 - a \end{vmatrix}
+  = (1 - a)^2 (4 - a) = 0,
+\end{align*}
+$\therefore a = 1$ 或 $4$.
+
+当 $a = 1$ 时，$A = \begin{bmatrix} 0 & -1 & 1 \\ -1 & 0 & 1 \\ 1 & 1 & 0 \end{bmatrix}$，
+\begin{align*}
+  |\lambda E - A| &= \begin{vmatrix}
+    \lambda & 1 & -1 \\
+    1 & \lambda & -1 \\
+    -1 & -1 & \lambda
+  \end{vmatrix}
+  = \begin{vmatrix}
+    \lambda & 1 & -1 \\
+    1 - \lambda & \lambda - 1 & 0 \\
+    \lambda - 1 & 0 & \lambda - 1
+  \end{vmatrix} \\
+  &= \begin{vmatrix}
+    \lambda + 1 & 1 & -1 \\
+    0 & \lambda - 1 & 0 \\
+    \lambda - 1 & 0 & \lambda - 1
+  \end{vmatrix}
+  = (\lambda - 1) \begin{vmatrix} \lambda + 1 & -1 \\ \lambda - 1 & \lambda - 1 \end{vmatrix}
+  = (\lambda - 1)^2 (\lambda + 2).
+\end{align*}
+$\lambda_1 = \lambda_2 = 1$，$\lambda_3 = -2$.
+
+当 $a = 4$ 时，$A = \begin{bmatrix} 3 & -1 & 1 \\ -1 & 3 & 1 \\ 1 & 1 & 3 \end{bmatrix}$，
+\[
+  |\lambda E - A| = \begin{vmatrix}
+    \lambda - 3 & 1 & -1 \\
+    1 & \lambda - 3 & -1 \\
+    -1 & -1 & \lambda - 3
+  \end{vmatrix} = (\lambda - 4)^2 (\lambda - 1).
+\]
+$\lambda_1 = \lambda_2 = 4$，$\lambda_3 = 1$. $\therefore A$ 的特征值的和最小时，$a = 1$.
+
+$(E - A) = \begin{pmatrix} 1 & 1 & -1 \\ 1 & 1 & -1 \\ -1 & -1 & 1 \end{pmatrix} \to \begin{pmatrix} 1 & 1 & -1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$，取单位正交特征向量
+\[
+  \eta_1 = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix},\qquad
+  \eta_2 = \frac{1}{\sqrt{6}} \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}.
+\]
+$(-2E - A) = \begin{pmatrix} -2 & 1 & -1 \\ 1 & -2 & -1 \\ -1 & -1 & -2 \end{pmatrix} \to \begin{pmatrix} -1 & 2 & 1 \\ 1 & -2 & -1 \\ -1 & -1 & -2 \end{pmatrix} \to \begin{pmatrix} 0 & 0 & 0 \\ 1 & -1 & 0 \\ 0 & 1 & 1 \end{pmatrix}$. 取单位特征向量
+\[
+  \eta_3 = \frac{1}{\sqrt{3}} \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}.
+\]
+\[
+  \therefore C = \begin{bmatrix}
+    \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{6}} & \dfrac{1}{\sqrt{3}} \\[0.8em]
+    -\dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{6}} & \dfrac{1}{\sqrt{3}} \\[0.8em]
+    0 & \dfrac{2}{\sqrt{6}} & -\dfrac{1}{\sqrt{3}}
+  \end{bmatrix},\qquad
+  C^{\T} A C = \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & -2
+  \end{bmatrix}.
+\]
+
+\textbf{【考点延伸】}《考试宝典》知识点 22——二次型
+
+\vspace{0.8em}
+
+\textbf{七、【解析】}
+\begin{align*}
+  (I - A)^{-1} + (I - A^{-1})^{-1}
+  &= (I - A)^{-1} + (AA^{-1} - A^{-1})^{-1} \\
+  &= (I - A)^{-1} + [(A - I)A^{-1}]^{-1}
+  = (I - A)^{-1} + A(A - I)^{-1} \\
+  &= (I - A)^{-1} - A(I - A)^{-1}
+  = (I - A)(I - A)^{-1} = I.
+\end{align*}
+
+\textbf{【考点延伸】}《考试宝典》知识点 4——矩阵的概念和基本运算
+
+\vspace{0.8em}
+
+\textbf{八、【解析】}(1) $B^2 + B = I \Rightarrow B(B + I) = I$；$|B|\,|B + I| = |I| = 1$；$|B| \neq 0$，$B$ 可逆.
+
+(2) 而 $A$ 可相似对角化，
+\[
+  \min(\rk(A), \rk(B)) \geqslant \rk(AB) = 2 \geqslant \rk(A) + \rk(B) - n = \rk(A), \quad\text{故 } \rk(A) = 2.
+\]
+设 $\lambda$ 为 $A$ 的特征值，$\alpha$ 为对应的特征向量，即 $A\alpha = \lambda \alpha$，则 $A^2 \alpha = \lambda A \alpha = \lambda^2 \alpha$；又由 $A^2 + A = 0$ 得 $A^2 \alpha = -A\alpha = -\lambda \alpha$，故 $\lambda^2 = -\lambda$，因此 $A$ 的特征值为 $0$ 或 $-1$. 又 $\rk(A) = 2$，故
+\[
+  A \sim \begin{bmatrix}
+    -1 & & & & \\
+    & -1 & & & \\
+    & & 0 & & \\
+    & & & \ddots & \\
+    & & & & 0
+  \end{bmatrix}_{n \times n},
+  \quad\text{故 }
+  |A + 2I| = \begin{vmatrix}
+    1 & & & & \\
+    & 1 & & & \\
+    & & 2 & & \\
+    & & & \ddots & \\
+    & & & & 2
+  \end{vmatrix}_{n \times n} = 2^{n - 2}.
+\]
+
+\end{document}

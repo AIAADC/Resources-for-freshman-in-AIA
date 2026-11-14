@@ -1,0 +1,302 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\T}{\mathrm{T}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2016--2017 学年度第二学期《线性代数》考试试题（A）卷}\\[0.4em]
+  {\large\bfseries 参考答案}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、判断题（$2\text{ 分}\times 8 = 16\text{ 分}$）}
+
+\begin{center}
+  1. 对\quad 2. 对\quad 3. 对\quad 4. 对\quad 5. 错\quad 6. 对\quad 7. 对\quad 8. 错
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{二、填空题（$4\text{ 分}\times 5 = 20\text{ 分}$）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=0.5em, topsep=0.4em]
+  \item $\begin{pmatrix} 1 & 1 & 1 \\ -1 & -1 & -1 \\ 1 & 1 & 1 \end{pmatrix}$\qquad
+  (2) $\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ -5 & 0 & 1 \end{pmatrix}$\qquad
+  (3) $128$\qquad
+  (4) $\begin{pmatrix} 1 \\ -2 \\ -3 \\ 0 \end{pmatrix}$\qquad
+  (5) $t > 3$
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、（8 分）}
+
+\textbf{解：（方法一）}对所有的 $1 \leqslant i \leqslant n$，将第 $i+1$ 列元素乘以 $-\dfrac{c_i}{a_i}$ 均加至第一列，得到
+\begin{align*}
+  D_{n+1} &= \begin{vmatrix}
+    a_0 - \dfrac{b_1 c_1}{a_1} - \dfrac{b_2 c_2}{a_2} - \cdots - \dfrac{b_n c_n}{a_n} & b_1 & \cdots & b_n \\
+    0 & a_1 & & \\
+    \vdots & & \ddots & \\
+    0 & & & a_n
+  \end{vmatrix} \\
+  &= \left(a_0 - \frac{b_1 c_1}{a_1} - \frac{b_2 c_2}{a_2} - \cdots - \frac{b_n c_n}{a_n}\right) a_1 a_2 \cdots a_n.
+\end{align*}
+
+\textbf{（方法二）}按最后一行展开得到
+\begin{align*}
+  D_{n+1} &= a_n D_n + (-1)^{n+2} c_n \begin{vmatrix}
+    b_1 & \cdots & b_{n-1} & b_n \\
+    a_1 & & & \\
+    & \ddots & & \\
+    & & a_{n-1} &
+  \end{vmatrix} \\
+  &= a_n D_n + (-1)^{n+2} c_n (-1)^{n+1} b_n a_1 a_2 \cdots a_{n-1}
+  = a_n D_n - b_n c_n a_1 a_2 \cdots a_{n-1}.
+\end{align*}
+所以由递推即得
+\[
+  D_{n+1} = \left(a_0 - \frac{b_1 c_1}{a_1} - \frac{b_2 c_2}{a_2} - \cdots - \frac{b_n c_n}{a_n}\right) a_1 a_2 \cdots a_n.
+\]
+
+\vspace{0.8em}
+
+\textbf{四、（12 分）}
+
+\textbf{解：}分别用 $A$ 和 $\widetilde{A}$ 表示系数矩阵和增广矩阵.
+
+(1) 方程组有唯一解当且仅当 $\rk(A) = \rk(\widetilde{A}) = 3$. 由于系数矩阵 $A$ 是三阶方阵，所以等价于 $\rk(A) = 3$，即 $A$ 是满秩矩阵或可逆矩阵. 从而
+\[
+  |A| = \begin{vmatrix}
+    \lambda + 3 & 1 & 2 \\
+    \lambda & \lambda - 1 & 1 \\
+    3(\lambda + 1) & \lambda & \lambda + 3
+  \end{vmatrix} = \lambda^2 (\lambda - 1) \neq 0.
+\]
+所以 $\lambda \neq 0$，$\lambda \neq 1$.
+
+(2) 考虑 $\lambda = 0$ 的情形. 对方程组的增广矩阵做行初等变换：
+\[
+  \widetilde{A} = \begin{pmatrix}
+    3 & 1 & 2 & 0 \\
+    0 & -1 & 1 & 0 \\
+    3 & 0 & 3 & 3
+  \end{pmatrix}
+  \longrightarrow \begin{pmatrix}
+    3 & 1 & 2 & 0 \\
+    0 & -1 & 1 & 0 \\
+    0 & -1 & 1 & 3
+  \end{pmatrix}
+  \longrightarrow \begin{pmatrix}
+    3 & 1 & 2 & 0 \\
+    0 & -1 & 1 & 0 \\
+    0 & 0 & 0 & 3
+  \end{pmatrix}.
+\]
+所以系数矩阵和增广矩阵的秩不同，从而无解.
+
+(3) 考虑 $\lambda = 1$ 的情形. 对方程组的增广矩阵做行初等变换：
+\[
+  \widetilde{A} = \begin{pmatrix}
+    4 & 1 & 2 & 1 \\
+    1 & 0 & 1 & 1 \\
+    6 & 1 & 4 & 3
+  \end{pmatrix}
+  \longrightarrow \begin{pmatrix}
+    0 & 1 & -2 & -3 \\
+    1 & 0 & 1 & 1 \\
+    0 & 1 & -2 & -3
+  \end{pmatrix}
+  \longrightarrow \begin{pmatrix}
+    0 & 1 & -2 & -3 \\
+    1 & 0 & 1 & 1 \\
+    0 & 0 & 0 & 0
+  \end{pmatrix}.
+\]
+所以系数矩阵和增广矩阵的秩相同，且小于未知数的个数，从而有无穷多解. 此时的同解方程组为：
+\[
+  \begin{cases}
+    x_1 + x_3 = 1, \\
+    x_2 - 2x_3 = -3.
+  \end{cases}
+\]
+解之得，
+\[
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+  = \begin{pmatrix} 1 - x_3 \\ -3 + 2x_3 \\ x_3 \end{pmatrix}
+  = \begin{pmatrix} 1 \\ -3 \\ 0 \end{pmatrix} + \begin{pmatrix} -1 \\ 2 \\ 1 \end{pmatrix} x_3.
+\]
+所以原方程组的通解为
+\[
+  \begin{pmatrix} 1 \\ -3 \\ 0 \end{pmatrix} + \begin{pmatrix} -1 \\ 2 \\ 1 \end{pmatrix} x_3,
+  \quad\text{其中 } x_3 \text{ 可取任意数.}
+\]
+
+\vspace{0.6em}
+
+\textbf{五、（10 分）}
+
+\textbf{解：}由于 $3$ 阶矩阵 $A$ 有三个线性无关的特征向量，所以 $A$ 可相似对角化. 若取矩阵
+\[
+  P = \begin{pmatrix}
+    1 & 1 & 2 \\
+    1 & 0 & 1 \\
+    1 & 1 & 1
+  \end{pmatrix},
+\]
+则 $P^{-1} A P = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1 \end{pmatrix}$. 计算 $P^{-1}$ 得 $P^{-1} = \begin{pmatrix} -1 & 1 & 1 \\ 0 & -1 & 1 \\ 1 & 0 & -1 \end{pmatrix}$. 所以
+\[
+  A = P \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1 \end{pmatrix} P^{-1}
+  = \begin{pmatrix}
+    -3 & 0 & 4 \\
+    -2 & 1 & 2 \\
+    -2 & 0 & 3
+  \end{pmatrix}.
+\]
+
+\vspace{0.8em}
+
+\textbf{六、（12 分）}
+
+\textbf{解：}二次型对应的对称矩阵为
+\[
+  A = \begin{pmatrix}
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0
+  \end{pmatrix}.
+\]
+(1) 求 $A$ 的特征多项式及特征值：
+\[
+  |\lambda I - A| = (\lambda - 2)(\lambda + 1)^2.
+\]
+所以，特征值为 $\lambda_1 = 2$，$\lambda_2 = \lambda_3 = -1$.
+
+(2) 求 $\lambda_1 = 2$ 所对应的特征向量，即求解线性方程组 $(2I - A)X = 0$ 的非零解.
+
+解线性方程组 $(2I - A)X = 0$ 得基础解系为 $\alpha_1 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}$，并将其单位化得 $\beta_1 = \begin{pmatrix} 1/\sqrt{3} \\ 1/\sqrt{3} \\ 1/\sqrt{3} \end{pmatrix}$.
+
+(3) 求 $\lambda_2 = \lambda_3 = -1$ 所对应的特征向量，即求解线性方程组 $(-I - A)X = 0$ 的非零解.
+
+解线性方程组 $(-I - A)X = 0$ 得基础解系为 $\alpha_2 = \begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}$，$\alpha_3 = \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}$. 利用 Gram--Schmidt 正交化方法将其正交化，单位化得
+\[
+  \beta_2 = \begin{pmatrix} -1/\sqrt{2} \\ 1/\sqrt{2} \\ 0 \end{pmatrix},\qquad
+  \beta_3 = \begin{pmatrix} -1/\sqrt{6} \\ -1/\sqrt{6} \\ 2/\sqrt{6} \end{pmatrix}.
+\]
+所以二次型 $2xy + 2yz + 2zx$ 所对应的标准型为 $2X^2 - Y^2 - Z^2$（曲面标准方程为 $2X^2 - Y^2 - Z^2 = 1$），所使用的正交变换矩阵为
+\[
+  P = \begin{pmatrix}
+    1/\sqrt{3} & -1/\sqrt{2} & -1/\sqrt{6} \\
+    1/\sqrt{3} & 1/\sqrt{2} & -1/\sqrt{6} \\
+    1/\sqrt{3} & 0 & 2/\sqrt{6}
+  \end{pmatrix},
+  \quad\text{也可为}\quad
+  \begin{pmatrix}
+    1/\sqrt{3} & -1/\sqrt{2} & 1/\sqrt{6} \\
+    1/\sqrt{3} & 0 & -2/\sqrt{6} \\
+    1/\sqrt{3} & 1/\sqrt{2} & 1/\sqrt{6}
+  \end{pmatrix}
+\]
+（每一列的符号全改变也对）.
+原方程确定的图形的形状与 $2X^2 - Y^2 - Z^2 = 1$ 确定的图形形状一样，所以也为双叶双曲面.
+
+\vspace{0.8em}
+
+\textbf{七、（10 分）}
+
+\textbf{证明：}(1) 设有常数 $c_0, c_1, \cdots, c_t$ 使得
+\begin{equation*}
+  c_0 \beta + c_1 (\beta + \alpha_1) + \cdots + c_t (\beta + \alpha_t) = 0. \tag{$*$}
+\end{equation*}
+等式两边同时左乘以 $A$ 得：
+\[
+  c_0 b + c_1 b + \cdots + c_t b = 0.
+\]
+由于 $b \neq 0$，所以得到
+\begin{equation*}
+  c_0 + c_1 + \cdots + c_t = 0. \tag{$**$}
+\end{equation*}
+将其代入 $(*)$ 式得
+\[
+  c_1 \alpha_1 + \cdots + c_t \alpha_t = 0.
+\]
+由于 $\alpha_1, \alpha_2, \cdots, \alpha_t$ 线性无关，所以 $c_1 = \cdots = c_t = 0$. 再代入 $(**)$ 式，也得 $c_0 = 0$. 又 $A(\beta + \alpha_i) = A\beta + A\alpha_i = b + 0 = b$，故它们均为 $AX = b$ 的解，得证.
+
+(2) 不可能有 $t + 2$ 个线性无关的解. 若不然，假设 $\beta_0, \beta_1, \cdots, \beta_{t+1}$ 是 $AX = b$ 的 $t + 2$ 个线性无关的解. 则
+\[
+  \beta_1 - \beta_0,\ \beta_2 - \beta_0,\ \cdots,\ \beta_{t+1} - \beta_0
+\]
+是齐次方程组 $AX = 0$ 的解. 由于 $AX = 0$ 只有 $t$ 个线性无关的解，所以
+\[
+  \beta_1 - \beta_0,\ \beta_2 - \beta_0,\ \cdots,\ \beta_{t+1} - \beta_0
+\]
+线性相关. 于是存在不全为 $0$ 的数 $c_1, c_2, \cdots, c_{t+1}$ 使得
+\[
+  c_1(\beta_1 - \beta_0) + c_2(\beta_2 - \beta_0) + \cdots + c_{t+1}(\beta_{t+1} - \beta_0) = 0.
+\]
+从而有
+\[
+  c_1 \beta_1 + c_2 \beta_2 + \cdots + c_{t+1} \beta_{t+1} - (c_1 + c_2 + \cdots + c_{t+1})\beta_0 = 0.
+\]
+由于其中的系数 $c_1, c_2, \cdots, c_{t+1}, -(c_1 + c_2 + \cdots + c_{t+1})$ 不全为 $0$，这与 $\beta_0, \beta_1, \cdots, \beta_{t+1}$ 线性无关矛盾. 从而得证.
+
+\vspace{0.8em}
+
+\textbf{八、（12 分）}
+
+\textbf{证明：}(1) 由条件知，$A$ 的特征值满足 $\lambda^2 - 2\lambda - 3 = 0$. 所以，$\lambda = 3$ 或 $\lambda = -1$，故 $0$ 不是 $A$ 的特征值，从而 $A$ 可逆.
+
+(2) 为证明 $A$ 可相似对角化，来确定 $A$ 的线性无关的特征向量的个数，等价于确定 $A$ 的所有特征值的几何重数.
+
+(i) $\lambda = 3$ 和 $\lambda = -1$ 均为 $A$ 的特征值.
+
+特征值 $\lambda = 3$ 的几何重数为：$n - \rk(3I - A)$；
+
+特征值 $\lambda = -1$ 的几何重数为：$n - \rk(-I - A) = n - \rk(I + A)$.
+
+由条件 $A^2 - 2A - 3I = 0$ 得到
+\begin{equation*}
+  (A - 3I)(A + I) = 0. \tag{$***$}
+\end{equation*}
+所以，一方面
+\[
+  \rk(A - 3I) + \rk(A + I) \leqslant n,
+\]
+另一方面
+\[
+  \rk(A - 3I) + \rk(A + I) = \rk(A - 3I) + \rk(-A - I) \geqslant \rk(A - 3I - A - I) = \rk(-4I) = n.
+\]
+从而 $\rk(A - 3I) + \rk(A + I) = n$. 所以 $A$ 的线性无关的特征向量的个数为
+\[
+  n - \rk(3I - A) + n - \rk(I + A) = n.
+\]
+所以 $A$ 可相似对角化.
+
+(ii) $\lambda = 3$ 是 $A$ 的特征值，而 $\lambda = -1$ 不是 $A$ 的特征值. 此时 $\lambda = 3$ 的几何重数为 $n - \rk(3I - A)$.
+
+由于 $\lambda = -1$ 不是 $A$ 的特征值，所以行列式 $|-I - A| \neq 0$，从而 $(I + A)$ 是可逆矩阵. 由 $(***)$ 式得 $A - 3I = 0$. 所以 $A$ 的线性无关的特征向量的个数为
+\[
+  n - \rk(3I - A) = n.
+\]
+所以 $A$ 可相似对角化.
+
+(iii) $\lambda = -1$ 是 $A$ 的特征值，而 $\lambda = 3$ 不是 $A$ 的特征值. 用与 (ii) 完全相同的论证方式可证.
+
+\end{document}

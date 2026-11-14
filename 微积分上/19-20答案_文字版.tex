@@ -1,0 +1,238 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\blank}[1][2.2cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2019～2020 学年第一学期}\\[0.5em]
+  {\Large\bfseries “微积分（一）”考试试卷（A 卷）解答}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、单项选择题（每小题 3 分，6 个小题共 18 分，将结果涂在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.6em]
+  \item 设 $0<a_n<1$，且 $\displaystyle\lim_{n\to\infty}a_n=1$，则以下数列中无界的是 \textbf{【C】}。
+
+  A. $\{a_n^2\}$ \qquad\quad
+  B. $\left\{\dfrac{1}{a_n}\right\}$ \qquad\quad
+  C. $\left\{\tan\dfrac{\pi a_n}{2}\right\}$ \qquad\quad
+  D. $\{\ln a_n\}$
+
+  \item 已知 $f(2)=3,\,f'(2)=5$，则极限 $\displaystyle\lim_{h\to 0}\frac{f^2(2+h)-9}{h}=$ \textbf{【A】}。
+
+  A. $30$ \qquad\qquad\ 
+  B. $10$ \qquad\qquad\quad\ 
+  C. $6$ \qquad\qquad\qquad\quad
+  D. $0$
+
+  \item 设函数 $f(x)$ 在闭区间 $[a,b]$ 上可导，则以下说法中\textbf{错误}的是 \textbf{【B】}。
+
+  \makebox[0.45\linewidth][l]{A. $f(x)$ 必在 $[a,b]$ 上有界}B. $f(x)$ 必在 $[a,b]$ 上有连续的导数
+
+  \makebox[0.45\linewidth][l]{C. $f(x)$ 必在 $[a,b]$ 上连续}D. $f(x)$ 必在 $[a,b]$ 上可积
+
+  \item 曲线 $y=\dfrac{1}{x}+\ln(1+\e^x)$ 一共有 \textbf{【D】} 条渐近线。
+
+  A. $0$ \qquad\qquad\quad 
+  B. $1$ \qquad\qquad\quad\ 
+  C. $2$ \qquad\qquad\qquad\quad
+  D. $3$
+
+  \item 设函数 $f(x)$ 二阶可导，且 $f''(x)<0$，则以下不等式中一定成立的是 \textbf{【B】}。
+
+  \makebox[0.45\linewidth][l]{A. $f(1)+f(3)>2f(2)$}B. $f(1)+f(3)<2f(2)$
+
+  \makebox[0.45\linewidth][l]{C. $f(1)+f(2)>2f(3)$}D. $f(1)+f(2)<2f(3)$
+
+  \item 微分方程 $y'-\dfrac{y}{2x}=0$ 满足初值条件 $y(1)=2$ 的特解为 \textbf{【A】}。
+
+  A. $2\sqrt{x}$ \qquad\quad\ 
+  B. $1+\sqrt{x}$ \qquad\quad
+  C. $1+x$ \qquad\qquad\quad\ 
+  D. $\sqrt{x+3}$
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、填空题（每小题 4 分，4 个小题共 16 分，将计算结果写在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., start=7, leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item 极限 $\displaystyle\lim_{n\to\infty}\frac{1}{n^4}(1^3+2^3+\cdots+n^3)=\underline{\ 1/4\ }$。
+
+  \textbf{解}：原式 $=\displaystyle\lim_{n\to\infty}\frac{n^2(n+1)^2}{4n^4}=\frac{1}{4}$ 或 $\displaystyle\int_0^1 x^3\dd x=\frac{1}{4}$。
+
+  \item 设函数 $y=x^2-x$。在 $x=2,\,\Delta x=0.01$ 时，微分 $\dd y=\underline{\ 0.03\ }$。
+
+  \textbf{解}：$\dd y=y'(2)\Delta x=0.03$。
+
+  \item $\displaystyle\lim_{x\to 0}\frac{\displaystyle\int_0^{\sin^2 x}\sqrt{3+t^2}\dd t}{x^2}=\underline{\ \sqrt{3}\ }$。
+
+  \textbf{解}：原式 $=\displaystyle\lim_{x\to 0}\frac{2\sin x\cos x\sqrt{3+\sin^4 x}}{2x}=\sqrt{3}$。
+
+  \item 曲线 $y=1-x^4$ 与 $x$ 轴所围成图形的面积为 $\underline{\ 8/5\ }$。
+
+  \textbf{解}：$S=\displaystyle\int_{-1}^1(1-x^4)\dd x=\frac{8}{5}$。
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、基本计算题（每小题 7 分，6 个小题共 42 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 已知当 $x\to 0$，$u=\e^{3x}-ax^2-(1+bx)\cos x$ 是与 $x^3$ 同阶的无穷小。求常数 $a,b$ 的值。
+
+  \textbf{解}：$\e^{3x}=1+3x+\dfrac{9}{2}x^2+\dfrac{9}{2}x^3+o(x^3)$，$\cos x=1-\dfrac{1}{2}x^2+o(x^3)$，
+
+  所以 $u=(3-b)x+(5-a)x^2+\dfrac{9+b}{2}x^3+o(x^3)\sim cx^3$（当 $b=3$ 时，$c=6\neq 0$）。
+
+  必然有 $a=5,\,b=3$。
+
+  \item 求 $f(x)=x^3-3x^2-9x+5$ 在区间 $[-2,2]$ 上的最大值与最小值。
+
+  \textbf{解}：$f'(x)=3x^2-6x-9$。
+
+  令 $f'(x)=0$，得到函数在开区间 $(-2,2)$ 内的驻点为 $x=-1$。
+
+  直接计算有 $f(-2)=3$，$f(2)=-17$，$f(-1)=10$。
+
+  故在区间 $[-2,2]$ 上函数的最大值为 $10$、最小值为 $-17$。
+
+  \item 求不定积分 $I=\displaystyle\int\frac{\e^{5x}}{\e^{2x}+1}\dd x$。
+
+  \textbf{解}：令 $u=\e^x$，
+  \begin{align*}
+    I &= \int\frac{u^4}{u^2+1}\dd u = \int\left(u^2-1+\frac{1}{u^2+1}\right)\dd u \\
+      &= \frac{u^3}{3}-u+\arctan u+C = \frac{\e^{3x}}{3}-\e^x+\arctan\e^x+C.
+  \end{align*}
+
+  \item 求定积分 $I=\displaystyle\int_0^{\frac{\pi}{4}}\frac{x}{\cos^2 x}\dd x$。
+
+  \textbf{解}：
+  \begin{align*}
+    I &= \left.x\tan x\right|_0^{\pi/4} - \int_0^{\pi/4}\tan x\dd x \\
+      &= \frac{\pi}{4} + \left.\ln\cos x\right|_0^{\pi/4} = \frac{\pi}{4} - \frac{\ln 2}{2}.
+  \end{align*}
+  或 $\dfrac{\pi}{4}-\ln\sqrt{2}$，$\dfrac{\pi}{4}+\ln\dfrac{1}{\sqrt{2}}$，$\dfrac{\pi}{4}+\ln\dfrac{\sqrt{2}}{2}$。
+
+  \item 判定反常积分 $\displaystyle\int_0^1\frac{1}{x\sqrt{x^2+1}}\dd x$ 的敛散性，若收敛求其值。
+
+  \textbf{解法一}：令 $x=\tan t$，有
+  \begin{align*}
+    \int_0^1\frac{1}{x\sqrt{x^2+1}}\dd x
+    &= \int_0^{\frac{\pi}{4}}\csc t\dd t \\
+    &= \bigl[\ln|\csc t-\cot t|\bigr]_{0^+}^{\frac{\pi}{4}} \\
+    &= \ln(\sqrt{2}-1) - \lim_{t\to 0^+}\ln\frac{1-\cos t}{\sin t} = +\infty.
+  \end{align*}
+  原反常积分发散。
+
+  \textbf{解法二}：令 $x=1/t$，有
+  \[
+    \int_0^1\frac{1}{x\sqrt{x^2+1}}\dd x = \int_1^{+\infty}\frac{1}{\sqrt{t^2+1}}\dd t = \left.\ln\bigl(t+\sqrt{t^2+1}\bigr)\right|_1^{+\infty} = +\infty.
+  \]
+  原反常积分发散。
+
+  \textbf{解法三}：$\dfrac{1}{x\sqrt{x^2+1}}\sim\dfrac{1}{x}\ (x\to 0^+)$，积分 $\displaystyle\int_0^1\frac{1}{x}\dd x$ 发散，故 $\displaystyle\int_0^1\frac{1}{x\sqrt{x^2+1}}\dd x$ 发散。
+
+  \item 求微分方程 $y''=\dfrac{\sin y}{\cos^3 y}$ 满足初值条件 $y(2)=0,\,y'(2)=1$ 的特解。
+
+  \textbf{解}：令 $y'=p(y)$，原方程化为
+  \[
+    p\frac{\dd p}{\dd y} = \frac{\sin y}{\cos^3 y}.
+  \]
+  分离变量以后积分得
+  \[
+    \frac{1}{2}p^2 = \frac{1}{2\cos^2 y} + C_1.
+  \]
+  代入初始条件得 $C_1=0$。注意到当 $y=0,\,p=1$，故 $p=\dfrac{1}{\cos y}$，亦即
+  \[
+    \frac{\dd y}{\dd x} = \frac{1}{\cos y}.
+  \]
+  再次分离变量积分得到 $x=\sin y+C_2$，代入初始条件得 $C_2=2$。
+
+  所求解为 $x=\sin y+2$ 或 $y=\arcsin(x-2)$。
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{四、应用题（每小题 7 分，2 个小题共 14 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 设函数 $f(x)=\begin{cases}\dfrac{\ln(1+x)}{x}, & x\in(-1,0)\cup(0,+\infty),\\[0.5em] 1, & x=0,\end{cases}$
+
+  讨论 $f'(x)$ 在点 $x=0$ 的连续性（需说明理由）。
+
+  \textbf{解}：当 $x\in(-1,0)\cup(0,+\infty)$ 时，$f'(x)=\dfrac{x-(1+x)\ln(1+x)}{x^2(1+x)}$。
+
+  又
+  \[
+    f'(0)=\lim_{x\to 0}\frac{\ln(1+x)-x}{x^2}=-\frac{1}{2}.
+  \]
+  又有
+  \[
+    \lim_{x\to 0}f'(x)=\lim_{x\to 0}\frac{x-(1+x)\ln(1+x)}{x^2}=\lim_{x\to 0}\frac{-\ln(1+x)}{2x}=-\frac{1}{2}.
+  \]
+  从而成立 $\displaystyle\lim_{x\to 0}f'(x)=f'(0)$。所以 $f'(x)$ 在 $x=0$ 连续。
+
+  \item 求曲线 $y=\sqrt{x}-\dfrac{x\sqrt{x}}{3}$ 对应于 $1\le x\le 4$ 弧段的长度。
+
+  \textbf{解}：$y'=\dfrac{1}{2\sqrt{x}}-\dfrac{\sqrt{x}}{2}$。
+
+  弧微分 $\dd s=\sqrt{1+(y')^2}\dd x=\dfrac{1}{2}\left(\dfrac{1}{\sqrt{x}}+\sqrt{x}\right)\dd x$。
+
+  故曲线长度为
+  \[
+    s=\frac{1}{2}\int_1^4\left(\frac{1}{\sqrt{x}}+\sqrt{x}\right)\dd x = \frac{10}{3}.
+  \]
+\end{enumerate}
+
+\vspace{0.8em}
+
+\newpage
+
+\textbf{五、综合题（每小题 5 分，2 个小题共 10 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 设 $n$ 为正整数，求方程 $(x+1)^{2n}=x^{2n}+1$ 所有的实根。并证明你的结论。
+
+  \textbf{解}：显然方程有实根 $x=0$。
+
+  设 $f(x)=(x+1)^{2n}-x^{2n}-1$。因 $t^{2n-1}$ 为严格单增函数，
+  \[
+    f'(x)=2n\bigl((x+1)^{2n-1}-x^{2n-1}\bigr)>0.
+  \]
+  所以 $f(x)$ 为严格单增函数，因此原方程只有唯一实根 $x=0$。
+
+  \item 设函数 $f(x)$ 在区间 $[a,b]$ 上有连续的导数。证明：
+  \[
+    f(x)\le\frac{1}{b-a}\left|\int_a^b f(x)\dd x\right|+\int_a^b |f'(x)|\dd x,\quad x\in[a,b].
+  \]
+
+  \textbf{证}：根据积分中值定理，$\exists\,\xi\in[a,b]$，使得 $f(\xi)=\dfrac{1}{b-a}\displaystyle\int_a^b f(x)\dd x$。
+
+  则
+  \begin{align*}
+    f(x) \le |f(x)| &= \left|f(\xi)+\int_\xi^x f'(t)\dd t\right| \le |f(\xi)|+\left|\int_\xi^x |f'(t)|\dd t\right| \\
+    &\le \frac{1}{b-a}\left|\int_a^b f(x)\dd x\right|+\int_a^b |f'(x)|\dd x.
+  \end{align*}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,138 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[C]{\small 考试时间 2019.01.07}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\blank}[1][2.2cm]{\underline{\hspace{#1}}}
+\newcommand{\choice}[1]{\text{【\quad】}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2018～2019 学年第一学期}\\[0.5em]
+  {\Large\bfseries 《微积分（一）》课程考试试卷（A 卷）}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、单项选择题（每小题 3 分，6 个小题共 18 分，将结果涂在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.6em]
+  \item 以下关于数列的命题，正确的是 \choice{}。
+
+  A. 一个有界数列与一个无界数列的和是无界数列 \quad
+  B. 两个无界数列的和是无界数列
+
+  C. 两个无界数列的乘积是无界数列 \quad
+  D. 一个有界数列与一个无界数列的乘积是无界数列
+
+  \item 设函数 $f(x)$ 在 $x=a$ 处可导，则函数 $\sqrt[3]{f(x)}$ 在 $x=a$ 处 \choice{}。
+
+  A. 可导 \qquad\quad
+  B. 不连续 \qquad\quad
+  C. 连续但不一定可导 \qquad\quad
+  D. 不可导
+
+  \item 设函数 $f(x)$ 在区间 $(a,b)$ 内连续，则 $f(x)$ 在区间 $(a,b)$ 内 \choice{}。
+
+  A. 有界 \qquad\quad
+  B. 可导 \qquad\quad
+  C. 存在最大值 \qquad\qquad\quad\ 
+  D. 原函数存在
+
+  \item 函数 $f(x)=x^4-2x^3$ 有 \choice{}。
+
+  A. 一个极小值和一个极大值 \qquad
+  B. 一个极小值 \qquad
+  C. 两个极小值 \qquad
+  D. 两个极大值
+
+  \item 设函数 $f(x)$ 在区间 $(a,b)$ 内满足 $f'(x)<0,\,f''(x)>0$。则在区间 $(a,b)$ 内 \choice{}。
+
+  A. $f(x)$ 单调减少，曲线 $y=f(x)$ 下凸。 \qquad
+  B. $f(x)$ 单调减少，曲线 $y=f(x)$ 上凸。
+
+  C. $f(x)$ 单调增加，曲线 $y=f(x)$ 下凸。 \qquad
+  D. $f(x)$ 单调增加，曲线 $y=f(x)$ 上凸。
+
+  \item 设 $M=\displaystyle\int_0^{\pi/4}\sqrt{\sin x}\dd x$，$N=\displaystyle\int_0^{\pi/4}\sqrt{\sec x}\dd x$，$K=\displaystyle\int_0^{\pi/4}\sqrt{\tan x}\dd x$，则 $M,N,K$ 的大小关系为 \choice{}。
+
+  A. $M<N<K$ \qquad\quad
+  B. $M<K<N$ \qquad\quad
+  C. $N<M<K$ \qquad\quad
+  D. $K<N<M$
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、填空题（每小题 4 分，4 个小题共 16 分，将计算结果写在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., start=7, leftmargin=2em, itemsep=0.9em, topsep=0.6em]
+  \item 设 $u=x+a\ln(1-x)+bx\sin(3x)$ 是 $x$ 的 3 阶无穷小，则 $a=\blank$，$b=\blank$。
+
+  \item 曲线 $y=x^3-6x^2+5x+3$ 的拐点坐标为 $\blank$。
+
+  \item $\displaystyle\lim_{x\to 0}\frac{\displaystyle\int_0^{1-\cos x}\tan t\dd t}{\sin x^4}=\blank$。
+
+  \item 曲线 $x=2\cos^3 t$，$y=2\sin^3 t$，$0\le t\le 2\pi$ 的弧长为 $\blank$。（给出数值结果）
+\end{enumerate}
+
+\newpage
+
+\textbf{三、基本计算题（每小题 7 分，6 个小题共 42 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=1.0em, topsep=0.6em]
+  \item 求曲线 $y=\sqrt{4x^2+2x+5}\ (x>0)$ 的渐近线。
+
+  \item 写出 $f(x)=\ln(1+x)$ 带 Lagrange 余项的 $n$ 阶麦克劳林公式。
+
+  \item 求不定积分 $I=\displaystyle\int\frac{\sqrt{x-3}}{2x}\dd x$。
+
+  \item 求定积分 $I=\displaystyle\int_0^{1/2} x\arcsin x\dd x$。
+
+  \item 求反常积分 $I=\displaystyle\int_0^{+\infty}\e^{-2x}\sin x\dd x$。
+
+  \item 求微分方程 $y'+\dfrac{y}{x}=y^2\ln x$ 的通解。
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{四、应用题（每小题 7 分，2 个小题共 14 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=1.0em, topsep=0.6em]
+  \item 设函数 $f(x)=\begin{cases}(1+x)^{1/x}, & x\in(-1,0)\cup(0,+\infty),\\ \e, & x=0,\end{cases}$ 求 $f'(x)$ 并讨论 $f'(x)$ 的连续性。
+
+  \item 求平面图形 $0\le y\le \cos x$，$0\le x\le\dfrac{\pi}{2}$ 绕 $y$ 轴旋转所得立体的体积。
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{五、综合题（每小题 5 分，2 个小题共 10 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=1.0em, topsep=0.6em]
+  \item 设函数 $f(x)$ 在区间 $[a,b]$ 上二阶可导，且 $f(a)=f(b)$，$|f''(x)|\le M$。证明：
+  \[
+    |f'(a)+f'(b)|\le M(b-a).
+  \]
+
+  \item 设 $f(x)$ 在区间 $[a,b]$ 上二阶可导，并且 $f''(x)\le 0$。证明：
+  \[
+    \int_a^b f(x)\dd x \ge \frac{(b-a)\bigl(f(a)+f(b)\bigr)}{2}.
+  \]
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,284 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\blank}[1][2.6cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2022～2023 学年第一学期}\\[0.35em]
+  {\Large\bfseries 《高等数学 A》（上）期中考试试卷（闭卷，启明学院用）}\\[0.6em]
+  {\normalsize
+    院(系)\,\underline{\ 启明学院\ }\quad
+    专业班级\,\blank[2.4cm]\quad
+    学号\,\blank[2.4cm]\quad
+    姓名\,\blank[2.0cm]\\[0.35em]
+    考试日期：2022-11-13\qquad\qquad
+    考试时间：2:30--5:00PM
+  }
+\end{center}
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{|c|*{6}{wc{1.35cm}|}}
+    \hline
+    题号 & 一 & 二 & 三 & 四 & 五 & 总分 \\
+    \hline
+    得分 & & & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\vspace{0.7em}
+
+\section*{第一部分\quad 期中考试试题}
+
+\textbf{一、填空题（每小题 4 分，共 20 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item $\inf\left\{1-\dfrac{1}{2^r}: r\in \mathbb{Q}^+\right\}=\blank$.
+
+  \item $\lim\limits_{n\to\infty}\left(\sqrt{n+4\sqrt{n}}-\sqrt{n-2\sqrt{n}}\right)=\blank$.
+
+  \item $\lim\limits_{x\to 0}\dfrac{\cos(\sin x)-\cos x}{x^4}=\blank$.
+
+  \item 设 $y=f(e^x)e^{f(x)}$，其中 $f(x)$ 是可导函数，则 $dy=\blank[4.5cm]\,dx$.
+
+  \item 设 $y=y(x)$ 是由方程 $\sin(xy)=\ln\dfrac{x+e}{y}+1$ 确定的隐函数，则 $y'(0)=\blank$.
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{二、选择题（每小题 4 分，共 12 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item 当 $n\to\infty$，如下数列发散的是 \blank[1.8cm].
+  \begin{enumerate}[label=\Alph*., leftmargin=2.2em, itemsep=0.3em, topsep=0.3em]
+    \item $\sqrt[n]{1}+\sqrt[n]{2}+\cdots+\sqrt[n]{10}$
+    \item $\dfrac{1+\sqrt{2}+\sqrt[3]{3}+\cdots+\sqrt[n]{n}}{n}$
+    \item $n^{(-1)^n}$
+    \item $\dfrac{(-1)^n}{n}$
+  \end{enumerate}
+
+  \item 下列说法错误的是 \blank[1.8cm].
+  \begin{enumerate}[label=\Alph*., leftmargin=2.2em, itemsep=0.3em, topsep=0.3em]
+    \item 若 $\{a_n\}$ 是有界数列，$\{b_n\}$ 也是有界数列，则 $\{a_nb_n\}$ 一定是有界数列.
+    \item 若 $\{a_n\}$ 是有界数列，$\{b_n\}$ 趋于 $0$，则 $\{a_nb_n\}$ 一定是有界数列且趋于 $0$.
+    \item 若 $\{a_n\}$ 是无界数列，$\{b_n\}$ 趋于无穷，则 $\{a_nb_n\}$ 一定是无界数列.
+    \item 若 $\{a_n\}$ 是无界数列，$\{b_n\}$ 也是无界数列，则 $\{a_nb_n\}$ 一定是无界数列.
+  \end{enumerate}
+
+  \item 当 $x\to 0$ 时，$e^x\ln(1+x)-(ax^3+bx^2+cx)$ 是 $x^3$ 的等价无穷小，则 \blank[1.8cm].
+  \begin{enumerate}[label=\Alph*., leftmargin=2.2em, itemsep=0.3em, topsep=0.3em]
+    \item $a=-\dfrac{2}{3},\ b=\dfrac{1}{2},\ c=1$
+    \item $a=\dfrac{2}{3},\ b=-\dfrac{1}{2},\ c=1$
+    \item $a=\dfrac{1}{3},\ b=\dfrac{1}{2},\ c=1$
+    \item $a=-\dfrac{1}{3},\ b=-\dfrac{1}{2},\ c=1$
+  \end{enumerate}
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{三、计算题（每小题 7 分，共 28 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 设 $a_n=\dfrac{1}{\sqrt{n^2+1}}+\dfrac{1}{\sqrt{n^2+2}}+\cdots+\dfrac{1}{\sqrt{(n+1)^2}}$，计算 $\lim\limits_{n\to\infty}a_n$.
+
+  \item 求无穷小量 $a^{x^2}-b^{x^2}\ (x\to 0)$ 的阶，其中 $a>0,\,b>0\ (a\neq b)$.
+
+  \item 设 $f(x)=x^{a^a}+a^{x^a}\ (x>0,\,a>0)$，求 $\dfrac{df(x)}{d(x^3)}$.
+
+  \item 设 $f(x)=(x^2+x)\cos(2x)$，求 $f^{(2022)}(0)$.
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{四、解答题（每小题 8 分，共 16 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 在区间 $(0,1)$ 上的函数 $x\sin\dfrac{1}{x}$ 是否一致连续，请提出你的论断并给予证明.
+
+  \item 设 $f(x)=\begin{cases} \dfrac{x}{2}+x^2\sin\dfrac{1}{x}, & x\neq 0, \\ 0, & x=0, \end{cases}$ 求 $f'(x)$ 并讨论 $f'(x)$ 在 $0$ 点的连续性.
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{五、证明题（每小题 8 分，共 24 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 已知 $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导且 $f(a)f(b)>0,\ f(a)f\!\left(\dfrac{a+b}{2}\right)<0$，证明：在 $(a,b)$ 内至少存在一点 $\xi$，s.t\ $f'(\xi)=f(\xi)$.
+
+  \item 设函数 $f(x)$ 在区间 $I$ 上可导，证明：$f'(x)$ 为区间 $I$ 上的常值函数当且仅当 $f(x)$ 为 $I$ 上的线性函数（即形如 $ax+b$ 的函数）.
+
+  \item 设函数 $f(x)$ 在 $(a,b)$ 上任意阶可微，且对每个正整数 $n$ 有 $f^{(n)}(x)\ge 0$ 和 $|f(x)|\le M$ 在 $(a,b)$ 上成立. 证明：对每个 $x\in(a,b)$，$r>0$，$x+r\in(a,b)$，成立关于导数的估计式 $f^{(n)}(x)\le\dfrac{2Mn!}{r^n}$，$\forall n\in \mathbb{N}_+$.
+\end{enumerate}
+
+\newpage
+\section*{第二部分\quad 参考答案与解析}
+
+\textbf{一、填空题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.4em]
+  \item $0$\quad（解析：$0<\dfrac{1}{2^r}<1\ (r\in\mathbb{Q}^+)$，故 $0<1-\dfrac{1}{2^r}<1$ 且 $\lim\limits_{r\to 0^+}\left(1-\dfrac{1}{2^r}\right)=0$，集合下确界为 $0$.）
+
+  \item $3$\quad（解析：原式 $=\lim\limits_{n\to\infty}\dfrac{6\sqrt{n}}{\sqrt{n+4\sqrt{n}}+\sqrt{n-2\sqrt{n}}}=3$.）
+
+  \item $\dfrac{1}{6}$
+
+  \textbf{解析：}已知 $\cos(\sin x)-\cos x=2\sin\left(\dfrac{\sin x+x}{2}\right)\sin\left(\dfrac{x-\sin x}{2}\right)$，
+  \begin{align*}
+    \lim_{x\to 0}\frac{\cos(\sin x)-\cos x}{x^4}
+    &= \lim_{x\to 0}\frac{2\sin\left(\dfrac{\sin x+x}{2}\right)\sin\left(\dfrac{x-\sin x}{2}\right)}{x^4} \\
+    &= \lim_{x\to 0}\frac{2\left(\dfrac{\sin x+x}{2}\right)\left(\dfrac{x-\sin x}{2}\right)}{x^4},
+  \end{align*}
+  \begin{align*}
+    \text{原式} &= \lim_{x\to 0}\frac{1}{2}\cdot\frac{x^2-(\sin x)^2}{x^4}
+    = \lim_{x\to 0}\frac{1}{2}\cdot\frac{2x-2\sin x\cos x}{4x^3} \\
+    &= \lim_{x\to 0}\frac{1-\cos x\cos x+\sin x\sin x}{12x^2}
+    = \lim_{x\to 0}\frac{2\sin^2 x}{12x^2}
+    = \frac{1}{6}.
+  \end{align*}
+
+  \item $e^{f(x)}\bigl(f'(e^x)e^x+f(e^x)f'(x)\bigr)$
+
+  \textbf{解析：}$y'=f'(e^x)e^x e^{f(x)}+f(e^x)e^{f(x)}f'(x)=e^{f(x)}\bigl(f'(e^x)e^x+f(e^x)f'(x)\bigr)$.
+
+  \item $e-e^4$
+
+  \textbf{解析：}原方程为 $\sin(xy)=\ln(x+e)-\ln(y)+1$，将等式两边求导得到：
+  \[
+    \cos(xy)(y+xy')=\frac{1}{x+e}-\frac{y'}{y}.
+  \]
+  取 $x=0$ 时，可得 $0=\ln\dfrac{e}{y(0)}+1$，故 $y(0)=e^2$. 将 $x=0$ 和 $y(0)=e^2$ 代入求导后的式子中，得到 $y'(0)=e-e^4$.
+\end{enumerate}
+
+\vspace{0.6em}
+\textbf{二、选择题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.4em]
+  \item C
+
+  \textbf{解析：}选项 A 中累加项只有 $10$ 项（极限为 $10$）；选项 B，已知 $\lim\limits_{n\to\infty}\sqrt[n]{n}=1$，用 Stolz 定理可以得到 $\lim\limits_{n\to\infty}\dfrac{1+\sqrt{2}+\sqrt[3]{3}+\cdots+\sqrt[n]{n}}{n}=1$；选项 C，子列 $\{a_{2k}\}_{k=1}^\infty=\{2k\}$ 发散；选项 D，$\lim\limits_{n\to\infty}\dfrac{(-1)^n}{n}=0$.
+
+  \item D
+
+  \textbf{解析：}选项 A，已知存在 $M_1,M_2>0$，分别使得 $\forall n\in\mathbb{N}$ 有 $|a_n|<M_1,\ |b_n|<M_2$. 显然 $|a_nb_n|<M_1M_2$，$\{a_nb_n\}$ 一定是有界数列.
+
+  选项 B，已知存在 $M_1>0$，使得 $\forall n\in\mathbb{N}$ 有 $|a_n|<M_1$. 对任意的 $\varepsilon>0$，存在 $N$，使得 $n>N$ 时，有 $|b_n|<\varepsilon$. 显然有 $|a_nb_n|<\varepsilon M_1$，由 $\varepsilon$ 的任意性，可知 $\{a_nb_n\}$ 趋于 $0$，显然有界.
+
+  选项 C，由 $\{b_n\}$ 趋于无穷可知，$\forall M>1$，存在 $N_1$，当 $n>N_1$ 时有 $|b_n|>M$. 因为 $\{a_n\}_1^{N_1}$ 是有限项，故 $\{a_n\}_1^{N_1}$ 有界，则 $\{a_n\}_{N_1+1}^\infty$ 是无界的，存在 $a_{N_2}\in\{a_n\}_{N_1+1}^\infty$ 使得 $|a_{N_2}|>M$. 故 $|a_{N_2}b_{N_2}|>M$，即 $\{a_nb_n\}$ 是无界数列.
+
+  选项 D，反例：$(a_n)=1,\ \dfrac{1}{2},\ 3,\ \dfrac{1}{4},\ 5,\ \cdots$；$(b_n)=1,\ 2,\ \dfrac{1}{3},\ 4,\ \dfrac{1}{5},\ \cdots$；$(a_nb_n)=1,\ 1,\ 1,\ 1,\ 1,\ \cdots$（有界）.
+
+  \item A
+
+  \textbf{解析：}泰勒展开：$e^x=1+x+\dfrac{x^2}{2}+o(x^2)$，$\ln(1+x)=x-\dfrac{x^2}{2}+\dfrac{x^3}{3}+o(x^3)$，故
+  \[
+    e^x\ln(1+x)=x+\frac{1}{2}x^2+\frac{1}{3}x^3+o(x^4),
+  \]
+  故 $\dfrac{1}{3}-a=1,\ b=\dfrac{1}{2},\ c=1$，即 $a=-\dfrac{2}{3},\ b=\dfrac{1}{2},\ c=1$.
+\end{enumerate}
+
+\vspace{0.6em}
+\textbf{三、计算题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.4em]
+  \item \textbf{解：}（注意 $(n+1)^2=n^2+2n+1$，共 $2n+1$ 项）
+  \[
+    \frac{2n+1}{\sqrt{(n+1)^2}}<a_n<\frac{2n+1}{\sqrt{n^2+1}}.
+  \]
+  由迫敛性得到 $\lim\limits_{n\to\infty}a_n=2$.
+
+  \item \textbf{解：}
+  \[
+    a^{x^2}-b^{x^2}=b^{x^2}\left[\left(\frac{a}{b}\right)^{x^2}-1\right]\sim \left(\frac{a}{b}\right)^{x^2}-1\sim x^2\ln\frac{a}{b}\quad (x\to 0,\ a,b>0,\ a\neq b),
+  \]
+  故为 $2$ 阶无穷小.
+
+  \item \textbf{解：}
+  \begin{align*}
+    \frac{df(x)}{d(x^3)}
+    &=\frac{x^{a^a}d(a^a\ln x)+a^{x^a}d(x^a\ln a)}{3x^2\,dx} \\
+    &=\frac{x^{a^a-1}a^a\,dx+a^{x^a}x^{a-1}a\ln a\,dx}{3x^2\,dx}
+    =\frac{x^{a^a-3}a^a+a^{x^a}x^{a-3}a\ln a}{3}.
+  \end{align*}
+
+  \item \textbf{解：}由 Leibniz 公式，
+  \begin{align*}
+    f^{(2022)}(x) &= \sum_{k=0}^{2022} C_{2022}^k (x^2+x)^{(k)}\bigl[\cos(2x)\bigr]^{(2022-k)} \\
+    &= (x^2+x)2^{2022}\cos(2x+1011\pi) + 2022(2x+1)2^{2021}\cos\!\left(2x+\frac{2021\pi}{2}\right) \\
+    &\quad + 2^{2020}\cdot 2022\cdot 2021\cos(2x+1010\pi),
+  \end{align*}
+  \[
+    \therefore\ f^{(2022)}(0)=2^{2020}\cdot 2022\cdot 2021.
+  \]
+\end{enumerate}
+
+\vspace{0.6em}
+\textbf{四、解答题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.4em]
+  \item \textbf{解：}$x\sin\dfrac{1}{x}$ 在 $(0,1)$ 是一致连续的.
+
+  已知 $\lim\limits_{x\to 0^+}x\sin\dfrac{1}{x}=0$ 且 $\lim\limits_{x\to 1^-}x\sin\dfrac{1}{x}=\sin 1$. 设
+  \[
+    F(x)=\begin{cases}
+      0, & x=0, \\
+      \sin 1, & x=1, \\
+      x\sin\dfrac{1}{x}, & x\in(0,1),
+    \end{cases}
+  \]
+  显然 $F(x)$ 在 $[0,1]$ 上连续，则 $F(x)$ 在 $[0,1]$ 上一致连续. 故 $x\sin\dfrac{1}{x}$ 在 $(0,1)$ 上是一致连续的.
+
+  \item \textbf{解：}$x\neq 0$ 时，$f'(x)=\dfrac{1}{2}+2x\sin\dfrac{1}{x}-\cos\dfrac{1}{x}$；
+  \[
+    f'(0)=\lim_{x\to 0}\frac{\dfrac{x}{2}+x^2\sin\dfrac{1}{x}}{x}=\frac{1}{2}.
+  \]
+  故
+  \[
+    f'(x)=\begin{cases}
+      \dfrac{1}{2}+2x\sin\dfrac{1}{x}-\cos\dfrac{1}{x}, & x\neq 0, \\[0.4em]
+      \dfrac{1}{2}, & x=0.
+    \end{cases}
+  \]
+  而 $\lim\limits_{x\to 0}f'(x)=\lim\limits_{x\to 0}\left(\dfrac{1}{2}+2x\sin\dfrac{1}{x}-\cos\dfrac{1}{x}\right)$ 不存在，所以 $f'(x)$ 在 $0$ 点不连续.
+\end{enumerate}
+
+\vspace{0.6em}
+\textbf{五、证明题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.4em]
+  \item \textbf{证明：}由 $f(a)f(b)>0,\ f(a)f\!\left(\dfrac{a+b}{2}\right)<0$，不妨令 $f(a)>0$（若 $f(a)<0$，考虑 $-f$ 即可），则 $f\!\left(\dfrac{a+b}{2}\right)<0,\ f(b)>0$. 因为 $f(x)$ 在 $[a,b]$ 上连续，在 $\left[a,\dfrac{a+b}{2}\right]$ 与 $\left[\dfrac{a+b}{2},b\right]$ 上分别用零点定理知，分别存在 $\xi_1\in\left(a,\dfrac{a+b}{2}\right),\ \xi_2\in\left(\dfrac{a+b}{2},b\right)$，使得 $f(\xi_1)=f(\xi_2)=0$.
+
+  再令 $F(x)=e^{-x}f(x)$，$F(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导且 $F(\xi_1)=F(\xi_2)=0$，由 Rolle 定理知：存在 $\xi\in(\xi_1,\xi_2)\subset(a,b)$，s.t\ $F'(\xi)=0$，即 $f'(\xi)=f(\xi)$.
+
+  \item \textbf{证明：}
+  $\Rightarrow$：$f'(x)=c$ 为常数，则固定 $x_0\in I$，对任意 $x\in I$（当 $x=x_0$ 时显然成立；当 $x\neq x_0$ 时由拉格朗日中值定理存在 $\xi$ 介于 $x$ 与 $x_0$ 之间），有
+  \[
+    f(x)=f(x_0)+f'(\xi)(x-x_0)=c(x-x_0)+f(x_0),
+  \]
+  为线性函数.
+
+  $\Leftarrow$：$f(x)=ax+b\ \Rightarrow\ f'(x)=a$ 为常数.
+
+  \item \textbf{证明：}由泰勒定理，对 $\theta\in(0,1)$ 有
+  \[
+    f(x+r)=\sum_{k=0}^{n}\frac{f^{(k)}(x)}{k!}r^k+\frac{f^{(n+1)}(x+\theta r)}{(n+1)!}r^{n+1}\ge f(x)+\frac{f^{(n)}(x)}{n!}r^n
+  \]
+  （因为对所有正整数 $m$ 有 $f^{(m)}\ge 0$ 且 $r>0$），故
+  \[
+    f^{(n)}(x)\le\frac{\bigl(f(x+r)-f(x)\bigr)n!}{r^n}\le\frac{2Mn!}{r^n}.
+  \]
+\end{enumerate}
+
+\end{document}

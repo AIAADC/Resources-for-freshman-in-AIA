@@ -1,0 +1,622 @@
+\documentclass[a4paper,11pt]{ctexart}
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.0cm,right=2.0cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{needspace}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small 2018、2019与2020《电路理论》真题及参考解答}
+\fancyfoot[C]{\small 第 \thepage\ 页，共 \pageref{LastPage}\ 页}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+\newcommand{\examsection}[1]{%
+  \begin{center}
+    {\Large\bfseries #1}
+  \end{center}
+  \vspace{2pt}
+}
+
+\newcommand{\qblock}[3]{%
+  \vspace{6pt}
+  \noindent\begin{minipage}{\textwidth}
+    \textbf{#1}\par
+    \vspace{4pt}
+    \begin{center}
+      \includegraphics[width=#3,height=4.8cm,keepaspectratio]{#2}
+    \end{center}
+  \end{minipage}\par
+  \vspace{2pt}
+}
+
+\newcommand{\solhead}{\par\needspace{4\baselineskip}\noindent\textbf{【参考解答整理】}\par\nopagebreak\vspace{1pt}}
+
+\begin{document}
+
+%======================================================================
+% 第一部分：2018-2019 电路理论
+%======================================================================
+\examsection{2018--2019 学年《电路理论》真题及参考解答}
+
+\qblock{1、（10分）求图示电路中受控源的功率。}{assets_文字版/fig_2018_q1.png}{0.34\textwidth}
+\solhead
+以底部接地端为参考节点，由左向右将上方各独立节点依次记为节点 $1$、$2$、$3$。由电压源支路得 $U_1 = 20\ \text{V}$，且控制电压 $U = U_2$。对节点 $2$、$3$ 列写节点电压方程：
+\begin{align*}
+-\frac{1}{24}U_1 + \left(\frac{1}{24}+\frac{1}{8}+\frac{1}{32}\right)U_2 - \frac{1}{8}U_3 &= 0,\\
+-\frac{1}{8}U_2 + \frac{1}{8}U_3 &= 0.15 - 0.05U.
+\end{align*}
+代入 $U_1 = 20\ \text{V}$ 及 $U = U_2$ 并通分整理得：
+\[
+\begin{cases}
+19U_2 - 12U_3 = 80,\\
+-3U_2 + 5U_3 = 6.
+\end{cases}
+\]
+解得 $U_2 = 8\ \text{V}$，$U_3 = 6\ \text{V}$。受控电流源两端电压为 $U_3 = 6\ \text{V}$（上正下负），向下流过的电流为 $0.05U = 0.05\times 8 = 0.4\ \text{A}$（关联参考方向），故受控源吸收的功率为
+\[
+P = 6 \times 0.4 = 2.4\ \text{W}.
+\]
+
+\qblock{2、（12分）电路如图所示，已知负载 $R_L$ 获得最大功率，求此时的电流 $I$ 和受控电流源的功率。}{assets_文字版/fig_2018_q2.png}{0.40\textwidth}
+\solhead
+断开负载 $R_L$，求左侧含源一端口网络的戴维南等效电路。
+\begin{enumerate}
+  \item 求开路电压 $U_{\mathrm{oc}}$：负载断开时 $I=0$，受控电压源 $3I=0$，故 $U_1 = 18\ \text{V}$。对右上方节点列写 KCL，有流过水平 $2\,\Omega$ 电阻的电流等于向左流经受控电流源的电流 $\frac{U_1}{3}$，由此得
+  \[
+  U_{\mathrm{oc}} = U_1 - 2\cdot\frac{U_1}{3} = \frac{1}{3}U_1 = \frac{1}{3}\times 18 = 6\ \text{V}.
+  \]
+  \item 求等效内阻 $R_i$：将 $18\ \text{V}$ 独立电压源短路，在端口处外加测试电压 $U_0$（上正下负），设流入端口上端的测试电流为 $I_0$，则 $I = -I_0$。由左网孔 KVL 得 $3I + U_1 = 0$，即 $U_1 = -3I = 3I_0$。又向右节点有水平 $2\,\Omega$ 电阻右向电流为 $\frac{U_1}{3} - I_0$，故
+  \[
+  U_0 = U_1 + 2\left(I_0 - \frac{U_1}{3}\right) = 3I_0 + 2(I_0 - I_0) = 3I_0 \implies R_i = \frac{U_0}{I_0} = 3\,\Omega.
+  \]
+\end{enumerate}
+当 $R_L = R_i = 3\,\Omega$ 时负载获得最大功率，此时负载电流为
+\[
+I = \frac{U_{\mathrm{oc}}}{R_i + R_L} = \frac{6}{3+3} = 1\ \text{A}.
+\]
+（此时负载获得的最大功率 $P_{L,\max} = \frac{6^2}{4\times 3} = 3\ \text{W}$。）代入 $I = 1\ \text{A}$，得
+\[
+U_1 = 18 - 3I = 15\ \text{V}, \qquad I_{U_1/3} = \frac{15}{3} = 5\ \text{A}.
+\]
+右端口电压 $U_{R_L} = I R_L = 3\ \text{V}$，受控电流源左端电位为 $18\ \text{V}$、右端电位为 $3\ \text{V}$，电流 $5\ \text{A}$ 由低电位流向高电位（与电压降落方向相反），故受控电流源吸收的功率为
+\[
+P_{\text{受控源}} = (3 - 18)\times 5 = -75\ \text{W} \quad (\text{即发出功率}\ 75\ \text{W}).
+\]
+
+\qblock{3、（10分）如图示含理想变压器的电路，$u_s(t)=12\sqrt{2}\sin\omega t\ \text{V}$，已知 $3\,\Omega$ 电阻获得最大功率 $P_{\max}$，求此时变压器变比 $n$ 及 $P_{\max}$。}{assets_文字版/fig_2018_q3.png}{0.40\textwidth}
+\solhead
+电源电压有效值为 $U_s = 12\ \text{V}$。将理想变压器副边 $36\,\Omega$ 电阻折合到原边，得等效电阻
+\[
+R' = \frac{36}{n^2}\,\Omega.
+\]
+$R'$ 与 $3\,\Omega$ 电阻并联后的等效电阻为
+\[
+R_p(n) = 3 \parallel \frac{36}{n^2} = \frac{36}{n^2 + 12}\,\Omega.
+\]
+由分压公式得 $3\,\Omega$ 电阻两端电压有效值（与变比 $n$ 有关）为
+\[
+U_{3\Omega}(n) = \frac{R_p(n)}{12 + R_p(n)}\,U_s = \frac{\frac{36}{n^2+12}}{12 + \frac{36}{n^2+12}} \times 12 = \frac{36}{n^2 + 15}\ \text{V}.
+\]
+故 $3\,\Omega$ 电阻消耗的功率为
+\[
+P(n) = \frac{U_{3\Omega}^2(n)}{3} = \frac{432}{(n^2 + 15)^2}\ \text{W}.
+\]
+当 $n$ 减小时分母 $n^2+15$ 严格减小、$P(n)$ 严格增大，因此不存在使 $P(n)$ 取极值的有限正变比 $n>0$；当 $n \to 0$（副边折合到原边等效开路）时，$U_{3\Omega} \to \frac{3}{12+3}\times 12 = 2.4\ \text{V}$，$3\,\Omega$ 电阻获得的最大功率（上确界）为
+\[
+P_{\max} = \frac{2.4^2}{3} = 1.92\ \text{W}.
+\]
+
+\qblock{4、（12分）已知电路中 $u_s$ 与 $i$ 同相，$u_s(t)=10\sqrt{2}\sin 4t\ \text{V}$，求电容 $C$ 的值。}{assets_文字版/fig_2018_q4.png}{0.50\textwidth}
+\solhead
+由 $u_s(t) = 10\sqrt{2}\sin 4t\ \text{V}$ 知角频率 $\omega = 4\ \text{rad/s}$。$0.125\ \text{F}$ 电容的电抗为
+\[
+X_{C_1} = -\frac{1}{\omega C_1} = -\frac{1}{4\times 0.125} = -2\,\Omega, \quad \text{即阻抗}\ -j2\,\Omega.
+\]
+对互感线圈 $L_1=2\ \text{H}$、$L_2=1.5\ \text{H}$、$M=0.5\ \text{H}$ 做去耦等效（两同名端同处于上方且底端共接，互感支路可等效移至左侧公共输入端串联 $+j\omega M = +j2\,\Omega$，而两竖直支路电感分别为 $L_1-M=1.5\ \text{H}$、$L_2-M=1\ \text{H}$，对应电抗分别为 $j\omega(L_1-M)=j6\,\Omega$、$j\omega(L_2-M)=j4\,\Omega$）。此时左侧串联的 $-j2\,\Omega$ 与去耦所得 $+j2\,\Omega$ 相互抵消，电容 $C$ 右侧支路总阻抗为
+\[
+Z = \frac{(5 + j4)\cdot j6}{5 + j4 + j6} = \frac{-24 + j30}{5 + j10}\,\Omega.
+\]
+其导纳为
+\[
+Y = \frac{1}{Z} = \frac{5 + j10}{-24 + j30} = \frac{(5+j10)(-24-j30)}{24^2 + 30^2} = \frac{180 - j390}{1476} = \frac{5}{41} - j\frac{65}{246}\ \text{S} \approx 0.122 - j0.2642\ \text{S}.
+\]
+因 $u_s$ 与 $i$ 同相，即并联部分总导纳虚部为零（谐振），故
+\[
+\omega C = \frac{65}{246} \implies C = \frac{65}{4 \times 246} = \frac{65}{984}\ \text{F} \approx 0.0661\ \text{F}.
+\]
+
+\qblock{5、（10分）图示电路开关在位置 1 时已处于稳态，$t=0$ 时开关 S 由 1 合向 2，求 $t\ge 0$ 时的 $u_L(t)$。}{assets_文字版/fig_2018_q5.png}{0.44\textwidth}
+\solhead
+设电感电流 $i_L(t)$ 取向下参考方向（与所标电压 $u_L(t)$ 为非关联参考方向）。
+\begin{enumerate}
+  \item 初始值：开关位于 $1$ 时直流稳态下电感短路，故
+  \[
+  i_L(0^+) = i_L(0^-) = \frac{8}{2} = 4\ \text{A}.
+  \]
+  \item 稳态值及等效电阻：$t\ge 0$ 时开关合向 $2$。断开电感 $0.1\ \text{H}$，求左侧含源一端口的戴维南等效参数。电感断开时，流过上边 $4\,\Omega$ 电阻的电流为零，故 $i_1 = 2\ \text{A}$，上正下负开路电压为
+  \[
+  U_{\mathrm{oc}} = 4i_1 + 2i_1 = 6i_1 = 12\ \text{V}.
+  \]
+  将独立电流源 $2\ \text{A}$ 开路，在电感端口外加电压 $U_0$（上正下负）并设流入上端电流为 $I_0$，则左竖直 $4\,\Omega$ 电阻电流 $i_1 = I_0$，由 KVL 得
+  \[
+  U_0 = 4I_0 + 4i_1 + 2i_1 = 10I_0 \implies R_i = \frac{U_0}{I_0} = 10\,\Omega.
+  \]
+  因此 $i_L(\infty) = \frac{U_{\mathrm{oc}}}{R_i} = \frac{12}{10} = 1.2\ \text{A}$，时间常数 $\tau = \frac{L}{R_i} = \frac{0.1}{10} = 0.01\ \text{s}$。
+\end{enumerate}
+由三要素法得（$t \ge 0$）：
+\begin{align*}
+i_L(t) &= i_L(\infty) + \bigl[i_L(0^+) - i_L(\infty)\bigr]e^{-t/\tau} = 1.2 + 2.8e^{-100t}\ \text{A},\\
+u_L(t) &= -L\frac{\mathrm{d}i_L(t)}{\mathrm{d}t} = -0.1 \times (-280e^{-100t}) = 28e^{-100t}\ \text{V} \quad (t \ge 0).
+\end{align*}
+
+\qblock{6、（12分）如图所示正弦稳态电路，已知 $U=52\ \text{V}$，$I_1=5\ \text{A}$，$I_2=4\ \text{A}$，$I=3\ \text{A}$，求 $R_1$、$X_L$、$X_C$ 和电感的无功功率。}{assets_文字版/fig_2018_q6.png}{0.38\textwidth}
+\solhead
+设并联支路两端电压为参考相量 $\dot{U}_L = U_L\angle 0^\circ$。电感电流 $\dot{I}_2$ 滞后 $\dot{U}_L$ $90^\circ$，而由 KCL 有 $\dot{I} = \dot{I}_1 + \dot{I}_2$。注意到已知有效值满足 $I^2 + I_2^2 = 3^2 + 4^2 = 5^2 = I_1^2$，可知 $\dot{I}$ 与 $\dot{I}_2$ 正交，从而 $\dot{I}$ 与 $\dot{U}_L$ 同相（$\dot{I}_1$ 超前 $\dot{U}_L$ 角度 $\theta = \arctan\frac{4}{3} \approx 53.13^\circ$）。
+
+由输入回路 KVL 及同相叠加关系得
+\[
+U_L = U - 4I = 52 - 4\times 3 = 40\ \text{V}.
+\]
+由此可得各参数及电感无功功率：
+\begin{align*}
+X_L &= \frac{U_L}{I_2} = \frac{40}{4} = 10\,\Omega,\\
+\dot{I}_1 &= 5\angle 53.13^\circ\ \text{A}, \qquad Z_1 = R_1 - jX_C = \frac{\dot{U}_L}{\dot{I}_1} = \frac{40\angle 0^\circ}{5\angle 53.13^\circ} = 8\angle -53.13^\circ = 4.8 - j6.4\,\Omega,\\
+R_1 &= 4.8\,\Omega, \qquad X_C = 6.4\,\Omega,\\
+Q_L &= I_2^2 X_L = 4^2 \times 10 = 160\ \text{var}.
+\end{align*}
+
+\qblock{7、（10分）如图所示电路，已知 $i_s = 10 + 15\sqrt{2}\sin t + 10\sqrt{2}\sin(2t - 30^\circ)\ \text{A}$，求 $I_1$ 以及 $i_1(t)$ 和功率表的读数。}{assets_文字版/fig_2018_q7.png}{0.38\textwidth}
+\solhead
+功率表测量 $2\,\Omega$ 与 $LC$ 并联网络的总有功功率（亦即 $2\,\Omega$ 电阻消耗的有功功率）。利用叠加定理分别求解各频率分量作用：
+\begin{enumerate}
+  \item 直流分量 $10\ \text{A}$ 作用：电感短路、电容开路，得 $i_1' = 10\ \text{A}$，$P' = 10^2 \times 2 = 200\ \text{W}$。
+  \item 基波分量 $15\sqrt{2}\sin t\ \text{A}$（$\omega_1 = 1\ \text{rad/s}$）作用：$1\ \text{H}$ 电感与 $1\ \text{F}$ 电容感抗、容抗分别为 $j1\,\Omega$ 与 $-j1\,\Omega$，发生串联谐振将 $2\,\Omega$ 电阻短路，故 $i_1'' = 0$，$P'' = 0$。
+  \item 二次谐波分量 $10\sqrt{2}\sin(2t - 30^\circ)\ \text{A}$（$\omega_2 = 2\ \text{rad/s}$）作用：电感阻抗 $j\omega_2 L = j2\,\Omega$，电容阻抗 $\frac{1}{j\omega_2 C} = -j0.5\,\Omega$，右支路总阻抗为 $j1.5\,\Omega$。由分流公式得
+  \[
+  \dot{I}_1''' = \frac{j1.5}{2 + j1.5}\times 10\angle -30^\circ = \frac{3\angle 90^\circ}{5\angle 36.87^\circ}\times 10\angle -30^\circ = 6\angle 23.13^\circ\ \text{A},
+  \]
+  对应有功功率 $P''' = 6^2 \times 2 = 72\ \text{W}$。
+\end{enumerate}
+叠加各分量得：
+\begin{align*}
+I_1 &= \sqrt{10^2 + 6^2} = \sqrt{136} \approx 11.66\ \text{A},\\
+i_1(t) &= 10 + 6\sqrt{2}\sin(2t + 23.13^\circ)\ \text{A},\\
+P &= P' + P'' + P''' = 200 + 0 + 72 = 272\ \text{W}.
+\end{align*}
+
+\qblock{8、（12分）如图为三相电路，线电压 $380\ \text{V}$，$Z = 22 - j64\ \Omega$，$L = \frac{3}{\pi}\ \text{H}$。\\
+（1）求电感上的电流的有效值；（2）求功率表 $\mathrm{W}_1$ 和 $\mathrm{W}_2$ 的读数。}{assets_文字版/fig_2018_q8.png}{0.40\textwidth}
+\solhead
+工频交流电 $f = 50\ \text{Hz}$（$\omega = 100\pi\ \text{rad/s}$），每个电感的感抗为
+\[
+X_L = \omega L = 100\pi \times \frac{3}{\pi} = 300\,\Omega.
+\]
+将三角形联结的三相对称电感负载等效变换为星形联结，每相等效电抗为 $\frac{X_L}{3} = 100\,\Omega$。设电源为正序对称三相电源，取 $\dot{U}_{AN} = \frac{380}{\sqrt{3}}\angle 0^\circ\ \text{V} \approx 219.39\angle 0^\circ\ \text{V}$，每相总阻抗为
+\[
+Z_{\text{相}} = Z + j\frac{X_L}{3} = (22 - j64) + j100 = 22 + j36\,\Omega \approx 42.19\angle 58.57^\circ\,\Omega.
+\]
+（1）A 相线电流及 C 相线电流分别为
+\begin{align*}
+\dot{I}_A &= \frac{\dot{U}_{AN}}{Z_{\text{相}}} = \frac{380/\sqrt{3}}{22 + j36} \approx 5.200\angle -58.57^\circ\ \text{A},\\
+\dot{I}_C &\approx 5.200\angle (-58.57^\circ + 120^\circ) = 5.200\angle 61.43^\circ\ \text{A}.
+\end{align*}
+故电感（三角形相支路）上电流的有效值为
+\[
+I_L = \frac{I_A}{\sqrt{3}} \approx \frac{5.200}{\sqrt{3}} \approx 3.00\ \text{A}.
+\]
+（2）两功率表按二表法接入，线电压相量 $\dot{U}_{AB} = 380\angle 30^\circ\ \text{V}$，$\dot{U}_{CB} = 380\angle 90^\circ\ \text{V}$，故功率表读数分别为
+\begin{align*}
+P_{\mathrm{W}_1} &= U_{AB} I_A \cos(\varphi_{\dot{U}_{AB}} - \varphi_{\dot{I}_A}) = 380 \times 5.200 \cos(30^\circ + 58.57^\circ) \approx 49.3\ \text{W},\\
+P_{\mathrm{W}_2} &= U_{CB} I_C \cos(\varphi_{\dot{U}_{CB}} - \varphi_{\dot{I}_C}) = 380 \times 5.200 \cos(90^\circ - 61.43^\circ) \approx 1735.4\ \text{W}.
+\end{align*}
+
+\qblock{9、（12分）在图(a)、(b)所示电路中，$N_0$ 为同一不含独立电源的电阻性网络，已知当 $I_s=0$ 时，$U_1=6\ \text{V}$；当 $I_s=3\ \text{A}$ 时，$U_1=12\ \text{V}$。求图(b)电路中的 $I_s=6\ \text{A}$ 时，$R$ 为何值其获得最大功率 $P_{\max}$，并求出 $P_{\max}$。}{assets_文字版/fig_2018_q9.png}{0.82\textwidth}
+\solhead
+\begin{enumerate}
+  \item 在图(a)中，$I_s = 0$（右侧端口开路）时 $U_1 = 6\ \text{V}$，流入 $N_0$ 左端口的电流 $I_1 = \frac{10 - 6}{2} = 2\ \text{A}$，故从 $N_0$ 左端口看入的等效电阻（令内部独立源为零）为
+  \[
+  R_i = \frac{U_1}{I_1} = \frac{6}{2} = 3\,\Omega.
+  \]
+  \item 在图(a)中当 $I_s = 3\ \text{A}$ 时 $U_1 = 12\ \text{V}$。由叠加定理，当 $10\ \text{V}$ 独立电压源置零（短路）、$I_s = 3\ \text{A}$ 单独作用时，左端口电压分量为 $U_1' = 12 - 6 = 6\ \text{V}$。将含 $N_0$ 与 $I_s=3\ \text{A}$ 的右半部分向左端口戴维南等效为电压源 $U_{\mathrm{oc}}'$ 与内阻 $R_i = 3\,\Omega$ 串联，接入左端 $2\,\Omega$ 电阻分压，有
+  \[
+  \frac{2}{2 + 3} U_{\mathrm{oc}}' = 6\ \text{V} \implies U_{\mathrm{oc}}' = 15\ \text{V}.
+  \]
+  \item 当图(b)中 $I_s = 6\ \text{A}$ 时，由线性齐次性知其对左端口的等效开路电压加倍，为 $U_{\mathrm{oc}}'' = 2U_{\mathrm{oc}}' = 30\ \text{V}$（内阻仍为 $R_i = 3\,\Omega$）。此时在图(b)中去掉电阻 $R$，剩余电路由左侧（$6\ \text{V}$ 与 $3\,\Omega$ 串联）与右侧（$30\ \text{V}$ 与 $3\,\Omega$ 串联）并联组成，求其戴维南等效电路：
+  \[
+  R_{\mathrm{eq}} = 3 \parallel 3 = 1.5\,\Omega, \qquad U_{\mathrm{oc}} = 6 + \frac{30 - 6}{3 + 3}\times 3 = 18\ \text{V}.
+  \]
+\end{enumerate}
+故当 $R = R_{\mathrm{eq}} = 1.5\,\Omega$ 时，$R$ 获得最大功率，最大功率为
+\[
+P_{\max} = \frac{U_{\mathrm{oc}}^2}{4R_{\mathrm{eq}}} = \frac{18^2}{4 \times 1.5} = 54\ \text{W}.
+\]
+
+%======================================================================
+% 第二部分：2019-2020 电路理论
+%======================================================================
+\newpage
+\examsection{2019--2020 学年《电路理论》真题及参考解答}
+
+\begin{center}
+  \begin{tabular}{|c|*{10}{>{\centering\arraybackslash}p{0.85cm}|}}
+    \hline
+    题号 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 总分 \\ \hline
+    题分 & 10 & 10 & 10 & 10 & 10 & 12 & 12 & 14 & 12 & 100 \\ \hline
+    得分 & & & & & & & & & & \\ \hline
+  \end{tabular}
+\end{center}
+\vspace{4pt}
+
+\qblock{1、（10分）求如图所示电路中受控源的功率。}{assets_文字版/fig_2019_q1.png}{0.44\textwidth}
+\solhead
+以底部导线为参考节点，对节点 $A$ 列写节点电压方程（结合支路关系 $U_A = 10 I_1$）：
+\[
+\left(\frac{1}{5} + \frac{1}{5} + \frac{1}{10}\right) U_A = \frac{40}{5} + \frac{5I_1}{5} \implies \frac{1}{2} U_A = 8 + I_1.
+\]
+代入 $U_A = 10I_1$，得 $5I_1 = 8 + I_1 \implies I_1 = 2\ \text{A}$，从而 $U_A = 20\ \text{V}$。流经右支路（由节点 $A$ 向右经受控电压源 $5I_1$ 及 $5\,\Omega$ 电阻 $R$）的电流为
+\[
+I_2 = \frac{U_A - 5I_1}{5} = \frac{20 - 10}{5} = 2\ \text{A}.
+\]
+因 $I_2$ 由受控源正极流入（关联参考方向），故受控源吸收的功率为
+\[
+P = (5I_1) \cdot I_2 = 10 \times 2 = 20\ \text{W}.
+\]
+
+\qblock{2、（10分）应用叠加定理求图示电路中的 $U$。}{assets_文字版/fig_2019_q2.png}{0.40\textwidth}
+\solhead
+分别考虑 $3\ \text{A}$ 电流源、$136\ \text{V}$ 电压源、$50\ \text{V}$ 电压源单独作用：
+\begin{enumerate}
+  \item $3\ \text{A}$ 电流源单独作用（$136\ \text{V}$ 与 $50\ \text{V}$ 电压源短路）：右侧 $40\,\Omega$ 与 $10\,\Omega$ 并联得 $8\,\Omega$，与左侧 $8\,\Omega$ 串联为 $16\,\Omega$，再与左竖直 $2\,\Omega$ 并联分流。流过 $8\,\Omega$ 的电流向右分流进入 $(40\parallel 10)\,\Omega$（注意由 $3\ \text{A}$ 箭头向右抽取左侧电流），故
+  \[
+  U' = -3 \times \frac{2}{2 + 16} \times \frac{10}{40 + 10} \times 40 = -3 \times \frac{2}{18} \times \frac{1}{5} \times 40 = -\frac{24}{9}\ \text{V}.
+  \]
+  \item $136\ \text{V}$ 电压源单独作用（$3\ \text{A}$ 电流源开路，$50\ \text{V}$ 电压源短路）：总串联电阻为 $2 + 8 + (40\parallel 10) = 18\,\Omega$，故
+  \[
+  U'' = 136 \times \frac{8}{18} = \frac{544}{9}\ \text{V}.
+  \]
+  \item $50\ \text{V}$ 电压源单独作用（$3\ \text{A}$ 电流源开路，$136\ \text{V}$ 电压源短路）：$40\,\Omega$ 与 $(8+2)\,\Omega$ 并联得 $8\,\Omega$，故
+  \[
+  U''' = 50 \times \frac{8}{10 + 8} = \frac{200}{9}\ \text{V}.
+  \]
+\end{enumerate}
+叠加得
+\[
+U = U' + U'' + U''' = -\frac{24}{9} + \frac{544}{9} + \frac{200}{9} = 80\ \text{V}.
+\]
+
+\qblock{3、（10分）用节点分析法求图示电路中受控源的功率。}{assets_文字版/fig_2019_q3.png}{0.36\textwidth}
+\solhead
+以下方导线为参考节点，左右及中间节点分别为 $A$、$C$、$B$。由右下方 $5\ \text{V}$ 独立电压源直接得 $U_C = 5\ \text{V}$，且控制电压 $U = U_A - U_C = U_A - 5$。对节点 $A$、$B$ 列写节点电压方程：
+\begin{align*}
+\left(1 + \frac{1}{2}\right) U_A - \frac{1}{2} U_B &= -4,\\
+-\frac{1}{2} U_A + \left(\frac{1}{2} + \frac{1}{3}\right) U_B - \frac{1}{3} U_C &= 3U.
+\end{align*}
+将 $U_C = 5\ \text{V}$ 和 $U = U_A - 5$ 代入上式，整理得：
+\[
+\begin{cases}
+3U_A - U_B = -8,\\
+-21U_A + 5U_B = -80.
+\end{cases}
+\]
+解得 $U_A = 20\ \text{V}$，$U_B = 68\ \text{V}$，从而 $U = U_A - U_C = 15\ \text{V}$。受控电流源的电流为 $3U = 45\ \text{A}$（由参考节点向上流入节点 $B$，与节点电压 $U_B$ 为非关联参考方向），故受控源吸收的功率为
+\[
+P_{\text{受控源}} = -U_B \cdot (3U) = -68 \times 45 = -3060\ \text{W} \quad (\text{即发出功率}\ 3060\ \text{W}).
+\]
+
+\qblock{4、（10分）电路如图所示，负载 $R_L$ 等于多少可以获得最大功率，并求此最大功率。}{assets_文字版/fig_2019_q4.png}{0.38\textwidth}
+\solhead
+断开负载 $R_L$，求左侧含源一端口的戴维南等效电路：
+\begin{enumerate}
+  \item 求开路电压 $U_{\mathrm{oc}}$：负载断开时 $I=0$，受控电压源 $4I=0$，左侧 $4\ \text{A}$ 电流源电流全部向下流经竖直 $2\,\Omega$ 电阻进入 $8\ \text{V}$ 电压源正极，故
+  \[
+  U_{\mathrm{oc}} = 2 \times 4 + 8 = 16\ \text{V}.
+  \]
+  \item 求等效内阻 $R_i$：令独立电流源 $4\ \text{A}$ 开路、独立电压源 $8\ \text{V}$ 短路（此时左端 $2\,\Omega$ 与 $1\,\Omega$ 支路不构成回路，无电流通过），在端口处加测试电压 $U_0$（上正下负）并设流出上端的电流为 $I = -I_0$（$I_0$ 为流入上端的测试电流），由右侧回路 KVL 得
+  \[
+  2I + 4I + U_0 = 0 \implies U_0 = -6I = 6I_0 \implies R_i = \frac{U_0}{I_0} = 6\,\Omega.
+  \]
+\end{enumerate}
+当 $R_L = R_i = 6\,\Omega$ 时负载获得最大功率，最大功率为
+\[
+P_{\max} = \frac{U_{\mathrm{oc}}^2}{4R_i} = \frac{16^2}{4 \times 6} = \frac{32}{3}\ \text{W} \approx 10.67\ \text{W}.
+\]
+
+\qblock{5、（10分）图示电路已处于稳态，$t=0$ 时开关 $\mathrm{S}$ 关闭，求 $t\ge 0$ 时的 $i_L(t)$。}{assets_文字版/fig_2019_q5.png}{0.48\textwidth}
+\solhead
+\begin{enumerate}
+  \item 初始值：$t < 0$ 时开关打开，右侧电路由 $1\ \text{H}$ 电感与 $2\ \text{A}$ 向下电流源并联。直流稳态下电感相当于短路，$2\ \text{A}$ 电流全部自下而上流经电感，故
+  \[
+  i_L(0^+) = i_L(0^-) = -2\ \text{A}.
+  \]
+  \item 稳态值：$t \ge 0$ 时开关闭合，稳态下电感短路使竖直 $2\,\Omega$ 电阻电压为零、电流为零，左侧贡献向下电流 $\frac{10}{2}=5\ \text{A}$，减去右侧 $2\ \text{A}$ 电流源分流，得
+  \[
+  i_L(\infty) = \frac{10}{2} - 2 = 3\ \text{A}.
+  \]
+  \item 时间常数：$t \ge 0$ 时独立电压源短路、独立电流源开路，电感两端等效电阻为 $R_{\mathrm{eq}} = 2 \parallel 2 = 1\,\Omega$，故
+  \[
+  \tau = \frac{L}{R_{\mathrm{eq}}} = \frac{1}{1} = 1\ \text{s}.
+  \]
+\end{enumerate}
+由三要素法得
+\[
+i_L(t) = i_L(\infty) + \bigl[i_L(0^+) - i_L(\infty)\bigr]e^{-t/\tau} = 3 - 5e^{-t}\ \text{A} \quad (t \ge 0).
+\]
+
+\qblock{6、（12分）电路如图所示，为使 $R$ 获得最大功率，求 $n$ 及此最大功率。}{assets_文字版/fig_2019_q6.png}{0.38\textwidth}
+\solhead
+断开负载电阻 $R$（由图知 $R = 1\,\Omega$），求理想变压器副边端口的戴维南等效电路（参考电流 $\dot{I}_1$、$\dot{I}_2$ 均自同名端流入，故 $\dot{U}_2 = n\dot{U}_1$，$\dot{I}_1 = -n\dot{I}_2$）：
+\begin{enumerate}
+  \item 求开路电压 $\dot{U}_{\mathrm{oc}}$：断开 $R$ 时，$\dot{U}_{\mathrm{oc}} = \dot{U}_2$。由节点 KCL 及跨接 $2\,\Omega$ 电阻支路 KVL 得
+  \[
+  10 = \dot{I}_1 + \dot{I}_2 + \dot{U}_1, \qquad \dot{U}_1 = 2\dot{I}_2 + \dot{U}_2.
+  \]
+  代入 $\dot{U}_2 = n\dot{U}_1$ 与 $\dot{I}_1 = -n\dot{I}_2$，解得 $\dot{I}_2 = \frac{1-n}{2}\dot{U}_1$，进而得
+  \[
+  \dot{U}_{\mathrm{oc}} = \frac{20n}{(1-n)^2 + 2}\ \text{V}.
+  \]
+  \item 求短路电流 $\dot{I}_{\mathrm{sc}}$ 及等效内阻 $Z_{\mathrm{eq}}$：将负载 $R$ 两端短路，则 $\dot{U}_2 = 0 \implies \dot{U}_1 = 0$，$2\,\Omega$ 电阻无电流，于是 $\dot{I}_1 = 10\ \text{A}$，$\dot{I}_2 = -\frac{10}{n}\ \text{A}$，向下流过短路线的电流 $\dot{I}_{\mathrm{sc}} = -\dot{I}_2 = \frac{10}{n}\ \text{A}$。故等效内阻为
+  \[
+  Z_{\mathrm{eq}}(n) = \frac{\dot{U}_{\mathrm{oc}}}{\dot{I}_{\mathrm{sc}}} = \frac{2n^2}{(1-n)^2 + 2}\,\Omega.
+  \]
+\end{enumerate}
+接回 $R = 1\,\Omega$ 后，$R$ 两端电压为
+\[
+\dot{U}_R(n) = \frac{R}{Z_{\mathrm{eq}}(n) + R}\,\dot{U}_{\mathrm{oc}}(n) = \frac{20n}{3n^2 - 2n + 3}\ \text{V},
+\]
+功率为 $P_R(n) = \frac{400n^2}{(3n^2 - 2n + 3)^2}\ \text{W}$。令 $\frac{\mathrm{d}}{\mathrm{d}n}\left(\frac{n}{3n^2-2n+3}\right) = \frac{3 - 3n^2}{(3n^2-2n+3)^2} = 0$，得 $n = 1$（此时恰好满足匹配条件 $Z_{\mathrm{eq}}(1) = 1\,\Omega = R$），最大功率为
+\[
+P_{\max} = \frac{10^2}{4 \times 1} = 25\ \text{W}.
+\]
+
+\qblock{7、（12分）如图所示正弦稳态电路，已知 $\omega = 100\ \text{rad/s}$，$U_{ab}=U_{cd}$，求电容 $C$ 的值。}{assets_文字版/fig_2019_q7.png}{0.36\textwidth}
+\solhead
+在 $\omega = 100\ \text{rad/s}$ 下，电感感抗为 $X_L = \omega L = 100 \times 0.1 = 10\,\Omega$。因 $\dot{U}_{ac}$ 与 $\dot{U}_{cb}$ 相互垂直且 $\dot{U}_{ac} + \dot{U}_{cb} = \dot{U}_{ab}$，$\dot{U}_{ad}$ 与 $\dot{U}_{db}$ 相互垂直且 $\dot{U}_{ad} + \dot{U}_{db} = \dot{U}_{ab}$，故节点 $c$、$d$ 分别位于以 $\dot{U}_{ab}$ 为直径的圆周两侧。由题意知弦长等于直径（$U_{cd} = U_{ab}$），因此几何图形 $acbd$ 为矩形，即有：
+\[
+U_{ac} = U_{db}, \qquad U_{cb} = U_{ad}.
+\]
+两直角三角形相似（比值相等），即 $\frac{U_{ac}}{U_{cb}} = \frac{U_{db}}{U_{ad}}$，代入各支路阻抗比例关系得
+\[
+\frac{500}{X_L} = \frac{X_C}{1000} \implies \frac{500}{10} = \frac{X_C}{1000} \implies X_C = 5 \times 10^4\,\Omega.
+\]
+由此求得电容值
+\[
+C = \frac{1}{\omega X_C} = \frac{1}{100 \times 5 \times 10^4} = 2 \times 10^{-7}\ \text{F} = 0.2\ \mu\text{F}.
+\]
+
+\qblock{8、（14分）图示为对称三相电路，已知线电压为 $380\ \text{V}$，两功率表的读数分别为：$P_1=0$，$P_2=1.65\ \text{kW}$，求负载的阻抗参数 $R+jX$。}{assets_文字版/fig_2019_q8.png}{0.40\textwidth}
+\solhead
+由两功率表接法知 $P_1 = U_L I_L \cos(30^\circ + \varphi) = 0$，$P_2 = U_L I_L \cos(30^\circ - \varphi) = 1650\ \text{W}$。因无源负载阻抗角 $|\varphi| \le 90^\circ$ 且 $P_2 > 0$，必有
+\[
+30^\circ + \varphi = 90^\circ \implies \varphi = 60^\circ, \qquad \cos\varphi = \cos 60^\circ = 0.5\ (\text{感性}).
+\]
+由 $P_2 = U_L I_C \cos(30^\circ - 60^\circ) = 380 \times I_C \cos 30^\circ = 1650\ \text{W}$，解得线电流有效值
+\[
+I_A = I_B = I_C = \frac{1650}{380 \cos 30^\circ} \approx 5.014\ \text{A}.
+\]
+星形对称负载相电压有效值 $U_p = \frac{380}{\sqrt{3}}\ \text{V}$，故每相阻抗模为
+\[
+|Z| = \frac{U_p}{I_A} = \frac{380/\sqrt{3}}{5.014} \approx 43.76\,\Omega.
+\]
+因此负载的复阻抗参数为
+\[
+Z = |Z|\angle 60^\circ = 43.76(\cos 60^\circ + j\sin 60^\circ) \approx 21.88 + j37.90\,\Omega.
+\]
+
+\qblock{九、（12分）如图所示电路，已知 $i_s = 10 + 15\sqrt{2}\sin t + 10\sqrt{2}\sin(2t - 30^\circ)\ \text{A}$，求图中电流表和电压表的读数及 $i_1(t)$。}{assets_文字版/fig_2019_q9.png}{0.38\textwidth}
+\solhead
+利用叠加定理分别计算直流分量、基波分量和二次谐波分量的响应：
+\begin{enumerate}
+  \item 直流分量 $10\ \text{A}$ 作用：电容支路开路，故 $i_1^{(0)} = 0$，电流表与电压表直流分量读数均为 $A_0 = 0$，$V_0 = 0$。
+  \item 基波分量 $15\sqrt{2}\sin t\ \text{A}$（$\omega_1 = 1\ \text{rad/s}$）作用：电感阻抗 $j1\,\Omega$、电容阻抗 $-j1\,\Omega$ 发生串联谐振将 $2\,\Omega$ 电阻短路，电流全部流入右侧支路，得 $\dot{I}_1^{(1)} = 15\angle 0^\circ\ \text{A}$，故
+  \[
+  A_1 = 15\ \text{A}, \qquad V_1 = I_1^{(1)}\cdot \omega_1 L = 15 \times 1 = 15\ \text{V}.
+  \]
+  \item 二次谐波分量 $10\sqrt{2}\sin(2t - 30^\circ)\ \text{A}$（$\omega_2 = 2\ \text{rad/s}$）作用：$j\omega_2 L = j2\,\Omega$，$\frac{1}{j\omega_2 C} = -j0.5\,\Omega$，右侧支路总阻抗为 $j1.5\,\Omega$。由分流公式得
+  \[
+  \dot{I}_1^{(2)} = \frac{2}{2 + j1.5}\times 10\angle -30^\circ = \frac{4}{5\angle 36.87^\circ}\times 10\angle -30^\circ = 8\angle -66.87^\circ\ \text{A},
+  \]
+  对应分量有效值 $A_2 = 8\ \text{A}$，$V_2 = I_1^{(2)}\cdot \omega_2 L = 8 \times 2 = 16\ \text{V}$。
+\end{enumerate}
+因此电流表读数、电压表读数和瞬时电流 $i_1(t)$ 分别为：
+\begin{align*}
+A &= \sqrt{A_0^2 + A_1^2 + A_2^2} = \sqrt{15^2 + 8^2} = 17\ \text{A},\\
+V &= \sqrt{V_0^2 + V_1^2 + V_2^2} = \sqrt{15^2 + 16^2} = \sqrt{481} \approx 21.93\ \text{V},\\
+i_1(t) &= 15\sqrt{2}\sin t + 8\sqrt{2}\sin(2t - 66.87^\circ)\ \text{A}.
+\end{align*}
+
+%======================================================================
+% 第三部分：2020-2021 学年第一学期 电路理论（64学时）A卷
+%======================================================================
+\newpage
+\examsection{华中科技大学 2020～2021 学年第一学期}
+\begin{center}
+  {\large\bfseries “电路理论（64 学时）”考试试卷（A 卷）及参考解答}\\[6pt]
+  \small 考试方式：\underline{\quad 闭卷 \quad}\quad 考试日期：\underline{\quad 2021.01.10 \quad}\quad 考试时长：\underline{\quad 150 \quad} 分钟\\[4pt]
+  院（系）：\underline{\hspace{4.2cm}}\quad 专业班级：\underline{\hspace{4.2cm}}\\
+  学\quad 号：\underline{\hspace{4.2cm}}\quad 姓\quad 名：\underline{\hspace{4.2cm}}
+\end{center}
+\vspace{2pt}
+\begin{center}
+  \begin{tabular}{|c|*{11}{>{\centering\arraybackslash}p{0.68cm}|}}
+    \hline
+    题号 & 一 & 二 & 三 & 四 & 五 & 六 & 七 & 八 & 九 & & 总分 \\ \hline
+    分数 & & & & & & & & & & & \\ \hline
+  \end{tabular}
+\end{center}
+\vspace{4pt}
+
+\qblock{一、（10分）求如图所示电路中受控源的功率。}{assets_文字版/fig_2020_q1.png}{0.38\textwidth}
+\solhead
+以左上方接地端为参考点（下节点记为节点 $1$，右上节点记为节点 $2$，中间节点记为节点 $3$）。由电压源支路及电流约束关系得
+\[
+U_1 = -15\ \text{V}, \qquad U_2 = -2I, \qquad U_2 - U_1 = 3I.
+\]
+将 $U_1$、$U_2$ 代入 $U_2 - U_1 = 3I$ 得 $-2I + 15 = 3I \implies I = 3\ \text{A}$，从而 $U_2 = -6\ \text{V}$。再对节点 $3$ 列写节点电压方程：
+\[
+-\frac{1}{2}U_1 - \frac{1}{2}U_2 + \left(\frac{1}{2} + \frac{1}{2} + \frac{1}{4}\right)U_3 = 0 \implies \frac{5}{4}U_3 = \frac{-15 + (-6)}{2} \implies U_3 = -8.4\ \text{V}.
+\]
+由节点 $2$ 向左流经 $2\,\Omega$ 电阻至节点 $3$ 的电流 $I_2 = \frac{U_2 - U_3}{2} = \frac{-6 - (-8.4)}{2} = 1.2\ \text{A}$，故由受控电压源 $2I$ 正极流出、负极流入的电流为
+\[
+I_1 = I_2 + I = 1.2 + 3 = 4.2\ \text{A}.
+\]
+因此受控源发出功率为
+\[
+P_{\text{发出}} = (2I)\cdot I_1 = (2 \times 3)\times 4.2 = 25.2\ \text{W} \quad (\text{吸收功率为}\ -25.2\ \text{W}).
+\]
+
+\qblock{二、（10分）应用叠加定理求图示电路中的电流 $I$。}{assets_文字版/fig_2020_q2.png}{0.40\textwidth}
+\solhead
+取左网孔电流 $I_1$ 与右网孔电流 $I_2$ 均为顺时针方向，应用叠加定理：
+\begin{enumerate}
+  \item $12\ \text{A}$ 电流源单独作用（$36\ \text{V}$ 电压源短路）：此时 $I_1 = 12\ \text{A}$，$I_2 = I'$。对右网孔列写 KVL 方程：
+  \[
+  -6I_1 + 18I_2 = 6I' \implies -6 \times 12 + 18I' = 6I' \implies I' = 6\ \text{A}.
+  \]
+  \item $36\ \text{V}$ 电压源单独作用（$12\ \text{A}$ 电流源开路）：$I_1 = 0$，$I_2 = I''$。对右网孔列写 KVL 方程：
+  \[
+  36 + 18I'' = 6I'' \implies 12I'' = -36 \implies I'' = -3\ \text{A}.
+  \]
+\end{enumerate}
+叠加得
+\[
+I = I' + I'' = 6 + (-3) = 3\ \text{A}.
+\]
+
+\qblock{三、（10分）用节点分析法求图示电路中受控源的功率。}{assets_文字版/fig_2020_q3.png}{0.38\textwidth}
+\solhead
+以右侧接地线为参考节点，由标定节点 $1$、$2$、$3$ 列写节点电压方程与附加约束：
+\begin{align*}
+\left(\frac{1}{2}+\frac{1}{2}\right)U_1 - \frac{1}{2}U_2 &= 2 + \frac{2}{2} = 3,\\
+U_2 &= 2\ \text{V},\\
+\frac{1}{2}U_3 &= I - 2,\\
+I &= \frac{U_1 - U_2}{2}.
+\end{align*}
+联立解得 $U_1 = 4\ \text{V}$，$U_2 = 2\ \text{V}$，$I = 1\ \text{A}$，$U_3 = -2\ \text{V}$。受控电流源电流 $I = 1\ \text{A}$ 自节点 $2$ 向下流向节点 $3$（与电压 $U_2 - U_3$ 为关联参考方向），故受控源吸收的功率为
+\[
+P = (U_2 - U_3) I = \bigl[2 - (-2)\bigr] \times 1 = 4\ \text{W}.
+\]
+
+\qblock{四、（10分）电路如图所示，请用戴维南定理求电路中的电流 $I$。}{assets_文字版/fig_2020_q4.png}{0.44\textwidth}
+\solhead
+断开右端 $1\,\Omega$ 负载电阻，求左侧含源一端口的戴维南等效电路：
+\begin{enumerate}
+  \item 求开路电压 $U_{\mathrm{oc}}$（上正下负）：负载断开后右支路电流为零，左侧回路 $I_1 = \frac{5}{2+3} = 1\ \text{A}$，由 KVL 得
+  \[
+  U_{\mathrm{oc}} = 2I_1 + 3I_1 = 5I_1 = 5\ \text{V}.
+  \]
+  \item 求等效内阻 $R_i$：将 $5\ \text{V}$ 电压源短路，从右端口外加电压 $U$（上正下负）并设自上端向左流入端口的电流为 $I$。此时左侧 $2\,\Omega$ 与 $3\,\Omega$ 并联，等效电阻 $2 \parallel 3 = \frac{6}{5}\,\Omega$，且向下流经 $3\,\Omega$ 电阻的电流 $I_1 = \frac{2}{2+3}I = \frac{2}{5}I$。由 KVL 得
+  \[
+  U = 2I_1 + 2I + \frac{6}{5}I = \frac{4}{5}I + 2I + \frac{6}{5}I = 4I \implies R_i = \frac{U}{I} = 4\,\Omega.
+  \]
+\end{enumerate}
+接回 $1\,\Omega$ 电阻，由戴维南等效电路求得
+\[
+I = \frac{U_{\mathrm{oc}}}{R_i + 1} = \frac{5}{4 + 1} = 1\ \text{A}.
+\]
+
+\qblock{五、（10分）图示电路已处于稳态，$t=0$ 时开关 $\mathrm{S}$ 接通，求 $t\ge 0$ 时的 $u_L(t)$。}{assets_文字版/fig_2020_q5.png}{0.42\textwidth}
+\solhead
+取电感电流 $i_L(t)$ 为向右参考方向（与所标 $u_L(t)$ 为非关联参考方向）。
+\begin{enumerate}
+  \item 初始值：$t < 0$ 时开关 $\mathrm{S}$ 断开，电路中无激励且已达稳态，故 $i_L(0^+) = i_L(0^-) = 0$。
+  \item 稳态值：$t \ge 0$ 时开关接通，稳态下电感短路，左侧 $2\,\Omega$ 与右侧并联电阻 $3 \parallel 6 = 2\,\Omega$ 均分 $2\ \text{A}$ 电流，故 $i_L(\infty) = 1\ \text{A}$。
+  \item 时间常数：独立电流源开路，电感两端等效电阻为 $R_{\mathrm{eq}} = 2 + (3\parallel 6) = 4\,\Omega$，故 $\tau = \frac{L}{R_{\mathrm{eq}}} = \frac{1}{4}\ \text{s}$。
+\end{enumerate}
+由三要素法得（$t \ge 0$）：
+\begin{align*}
+i_L(t) &= 1 + (0 - 1)e^{-4t} = 1 - e^{-4t}\ \text{A},\\
+u_L(t) &= -L\frac{\mathrm{d}i_L(t)}{\mathrm{d}t} = -1 \times 4e^{-4t} = -4e^{-4t}\ \text{V} \quad (t \ge 0).
+\end{align*}
+
+\qblock{六、（12分）电路如图所示，求电路的有功功率和两个电流表的读数。}{assets_文字版/fig_2020_q6.png}{0.48\textwidth}
+\solhead
+在 $\omega = 10^4\ \text{rad/s}$ 下，先将互感耦合部分去耦（$L_1$ 左端与 $L_2$ 上端为同名端，在连接点处属于异名端串联关系）。其星形去耦等效电抗为：
+\begin{itemize}
+  \item 左侧（$L_1$）串联支路：$j\omega(L_1 + M) = j10^4\times (20 + 20)\times 10^{-3} = j400\,\Omega$；
+  \item 竖直（$L_2$）支路：$j\omega(L_2 + M) = j10^4\times (60 + 20)\times 10^{-3} = j800\,\Omega$；
+  \item 右侧电容支路串联负互感：$-j\omega M = -j200\,\Omega$，电容电抗 $\frac{1}{j\omega C} = -j\frac{1}{10^4 \times 1.5\times 10^{-6}} = -j\frac{200}{3}\,\Omega$，故右侧总阻抗为 $-j\frac{800}{3}\,\Omega$。
+\end{itemize}
+并联部分总阻抗为
+\[
+Z_1 = j800 \parallel \left(-j\frac{800}{3}\right) = \frac{800 \times \frac{800}{3}}{j\left(800 - \frac{800}{3}\right)} = -j400\,\Omega.
+\]
+$-j400\,\Omega$ 与串联的 $j400\,\Omega$ 发生串联谐振，输入总阻抗 $Z_{\mathrm{in}} = 50\,\Omega$。由此求得总电流及有功功率：
+\[
+I = \frac{200}{50} = 4\ \text{A}, \qquad P = I^2 \times 50 = 4^2 \times 50 = 800\ \text{W}.
+\]
+并联部分两端等效电压有效值为 $U_1 = I \cdot |Z_1| = 4 \times 400 = 1600\ \text{V}$，故两电流表读数分别为
+\[
+A_1 = \frac{1600}{800} = 2\ \text{A}, \qquad A_2 = \frac{1600}{800/3} = 6\ \text{A}.
+\]
+
+\qblock{七、（12分）如图所示正弦稳态电路，已知并联部分有功功率为 $100\ \text{W}$，并联部分功率因数 $\cos\varphi = \frac{\sqrt{2}}{2}$（容性），$\dot{U}_2 = 100\sqrt{2}\angle 0^\circ\ \text{V}$，求复阻抗 $Z$。}{assets_文字版/fig_2020_q7.png}{0.44\textwidth}
+\solhead
+由并联部分功率因数 $\cos\varphi = \frac{\sqrt{2}}{2}$（容性），知功率因数角 $\varphi = -45^\circ$，即总电流 $\dot{I}_1$ 超前电压 $\dot{U}_2$ $45^\circ$。由有功功率公式 $P = U_2 I_1 \cos\varphi$ 得
+\[
+100 = 100\sqrt{2}\cdot I_1 \cdot \frac{\sqrt{2}}{2} \implies I_1 = 1\ \text{A}, \quad \text{故}\ \dot{I}_1 = 1\angle 45^\circ\ \text{A}.
+\]
+右侧 $RL$ 支路电流为
+\[
+\dot{I}_3 = \frac{\dot{U}_2}{R_3 + j100} = \frac{100\sqrt{2}\angle 0^\circ}{100 + j100} = 1\angle -45^\circ\ \text{A}.
+\]
+由节点 KCL 得支路 $Z$ 中的电流为
+\[
+\dot{I}_2 = \dot{I}_1 - \dot{I}_3 = \left(\frac{\sqrt{2}}{2} + j\frac{\sqrt{2}}{2}\right) - \left(\frac{\sqrt{2}}{2} - j\frac{\sqrt{2}}{2}\right) = j\sqrt{2} = \sqrt{2}\angle 90^\circ\ \text{A}.
+\]
+故复阻抗
+\[
+Z = \frac{\dot{U}_2}{\dot{I}_2} = \frac{100\sqrt{2}\angle 0^\circ}{\sqrt{2}\angle 90^\circ} = -j100\,\Omega.
+\]
+
+\qblock{八、（14分）图示为正弦稳态三相电路，已知线电压为 $380\ \text{V}$，功率表的读数为 $3009.6\ \text{W}$，电流表的读数为 $7.6\ \text{A}$，求负载 $Z$。}{assets_文字版/fig_2020_q8.png}{0.44\textwidth}
+\solhead
+负载为三角形联结对称三相负载，取 $\dot{U}_{AB} = 380\angle 0^\circ\ \text{V}$（正序），由电流表所测相电流有效值 $I_{AB} = 7.6\ \text{A}$，得负载阻抗模与线电流有效值：
+\[
+|Z| = \frac{U_L}{I_{AB}} = \frac{380}{7.6} = 50\,\Omega, \qquad I_A = \sqrt{3}\,I_{AB} = 7.6\sqrt{3}\ \text{A}.
+\]
+功率表电压线圈接 $\dot{U}_{BC}$、电流线圈接 $\dot{I}_A$，其读数为 $P_{\mathrm{W}} = U_{BC} I_A \cos(\dot{U}_{BC}, \dot{I}_A) = 3009.6\ \text{W}$，即
+\[
+380 \times 7.6\sqrt{3}\cos(\dot{U}_{BC}, \dot{I}_A) = 3009.6 \implies \cos(\dot{U}_{BC}, \dot{I}_A) \approx 0.6017,
+\]
+因 $P_{\mathrm{W}} > 0$，相量 $\dot{I}_A$ 落在 $\dot{U}_{BC}$ 与 $\dot{U}_{AB}$ 之间（夹角约为 $53.01^\circ$）。又在三角形接法中 $\dot{I}_A$ 滞后 $\dot{I}_{AB}$ $30^\circ$，而 $\dot{U}_{AB}$ 超前 $\dot{U}_{BC}$ $120^\circ$，故负载阻抗角（$\dot{U}_{AB}$ 超前 $\dot{I}_{AB}$ 的角度）为
+\[
+\varphi = 120^\circ - 53.01^\circ - 30^\circ = 36.99^\circ.
+\]
+因此每相负载复阻抗为
+\[
+Z = 50\angle 36.99^\circ\,\Omega \approx 39.94 + j30.08\,\Omega.
+\]
+
+\qblock{九、（12分）如图所示电路，已知 $u_s = [100 + 200\sqrt{2}\sin 10t + 100\sqrt{2}\sin 30t]\ \text{V}$，求图中功率表和电流表的读数。}{assets_文字版/fig_2020_q9.png}{0.44\textwidth}
+\solhead
+功率表测量电源发出的总有功功率，电流表测量电感 $L_1$ 支路电流有效值。分别计算各谐波分量：
+\begin{enumerate}
+  \item $100\ \text{V}$ 直流分量作用：电感 $L_1$、$L_2$ 短路将 $R_2$ 短接，电容 $C_1$ 开路，故
+  \[
+  I(0) = \frac{100}{10} = 10\ \text{A}, \qquad A(0) = 10\ \text{A}, \qquad P(0) = 10^2 \times 10 = 1000\ \text{W}.
+  \]
+  \item 基波分量 $200\sqrt{2}\sin 10t\ \text{V}$（$\omega_1 = 10\ \text{rad/s}$）作用：$\omega_1 L_1 = 20\,\Omega$，$\frac{1}{\omega_1 C_1} = \frac{1}{10 \times 5 \times 10^{-3}} = 20\,\Omega$，$C_1$ 与 $L_1$ 发生并联谐振（等效开路），$L_2$ 支路无电流，输入电阻为 $R_1 + R_2 = 20\,\Omega$。故
+  \[
+  I(1) = \frac{200}{20} = 10\ \text{A}, \qquad P(1) = 10^2 \times 20 = 2000\ \text{W}, \qquad A(1) = \frac{100}{20} = 5\ \text{A}.
+  \]
+  \item 三次谐波分量 $100\sqrt{2}\sin 30t\ \text{V}$（$\omega_3 = 30\ \text{rad/s}$）作用：$\omega_3 L_2 = 7.5\,\Omega$，并联部分阻抗 $j\omega_3 L_1 \parallel \frac{1}{j\omega_3 C_1} = j60 \parallel \left(-j\frac{20}{3}\right) = -j7.5\,\Omega$，与 $L_2$（$+j7.5\,\Omega$）发生串联谐振而将 $R_2$ 短接。因此
+  \[
+  I(3) = \frac{100}{10} = 10\ \text{A}, \qquad P(3) = 10^2 \times 10 = 1000\ \text{W}, \qquad A(3) = \frac{10 \times 7.5}{60} = 1.25\ \text{A}.
+  \]
+\end{enumerate}
+叠加各分量得功率表与电流表读数分别为
+\begin{align*}
+P &= P(0) + P(1) + P(3) = 1000 + 2000 + 1000 = 4000\ \text{W},\\
+A &= \sqrt{A(0)^2 + A(1)^2 + A(3)^2} = \sqrt{10^2 + 5^2 + 1.25^2} = \sqrt{126.5625} = 11.25\ \text{A}.
+\end{align*}
+
+\end{document}

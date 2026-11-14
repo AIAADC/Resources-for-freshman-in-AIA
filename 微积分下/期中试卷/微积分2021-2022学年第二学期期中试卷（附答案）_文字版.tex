@@ -1,0 +1,237 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\grad}{\operatorname{grad}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2021--2022 学年第二学期期中考试试卷}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、基本计算题（每小题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*、, leftmargin=2.2em, itemsep=0.9em, topsep=0.6em]
+  \item 求微分方程 $y'' + 9y = x\cos 3x$ 对应的齐次方程的通解，并写出非齐次方程的特解形式.
+
+  \item 设二阶线性微分方程 $y'' + a(x)y' + b(x)y = f(x)$ 有三个特解 $y_1 = x,\ y_2 = x + 2e^x,\ y_3 = x + (2+3x)e^x$，求其通解.
+
+  \item 已知直线 $L_1: \begin{cases} x - 3y + z = 0 \\ 2x - 4y + z = -1 \end{cases}$ 和 $L_2: x = \dfrac{y+1}{3} = \dfrac{z-2}{4}$，求 $L_1$ 与 $L_2$ 之间的距离 $d$.
+
+  \item 设由方程 $F(x-y, y-z, z-x) = 0$ 确定隐函数 $z = z(x,y)$，$F$ 有连续偏导数且 $F_2' - F_3' \neq 0$，求 $dz$.
+
+  \item 求曲线 $L: \begin{cases} x^2 + y^2 + z^2 = 4 \\ (x-1)^2 + y^2 = 1 \end{cases}$ 在点 $P(1,1,\sqrt{2})$ 处的法平面方程.
+
+  \item 求椭圆曲线 $\begin{cases} z = x^2 + y^2 \\ x + y + z = 4 \end{cases}$ 上距离原点最近的点.
+
+  \item 计算 $I = \displaystyle\iint_D \big(x^2y^2 + x\sin(x^2+y^2)\big)\,dxdy$，其中 $D$ 为 $|x| + |y| \le 1$.
+
+  \item 设平面区域 $D$ 由直线 $y=x$，圆弧 $y = 1 + \sqrt{1-x^2}$ 及 $y$ 轴所围成，计算 $I = \displaystyle\iint_D xy\,d\sigma$.
+
+  \item 求二次积分 $I = \displaystyle\int_0^1 dx \int_x^1 e^{-y^2}\,dy$.
+
+  \item 求 $I = \displaystyle\iiint_\Omega \dfrac{1}{\sqrt{x^2+y^2+z^2}}\,dv$，其中 $\Omega$ 是由曲面 $z = \sqrt{x^2+y^2}$ 与 $z = 1$ 所围成的区域.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、综合题（每小题 8 分，共 40 分）}
+
+\begin{enumerate}[label=\arabic*、, leftmargin=2.2em, itemsep=0.9em, topsep=0.6em]
+  \item 设变换 $\begin{cases} u = x - 2\sqrt{y} \\ v = x + 2\sqrt{y} \end{cases}$ 把方程 $\dfrac{\partial^2 z}{\partial x^2} - y\dfrac{\partial^2 z}{\partial y^2} - \dfrac{1}{2}\dfrac{\partial z}{\partial y} = 0$ 化为以 $u,v$ 为自变量的方程，求新方程.
+
+  \item 讨论二元函数 $f(x,y) = \begin{cases} \dfrac{x^2y^2}{(x^2+y^2)^{\frac{3}{2}}}, & x^2+y^2 \neq 0 \\ 0, & x^2+y^2 = 0 \end{cases}$ 在原点 $(0,0)$ 处（1）连续性；（2）偏导数是否存在；（3）是否可微.
+
+  \item 求常数 $a,b,c$ 的值，使函数 $f(x,y,z) = axy^2 + byz + cx^3z^2$ 在点 $M(1,2,-1)$ 处沿 $x$ 轴正向的方向导数取得最大值 $64$.
+
+  \item 求 $I = \displaystyle\iiint_\Omega z\,dv$，其中 $\Omega$ 是由平面曲线 $\begin{cases} y^2 = 2z \\ x = 0 \end{cases}$ 绕 $z$ 轴旋转一周所得的旋转曲面与平面 $z=1,\ z=2$ 所围成的区域.
+
+  \item 曲面 $x^2 + y^2 + z = 4$ 将球体 $x^2 + y^2 + z^2 \le 4z$ 分为两部分，求这两部分的体积比.
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+  {\Large\bfseries 2021--2022 学年第二学期期中考试试卷参考答案}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、基本计算题（每小题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*、, leftmargin=2.2em, itemsep=0.9em, topsep=0.6em]
+  \item 【解析】微分方程 $y'' + 9y = x\cos 3x$ 的齐次方程为 $y'' + 9y = 0$.
+
+  齐次方程的特征方程为 $\lambda^2 + 9 = 0$，可得特征根为 $\lambda = \pm 3i$.
+
+  所以齐次方程 $y'' + 9y = 0$ 的通解为 $y = C_1\cos 3x + C_2\sin 3x$.
+
+  $y'' + 9y = x\cos 3x$ 的非齐次项为 $f(x) = x\cos 3x$，$\pm 3i$ 是特征复根，
+
+  所以 $y'' + 9y = x\cos 3x$ 的待定特解形式为 $y^* = x(ax+b)\cos 3x + x(cx+d)\sin 3x$.
+
+  \item 【解析】由条件知，$y_2 - y_1 = 2e^x,\ y_3 - y_2 = 3xe^x$ 为对应的齐次方程的解.
+
+  对应的齐次方程的通解为 $\bar{y} = C_1e^x + C_2xe^x$.
+
+  所以原方程的通解为 $y = \bar{y} + y_1 = C_1e^x + C_2xe^x + x$.
+
+  \item 【解析】$L_1$ 的方向矢量 $\vec{s}_1 = \{1,-3,1\} \times \{2,-4,1\} = \{1,1,2\}$，
+
+  $L_2$ 的方向矢量 $\vec{s}_2 = \{1,3,4\}$，
+
+  得 $\vec{s}_1 \times \vec{s}_2 = \{-2,-2,2\} \parallel \{1,1,-1\}$.
+
+  取 $L_1$ 上的点 $P(-1,0,1)$ 和法矢量 $\vec{n} = \{1,1,-1\}$，得到平面方程为
+  \[
+    (x+1) + y - (z-1) = 0, \quad \text{即 } x + y - z + 2 = 0.
+  \]
+  取 $L_2$ 上的点 $Q(0,-1,2)$，则点 $Q$ 到 $x + y - z + 2 = 0$ 的距离为
+  \[
+    d = \frac{|-1 - 2 + 2|}{\sqrt{3}} = \frac{1}{\sqrt{3}}.
+  \]
+
+  \item 【解析】将方程 $F(x-y, y-z, z-x) = 0$ 对 $x, y$ 分别求偏导，得
+  \[
+    F_1' - F_2'\frac{\partial z}{\partial x} + F_3'\left(\frac{\partial z}{\partial x} - 1\right) = 0, \quad
+    -F_1' + F_2'\left(1 - \frac{\partial z}{\partial y}\right) + F_3'\frac{\partial z}{\partial y} = 0.
+  \]
+  解得 $\dfrac{\partial z}{\partial x} = \dfrac{F_1' - F_3'}{F_2' - F_3'}$，$\dfrac{\partial z}{\partial y} = \dfrac{F_2' - F_1'}{F_2' - F_3'}$.
+
+  由此得出 $dz = \dfrac{\partial z}{\partial x}\,dx + \dfrac{\partial z}{\partial y}\,dy = \dfrac{F_1' - F_3'}{F_2' - F_3'}\,dx + \dfrac{F_2' - F_1'}{F_2' - F_3'}\,dy$.
+
+  \item 【解析】令 $F(x,y,z) = x^2 + y^2 + z^2 - 4$，$G(x,y,z) = (x-1)^2 + y^2 - 1$，
+
+  则两个曲面的法矢量分别为：
+  \[
+    \vec{n}_F = \{2x, 2y, 2z\}\big|_P = \{2, 2, 2\sqrt{2}\} \parallel \{1, 1, \sqrt{2}\}, \quad
+    \vec{n}_G = \{2(x-1), 2y, 0\}\big|_P = \{0, 2, 0\} \parallel \{0, 1, 0\}.
+  \]
+  切向量可取为 $\vec{T} = \{1, 1, \sqrt{2}\} \times \{0, 1, 0\} = \{-\sqrt{2}, 0, 1\}$.
+
+  所以法平面方程 $-\sqrt{2}(x-1) + 0\cdot(y-1) + (z - \sqrt{2}) = 0$，即 $z = \sqrt{2}x$.
+
+  \item 【解析】设拉格朗日函数 $F(x,y,z,\lambda,\mu) = x^2 + y^2 + z^2 + \lambda(x^2 + y^2 - z) + \mu(x + y + z - 4)$.
+
+  解方程组
+  \[
+    \begin{cases}
+      F_x = 2x + 2\lambda x + \mu = 0, \\
+      F_y = 2y + 2\lambda y + \mu = 0, \\
+      F_z = 2z - \lambda + \mu = 0, \\
+      F_\lambda = x^2 + y^2 - z = 0, \\
+      F_\mu = x + y + z - 4 = 0,
+    \end{cases}
+  \]
+  得驻点 $M_1(1,1,2)$，$M_2(-2,-2,8)$.
+
+  比较得 $1^2 + 1^2 + 2^2 < (-2)^2 + (-2)^2 + 8^2$，所以点 $M_1(1,1,2)$ 为距离原点最近的点.
+
+  \item 【解析】由于 $D$ 关于 $y$ 轴对称，$x\sin(x^2+y^2)$ 是关于 $x$ 的奇函数，所以
+  \[
+    \iint_D x\sin(x^2+y^2)\,dxdy = 0.
+  \]
+  又 $D$ 关于坐标轴对称，$x^2y^2$ 既是 $x$ 的偶函数，又是 $y$ 的偶函数，所以
+  \[
+    I = 4\iint_{D_1} x^2y^2\,dxdy \quad (\text{$D_1$ 是 $D$ 中第一象限部分}) = 4\int_0^1 x^2\,dx \int_0^{1-x} y^2\,dy = \frac{1}{45}.
+  \]
+
+  \item 【解析】用极坐标变换：$D:\ \dfrac{\pi}{4} \le \theta \le \dfrac{\pi}{2}$，$\ 0 \le r \le 2\sin\theta$.
+  \begin{align*}
+    I &= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} d\theta \int_0^{2\sin\theta} r\cos\theta \cdot r\sin\theta \cdot r\,dr = \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \sin\theta\cos\theta\,d\theta \int_0^{2\sin\theta} r^3\,dr \\
+      &= 4\int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \sin^5\theta\,d(\sin\theta) = \frac{7}{12}.
+  \end{align*}
+
+  \item 【解析】
+  \begin{align*}
+    I &= \int_0^1 dx \int_x^1 e^{-y^2}\,dy = \int_0^1 e^{-y^2}\,dy \int_0^y dx = \int_0^1 y e^{-y^2}\,dy \\
+      &= \left.-\frac{1}{2}e^{-y^2}\right|_0^1 = -\frac{1}{2}(e^{-1} - 1) = \frac{1 - e^{-1}}{2}.
+  \end{align*}
+
+  \item 【解析】利用球面坐标
+  \[
+    I = \int_0^{2\pi} d\theta \int_0^{\frac{\pi}{4}} d\varphi \int_0^{\frac{1}{\cos\varphi}} \frac{1}{\rho}\cdot \rho^2\sin\varphi\,d\rho = \pi \int_0^{\frac{\pi}{4}} \sin\varphi \cdot \frac{1}{\cos^2\varphi}\,d\varphi = (\sqrt{2} - 1)\pi.
+  \]
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{二、综合题（每小题 8 分，共 40 分）}
+
+\begin{enumerate}[label=\arabic*、, leftmargin=2.2em, itemsep=0.9em, topsep=0.6em]
+  \item 【解析】$z$ 是以 $u,v$ 为中间变量，以 $x,y$ 为自变量的复合函数：
+  \begin{align*}
+    \frac{\partial z}{\partial x} &= \frac{\partial z}{\partial u}\cdot\frac{\partial u}{\partial x} + \frac{\partial z}{\partial v}\cdot\frac{\partial v}{\partial x} = \frac{\partial z}{\partial u} + \frac{\partial z}{\partial v}, \\
+    \frac{\partial z}{\partial y} &= \frac{\partial z}{\partial u}\cdot\frac{\partial u}{\partial y} + \frac{\partial z}{\partial v}\cdot\frac{\partial v}{\partial y} = \frac{1}{\sqrt{y}}\left(-\frac{\partial z}{\partial u} + \frac{\partial z}{\partial v}\right), \\
+    \frac{\partial^2 z}{\partial x^2} &= \frac{\partial^2 z}{\partial u^2} + 2\frac{\partial^2 z}{\partial u\partial v} + \frac{\partial^2 z}{\partial v^2}, \\
+    \frac{\partial^2 z}{\partial y^2} &= -\frac{1}{2}y^{-\frac{3}{2}}\left(-\frac{\partial z}{\partial u} + \frac{\partial z}{\partial v}\right) + \frac{1}{\sqrt{y}}\left(\frac{\partial^2 z}{\partial u^2}\cdot\frac{1}{\sqrt{y}} + \frac{\partial^2 z}{\partial u\partial v}\cdot\frac{-2}{\sqrt{y}} + \frac{\partial^2 z}{\partial v^2}\cdot\frac{1}{\sqrt{y}}\right).
+  \end{align*}
+  代入方程 $\dfrac{\partial^2 z}{\partial x^2} - y\dfrac{\partial^2 z}{\partial y^2} - \dfrac{1}{2}\dfrac{\partial z}{\partial y} = 0$ 得
+  \[
+    \frac{\partial^2 z}{\partial x^2} - y\frac{\partial^2 z}{\partial y^2} - \frac{1}{2}\frac{\partial z}{\partial y} = 4\frac{\partial^2 z}{\partial u\partial v} = 0,
+  \]
+  所以变换后的方程为 $\dfrac{\partial^2 z}{\partial u\partial v} = 0$.
+
+  \item 【解析】
+  \begin{enumerate}[label=(\arabic*), leftmargin=2em, itemsep=0.4em, topsep=0.3em]
+    \item 因为 $0 \le f(x,y) = \dfrac{x^2 y^2}{(x^2+y^2)^{\frac{3}{2}}} \le \dfrac{1}{4}\sqrt{x^2+y^2}$，所以 $\lim\limits_{x\to 0,\ y\to 0} f(x,y) = 0 = f(0,0)$，故 $f(x,y)$ 在 $(0,0)$ 点连续.
+    \item 因为 $f(x,0) = 0$，所以 $f_x(0,0) = \lim\limits_{x\to 0}\dfrac{f(x,0) - f(0,0)}{x} = 0$，同理 $f_y(0,0) = 0$.
+    \item 因为
+    \[
+      \lim_{\Delta x\to 0,\ \Delta y\to 0} \frac{\Delta f - [f_x(0,0)\Delta x + f_y(0,0)\Delta y]}{\sqrt{\Delta x^2 + \Delta y^2}} = \lim_{\Delta x\to 0,\ \Delta y\to 0} \frac{\Delta x^2 \cdot \Delta y^2}{(\Delta x^2 + \Delta y^2)^2},
+    \]
+    当取 $\Delta y = \Delta x \to 0$ 时，上式 $= \dfrac{1}{4} \neq 0$，所以 $f(x,y)$ 在 $(0,0)$ 处不可微.
+  \end{enumerate}
+
+  \item 【解析】$f_x'(x,y,z) = ay^2 + 3cx^2z^2$，$f_y'(x,y,z) = 2axy + bz$，$f_z'(x,y,z) = by + 2cx^3z$.
+
+  梯度 $\grad f(1,2,-1) = (4a + 3c,\ 4a - b,\ 2b - 2c)$.
+
+  设 $\vec{l} = (1,0,0)$，则 $\cos\alpha = 1,\ \cos\beta = 0,\ \cos\gamma = 0$，
+
+  故 $\left.\dfrac{\partial f}{\partial l}\right|_{(1,2,-1)} = f_x'(1,2,-1)\cos\alpha + f_y'(1,2,-1)\cos\beta + f_z'(1,2,-1)\cos\gamma = 4a + 3c$.
+
+  方向导数沿梯度的方向达到最大值，且其最大值为梯度的模，根据题意有
+  \[
+    \begin{cases}
+      4a + 3c = 64, \\
+      4a - b = 0, \\
+      2b - 2c = 0,
+    \end{cases}
+  \]
+  故 $a = 4,\ b = c = 16$.
+
+  \item 【解析】旋转曲面方程为 $x^2 + y^2 = 2z$.
+
+  采用投影法：
+  \[
+    I = \int_0^{2\pi} d\theta \int_0^{\sqrt{2}} r\,dr \int_1^2 z\,dz + \int_0^{2\pi} d\theta \int_{\sqrt{2}}^2 r\,dr \int_{\frac{r^2}{2}}^2 z\,dz = \frac{14}{3}\pi.
+  \]
+
+  \item 【解析】设球体两部分的体积分别为 $V_1, V_2$.
+
+  由 $\begin{cases} x^2 + y^2 + z = 4 \\ x^2 + y^2 + z^2 = 4z \end{cases}$ 得交线 $\begin{cases} x^2 + y^2 = 3 \\ z = 1 \end{cases}$.
+  \[
+    V_1 = \iiint_\Omega dv = \int_0^{2\pi} d\theta \int_0^{\sqrt{3}} r\,dr \int_{2-\sqrt{4-r^2}}^{4-r^2} dz = 2\pi \left(\int_0^{\sqrt{3}} \big(2 - r^2 + \sqrt{4-r^2}\big)r\,dr\right) = \frac{37}{6}\pi.
+  \]
+  $V_2 = \dfrac{32}{3}\pi - V_1 = \dfrac{27}{6}\pi$.
+
+  故 $V_1 : V_2 = 37 : 27$.
+\end{enumerate}
+
+\end{document}

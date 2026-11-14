@@ -1,0 +1,300 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\blank}[1][2.6cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2024～2025 学年第一学期}\\[0.35em]
+  {\Large\bfseries 《高等数学 A》（上）期中考试试卷（闭卷，启明学院用）}\\[0.6em]
+  {\normalsize
+    考试日期：2024-11-16\quad
+    考试时间：8:30--11:00 AM\\[0.35em]
+    院(系)：\underline{\;\;启明学院\;\;}\quad
+    专业班级：\blank[2.6cm]\quad
+    学号：\blank[2.5cm]\quad
+    姓名：\blank[2.3cm]
+  }
+\end{center}
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{|c|*{6}{wc{1.4cm}|}}
+    \hline
+    题号 & 一 & 二 & 三 & 四 & 五 & 总分 \\
+    \hline
+    得分 & & & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\vspace{0.7em}
+
+\section*{第一部分\quad 期中考试试题}
+
+\textbf{一、填空题（每小题 4 分，共 20 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.75em, topsep=0.5em]
+  \item $\inf\{r\in\mathbb{Q}: r^2 < 2\} = \blank$.
+
+  \item 已知 $\lim\limits_{n\to\infty}(a_{n+1}-a_n)=a$，那么 $\lim\limits_{n\to\infty}\dfrac{a_n}{n} = \blank$.
+
+  \item $\lim\limits_{x\to 0^+}\dfrac{\ln(\sin ax)}{\ln(\sin bx)} = \blank\quad (a,b>0)$.
+
+  \item 设 $y = e^{\arctan f(x)} + x$，其中 $f(x)$ 是可导函数，则 $dy = \blank[4.2cm]$.
+
+  \item 设 $y = y(x)$ 是由方程 $\sin(xy) = e^y - 1$ 确定的隐函数，则 $y'(0) = \blank$.
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{二、选择题（每小题 4 分，共 12 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.85em, topsep=0.5em]
+  \item 当 $n\to\infty$，如下数列发散的是 \blank[1.8cm].
+  \begin{enumerate}[label=\Alph*., leftmargin=1.8em, itemsep=0.35em, topsep=0.35em]
+    \item $1 + \dfrac{1}{2} + \dfrac{1}{3} + \cdots + \dfrac{1}{n}$
+    \item $\dfrac{1 + \sqrt{2} + \sqrt[3]{3} + \cdots + \sqrt[n]{n}}{n}$
+    \item $\left(1 - \dfrac{1}{n+1}\right)^{\sin n}$
+    \item $\dfrac{\sin n}{n}$
+  \end{enumerate}
+
+  \item 下列说法错误的是 \blank[1.8cm].
+  \begin{enumerate}[label=\Alph*., leftmargin=1.8em, itemsep=0.3em, topsep=0.35em]
+    \item 单调函数的间断点都是第一类间断点.
+    \item 若 $\{a_n\}$ 是有界数列，$\{b_n\}$ 趋于 $0$，则 $\{a_n b_n\}$ 一定是有界数列且趋于 $0$.
+    \item 有界数列必有收敛子列，且都收敛到同一个极限.
+    \item Riemann 函数在 $(0,1)$ 内任何无理点处都连续.
+  \end{enumerate}
+
+  \item 当 $x\to 0$ 时，$\sqrt{1+x}\tan x - (ax^3 + bx^2 + cx)$ 是 $x^3$ 的等价无穷小，则 \blank[1.8cm].
+  \begin{enumerate}[label=\Alph*., leftmargin=1.8em, itemsep=0.35em, topsep=0.35em]
+    \item $a=\dfrac{5}{24},\ b=\dfrac{1}{2},\ c=1$
+    \item $a=\dfrac{5}{24},\ b=2,\ c=1$
+    \item $a=-\dfrac{19}{24},\ b=2,\ c=1$
+    \item $a=-\dfrac{19}{24},\ b=\dfrac{1}{2},\ c=1$
+  \end{enumerate}
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{三、计算题（每小题 7 分，共 28 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 设 $a_n = \dfrac{1}{\sqrt{n^2+1}} + \dfrac{2}{\sqrt{n^2+2}} + \cdots + \dfrac{n}{\sqrt{n^2+n}}$，计算 $\lim\limits_{n\to\infty} a_n$.
+
+  \item 求极限 $\lim\limits_{x\to 1^-} \ln x \cdot \ln(1-x)$.
+
+  \item 设 $x = a(t\sin t),\ y = a(t\cos t)\ (a\neq 0)$，求 $\dfrac{dy}{dx},\ \dfrac{d^2y}{dx^2}$.
+
+  \item 求函数 $f(x) = e^{\sin x}$ 具有 Peano 余项的 5 阶麦克劳林展开式.
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{四、解答题（每小题 8 分，共 16 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 求常数 $a,b$ 使得下面的函数在定义域内可导并讨论 $f'(x)$ 在 $0$ 点的连续性.
+  \[
+    f(x) = \begin{cases}
+      \dfrac{\sin^2(ax)}{x}, & x > 0, \\[0.6em]
+      (2a-1)x + b, & x \le 0.
+    \end{cases}
+  \]
+
+  \item 判断 $f(x) = x + \sin x$ 是否一致连续，并说明理由.
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{五、证明题（每小题 8 分，共 24 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 已知 $f(x)$ 在 $[a,b]$ 上可导. 假设存在 $x_0\in(a,b)$ 使得 $f'(x_0)=0$. 证明：存在 $\xi\in(a,b)$，s.t. $f'(\xi) = \dfrac{f(\xi)-f(a)}{b-a}$.
+
+  \item 用 $\varepsilon\text{--}\delta$ 语言证明以下极限：$\lim\limits_{x\to 1}\dfrac{x}{2x^2+1} = \dfrac{1}{3}$.
+
+  \item 设函数 $f(x)$ 在 $[-1,1]$ 上有三阶导函数，且 $f(-1)=f(0)=0,\ f(1)=1,\ f'(0)=0$. 证明：存在 $\xi\in(-1,1)$，使得 $f'''(\xi) \ge 3$.
+\end{enumerate}
+
+\newpage
+
+\section*{第二部分\quad 参考答案}
+
+\textbf{一、填空题（每小题 4 分，共 20 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.55em, topsep=0.4em]
+  \item $-\sqrt{2}$
+  \item $a$
+  \item $1$
+  \item $\left(\dfrac{f'(x)}{1+f^2(x)}e^{\arctan f(x)} + 1\right)dx$
+  \item $0$
+\end{enumerate}
+
+\vspace{0.7em}
+\textbf{二、选择题（每小题 4 分，共 12 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.5em, topsep=0.4em]
+  \item A
+  \item C
+  \item D
+\end{enumerate}
+
+\vspace{0.7em}
+\textbf{三、计算题（每小题 7 分，共 28 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=1.0em, topsep=0.4em]
+  \item \textbf{解：}
+  \[
+    a_n = \frac{1}{\sqrt{n^2+1}} + \frac{2}{\sqrt{n^2+2}} + \cdots + \frac{n}{\sqrt{n^2+n}}
+    \ge \frac{1+2+\cdots+n}{\sqrt{n^2+n}} = \frac{n(n+1)}{2\sqrt{n^2+n}}, \tag*{(3\text{ 分})}
+  \]
+  \[
+    \lim_{n\to\infty}\frac{n(n+1)}{2\sqrt{n^2+n}} = +\infty. \tag*{(2\text{ 分})}
+  \]
+  由数列极限的比较性质，所以 $\lim\limits_{n\to\infty} a_n = +\infty$. \hfill $(2\text{ 分})$
+
+  \item \textbf{解法 1：}
+  \[
+    \lim_{x\to 1^-}\ln x\cdot\ln(1-x)
+    = \lim_{x\to 1^-}\frac{\ln(1-x)}{(\ln x)^{-1}}
+    = \lim_{x\to 1^-}\frac{\dfrac{-1}{1-x}}{(-1)(\ln x)^{-2}\cdot\dfrac{1}{x}} \tag*{(4\text{ 分})}
+  \]
+  \[
+    = \lim_{x\to 1^-}\frac{x\ln^2 x}{1-x}
+    = \lim_{x\to 1^-}\frac{\ln^2 x + 2\ln x}{-1} = 0. \tag*{(3\text{ 分})}
+  \]
+
+  \textbf{解法 2：}令 $t = 1-x$，$x\to 1^-$ 时，$t\to 0^+$，
+  \[
+    \lim_{x\to 1^-}\ln x\cdot\ln(1-x)
+    = \lim_{t\to 0^+}\ln(1-t)\cdot\ln t
+    = \lim_{t\to 0^+}\frac{\ln(1-t)}{-t}\cdot(-t\ln t)
+    = -\lim_{t\to 0^+} t\ln t \tag*{(4\text{ 分})}
+  \]
+  \[
+    = -\lim_{t\to 0^+}\frac{\ln t}{\dfrac{1}{t}}
+    = -\lim_{t\to 0^+}\frac{\dfrac{1}{t}}{-\dfrac{1}{t^2}}
+    = \lim_{t\to 0^+} t = 0. \tag*{(3\text{ 分})}
+  \]
+
+  \item \textbf{解：}
+  \[
+    \frac{dy}{dx} = \frac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}
+    = \frac{a(\cos t - t\sin t)}{a(\sin t + t\cos t)}
+    = \frac{\cos t - t\sin t}{\sin t + t\cos t}, \tag*{(4\text{ 分})}
+  \]
+  \[
+    \frac{d^2y}{dx^2} = \frac{\dfrac{d}{dt}\left(\dfrac{\cos t - t\sin t}{\sin t + t\cos t}\right)}{\dfrac{dx}{dt}}
+    = \frac{-2 - t^2}{a(\sin t + t\cos t)^3}. \tag*{(3\text{ 分})}
+  \]
+
+  \item \textbf{解：}因为
+  \[
+    \sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} + o(x^5)\ (x\to 0), \tag*{(2\text{ 分})}
+  \]
+  \[
+    e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + o(x^5)\ (x\to 0), \tag*{(2\text{ 分})}
+  \]
+  所以
+  \begin{align*}
+    e^{\sin x} &= \sum_{k=0}^5 \frac{(\sin x)^k}{k!} + o(\sin^5 x) \\
+    &= 1 + x - \frac{x^3}{3!} + \frac{x^5}{5!} + \frac{1}{2!}\left(x^2 - \frac{x^4}{3}\right) + \frac{1}{3!}\left(x^3 - \frac{x^5}{2}\right) + \frac{x^4}{4!} + \frac{x^5}{5!} + o(x^5) \\
+    &= 1 + x + \frac{x^2}{2} - \frac{x^4}{8} - \frac{x^5}{15} + o(x^5)\ (x\to 0). \tag*{(3\text{ 分})}
+  \end{align*}
+\end{enumerate}
+
+\vspace{0.7em}
+\textbf{四、解答题（每小题 8 分，共 16 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=1.0em, topsep=0.4em]
+  \item \textbf{解：}$\lim\limits_{x\to 0^+} f(x) = \lim\limits_{x\to 0^+}\dfrac{\sin^2(ax)}{x} = 0$，$\lim\limits_{x\to 0^-} f(x) = \lim\limits_{x\to 0^-}[(2a-1)x+b] = b = f(0)$，
+
+  由 $f(x)$ 在 $0$ 点连续可得 $b = 0$. \hfill $(2\text{ 分})$
+
+  又 $f'_+(0) = \lim\limits_{x\to 0^+}\dfrac{\frac{\sin^2(ax)}{x}}{x} = a^2 = f'_-(0) = \lim\limits_{x\to 0^-}\dfrac{(2a-1)x}{x} = 2a-1$，解得 $a=1$，且 $f'(0)=1$. \hfill $(2\text{ 分})$
+
+  故
+  \[
+    f'(x) = \begin{cases}
+      \dfrac{x\sin(2x)-\sin^2 x}{x^2}, & x > 0, \\[0.6em]
+      1, & x \le 0.
+    \end{cases}
+  \]
+  \[
+    \lim_{x\to 0^+} f'(x) = \lim_{x\to 0^+}\frac{x\sin(2x)-\sin^2 x}{x^2} = 1 = \lim_{x\to 0^-} f'(x) = f'(0), \tag*{(3\text{ 分})}
+  \]
+  故 $f'(x)$ 在 $0$ 点连续. \hfill $(1\text{ 分})$
+
+  \item \textbf{解：}$f(x) = x + \sin x$ 在 $\mathbb{R}$ 上一致连续. \hfill $(2\text{ 分})$
+
+  理由如下：
+
+  $\forall \varepsilon > 0$，取 $\delta = \dfrac{\varepsilon}{2}$，$\forall x,y\in\mathbb{R}$，且 $|x-y| < \delta$ 时， \hfill $(2\text{ 分})$
+  \[
+    |f(x) - f(y)| = |x + \sin x - y - \sin y| \le |x-y| + |\sin x - \sin y|
+  \]
+  （当 $x\neq y$ 时由 Lagrange 中值定理，$\xi$ 介于 $x,y$ 之间；$x=y$ 时不等式亦显然成立）
+  \[
+    = |x-y| + |\cos\xi|\cdot|x-y| \le 2|x-y| < \varepsilon,
+  \]
+  因此由一致连续的定义可知 $f(x) = x + \sin x$ 在 $\mathbb{R}$ 上一致连续. \hfill $(4\text{ 分})$
+
+  \textit{注：也可直接对 $f(x)$ 应用 Lagrange 中值定理，因 $|f'(x)|=|1+\cos x|\le 2$，故 $f(x)$ 在 $\mathbb{R}$ 上满足 Lipschitz 条件从而一致连续.}
+\end{enumerate}
+
+\vspace{0.7em}
+\textbf{五、证明题（每小题 8 分，共 24 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=1.0em, topsep=0.4em]
+  \item \textbf{证明：}令 $F(x) = e^{-\frac{x}{b-a}}[f(x)-f(a)]$，$F(x)$ 在 $[a,b]$ 上连续，可导， \hfill $(3\text{ 分})$
+
+  且 $F(a)=0$，$F'(x_0) = -\dfrac{1}{b-a}e^{-\frac{x_0}{b-a}}[f(x_0)-f(a)] = -\dfrac{F(x_0)}{b-a}$， \hfill $(2\text{ 分})$
+
+  若 $F(x_0)\neq 0$，则 $\exists\xi_1\in(a,x_0)$，$F'(\xi_1) = \dfrac{F(x_0)-F(a)}{x_0-a} = \dfrac{F(x_0)}{x_0-a}$，
+
+  $F'(x_0)$ 与 $F'(\xi_1)$ 异号，由 Darboux 定理知 $\exists\xi\in(\xi_1,x_0)\subset(a,b)$，$F'(\xi)=0$，即 $f'(\xi)=\dfrac{f(\xi)-f(a)}{b-a}$，结论成立. \hfill $(2\text{ 分})$
+
+  若 $F(x_0)=0$，则取 $\xi=x_0\in(a,b)$，有 $F'(\xi)=0$，结论亦成立. \hfill $(1\text{ 分})$
+
+  \item \textbf{证明：}$\forall \varepsilon > 0$，取 $\delta = \min\{\varepsilon, 1\}$，当 $0 < |x-1| < \delta$ 时， \hfill $(3\text{ 分})$
+  \[
+    \left|\frac{x}{2x^2+1} - \frac{1}{3}\right|
+    = \frac{|x-1|\cdot|2x-1|}{3(2x^2+1)}
+    \le \frac{1}{3}|x-1|\cdot|2(x-1)+1|
+    \le \frac{1}{3}|x-1|(2|x-1|+1)
+    < |x-1| < \varepsilon.
+  \]
+  所以 $\lim\limits_{x\to 1}\dfrac{x}{2x^2+1} = \dfrac{1}{3}$. \hfill $(5\text{ 分})$
+
+  \item \textbf{证明：}由 Taylor 公式，对任意 $x\in[-1,1]\setminus\{0\}$，存在介于 $0$ 与 $x$ 之间的 $\eta$，使得
+  \[
+    f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(\eta)}{3!}x^3, \tag*{(2\text{ 分})}
+  \]
+  分别取 $x=1$ 及 $x=-1$ 可得：
+  \[
+    1 = f(1) = \frac{f''(0)}{2!} + \frac{f'''(\xi_1)}{3!}\quad (0 < \xi_1 < 1), \tag*{(2\text{ 分})}
+  \]
+  \[
+    0 = f(-1) = \frac{f''(0)}{2!} - \frac{f'''(\xi_2)}{3!}\quad (-1 < \xi_2 < 0), \tag*{(2\text{ 分})}
+  \]
+  两式相减可得：
+  \[
+    1 = \frac{f'''(\xi_1) + f'''(\xi_2)}{3!} \le \frac{1}{3}\max\{f'''(\xi_1), f'''(\xi_2)\} = \frac{1}{3}f'''(\xi)
+  \]
+  （其中 $\xi\in\{\xi_1,\xi_2\}\subset(-1,1)$ 为使 $f'''(\xi_1), f'''(\xi_2)$ 取较大者之点），即 $f'''(\xi)\ge 3$. \hfill $(2\text{ 分})$
+\end{enumerate}
+
+\end{document}

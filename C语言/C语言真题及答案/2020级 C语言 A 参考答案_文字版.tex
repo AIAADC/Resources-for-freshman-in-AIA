@@ -1,0 +1,586 @@
+\documentclass[UTF8,a4paper,10.5pt]{ctexart}
+\usepackage[left=1.9cm,right=1.9cm,top=1.8cm,bottom=1.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue!70!black}\bfseries,
+    commentstyle=\color{green!45!black},
+    stringstyle=\color{red!60!black},
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    showstringspaces=false,
+    escapeinside={(*@}{@*)},
+    aboveskip=2pt,
+    belowskip=2pt
+}
+
+\lstdefinestyle{outputstyle}{
+    language={},
+    basicstyle=\ttfamily\small,
+    keywordstyle={},
+    commentstyle={},
+    stringstyle={},
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    showstringspaces=false,
+    aboveskip=2pt,
+    belowskip=4pt,
+    frame=leftline,
+    framerule=1.5pt,
+    rulecolor=\color{gray!50},
+    xleftmargin=1.2em
+}
+
+\newcommand{\blankans}[1]{\underline{\ \texttt{#1}\ }}
+\newcommand{\parenval}[1]{\hfill(\makebox[1.4cm][c]{#1})}
+
+\begin{document}
+
+\begin{center}
+    {\Large\bfseries 2020 级信息学院《C 语言程序设计》考试试题（A）参考答案}
+\end{center}
+
+\medskip
+
+\noindent\textbf{一、判断下列语句或程序段的对错。（“$\times$”表示错，“$\checkmark$”表示对）（10分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=2pt]
+    \item \texttt{int x=05678;} \parenval{$\times$}
+    \item \texttt{int x = 0x177f;}\\
+          \texttt{float y = 1.8e+5;} \parenval{$\checkmark$}
+    \item \lstinline|char _a01='\101';| \parenval{$\checkmark$}
+    \item \texttt{int **p, (*pa)[10];}\\
+          \texttt{p = pa;} \parenval{$\times$}
+    \item \texttt{int (*pa)[5],a[5][5];}\\
+          \texttt{pa = a++;} \parenval{$\times$}
+    \item \texttt{char *str[10];}\\
+          \texttt{gets(str[0]);} \parenval{$\times$}
+    \item \texttt{int *p, a[5][5];}\\
+          \texttt{p = *a+1;} \parenval{$\checkmark$}
+    \item \texttt{int a[5]=\{0, 1, 2,3,4,5\};} \parenval{$\times$}
+    \item \texttt{char **p, *pa[10];}\\
+          \texttt{p = pa;} \parenval{$\checkmark$}
+    \item \lstinline|char *str = "\\tabcd\123\\n";| \parenval{$\checkmark$}
+\end{enumerate}
+
+\medskip
+
+\noindent\textbf{二、计算下列表达式的值（10分）}
+
+\noindent 假设 \texttt{int} 和 \texttt{unsigned int} 类型均为 16 位长度，且各题彼此独立。
+
+\noindent 设 \texttt{unsigned int a=2, b=3; int c=4, d=5; float f; char str[10]="hust";}
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=2pt]
+    \item \texttt{f = c/b + d/a;} \parenval{\texttt{3.0}}
+    \item \texttt{--a || --a \&\& a;} \parenval{\texttt{1}}
+    \item \texttt{(a\^{}c) \& (b|d)} \parenval{\texttt{6}}
+    \item \texttt{f = sizeof(str) + strlen(str);} \parenval{\texttt{14.0}}
+    \item \texttt{a-c > d - b ? a : b;} \parenval{\texttt{2}}
+\end{enumerate}
+
+\newpage
+\noindent\textbf{三、程序改错（10分）要求：不得改变程序框架，不得重写程序，无需文字说明，直接在代码上添加、删除和修改。}
+
+\noindent 1、如下程序对已知的 \texttt{N} 个字符串排序，其中在 \texttt{main()} 函数中初始化，在 \texttt{sort} 函数中排序（使用指针数组）。
+\begin{lstlisting}
+#include <stdio.h>
+#include <string.h>               // 添加头文件
+#define N 5                       // 添加符号常量定义
+void sort(char *pstr[]);          // 添加函数声明
+
+void main()
+{
+    int i;
+    char str[N][80] = {"basic", "pascal", "colbol", "losp", "agol"};
+    char *pstr[N] = {str[0], str[1], str[2], str[3], str[4]};  // 修改：初始化指针数组
+    sort(pstr);
+    for (i = 0; i < N; i++)
+    {
+        printf("%s\n", pstr[i]);  // 修改：输出 pstr[i]
+    }
+}
+
+void sort(char *pstr[])           // 修改：形参改为 char *pstr[]
+{
+    int i, j;
+    char *temp;
+    for (i = 0; i < N - 1; i++)       // 修改：循环条件改为 i < N - 1
+        for (j = 0; j < N - 1 - i; j++)  // 修改：循环条件改为 j < N - 1 - i
+            if (strcmp(pstr[j], pstr[j + 1]) > 0)  // 修改：用 strcmp 比较字符串大小
+            {
+                temp = pstr[j];
+                pstr[j] = pstr[j + 1];
+                pstr[j + 1] = temp;
+            }
+}
+\end{lstlisting}
+
+\medskip
+\noindent 2、设有 4 个候选人，\texttt{N} 个人参加选举，每次输入一个得票的候选人的名字，要求最后输出个人的得票结果。
+\begin{lstlisting}
+#include <stdio.h>
+#include <string.h>               // 添加头文件
+#define N 10
+struct person
+{
+    char name[10];                // 修改：成员改为字符数组（或 char *name;）
+    int count;
+};
+
+void main()
+{
+    struct person leader[4] = {{"wang", 0},
+                               {"zhao", 0},
+                               {"mao",  0},
+                               {"gao",  0}};
+    int i, j;
+    char name[10];                // 添加字符数组定义
+    for (i = 0; i < N; i++)
+    {
+        gets(name);
+        for (j = 0; j < 4; j++)
+            if (strcmp(leader[j].name, name) == 0)  // 修改：用 strcmp 比较且下标改为 j
+            {
+                leader[j].count++;  // 修改：对 leader[j].count 自增
+                break;              // 修改：改为 break
+            }
+    }
+    printf("\n");
+    for (j = 0; j < 4; j++)
+        printf("%s:%d\n", leader[j].name, leader[j].count);
+}
+\end{lstlisting}
+
+\medskip
+
+\noindent\textbf{四、程序填空（10分）}
+
+\noindent (1)~求已知两个正整数的最大公约数。
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    (*@\blankans{int i}@*);
+    int a, b;
+
+    printf("please input a ,b:");
+    scanf("%d%d", (*@\blankans{\&a, \&b}@*));
+
+    for (i = (*@\blankans{a>b?b:a}@*); i > 0; i--)  // i 初值为 a,b 中的较小值
+    {
+        if ((*@\blankans{a\%i==0 \&\& b\%i==0}@*))
+        {
+            printf("the max  = %d ", i);
+            (*@\blankans{break}@*);
+        }
+    }
+}
+\end{lstlisting}
+
+\medskip
+\noindent (2)~求序列：$1!,\ 2!,\ 3!,\ 4!\cdots\cdots$ 的前 10 项之和。
+\begin{lstlisting}
+(*@\blankans{\#include <stdio.h>}@*)
+
+void main()
+{
+    int i;
+    long int sum, t;  // sum 代表和, t 代表某项
+
+    sum = 0;
+    t = 1;
+
+    for (i = 1; (*@\blankans{i<=10}@*); i++)
+    {
+        sum = (*@\blankans{sum+t}@*);
+        (*@\blankans{t = t*(i+1)}@*);
+    }
+    printf(" sum = %ld", (*@\blankans{sum}@*));
+}
+\end{lstlisting}
+
+\medskip
+\noindent\textbf{五、输出程序运行结果（25分，每题5分，结果写在题目的右边）}
+
+\noindent 1、
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    int i;
+    for (i = 1; i < 10; i++)
+    {
+        if (i % 3)
+        {
+            putchar('W');
+        }
+        else if (i % 6 == 0) break;
+        else continue;
+        printf("U  HAN\n");
+    }
+    printf("I  love you");
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{lstlisting}[style=outputstyle]
+WU  HAN
+WU  HAN
+WU  HAN
+WU  HAN
+I  love you
+\end{lstlisting}
+
+\medskip
+\noindent 2、
+\begin{lstlisting}
+#include <stdio.h>
+
+int n;
+
+void display()
+{
+    int a = 1;
+    static int b = 1;
+    printf("a=%d,  b=%d  c=%d\n", a++, b++, ++n);
+}
+
+void main()
+{
+    int i;
+    for (i = 0; i < 5; i++)
+    {
+        display();
+    }
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{lstlisting}[style=outputstyle]
+a=1,  b=1  c=1
+a=1,  b=2  c=2
+a=1,  b=3  c=3
+a=1,  b=4  c=4
+a=1,  b=5  c=5
+\end{lstlisting}
+
+\medskip
+\noindent 3、
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    char str[][20] = {"china",
+                      "hubei",
+                      "wuhan",
+                      "hust-aia",
+                      "c language"};
+    int i;
+    for (i = 0; i < 5; i++)
+    {
+        printf("%s\n", str[4 - i] + 4 - i);
+    }
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{lstlisting}[style=outputstyle]
+nguage
+t-aia
+han
+ubei
+china
+\end{lstlisting}
+
+\medskip
+\noindent 4、
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    char *str[] = {"pascal", "cobol", "fortran", "lisp", "java"};
+    char **p[] = {str + 4, str + 3, str + 2, str + 1, str};
+    char ***pp = p;
+
+    printf("%s---", **(pp++) + 1);
+    printf("%s---", **(pp++) + 2);
+    printf("%s---", **(pp++) + 1);
+    printf("%s",    **(pp++) + 2);
+    printf("---%s", **(pp));
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{lstlisting}[style=outputstyle]
+ava---sp---ortran---bol---pascal
+\end{lstlisting}
+
+\medskip
+\noindent 5、
+\begin{lstlisting}
+#include <stdio.h>
+#define N 6
+
+void main()
+{
+    int a[N][N];
+    int i, j;
+
+    for (i = 0; i < N; i++)
+    {
+        a[i][0] = 1;
+        a[i][i] = 1;
+    }
+    for (i = 2; i < N; i++)
+    {
+        for (j = 1; j < i; j++)
+        {
+            a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+        }
+    }
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j <= i; j++)
+        {
+            printf("%5d", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{lstlisting}[style=outputstyle]
+    1
+    1    1
+    1    2    1
+    1    3    3    1
+    1    4    6    4    1
+    1    5   10   10    5    1
+\end{lstlisting}
+
+\medskip
+
+\noindent\textbf{六、编程（35分）注意：不得使用全局变量，注意程序结构}
+
+\noindent 1、(1)~编一程序，输入 $x$ 的值，输出 $y$ 的值。（6分）
+\[
+y = \begin{cases}
+x + 10, & x < 10 \\
+2x + 200, & 10 \le x < 100 \\
+3x + 300, & x \ge 100
+\end{cases}
+\]
+
+\noindent 2、编写一猜数游戏程序，随机产生某个小于 $N$ 的正整数，从键盘反复输入整数进行猜数，当未猜中时，提示输入过大或过小。猜中时，指出猜的次数。最多允许猜 20 次。（8分）
+
+\noindent 3、编一程序，要求主函数中输入一行英文和一个字母，被调用的函数返回删除该字母后的那行英文（如有多个，一并删除）并在主函数中输出。（9分）
+
+\noindent 4、某班有学生 $N$ 名，每名学生信息由姓名、性别、学号、成绩 1、成绩 2 和成绩 3 组成，试编程要求：
+\begin{enumerate}[label=（\arabic*）, leftmargin=2.4em, itemsep=2pt]
+    \item 学生信息由键盘输入
+    \item 求每人平均分
+    \item 按平均分数从高到低排序
+    \item 按平均分从高到低显示所有平均分不及格的男生信息。
+\end{enumerate}
+\noindent （每小题写一函数，通过 \texttt{main} 函数调用实现）（12分）
+
+\medskip
+\noindent\textbf{参考程序：}
+
+\medskip
+\noindent 1、
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    float x, y;
+    scanf("%f", &x);
+    if (x < 10)
+    {
+        y = x + 10;
+    }
+    else if (x < 100)
+    {
+        y = 2 * x + 200;
+    }
+    else
+    {
+        y = 3 * x + 300;
+    }
+    printf("y=%f", y);
+}
+\end{lstlisting}
+
+\medskip
+\noindent 2、
+\begin{lstlisting}
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#define N 100
+
+void main()
+{
+    int a, i, x, count;
+    srand((unsigned)time(NULL));
+    a = rand() % (N - 1) + 1;
+    count = 0;
+    for (i = 0; i < 20; i++)
+    {
+        scanf("%d", &x);
+        count++;
+        if (x == a)
+        {
+            break;
+        }
+        else if (x < a)
+        {
+            printf("太小");
+        }
+        else
+        {
+            printf("太大");
+        }
+    }
+    if (i < 20)
+    {
+        printf("猜中用的次数=%d", count);
+    }
+    else
+    {
+        printf("未猜中");
+    }
+}
+\end{lstlisting}
+
+\medskip
+\noindent 3、
+\begin{lstlisting}
+#include <stdio.h>
+#include <string.h>
+
+char *delchar(char *pstr, char c);
+
+void main()
+{
+    char str[80], *ps;
+    char c;
+    gets(str);
+    scanf("%c", &c);
+    ps = delchar(str, c);
+    puts(ps);
+}
+
+char *delchar(char *pstr, char c)
+{
+    static char p[80];
+    int i, j;
+    for (i = 0, j = 0; pstr[i] != '\0'; i++)
+    {
+        if (pstr[i] != c)
+        {
+            p[j++] = pstr[i];
+        }
+    }
+    p[j] = '\0';
+    return p;
+}
+\end{lstlisting}
+
+\medskip
+\noindent 4、
+\begin{lstlisting}
+#include <stdio.h>
+#define N 30
+
+struct student
+{
+    char name[10];
+    char sex;
+    long int no;
+    float score[3];
+    float ave;
+};
+
+void input(struct student *p);
+void average(struct student *p);
+void sort(struct student *p);
+void findnopassm(struct student *p);
+
+void main()
+{
+    struct student stu[N];
+    input(stu);
+    average(stu);
+    sort(stu);
+    findnopassm(stu);
+}
+
+void input(struct student *p)
+{
+    int i;
+    for (i = 0; i < N; i++)
+    {
+        scanf("%s %c%ld%f%f%f", p[i].name, &p[i].sex, &p[i].no,
+              &p[i].score[0], &p[i].score[1], &p[i].score[2]);
+    }
+}
+
+void average(struct student *p)
+{
+    int i;
+    for (i = 0; i < N; i++)
+    {
+        p[i].ave = (p[i].score[0] + p[i].score[1] + p[i].score[2]) / 3;
+        printf("%s\t%ld\t%f\n", p[i].name, p[i].no, p[i].ave);
+    }
+}
+
+void sort(struct student *p)
+{
+    struct student temp;
+    int i, j;
+    for (i = 0; i < N - 1; i++)
+        for (j = 0; j < N - 1 - i; j++)
+        {
+            if (p[j].ave < p[j + 1].ave)
+            {
+                temp = p[j];
+                p[j] = p[j + 1];
+                p[j + 1] = temp;
+            }
+        }
+    for (i = 0; i < N; i++)
+    {
+        printf("%s\t%ld\t%f\n", p[i].name, p[i].no, p[i].ave);
+    }
+}
+
+void findnopassm(struct student *p)
+{
+    int i;
+    for (i = 0; i < N; i++)
+        if (p[i].sex == 'M' && p[i].ave < 60)
+        {
+            printf("%s\t%c\t%ld\t%f\n", p[i].name, p[i].sex, p[i].no, p[i].ave);
+        }
+}
+\end{lstlisting}
+
+\end{document}

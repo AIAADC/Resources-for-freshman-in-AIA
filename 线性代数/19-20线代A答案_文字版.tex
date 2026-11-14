@@ -1,0 +1,202 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.32}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\score}[1]{\hfill$\cdots\text{#1 分}$}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2020 线性代数试题答案（A 卷）}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、判断题（$2' \times 8 = 16'$）}
+
+\vspace{0.3em}
+1\ ($\times$)\quad
+2\ ($\times$)\quad
+3\ ($\times$)\quad
+4\ ($\checkmark$)\quad
+5\ ($\checkmark$)\quad
+6\ ($\times$)\quad
+7\ ($\times$)\quad
+8\ ($\times$)
+
+\vspace{0.9em}
+
+\textbf{二、填空题（$4' \times 5 = 20'$）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.6em, topsep=0.4em]
+  \item $A^5 = \dfrac{1}{3}\begin{bmatrix} 5^5-2 & 5^5+1 & 5^5+1 \\ 5^5+1 & 5^5-2 & 5^5+1 \\ 5^5+1 & 5^5+1 & 5^5-2 \end{bmatrix}$（或 $\begin{bmatrix} 1041 & 1042 & 1042 \\ 1042 & 1041 & 1042 \\ 1042 & 1042 & 1041 \end{bmatrix}$）
+
+  \item 通解为 $x = k_1\begin{bmatrix} 3 \\ 1 \\ 1 \\ 0 \end{bmatrix} + k_2\begin{bmatrix} 1 \\ -2 \\ 0 \\ 1 \end{bmatrix}$. \qquad （结构 $2$ 分；结果 $2$ 分）
+
+  \item $a = -5,\quad b = 4$ \qquad （每个 $2$ 分）
+
+  \item 秩为 $2$
+
+  \item $P = \begin{bmatrix} 1 & 0 & 0 & 2 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{三、计算 $n$ 阶行列式的值（8 分）}
+
+\begin{align*}
+  D_n &= \begin{vmatrix}
+    a+x & b & b & \cdots & b & b \\
+    a & a+x & 0 & \cdots & 0 & 0 \\
+    a & 0 & a+x & \cdots & 0 & 0 \\
+    \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+    a & 0 & 0 & \cdots & a+x & 0 \\
+    a & 0 & 0 & \cdots & 0 & a+x
+  \end{vmatrix} \qquad \text{（}a+x \neq 0\text{，每列乘以 }\dfrac{-a}{a+x}\text{ 加到第一列）} \\[0.6em]
+  &= \begin{vmatrix}
+    (a+x) - (n-1)\dfrac{ab}{a+x} & b & b & \cdots & b & b \\
+    0 & a+x & 0 & \cdots & 0 & 0 \\
+    0 & 0 & a+x & \cdots & 0 & 0 \\
+    \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+    0 & 0 & 0 & \cdots & a+x & 0 \\
+    0 & 0 & 0 & \cdots & 0 & a+x
+  \end{vmatrix} \\[0.6em]
+  &= \left[a + x - (n-1)\frac{ab}{a+x}\right]\cdot (a+x)^{n-1} \\
+  &= (a+x)^n - (n-1)ab(a+x)^{n-2}
+\end{align*}
+
+附注：\par\nopagebreak
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.15em, topsep=0.2em]
+  \item 计算结果对得分 $8$ 分.
+  \item 如有错误：计算过程得 $3\sim 5$ 分；结果得 $3$ 分.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{四、（12 分）}
+
+线性组合表示为方程组 $(\alpha_1, \alpha_2, \alpha_3)x = \beta$ \score{2}
+
+$\begin{bmatrix} 1 & 1 & a & -2 \\ a & 1 & 1 & a-3 \\ 1 & a & 1 & -2 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & a & -2 \\ 0 & 1-a & 1-a^2 & 3(a-1) \\ 0 & 0 & (1-a)(2+a) & 3(a-1) \end{bmatrix}$ \hfill $\cdots\text{1 分（有变换就给分）}$
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.35em, topsep=0.3em]
+  \item $a \neq 1,\ a \neq -2$，唯一线性表示 \score{2}
+  \item $a = -2$ 不能线性表示 \score{2}
+  \item $a = 1$ 无穷线性表示 \score{2}
+
+  $x = k_1\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix} + k_2\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix} + \begin{bmatrix} -2 \\ 0 \\ 0 \end{bmatrix}$，
+
+  或者 $(-k_1 - k_2 - 2)\alpha_1 + k_1\alpha_2 + k_2\alpha_3 = \beta,\quad k_1, k_2 \in \mathbb{R}$ \score{3}
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{五、（12 分）}
+
+$A = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 0 & -1 \\ 1 & -1 & 0 \end{bmatrix}$， \score{2}
+
+$|\lambda I - A| = (\lambda - 1)^2(\lambda + 2)$，特征值 $1, 1, -2$， \score{2}
+
+$\lambda = 1$ 对应特征向量 $\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$， \score{2}
+
+$\lambda = -2$ 对应特征向量 $\begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}$ \score{1}
+
+特征向量正交化，标准化 \score{3}
+
+$C = \begin{bmatrix}
+  \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{6}} & \dfrac{-1}{\sqrt{3}} \\[0.8em]
+  \dfrac{1}{\sqrt{2}} & \dfrac{-1}{\sqrt{6}} & \dfrac{1}{\sqrt{3}} \\[0.8em]
+  0 & \dfrac{2}{\sqrt{6}} & \dfrac{1}{\sqrt{3}}
+\end{bmatrix}$，$X = CY$，$f = y_1^2 + y_2^2 - 2y_3^2$ \score{2}
+
+附注：\par\nopagebreak
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.15em, topsep=0.2em]
+  \item 如特征向量没有标准化、正交化，扣 $3$ 分.
+  \item 如果某一步起错误，后面有过程，给后面步骤不超过一半的得分.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{六、（12 分）}
+
+由题意矩阵 $A$ 秩为 $3$， \score{2}
+
+齐次解空间 $\dim N(A) = 4 - 3 = 1$
+
+或者基础解系为一个向量，或者给出解的结构 \score{2}
+
+$Ax = x_1\alpha_1 + x_2\alpha_2 + x_3\alpha_3 + x_4\alpha_4 = (x_1 + x_2)\alpha_2 + (-2x_1 + x_3)\alpha_3 + x_4\alpha_4 = 0$，
+
+由线性无关性，得 $\begin{cases} x_1 + x_2 = 0 \\ -2x_1 + x_3 = 0 \\ x_4 = 0 \end{cases}$，$x = k\begin{bmatrix} -1 \\ 1 \\ -2 \\ 0 \end{bmatrix}$， \score{3}
+
+（$\beta = \alpha_1 + \alpha_2 - \alpha_3 - \alpha_4 = A\begin{bmatrix} 1 \\ 1 \\ -1 \\ -1 \end{bmatrix}$，则 $Ax = \beta$ 有特解 $\begin{bmatrix} 1 \\ 1 \\ -1 \\ -1 \end{bmatrix}$）， \score{3}
+
+则 $Ax = \beta$ 通解 $x = k\begin{bmatrix} -1 \\ 1 \\ -2 \\ 0 \end{bmatrix} + \begin{bmatrix} 1 \\ 1 \\ -1 \\ -1 \end{bmatrix}$ \score{2}
+
+\vspace{0.9em}
+
+\textbf{七、（10 分）}
+
+设 $A$ 为实对称矩阵，则 $A$ 可以相似对角化 \score{3}
+
+设 $A$ 有特征值 $\lambda$，则满足 $(\lambda - 1)(\lambda^2 + 2\lambda + 5) = 0$，
+
+$\lambda^2 + 2\lambda + 5 = (\lambda + 1)^2 + 4 > 0$，所以 $\lambda = 1$，即 $A$ 的特征值只能是 $1$， \score{4}
+
+由 $A$ 为实对称矩阵，故必存在正交矩阵 $C$，
+
+使得 $C^{-1}AC = I$，即 $A = C \cdot I \cdot C^{-1} = CC^{-1} = I$ \score{3}
+
+附注：其他证明方法给分
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.15em, topsep=0.2em]
+  \item 给出实对称矩阵的任何性质 $3$ 分；\qquad 2.\ 相关证明论述 $2\sim 4$ 分；
+  \item[3.] 结构表述 $3$ 分.
+\end{enumerate}
+
+\newpage
+
+\textbf{八、（10 分）}
+
+1\ （4 分）\\*[\parskip]
+因为矩阵 $A$ 的特征值 $\lambda_i = a_{ii}$ \score{2}
+
+$a_{ii} \neq a_{jj}$，
+
+则矩阵 $A$ 有 $n$ 个互不相同的特征值，故矩阵 $A$ 可对角化 \score{2}
+
+\vspace{0.4em}
+2\ （6 分）\\*[\parskip]
+$a_{ii} = a_{jj}$，则矩阵 $A$ 的特征值 $\lambda_i = a_{ii} = k$， \score{2}
+
+如果存在 $a_{ij} \neq 0$，则矩阵 $(kI - A)$ 的秩 $\ge 1$，所以 $n - \rk(kI - A) \le n - 1$，
+
+即 $n$ 重特征值对应的特征向量不足 $n$ 个，
+
+即矩阵 $A$ 不可对角化. \score{4}
+
+\vspace{0.4em}
+另法：反证法
+
+如果 $A$ 可以对角化，
+
+则矩阵 $A = P(kI)P^{-1} = kI$，
+
+这与存在 $a_{ij} \neq 0$，$A$ 不是对角矩阵相矛盾.
+
+\end{document}

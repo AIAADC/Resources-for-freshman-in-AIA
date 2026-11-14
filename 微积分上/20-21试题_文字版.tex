@@ -1,0 +1,125 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\blank}[1][2.2cm]{\underline{\hspace{#1}}}
+\newcommand{\choice}[1]{\text{【\quad】}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2020～2021 学年第一学期}\\[0.4em]
+  {\Large\bfseries “微积分（一）”考试试卷（A 卷）}\\[0.7em]
+  {\normalsize
+    考试方式：\underline{\ \ 闭卷\ \ }\quad
+    考试日期：\underline{\ 2021.01.10\ }\quad
+    考试时长：\underline{\ 120 分钟\ }
+  }\\[0.6em]
+  {\normalsize
+    \begin{tabular}{@{}p{7.5cm}p{7.5cm}@{}}
+      院（系）：\underline{\hspace{4.8cm}} & 专业班级：\underline{\hspace{4.8cm}} \\[0.3em]
+      学\qquad 号：\underline{\hspace{4.8cm}} & 姓\qquad 名：\underline{\hspace{4.8cm}}
+    \end{tabular}
+  }
+\end{center}
+
+\vspace{0.4em}
+
+\textbf{一、单项选择题（每小题 4 分，4 个小题共 16 分。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.4em, topsep=0.35em]
+  \item 曲线 $y=(x-1)(x-2)(x-3)$ 与 $x$ 轴所围成的图形的面积可表示为 \choice{}。
+
+  A. $\displaystyle\int_1^3 (x-1)(x-2)(x-3)\dd x$
+
+  B. $-\displaystyle\int_1^3 (x-1)(x-2)(x-3)\dd x$
+
+  C. $\displaystyle\int_1^2 (x-1)(x-2)(x-3)\dd x - \int_2^3 (x-1)(x-2)(x-3)\dd x$
+
+  D. $\displaystyle\int_2^3 (x-1)(x-2)(x-3)\dd x - \int_1^2 (x-1)(x-2)(x-3)\dd x$
+
+  \item 设 $f(x)$ 是周期为 $T$ 的连续函数，$a$ 为常数，则下列必为周期函数的是 \choice{}。
+
+  A. $\displaystyle\int_x^{x+a} f(t)\dd t$ \qquad\quad
+  B. $\displaystyle\int_a^{x+T} f(t)\dd t$ \qquad\quad
+  C. $\displaystyle\int_a^x f(t+T)\dd t$ \qquad\quad
+  D. $\displaystyle\int_a^x f(t)\dd t$
+
+  \item 已知函数 $f(x)=\begin{cases}2(x-1), & x<1,\\ \ln x, & x\ge 1,\end{cases}$ 则 $f(x)$ 的一个原函数是 \choice{}。
+
+  \makebox[0.48\linewidth][l]{A. $F(x)=\begin{cases}(x-1)^2, & x<1,\\ x(\ln x-1), & x\ge 1.\end{cases}$}B. $F(x)=\begin{cases}(x-1)^2, & x<1,\\ x(\ln x+1)-1, & x\ge 1.\end{cases}$
+
+  \vspace{0.4em}
+  \makebox[0.48\linewidth][l]{C. $F(x)=\begin{cases}(x-1)^2, & x<1,\\ x(\ln x+1)+1, & x\ge 1.\end{cases}$}D. $F(x)=\begin{cases}(x-1)^2, & x<1,\\ x(\ln x-1)+1, & x\ge 1.\end{cases}$
+
+  \item 设 $I_1=\displaystyle\int_2^1 \e^x\dd x$，$I_2=\displaystyle\int_2^1 \e^{x^2}\dd x$，$I_3=\displaystyle\int_2^1 (1+x)\dd x$，则 \choice{}。
+
+  A. $I_1>I_2>I_3$ \qquad\quad
+  B. $I_3>I_1>I_2$ \qquad\quad
+  C. $I_1>I_3>I_2$ \qquad\quad
+  D. $I_2>I_1>I_3$
+\end{enumerate}
+
+\vspace{0.5em}
+
+\textbf{二、填空题（每小题 5 分，4 个小题共 20 分。）}
+
+\begin{enumerate}[label=\arabic*., start=5, leftmargin=2em, itemsep=0.45em, topsep=0.35em]
+  \item $\displaystyle\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\left(\frac{\sin x}{1+\cos x}+|x|\right)\dd x=\blank$。
+
+  \item $\displaystyle\int_0^1 x(1-x)^{99}\dd x=\blank$。
+
+  \item 设 $f(x)$ 的一个原函数是 $x\ln x$，则 $\displaystyle\int xf'(x)\dd x=\blank$。
+
+  \item $\displaystyle\int_1^3 \frac{1}{\sqrt{x}(1+x)}\dd x=\blank$。
+\end{enumerate}
+
+\newpage
+
+\textbf{三、计算题（每小题 8 分，4 个小题共 32 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=9, leftmargin=2em, itemsep=1.1em, topsep=0.6em]
+  \item 求极限 $l=\displaystyle\lim_{n\to\infty}\ln\sqrt[n]{\left(1+\frac{1}{n}\right)^2\left(1+\frac{2}{n}\right)^2\cdots\left(1+\frac{n}{n}\right)^2}$。
+
+  \item 计算 $l=\displaystyle\lim_{x\to 0}\frac{\displaystyle\int_0^x t\ln(1+t\sin t)\dd t}{1-\cos x^2}$。
+
+  \item 计算 $I=\displaystyle\int_0^{\ln 5}\frac{\e^x\sqrt{\e^x-1}}{\e^x+3}\dd x$。
+
+  \item 求 $I=\displaystyle\int_0^{+\infty}\frac{\ln(1+x)}{(1+x)^2}\dd x$。
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{四、应用题（每小题 8 分，2 个小题共 16 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=13, leftmargin=2em, itemsep=1.0em, topsep=0.6em]
+  \item 计算抛物线 $y^2=4(x+1)$ 与 $y^2=4(1-x)$ 所围成的平面图形的面积。
+
+  \item 设 $D$ 是由 $y=(x-1)^2$、$x$ 轴、$y$ 轴以及 $x=2$ 所围成的平面区域，求 $D$ 绕 $y$ 轴旋转一周所得的旋转体体积。
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{五、综合题（每小题 8 分，2 个小题共 16 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=15, leftmargin=2em, itemsep=1.0em, topsep=0.6em]
+  \item 设 $f(x)$ 在 $\left[0,\dfrac{\pi}{2}\right]$ 上连续，且满足 $f(x)=\cos x+\displaystyle\int_0^{\frac{\pi}{2}}f(t)\dd t$，求 $f(x)$。
+
+  \item 设函数 $f(x)$ 在 $[a,b]$ 上连续，$f(x)>0$，又 $F(x)=\displaystyle\int_a^x f(t)\dd t+\int_b^x \frac{1}{f(t)}\dd t$，试证：$F(x)=0$ 在 $[a,b]$ 中有且仅有一个实根。
+\end{enumerate}
+
+\end{document}

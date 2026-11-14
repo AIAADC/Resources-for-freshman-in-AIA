@@ -1,0 +1,262 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\blank}[1][2.6cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2021～2022 学年第一学期}\\[0.35em]
+  {\Large\bfseries 《微积分（一）》（上）期中考试试卷（启明学院用）}\\[0.7em]
+  {\normalsize
+    考试日期：2021-11-21\qquad\qquad
+    考试时间：8:30--10:30AM
+  }
+\end{center}
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{|c|*{6}{wc{1.35cm}|}}
+    \hline
+    题号 & 一 & 二 & 三 & 四 & 五 & 总分 \\
+    \hline
+    得分 & & & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\vspace{0.8em}
+
+\section*{第一部分\quad 期中考试试题}
+
+\textbf{一、填空题（每小题 4 分，共 20 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item 已知 $\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}=a$ 且 $a_n>0\ (n=1,2,\cdots)$，那么 $\lim\limits_{n\to\infty} a_n^{\frac{1}{n}}=\blank$.
+
+  \item $\sup\{r\in \mathbb{Q}: r^2<2\}=\blank$.
+
+  \item $\lim\limits_{n\to\infty}\left(1+\dfrac{1}{n}+\dfrac{1}{n^2}\right)^n=\blank$.
+
+  \item 设 $y=\arcsin\bigl(\ln u(x)-v^2(x)\bigr)$，$u(x),v(x)$ 可微，则 $dy=\blank[4.5cm]\,dx$.
+
+  \item 设 $y e^{xy}-x+1=0$，则 $\left.\dfrac{dy}{dx}\right|_{x=0}=\blank$.
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{二、选择题（每小题 4 分，共 12 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item 当 $n\to\infty$，如下收敛的是 \blank[1.8cm].
+  \begin{enumerate}[label=\Alph*., leftmargin=2.2em, itemsep=0.3em, topsep=0.3em]
+    \item $\dfrac{1}{1}+\dfrac{1}{\sqrt{2}}+\cdots+\dfrac{1}{\sqrt{n}}$
+    \item $\left(1+\dfrac{1}{n^2}\right)^{n^3}$
+    \item $\sqrt{n+3}-\sqrt{n-1}$
+    \item $\sin n(\pi+1)$
+  \end{enumerate}
+
+  \item 下列叙述错误的是 \blank[1.8cm].
+  \begin{enumerate}[label=\Alph*., leftmargin=2.2em, itemsep=0.3em, topsep=0.3em]
+    \item 单调函数的间断点都是第一类间断点
+    \item $o(x^2)=O(\sin x)\ (x\to 0)$
+    \item 有界数列必有收敛子列，且都收敛到同一个极限
+    \item $\sin\dfrac{1}{x}$ 在 $(1,+\infty)$ 上一致连续
+  \end{enumerate}
+
+  \item 设函数 $f(x)=\sqrt{1+x}\,\tan x$ 在 $x=0$ 处的 $3$ 次泰勒多项式为 $ax+bx^2+cx^3$，则 \blank[1.8cm].
+  \begin{enumerate}[label=\Alph*., leftmargin=2.2em, itemsep=0.3em, topsep=0.3em]
+    \item $a=1,\ b=2,\ c=\dfrac{5}{24}$
+    \item $a=1,\ b=2,\ c=-\dfrac{5}{24}$
+    \item $a=1,\ b=\dfrac{1}{2},\ c=-\dfrac{5}{24}$
+    \item $a=1,\ b=\dfrac{1}{2},\ c=\dfrac{5}{24}$
+  \end{enumerate}
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{三、计算题（每小题 7 分，共 28 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 计算 $\lim\limits_{n\to\infty}\left(\dfrac{1}{n^2+1}+\dfrac{2}{n^2+\dfrac{1}{2}}+\cdots+\dfrac{n}{n^2+\dfrac{1}{n}}\right)$.
+
+  \item 计算 $\lim\limits_{x\to 0}\left(\dfrac{\sin x}{x}\right)^{\frac{1}{x^2}}$.
+
+  \item 设 $f(x)=\begin{cases} \cos x, & x<0, \\ \ln(1+x^2), & x\ge 0. \end{cases}$ 求 $f'(x)$.
+
+  \item 设 $x=a(t-\sin t)$，$y=a(1-\cos t)$，求 $\dfrac{dy}{dx}$，$\dfrac{d^2y}{dx^2}$.
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{四、解答题（每小题 8 分，共 16 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 在什么条件下，函数 $f(x)=\begin{cases} x^n\sin\dfrac{1}{x}, & x\neq 0, \\ 0, & x=0, \end{cases}\ (n=0,1,2,\cdots)$
+  \begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=0.25em, topsep=0.3em]
+    \item 在 $x=0$ 处连续；
+    \item 在 $x=0$ 处可导；
+    \item 在 $x=0$ 处导函数连续.
+  \end{enumerate}
+
+  \item 已知函数 $f(x)$ 在开区间 $(a,b)$ 上有连续的导函数，且导函数在端点的单侧极限 $f'(a+)$ 与 $f'(b-)$ 都存在且有限，请论证函数 $f(x)$ 在 $(a,b)$ 上的一致连续性.
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{五、证明题（每题 8 分，共 24 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 设 $f(x)$ 在 $(a,b)$ 上连续且在端点的单侧极限发散至 $+\infty$，即 $f(a+)=+\infty$ 与 $f(b-)=+\infty$，证明：$f(x)$ 在 $(a,b)$ 上有最小值.
+
+  \item 设 $\lim\limits_{x\to x_0}f(x)=A\ (A\neq 0)$，证明：$\lim\limits_{x\to x_0}\dfrac{1}{f^2(x)}=\dfrac{1}{A^2}$.
+
+  \item 设函数 $f(x)$ 在 $[0,1]$ 上连续，$f(0)=0$. 在 $(0,1)$ 中 $f(x)$ 可导且 $|f'(x)|\le f(x)$. 证明：$f(x)\equiv 0$.
+\end{enumerate}
+
+\newpage
+\section*{第二部分\quad 参考答案}
+
+\textbf{一、填空题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.4em]
+  \item $a$
+  \item $\sqrt{2}$
+  \item $e$
+  \item $\dfrac{u'(x)-2u(x)v(x)v'(x)}{u(x)\sqrt{1-\bigl(\ln u(x)-v^2(x)\bigr)^2}}$
+  \item $0$
+\end{enumerate}
+
+\vspace{0.6em}
+\textbf{二、选择题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.5em, topsep=0.4em]
+  \item C
+  \item C
+  \item D
+\end{enumerate}
+
+\vspace{0.6em}
+\textbf{三、计算题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.4em]
+  \item \textbf{解：}由夹挤原理：
+  \[
+    \frac{n(n+1)}{2(n^2+1)} \le \frac{1}{n^2+1}+\frac{2}{n^2+1/2}+\cdots+\frac{n}{n^2+1/n} \le \frac{n(n+1)}{2(n^2+1/n)}.
+  \]
+  又 $\lim\limits_{n\to\infty}\dfrac{n(n+1)}{2(n^2+1)}=\lim\limits_{n\to\infty}\dfrac{n(n+1)}{2(n^2+1/n)}=\dfrac{1}{2}$，所以原式极限为 $\dfrac{1}{2}$.
+
+  \item \textbf{解：}设 $u=\dfrac{\sin x}{x}$，$v=\dfrac{1}{x^2}$. 计算
+  \[
+    \lim_{x\to 0}(u-1)v
+    = \lim_{x\to 0}\frac{\sin x-x}{x^3}
+    = \lim_{x\to 0}\frac{\cos x-1}{3x^2}
+    = \lim_{x\to 0}\frac{-2\sin^2\left(\frac{x}{2}\right)}{3x^2}
+    = \lim_{x\to 0}\frac{-2\left(\frac{x}{2}\right)^2}{3x^2}
+    = -\frac{1}{6},
+  \]
+  则 $\lim\limits_{x\to 0}u^v=e^{-\frac{1}{6}}$.
+
+  \item \textbf{解：}当 $x<0$ 时，$f'(x)=-\sin x$；当 $x>0$ 时，$f'(x)=\dfrac{2x}{1+x^2}$；
+  当 $x=0$ 时，$f'_-(0)=\lim\limits_{x\to 0^-}\dfrac{\cos x}{x}$ 不存在，显然 $f'(0)$ 不存在.
+  \[
+    \therefore\ f'(x)=\begin{cases} -\sin x, & x<0, \\ \dfrac{2x}{1+x^2}, & x>0. \end{cases}
+  \]
+
+  \item \textbf{解：}（设 $a\neq 0$ 且 $1-\cos t\neq 0$）
+  \[
+    \frac{dy}{dx}=\frac{a\sin t}{a(1-\cos t)}=\frac{\sin t}{1-\cos t},\qquad
+    \frac{d^2y}{dx^2}=\frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}
+    =\frac{\frac{\cos t(1-\cos t)-(\sin t)^2}{(1-\cos t)^2}}{a(1-\cos t)}
+    =-\frac{1}{a(1-\cos t)^2}.
+  \]
+\end{enumerate}
+
+\vspace{0.6em}
+\textbf{四、解答题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.4em]
+  \item \textbf{解：}(1) 因为 $0\le \left|x^n\sin\dfrac{1}{x}\right|\le |x|^n$，而当 $n>0$ 时，$\lim\limits_{x\to 0}|x|^n=0$. 由夹挤原理
+  \[
+    \lim_{x\to 0}f(x)=\lim_{x\to 0}x^n\sin\frac{1}{x}=0=f(0).
+  \]
+  即当 $n>0$（$n\ge 1$）时，$f(x)$ 在点 $x=0$ 处连续（$n=0$ 时极限不存在）.
+
+  (2) $\lim\limits_{x\to 0}\dfrac{f(x)-f(0)}{x}=\lim\limits_{x\to 0}\dfrac{x^n\sin\frac{1}{x}}{x}=\lim\limits_{x\to 0}x^{n-1}\sin\dfrac{1}{x}$.
+  当且仅当 $n>1$（$n\ge 2$）时，上述极限存在，即当 $n>1$ 时，$f(x)$ 在 $x=0$ 处可导，且 $f'(0)=0$.
+
+  (3) $\because\ f'(x)=\begin{cases} n x^{n-1}\sin\dfrac{1}{x}-x^{n-2}\cos\dfrac{1}{x}, & x\neq 0, \\ 0, & x=0 \end{cases}\ (n>1)$.
+  由上式可知：当且仅当 $n>2$（$n\ge 3$）时，$\lim\limits_{x\to 0}f'(x)=0=f'(0)$，即 $f'(x)$ 在 $x=0$ 处连续.
+
+  \item \textbf{证明：}令
+  \[
+    F(x)=\begin{cases}
+      f'(a+), & x=a, \\
+      f'(x), & a<x<b, \\
+      f'(b-), & x=b.
+    \end{cases}
+  \]
+  因为 $f'(x)$ 在 $(a,b)$ 上连续，且
+  \[
+    \lim_{x\to a^+}F(x)=\lim_{x\to a^+}f'(x)=f'(a+)=F(a),\qquad
+    \lim_{x\to b^-}F(x)=\lim_{x\to b^-}f'(x)=f'(b-)=F(b),
+  \]
+  所以 $F(x)$ 在闭区间 $[a,b]$ 上连续，从而有界. 因此 $F(x)$ 在 $(a,b)$ 上也有界，即 $f'(x)$ 在开区间 $(a,b)$ 上有界，所以对任意 $x\in(a,b)$，存在常数 $M>0$，使得 $|f'(x)|\le M$.
+
+  对任意的 $\varepsilon>0$，取 $\delta=\dfrac{\varepsilon}{M}>0$. 对任意 $x_1,x_2\in(a,b)$，当 $|x_1-x_2|<\delta$ 时（若 $x_1=x_2$ 则显然成立；若 $x_1\neq x_2$），由拉格朗日中值定理，存在 $\xi$ 介于 $x_1,x_2$ 之间，使得
+  \[
+    |f(x_1)-f(x_2)|=|f'(\xi)|\,|x_1-x_2|\le M|x_1-x_2|<M\delta=\varepsilon.
+  \]
+  因此函数 $f(x)$ 在 $(a,b)$ 上一致连续.
+\end{enumerate}
+
+\vspace{0.6em}
+\textbf{五、证明题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.4em]
+  \item \textbf{证明：}在 $(a,b)$ 内任取一点 $c\in(a,b)$，令 $M=f(c)$. 因为 $f(a+)=+\infty$ 和 $f(b-)=+\infty$，所以存在 $\delta>0$（满足 $a+\delta<c<b-\delta$），使得当 $x\in(a,a+\delta)$ 和 $x\in(b-\delta,b)$ 时，均有 $f(x)\ge M$ 成立.
+
+  因为 $f(x)$ 在闭区间 $[a+\delta,\,b-\delta]$ 上连续，所以在该闭区间上有最小值 $N$，即 $\forall x\in[a+\delta,\,b-\delta]$，有 $f(x)\ge N$. 又因为 $c\in[a+\delta,\,b-\delta]$，故 $N\le f(c)=M$；从而对任意 $x\in(a,a+\delta)\cup(b-\delta,b)$，也有 $f(x)\ge M\ge N$. 因此 $f(x)$ 在 $(a,b)$ 上有最小值 $N$.
+
+  \item \textbf{证明：}因为 $\lim\limits_{x\to x_0}f(x)=A\ (A\neq 0)$，由极限的定义及保号性，存在 $\delta_1>0$，当 $0<|x-x_0|<\delta_1$ 时，有 $\dfrac{|A|}{2}<|f(x)|<\dfrac{3|A|}{2}$. 又对任意 $\varepsilon>0$，存在 $\delta_2>0$，当 $0<|x-x_0|<\delta_2$ 时，有 $|f(x)-A|<\dfrac{|A|^3}{10}\varepsilon$.
+
+  取 $\delta=\min\{\delta_1,\delta_2\}>0$，则当 $0<|x-x_0|<\delta$ 时，既有 $\dfrac{|A|}{2}<|f(x)|<\dfrac{3|A|}{2}$（从而 $|f(x)+A|\le |f(x)|+|A|<\dfrac{5|A|}{2}$ 且 $f^2(x)>\dfrac{|A|^2}{4}$），又有
+  \[
+    \left|\frac{1}{f^2(x)}-\frac{1}{A^2}\right|
+    =\frac{|f(x)-A|\,|f(x)+A|}{A^2 f^2(x)}
+    <\frac{|f(x)-A|\cdot \frac{5|A|}{2}}{|A|^2\cdot \frac{|A|^2}{4}}
+    =\frac{10}{|A|^3}|f(x)-A|
+    <\varepsilon.
+  \]
+  所以 $\lim\limits_{x\to x_0}\dfrac{1}{f^2(x)}=\dfrac{1}{A^2}$.
+
+  \item \textbf{证法 1：}由 $|f'(x)|\le f(x)$ 可知在 $(0,1)$ 上 $f(x)\ge 0$ 且 $f'(x)\le f(x)$. 令 $F(x)=e^{-2x}f^2(x)$，则 $F(x)$ 在 $[0,1]$ 上连续，在 $(0,1)$ 内可导，且
+  \[
+    F'(x)=2e^{-2x}f(x)\bigl[f'(x)-f(x)\bigr]\le 0.
+  \]
+  因此 $F(x)$ 在 $[0,1]$ 上单调递减，所以对任意 $x\in(0,1)$ 有 $0\le F(x)=e^{-2x}f^2(x)\le F(0)=0$，故 $f(x)\equiv 0$ 在 $[0,1)$ 恒为 $0$. 再根据 $f(x)$ 在 $x=1$ 处的连续性可知，$f(x)\equiv 0$ 在 $[0,1]$ 上成立.
+
+  \textbf{证法 2：}当 $x\in\left(0,\dfrac{1}{2}\right]$ 时，由拉格朗日中值定理知，$\exists\,\xi_1\in(0,x)$，有 $f(x)-f(0)=f'(\xi_1)x$，从而
+  \[
+    |f(x)|=|f'(\xi_1)x|\le \frac{1}{2}f(\xi_1).
+  \]
+  同理有 $\xi_2\in(0,\xi_1)$，使得 $|f(\xi_1)|\le \dfrac{1}{2}f(\xi_2)$. 依此类推可得
+  \[
+    0\le |f(x)|\le \frac{1}{2}f(\xi_1)\le \frac{1}{2^2}f(\xi_2)\le \cdots \le \frac{1}{2^n}f(\xi_n).
+  \]
+  由于 $f(x)$ 在 $[0,1]$ 上连续从而有界（设 $|f(t)|\le M$），故 $\lim\limits_{n\to\infty}\dfrac{1}{2^n}f(\xi_n)=0$，所以对 $x\in\left(0,\dfrac{1}{2}\right]$ 有 $f(x)\equiv 0$.
+
+  以 $x=\dfrac{1}{2}$（已知 $f\left(\frac{1}{2}\right)=0$）为左端点，同理可证 $f(x)\equiv 0\ \left(x\in\left[\dfrac{1}{2},1\right)\right)$，即 $f(x)\equiv 0\ \bigl(x\in[0,1)\bigr)$. 再根据 $f(x)$ 在 $x=1$ 处的连续性可知，$f(x)\equiv 0$ 在 $[0,1]$ 上成立.
+\end{enumerate}
+
+\end{document}

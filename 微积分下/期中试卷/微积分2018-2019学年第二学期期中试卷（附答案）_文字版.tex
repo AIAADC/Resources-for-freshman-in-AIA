@@ -1,0 +1,209 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\grad}{\operatorname{grad}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2018--2019 学年第二学期期中考试试卷}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、基本计算题（每题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.6em]
+  \item 求微分方程 $yy'' + (y')^2 = 0$ 满足初始条件 $y(0) = 1,\ y'(0) = \dfrac{1}{2}$ 的特解.
+
+  \item 设 $y = e^x(C_1\sin 2x + C_2\cos 2x)$ 为某二阶常系数齐次微分方程的通解，求此微分方程.
+
+  \item 已知点 $A(3,-3,1)$ 与点 $B(3,-2,2)$，若 $\overrightarrow{AM} = 3\overrightarrow{AB}$，求矢量 $\overrightarrow{OM}$ 的方向余弦.
+
+  \item 判断直线 $L_1: \dfrac{x+1}{2} = \dfrac{y-2}{-1} = \dfrac{z-4}{3}$ 与直线 $L_2: \dfrac{x-1}{1} = \dfrac{y+3}{2} = \dfrac{z-6}{5}$ 是否共面.
+
+  \item 讨论二重极限 $\lim\limits_{(x,y)\to(0,0)} \dfrac{xy^2}{x+y}$ 的存在性，若极限存在求其值，若不存在说明理由.
+
+  \item 已知平面曲线由方程 $x^2 + y^3 + \ln(x+y) - 3 = 0$ 确定，求曲线在点 $(2,-1)$ 处的法线方程.
+
+  \item 设 $\varphi(u,v)$ 有连续偏导数，方程 $\varphi(cx - az, cy - bz) = 0$ 确定隐函数 $z = z(x,y)$，求证：$az_x + bz_y = c$.
+
+  \item 计算 $I = \displaystyle\int_0^2 dy \int_0^2 \max\{xy, 1\}\,dx$.
+
+  \item 计算二重积分 $I = \displaystyle\iint_D \cos(x^2+y^2)\,dxdy$，其中 $D = \{(x,y)\mid x^2+y^2 \le 4,\ |x| \ge |y|\}$（由 $x^2+y^2=4$ 和 $y^2=x^2$ 围成的包含 $x$ 轴的区域）.
+
+  \item 计算三重积分 $I = \displaystyle\iiint_V \sqrt{x^2+y^2}\,dxdydz$，其中区域 $V$ 由曲面 $z=0$，$z = 4 - x^2 - y^2$ 围成.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、综合计算题（每题 8 分，共 40 分）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.9em, topsep=0.6em]
+  \item 求解微分方程 $y'' - 3y' + 2y = e^{2x} + e^{3x}$.
+
+  \item 求函数 $u = 2x + y^2z$ 在点 $(1,-1,-1)$ 沿椭球面 $x^2 + 2y^2 + 3z^2 = 6$ 在该点的外法线方向的方向导数.
+
+  \item 求函数 $u = x + 3z$ 在曲线 $\begin{cases} x + 2y - 3z = 2 \\ x^2 + y^2 = 2 \end{cases}$ 上的最大值与最小值.
+
+  \item 求积分 $\displaystyle\iiint_V x^2\,dxdydz$，其中区域 $V:\ x^2 + y^2 + z^2 \le 2z$.
+
+  \item 设函数 $f(x,y) = \begin{cases} \dfrac{xy^3}{x^2+y^2}, & (x,y) \neq (0,0) \\ 0, & (x,y) = (0,0) \end{cases}$
+  \begin{enumerate}[label=(\arabic*), leftmargin=2em, itemsep=0.3em, topsep=0.3em]
+    \item 讨论 $f(x,y)$ 在 $(0,0)$ 处的可微性；
+    \item 求 $f_{xy}(0,0)$.
+  \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+  {\Large\bfseries 2018--2019 学年第二学期期中考试试卷参考答案}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、基本计算题（每题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.6em]
+  \item 【解析】令 $y' = p$，则 $y'' = \dfrac{dp}{dx} = \dfrac{dp}{dy}\dfrac{dy}{dx} = p\dfrac{dp}{dy}$.
+
+  方程化为 $yp\dfrac{dp}{dy} + p^2 = 0 \implies \dfrac{dp}{dy} + \dfrac{p}{y} = 0$，即 $\dfrac{dp}{p} + \dfrac{dy}{y} = 0$，两边积分可得 $\ln|p| + \ln|y| = \ln C$，即 $py = c$.
+
+  因此 $y\,dy = c\,dx \implies \dfrac{1}{2}y^2 = cx + c'$，代入 $y(0) = 1,\ y'(0) = \dfrac{1}{2}$，可解得 $c' = \dfrac{1}{2},\ c = \dfrac{1}{2}$.
+
+  方程即为 $y^2 = x + 1$，结合 $y(0) = 1$ 知 $y > 0$，故 $y = \sqrt{x+1}$.
+
+  \item 【解析】由题可得方程有特征根 $r_1 = 1 + 2i,\ r_2 = 1 - 2i$，$r_1 + r_2 = 2,\ r_1 r_2 = 5$，因此所求微分方程为
+  \[
+    y'' - 2y' + 5y = 0.
+  \]
+
+  \item 【解析】设 $M(x,y,z)$，$\overrightarrow{AM} = (x-3, y+3, z-1)$，$\overrightarrow{AB} = (0,1,1)$，故 $x=3,\ y=0,\ z=4$.
+
+  $\overrightarrow{OM} = (3,0,4)$，$\cos\alpha = \dfrac{3}{5},\ \cos\beta = 0,\ \cos\gamma = \dfrac{4}{5}$.
+
+  \item 【解析】由于二者的方向向量不平行，因此这两条直线要么异面，要么共面相交. 假设它们共面相交，联立方程
+  \[
+    \begin{cases}
+      \dfrac{x+1}{2} = \dfrac{y-2}{-1} = \dfrac{z-4}{3}, \\[0.6em]
+      \dfrac{x-1}{1} = \dfrac{y+3}{2} = \dfrac{z-6}{5},
+    \end{cases}
+  \]
+  发现方程无解，故这两条直线不相交，即异面（不共面）.
+
+  \item 【解析】选取路径 $y = kx^3 - x\ (k \neq 0)$，当 $(x,y)\to(0,0)$ 时有
+  \[
+    \lim_{\substack{(x,y)\to(0,0) \\ y=kx^3-x}} \frac{xy^2}{x+y} = \lim_{x\to 0}\left(kx^4 - 2x^2 + \frac{1}{k}\right) = \frac{1}{k},
+  \]
+  极限与 $k$ 值有关，故该极限不存在.
+
+  \item 【解析】令 $F(x,y) = x^2 + y^3 + \ln(x+y) - 3$，$F_x = 2x + \dfrac{1}{x+y}$，$F_y = 3y^2 + \dfrac{1}{x+y}$.
+
+  因此 $F_x(2,-1) = 5,\ F_y(2,-1) = 4$，法线方程为 $\dfrac{x-2}{5} = \dfrac{y+1}{4}$.
+
+  \item 【解析】方程两边对 $x$ 求偏导数，得 $\varphi_u(c - az_x) + \varphi_v(-bz_x) = 0 \implies z_x = \dfrac{c\varphi_u}{a\varphi_u + b\varphi_v}$.
+
+  同理可得 $z_y = \dfrac{c\varphi_v}{a\varphi_u + b\varphi_v}$，故 $az_x + bz_y = c$.
+
+  \item 【解析】原式
+  \begin{align*}
+    I &= \int_0^1 \int_0^1 dxdy + \int_1^2 dx \int_0^{\frac{1}{x}} dy + \int_1^2 dy \int_0^{\frac{1}{y}} dx + \int_{\frac{1}{2}}^2 dx \int_{\frac{1}{x}}^2 xy\,dy \\
+      &= 1 + \ln 2 + \ln 2 + \frac{15}{4} - \ln 2 = \frac{19}{4} + \ln 2.
+  \end{align*}
+
+  \item 【解析】利用对称性和极坐标得
+  \[
+    I = 4\int_0^{\frac{\pi}{4}} d\theta \int_0^2 r\cos r^2\,dr = \pi\int_0^2 \frac{1}{2}\cos r^2\,dr^2 = \pi\left.\frac{1}{2}\sin r^2\right|_0^2 = \frac{\pi\sin 4}{2}.
+  \]
+
+  \item 【解析】利用柱坐标得
+  \[
+    I = \int_0^{2\pi} d\theta \int_0^2 r^2\,dr \int_0^{4-r^2} dz = 2\pi \int_0^2 r^2(4-r^2)\,dr = \frac{128}{15}\pi.
+  \]
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{二、综合计算题（每题 8 分，共 40 分）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.9em, topsep=0.6em]
+  \item 【解析】齐次方程的特征方程为 $r^2 - 3r + 2 = 0 \implies r = 1, 2$，故齐次方程的通解为 $Y = C_1 e^x + C_2 e^{2x}$.
+
+  设非齐次方程的特解为 $y^* = Ae^{3x} + Bxe^{2x}$，代入方程可得 $A = \dfrac{1}{2},\ B = 1$，故特解为
+  \[
+    y^* = \frac{1}{2}e^{3x} + xe^{2x}.
+  \]
+  因此通解为 $y = Y + y^* = C_1 e^x + C_2 e^{2x} + \dfrac{1}{2}e^{3x} + xe^{2x}$.
+
+  \item 【解析】令 $F(x,y,z) = x^2 + 2y^2 + 3z^2 - 6$，
+
+  $F_x(1,-1,-1) = 2,\ F_y(1,-1,-1) = -4,\ F_z(1,-1,-1) = -6$，故外法线向量为 $\vec{n} = (2,-4,-6)$.
+
+  $\grad(u)\big|_{(1,-1,-1)} = (2, 2yz, y^2)\big|_{(1,-1,-1)} = (2, 2, 1)$.
+
+  因此所求方向导数为 $\dfrac{2\times 2 - 4\times 2 - 6\times 1}{\sqrt{4 + 16 + 36}} = \dfrac{-10}{2\sqrt{14}} = -\dfrac{5}{\sqrt{14}}$.
+
+  \item 【解析】令 $F(x,y,z,\mu,\lambda) = x + 3z + \mu(x + 2y - 3z - 2) + \lambda(x^2 + y^2 - 2)$.
+
+  由
+  \[
+    \begin{cases}
+      F_x = 1 + \mu + 2\lambda x = 0, \\
+      F_y = 2\mu + 2\lambda y = 0, \\
+      F_z = 3 - 3\mu = 0, \\
+      F_\mu = x + 2y - 3z - 2 = 0, \\
+      F_\lambda = x^2 + y^2 - 2 = 0,
+    \end{cases}
+    \implies
+    \begin{cases}
+      x = 1, \\
+      y = 1, \\
+      z = \dfrac{1}{3},
+    \end{cases}
+    \quad
+    \begin{cases}
+      x = -1, \\
+      y = -1, \\
+      z = -\dfrac{5}{3},
+    \end{cases}
+  \]
+  $u\left(1,1,\dfrac{1}{3}\right) = 2$，$u\left(-1,-1,-\dfrac{5}{3}\right) = -6$.
+
+  故最大值为 $2$，最小值为 $-6$.
+
+  \item 【解析】
+  \begin{align*}
+    I &= \int_0^{2\pi} d\theta \int_0^{\frac{\pi}{2}} d\varphi \int_0^{2\cos\varphi} r^4\sin^3\varphi\cos^2\theta\,dr = \pi \int_0^{\frac{\pi}{2}} \sin^3\varphi\,d\varphi \int_0^{2\cos\varphi} r^4\,dr \\
+      &= \frac{32}{5}\pi \int_0^{\frac{\pi}{2}} \sin^3\varphi\cos^5\varphi\,d\varphi = \frac{32}{5}\pi \times \frac{1}{24} = \frac{4\pi}{15}.
+  \end{align*}
+
+  \item 【解析】
+  \begin{enumerate}[label=(\arabic*), leftmargin=2em, itemsep=0.4em, topsep=0.3em]
+    \item $\dfrac{\partial f}{\partial x}(0,0) = \lim\limits_{x\to 0} \dfrac{f(x,0) - f(0,0)}{x - 0} = 0$，$\dfrac{\partial f}{\partial y}(0,0) = \lim\limits_{y\to 0} \dfrac{f(0,y) - f(0,0)}{y - 0} = 0$.
+    \[
+      \lim_{(x,y)\to(0,0)} \frac{f(x,y) - f(0,0) - f_x(0,0)x - f_y(0,0)y}{\sqrt{x^2+y^2}} = \lim_{(x,y)\to(0,0)} \frac{xy^3}{(x^2+y^2)^{\frac{3}{2}}} = 0
+    \]
+    （因 $\left|\dfrac{xy^3}{(x^2+y^2)^{\frac{3}{2}}}\right| \le |y| \to 0$），因此 $f(x,y)$ 在 $(0,0)$ 处可微.
+
+    \item 当 $(x,y) \neq (0,0)$ 时，$f_x(x,y) = \dfrac{y^3(y^2 - x^2)}{(x^2+y^2)^2}$，故 $f_x(0,y) = y$.
+    \[
+      f_{xy}(0,0) = \lim_{y\to 0} \frac{f_x(0,y) - f_x(0,0)}{y - 0} = \lim_{y\to 0} \frac{y - 0}{y - 0} = 1.
+    \]
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
