@@ -1,0 +1,577 @@
+\documentclass[UTF8,a4paper,10.5pt]{ctexart}
+\usepackage[left=1.9cm,right=1.9cm,top=1.9cm,bottom=2.0cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue!70!black}\bfseries,
+    commentstyle=\color{green!45!black},
+    stringstyle=\color{red!60!black},
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    showstringspaces=false,
+    aboveskip=3pt,
+    belowskip=3pt
+}
+
+\newcommand{\ans}[1]{\hfill(\makebox[1.8cm][c]{#1})}
+\newcommand{\fillans}[1]{\underline{\textbf{\ #1\ }}}
+
+\begin{document}
+
+\begin{center}
+    {\Large\bfseries 2018 级信息学院《C 语言程序设计》考试试题（A）答案}
+\end{center}
+
+\noindent
+\small
+院系：\underline{\hspace{2.4cm}}\quad
+班级：\underline{\hspace{2.4cm}}\quad
+姓名：\underline{\hspace{2.2cm}}\quad
+学号：\underline{\hspace{2.6cm}}\quad
+成绩：\underline{\hspace{1.8cm}}
+\normalsize
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|*{7}{>{\centering\arraybackslash}p{1.4cm}|}}
+\hline
+题号 & 1 & 2 & 3 & 4 & 5 & 6 & 总分 \\
+\hline
+得分 &   &   &   &   &   &   &      \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{一、判断下列概念、语句或程序段的对错。（“$\times$”表示错，“$\checkmark$”表示对）（10 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=4pt]
+    \item \texttt{int x=0xabcd ; \quad // 对一个整型变量初始化} \ans{$\checkmark$}
+    \item \texttt{int a = 012 + 87;} \\
+          \texttt{float b = 12.8e+10 ;} \ans{$\checkmark$}
+    \item 一个 \texttt{int} 指针变量和一个 \texttt{int} 数组指针变量所占用的存储空间是一样的 \ans{$\checkmark$}
+    \item \texttt{int **p, *pa[5];} \\
+          \texttt{p = pa ;} \ans{$\checkmark$}
+    \item \texttt{int a[5][5];} \\
+          \texttt{int (*pa)[5]=a++;} \ans{$\times$}
+    \item \texttt{char *str[5];} \\
+          \texttt{scanf("\%s",str[0]);} \ans{$\times$}
+    \item \texttt{int x, *p =\&x , a[5][5];} \\
+          \texttt{*p = a[0][0] + 10 ;} \ans{$\checkmark$}
+    \item \texttt{int a = (1e5, 0x1a, 0187);} \ans{$\times$}
+    \item \texttt{char x = '\textbackslash 177' ;} \ans{$\checkmark$}
+    \item \texttt{char *str = "\textbackslash\textbackslash\textbackslash\textbackslash\textbackslash\textbackslash\textbackslash text\textbackslash";} \ans{$\times$}
+\end{enumerate}
+
+\section*{二、计算下列表达式的值（10 分）}
+
+\noindent 假设 \texttt{int} 和 \texttt{unsigned} 类型均为 16 位长度，且各题彼此独立。\\
+设：
+\begin{lstlisting}
+unsigned int a=1, b=2;
+int c=4, d=6;
+float f;
+char str[]= "HUST";
+char s1[10]={'A', 'I', 'A'};
+char s2[20]={'h', 'u', 's', 't', '\0', 'A', 'I', 'A'};
+\end{lstlisting}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=4pt]
+    \item \texttt{f = a>b ? a/b : d/c;} \ans{\texttt{1.0}}
+    \item \texttt{!a \&\& --b || c/d;} \ans{\texttt{0}}
+    \item \texttt{f = (a - c)/2} \ans{\texttt{32766.0}}
+    \item \texttt{f = sizeof(str);} \ans{\texttt{5.0}}
+    \item \texttt{f = strlen(s1) + strlen(s2);} \ans{\texttt{7.0}}
+\end{enumerate}
+
+\section*{三、程序改错（10 分）}
+
+\noindent 要求：不得改变程序框架，不得重写程序，无需文字说明，直接在代码上添加、删除和修改。
+
+\medskip
+\noindent 1、如下程序，删除给定字符串中的数字字符，主函数中输入和输出，调用函数完成删除功能。
+
+\noindent\textbf{修改点：}
+\begin{itemize}[leftmargin=2em, itemsep=1pt, topsep=2pt]
+    \item 缺少以下两行：\texttt{\#include <string.h>} 和 \texttt{char *delnum(char *s);}
+    \item \texttt{char *string[80];} $\longrightarrow$ \texttt{char string[80], *pstr;}
+    \item \texttt{char delnum(char **s)} $\longrightarrow$ \texttt{char *delnum(char *s)}
+    \item \texttt{char *temp = *s;} $\longrightarrow$ \texttt{char *temp = s;}
+    \item \texttt{for (i = 0; s[i] != '\textbackslash 0'; i++)} $\longrightarrow$ \texttt{for (i = 0; s[i] != '\textbackslash 0'; )}
+    \item \texttt{strcpy(s+1, s);} $\longrightarrow$ \texttt{strcpy(s + i, s + i + 1);}
+\end{itemize}
+\begin{lstlisting}
+#include <stdio.h>
+#include <string.h>
+char *delnum(char *s);
+
+void main()
+{
+    char string[80], *pstr;
+    printf("input string:\n");
+    gets(string);
+    pstr=delnum(string);
+    puts(pstr);
+}
+char *delnum(char *s)
+{
+    int i;
+    char *temp = s;
+    for (i = 0; s[i] != '\0'; )
+    {
+        if (s[i] >= '0' && s[i] <= '9')
+            strcpy(s + i, s + i + 1);
+        else
+            i++;
+    }
+    return temp;
+}
+\end{lstlisting}
+
+\medskip
+\noindent 2、求 3 个浮点数的平方和与立方和
+
+\noindent\textbf{修改点：}
+\begin{itemize}[leftmargin=2em, itemsep=1pt, topsep=2pt]
+    \item 缺少函数声明：\texttt{float calc(float x, float y, float z, float *s\_v);}
+    \item \texttt{main()} $\longrightarrow$ \texttt{void main()}
+    \item \texttt{float a, b;} $\longrightarrow$ \texttt{float a, b, c;}
+    \item \texttt{flaot pingf\_v, lif\_v;} $\longrightarrow$ \texttt{float pingf\_v, lif\_v;}
+    \item \texttt{scanf("\%f\%f\%f", a, b, c);} $\longrightarrow$ \texttt{scanf("\%f\%f\%f", \&a, \&b, \&c);}
+    \item \texttt{pingf\_v = calc(a, b, c, lif\_v);} $\longrightarrow$ \texttt{pingf\_v = calc(a, b, c, \&lif\_v);}
+    \item \texttt{calc(float x, float y, float s\_v)} $\longrightarrow$ \\
+          \texttt{float calc(float x, float y, float z, float *s\_v)}
+    \item \texttt{float *temp;} $\longrightarrow$ \texttt{float temp;}
+    \item \texttt{pingf\_v = a*a+b*b+c*c;} $\longrightarrow$ \texttt{temp = x*x+y*y+z*z;}
+    \item \texttt{s\_v = a*a*a + b*b*b+c*c*c;} $\longrightarrow$ \texttt{*s\_v = x*x*x + y*y*y+z*z*z;}
+    \item \texttt{*temp=pingf\_v} $\longrightarrow$ 去掉
+    \item \texttt{return *temp;} $\longrightarrow$ \texttt{return temp;}
+\end{itemize}
+\begin{lstlisting}
+#include <stdio.h>
+float calc(float x, float y, float z, float *s_v);
+void main()
+{
+    float a, b, c;
+    float pingf_v, lif_v;
+    scanf("%f%f%f", &a, &b, &c);
+    pingf_v = calc(a, b, c, &lif_v);
+    printf("pingf_v=%f, lif_v=%f", pingf_v, lif_v);
+}
+float calc(float x, float y, float z, float *s_v)
+{
+    float temp;
+    temp = x*x + y*y + z*z;
+    *s_v = x*x*x + y*y*y + z*z*z;
+    return temp;
+}
+\end{lstlisting}
+
+\section*{四、程序填空（10 分）}
+
+\noindent 1）编一程序实现一个最简单的计算器的功能，如输入 \texttt{3+5} 回车显示 \texttt{3+5=8}；输错就退出（输入的不是加减乘除的运算就算错）。
+\begin{lstlisting}[escapeinside={(*@}{@*)}]
+#include <stdio.h>
+#include <math.h>
+void main( )
+{
+    (*@\fillans{float a, b}@*) ;
+    char op ;
+    while((*@\fillans{1}@*) )
+    {
+        scanf("%f %c %f", &a,&op, &b); //
+        if((*@\fillans{(op!='+') \&\& (op!='-') \&\& (op!='*') \&\& (op!='/')}@*) )
+        (*@\fillans{break}@*);
+        switch(op)
+        {
+            case '+': printf("%f+%f=%f",a,b,a+b);
+                      break;
+            case '-': printf("%f-%f=%f",a, b, a-b);
+                      break;
+            case '*': printf("%f * %f=%f",a,b,a*b);
+                      break;
+            case '/': if((*@\fillans{fabs(b)<1e-6}@*))
+                          printf("除法错");
+                      else
+                          printf("%f / %f = %f",a,b,a/b);
+                      break;
+        }
+    }
+}
+\end{lstlisting}
+
+\medskip
+\noindent 2）输入一行字符串，统计其中 26 个字母各自出现的次数（不分大小写）。
+\begin{lstlisting}[escapeinside={(*@}{@*)}]
+#include <string.h>
+#include <stdio.h>
+void main( )
+{
+    char str[256];
+    unsigned int i;
+    static int count[26];
+    gets(str);
+    for( i=0; str[i]!='\0' ; i++)
+    {
+        if( (*@\fillans{str[i]>='a' \&\& str[i]<='z'}@*) )
+        {
+            count[(*@\fillans{str[i]-'a'}@*)]++;
+        }
+        else if ( (*@\fillans{str[i]>='A' \&\& str[i]<='Z'}@*) )
+        {
+            (*@\fillans{count[str[i]-'A']++}@*) ;
+        }
+    }
+
+    for (i=0;i<26; i++)
+    printf("字母：%c 的个数=%d\n", (*@\fillans{'a'+i, count[i]}@*));
+}
+\end{lstlisting}
+
+\section*{五、写出程序运行结果（25 分，结果写在题目的右边）}
+
+\begin{enumerate}[label=\arabic*、, leftmargin=2em, itemsep=8pt]
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void main( )
+{
+    int a=3,b=4;
+    int c=5,d=6;
+    float f;
+    f = (a++,b++,a+b);
+    printf("f=%f\n",f);
+    f = b/a + d/c ;
+    printf("f=%f\n",f);
+    f = (a|b)^(c&d);
+    printf("f=%f\n",f);
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{verbatim}
+f=9.000000
+f=2.000000
+f=1.000000
+\end{verbatim}
+
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void fun( )
+{
+    int at= 0;
+    static int st=0;
+    printf("at=%d,  st=%d  st+at=%d\n",at++,st++,st+at);
+}
+void main( )
+{
+    int i;
+    for(i=0;i<5;i++)
+    {
+        fun( );
+    }
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{verbatim}
+at=0,  st=0  st+at=0
+at=0,  st=1  st+at=1
+at=0,  st=2  st+at=2
+at=0,  st=3  st+at=3
+at=0,  st=4  st+at=4
+\end{verbatim}
+
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void main( )
+{
+    char str[][20]={ "china",
+        "hubei",
+        "wuhan",
+        "hust-aia" ,
+        "c language" };
+    int i ;
+    for ( i=0 ; i < 5 ; i++)
+    {
+    printf("%s\n", str[4-i]+i);
+    }
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{verbatim}
+c language
+ust-aia
+han
+ei
+a
+\end{verbatim}
+
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void main( )
+{
+    char *str[]={"china", "hubei", "wuhan", "hust-aia"};
+    char **p[] = {str+3 , str+2 , str+1 , str};
+    char ***pp = p ;
+    printf("%s---", **++pp);
+    printf("---%s---", *pp[1]);
+    printf("---%s", *--*++pp+2);
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{verbatim}
+wuhan------hubei------ina
+\end{verbatim}
+
+\newpage
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void main()
+{
+    int a[5][5];
+    int i, j;
+    for (i = 0; i < 5; i++)
+    {
+        a[i][0] = 1;
+        a[i][i] = 1;
+    }
+    for (i = 2; i < 5; i++)
+    {
+        for (j = 1; j < i; j++)
+        {
+            a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+        }
+    }
+    for (i = 0; i < 5; i++)
+    {
+        for (j = 0; j <= i; j++)
+        {
+            printf("%5d", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+\end{lstlisting}
+\noindent\textbf{运行结果：}
+\begin{verbatim}
+    1
+    1    1
+    1    2    1
+    1    3    3    1
+    1    4    6    4    1
+\end{verbatim}
+\end{enumerate}
+
+\section*{六、编程（35 分）注意：不得使用全局变量，注意程序结构}
+
+\noindent 1）编程，输入一个数值 $x$，计算 $y$ 的结果。（8~分）
+\[
+y = \begin{cases}
+x+1 & 0 \le x < 2 \\
+2x+2 & 2 \le x < 4 \\
+3x+3 & 4 \le x < 6 \\
+4x+4 & 6 \le x < 8
+\end{cases}
+\]
+\begin{lstlisting}
+#include <stdio.h>
+void main( )
+{
+    float x, y;
+    printf("input the number x=");
+    scanf("%f",&x);
+    if( x >= 0 && x < 2 )
+    {
+        y = x + 1;
+    }
+    else if (x >= 2 && x < 4)
+    {
+        y = 2*x + 2;
+    }
+    else if ( x >= 4 && x < 6)
+    {
+        y = 3*x + 3 ;
+    }
+    else if ( x >= 6 && x < 8)
+    {
+        y = 4*x + 4;
+    }
+    else
+    {
+        printf("error in input data\n");
+        return;
+    }
+    printf("y=%.2f",y);
+}
+\end{lstlisting}
+
+\medskip
+\noindent 2、编程求序列：$\dfrac{1}{2}, \dfrac{3}{4}, \dfrac{5}{8}, \dfrac{7}{16}, \dfrac{9}{32} \cdots\cdots$，所有大于等于 $0.000001$ 的数据项之和，显示输出计算的结果。（8~分）
+\begin{lstlisting}
+#include <stdio.h>
+#include <math.h>
+void main( )
+{
+    float sum, a, b; //sum 代表和, a 为分子, b 为分母
+    sum = 0;
+    a = 1;           // 分子赋初值
+    b = 2;           // 分母赋初值
+    while (a/b >= 1e-6)
+    {
+        sum = sum + a/b; // 累加一项
+        a = a + 2;       // 求下一项的分子
+        b = b * 2;       // 求下一项的分母
+    }
+    printf(" sum = %f", sum);
+}
+\end{lstlisting}
+
+\medskip
+\noindent 3、编程序，要求主函数中输入 $N$ 行英文，被调用的函数返回其中最长的那个单词（如有多个，返回最后出现的）并在主函数中输出。（10~分）
+\begin{lstlisting}
+#define N 10
+#include<string.h>
+#include<stdio.h>
+char *findstr(char (*pstr)[80]);
+void main()
+{
+    int i;
+    char str[N][80], *ps;
+    for(i=0; i<N; i++)
+    {
+        gets(str[i]);
+    }
+    ps = findstr(str);
+    puts(ps);
+}
+char *findstr(char (*pstr)[80])
+{
+    int i, j, k=0;
+    static char maxstr[80], tempstr[80];
+    for(i=0; i<N; i++)
+    {
+        for(j=0; pstr[i][j]!='\0'; j++)
+        {
+            if((pstr[i][j]>='a' && pstr[i][j]<='z')
+               || (pstr[i][j]>='A' && pstr[i][j]<='Z'))
+            {
+                tempstr[k++]=pstr[i][j];
+            }
+            else
+            {
+                tempstr[k]='\0';
+                if(strlen(tempstr)>=strlen(maxstr))
+                    strcpy(maxstr,tempstr);
+                k=0;
+            }
+        }
+        tempstr[k]='\0';
+        if(strlen(tempstr)>=strlen(maxstr))
+            strcpy(maxstr,tempstr);
+        k=0;
+    }
+    return maxstr;
+}
+\end{lstlisting}
+
+\medskip
+\noindent 4、某班有学生 20 名参加期末考试，每名学生信息由姓名、学号、性别、外语、数学、C 课设和总分组成，试编程要求：（9~分）
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=2pt]
+    \item 学生信息由键盘输入；
+    \item 能按 C 课设成绩查找学生信息；
+    \item 按总分高低顺序输出 C 课设挂科的男生信息。
+\end{enumerate}
+\noindent （每小题写一函数，通过 \texttt{main} 函数调用实现）
+\begin{lstlisting}
+struct student{
+    char name[10];
+    char no[20];
+    char sex;
+    float engl;
+    float math;
+    float Cpro;
+    float sum;
+};
+#define N 20
+#include <stdio.h>
+void input(struct student *p);
+void findstu(struct student *p);
+void outputstu(struct student *p);
+
+void main( )
+{
+    struct student stu[N];
+    input(stu);
+    findstu(stu);
+    outputstu(stu);
+}
+void input(struct student *p)
+{
+    int i;
+    for(i=0; i<N; i++, p++)
+    {
+        scanf("%s%s %c%f%f%f", p->name, p->no, &p->sex,
+              &p->engl, &p->math, &p->Cpro);
+        p->sum = p->engl + p->math + p->Cpro;
+    }
+}
+void findstu(struct student *p)
+{
+    int i; float x;
+    while(1)
+    {
+        printf("请输入 C 课设成绩"); // 系统设计成输入 0-100 之外的数退出,
+        // 输入正确的 C 课设分数 x, 则显示分数大于等于 x 的所有学生
+        scanf("%f", &x);
+        if(x<0 || x>100) break;
+        for(i=0; i<N; i++)
+        {
+            if(p[i].Cpro >= x)
+                printf("%10s%20s %c%10f%10f%10f%10f\n",
+                       p[i].name, p[i].no, p[i].sex,
+                       p[i].engl, p[i].math, p[i].Cpro, p[i].sum);
+        }
+    }
+}
+void outputstu(struct student *p)
+{
+    int i, j;
+    struct student temp;
+    for(i=0; i<N-1; i++)
+        for(j=0; j<N-1-i; j++)
+        {
+            if(p[j].sum < p[j+1].sum)
+            {
+                temp = p[j];
+                p[j] = p[j+1];
+                p[j+1] = temp;
+            }
+        }
+    for(i=0; i<N; i++)
+    {
+        if(p[i].Cpro<60 && p[i].sex=='M')
+            printf("%10s%20s %c%10f%10f%10f%10f\n",
+                   p[i].name, p[i].no, p[i].sex,
+                   p[i].engl, p[i].math, p[i].Cpro, p[i].sum);
+    }
+}
+\end{lstlisting}
+
+\end{document}

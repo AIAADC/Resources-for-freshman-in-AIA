@@ -1,0 +1,261 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+\newcommand{\score}[1]{\hfill（#1）}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2022～2023 学年第一学期}\\[0.4em]
+  {\Large\bfseries “微积分（一）”期中考试试卷（A 卷）}\\[0.9em]
+  {\normalsize
+    考试方式：\underline{\ \ 闭卷\ \ }\quad
+    考试日期：\underline{\ 2022-11-13\ }\quad
+    考试时长：\underline{\ 150\ }分钟
+  }\\[0.5em]
+  {\normalsize
+    专业班级：\blank[3.6cm]\quad
+    学\hspace{1em}号：\blank[3.4cm]\quad
+    姓\hspace{1em}名：\blank[3.0cm]
+  }\\[0.7em]
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \rule[-0.5em]{0pt}{1.7em}\makebox[2.2cm]{题号} & \makebox[2.0cm]{一} & \makebox[2.0cm]{二} & \makebox[2.0cm]{三} & \makebox[2.0cm]{总分} \\
+    \hline
+    \rule[-0.6em]{0pt}{1.9em}分数 & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、基本计算题（每小题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.95em, topsep=0.5em]
+  \item 求极限 $l = \lim\limits_{n\to\infty}\left(\sin\dfrac{\pi}{\sqrt{n^2+1}} + \sin\dfrac{\pi}{\sqrt{n^2+2}} + \cdots + \sin\dfrac{\pi}{\sqrt{n^2+n}}\right)$.
+
+  \item 求极限 $l = \lim\limits_{x\to 0}\dfrac{1}{\ln(1+x)}\left(\dfrac{1}{x} - \dfrac{1}{\sin x}\right)$.
+
+  \item 求当 $x\to 0$ 时，无穷小量 $x - \arctan x$ 的主部与阶数.
+
+  \item 设 $b = \lim\limits_{x\to 0}\dfrac{x + a\cos x - 2}{\tan x}$ 为常数，求 $a, b$.
+
+  \item 设函数 $f(x) = \dfrac{\ln|x|}{|x-1|}\sin x$，求 $f(x)$ 的间断点并判断类型.
+
+  \item 设 $y(x) = \dfrac{\sqrt{1+x} - \sqrt{1-x}}{\sqrt{1+x} + \sqrt{1-x}}~(x\neq 0, x\neq\pm 1)$，求 $y'(x)$.
+
+  \item 设二阶可导函数 $y = y(x)$ 由方程 $y = 1 + x\e^y$ 确定，则 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{x=0}$.
+
+  \item 设 $y = (1+x^2)^{\sin x}$，求 $\dd y$.
+
+  \item 已知 $f(x) = x^3 \ln(1+x)$，求 $f^{(10)}(0)$.
+
+  \item 求曲线 $r = 1 - \cos\theta$ 在 $\theta = \dfrac{\pi}{2}$ 处的切线方程.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{二、综合题（每小题 6 分，共 30 分）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.95em, topsep=0.5em]
+  \item 研究函数 $f(x) = \lim\limits_{n\to\infty}\dfrac{x + x^2 \e^{nx}}{1 + \e^{nx}}$ 的连续性.
+
+  \item 设 $y = g(x)$ 是 $y = f(x)$ 的反函数，$f(1) = 2$，$f'(1) = -4$，求 $y = g(1+x^2)$ 在 $x = 1$ 的导数.
+
+  \item 设函数 $f(x)$ 在 $x = 1$ 处二阶可导，且 $f'(1) = 0$，$f''(1) = 0$，$y = f^2(x)$，求 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{x=1}$.
+
+  \item 设函数 $g(x) = \begin{cases} x^3 \sin\dfrac{1}{x}, & x\neq 0 \\[0.4em] 0, & x = 0 \end{cases}$，函数 $f(x)$ 可导，求 $F(x) = f(g(x))$ 的导数.
+
+  \item 将水以 $4\,\mathrm{m}^3/\mathrm{min}$ 的速率注入一个圆锥形容器中，容器顶朝下倒立，它的高度为 $8$ 米，底半径为 $4$ 米，当容器内的水深达 $5$ 米时，水面升高的速率是多少？
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{三、证明题（每小题 5 分，共 10 分）}
+
+\begin{enumerate}[label=\arabic*., start=16, leftmargin=2em, itemsep=0.95em, topsep=0.5em]
+  \item 设 $x_n > 0$，$x_{n+1} + \dfrac{4}{x_n} < 4~(n = 1, 2, \cdots)$，证明 $\lim\limits_{n\to\infty} x_n$ 存在并求其值.
+
+  \item 设函数 $f(x)$ 在 $[0, b]$ 上具有二阶导数，且 $|f''(x)| \le M$，$f(x)$ 在 $(0, b)$ 上取得最大值，试证：$|f'(0)| + |f'(b)| \le Mb$.
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+  {\small 考试日期：2022-11-13\quad 2:30--5:00}\\[0.6em]
+  {\Large\bfseries 2022～2023 学年第一学期}\\[0.4em]
+  {\Large\bfseries 《微积分（一）》课程期中试题解答}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、基本计算题（每小题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 求极限 $l = \lim\limits_{n\to\infty}\left(\sin\dfrac{\pi}{\sqrt{n^2+1}} + \sin\dfrac{\pi}{\sqrt{n^2+2}} + \cdots + \sin\dfrac{\pi}{\sqrt{n^2+n}}\right)$.\\[0.3em]
+  解：设 $x_n = \sin\dfrac{\pi}{\sqrt{n^2+1}} + \sin\dfrac{\pi}{\sqrt{n^2+2}} + \cdots + \sin\dfrac{\pi}{\sqrt{n^2+n}}$，则
+  \[
+    n\sin\frac{\pi}{\sqrt{n^2+n}} \le x_n \le n\sin\frac{\pi}{\sqrt{n^2+1}}, \tag*{（3 分）}
+  \]
+  而 $\lim\limits_{n\to\infty} n\sin\dfrac{\pi}{\sqrt{n^2+1}} = \lim\limits_{n\to\infty} n\cdot\dfrac{\pi}{\sqrt{n^2+1}} = \pi$，$\lim\limits_{n\to\infty} n\sin\dfrac{\pi}{\sqrt{n^2+n}} = \pi$，\\[0.2em]
+  所以 $l = \pi$. \score{6 分}
+
+  \item 求极限 $l = \lim\limits_{x\to 0}\dfrac{1}{\ln(1+x)}\left(\dfrac{1}{x} - \dfrac{1}{\sin x}\right)$.\\[0.3em]
+  解：
+  \vspace{-1.8em}
+  \begin{align*}
+    l &= \lim_{x\to 0}\frac{1}{x}\cdot\frac{\sin x - x}{x\sin x} = \lim_{x\to 0}\frac{\sin x - x}{x^3} \tag*{（3 分）} \\
+      &= \lim_{x\to 0}\frac{\cos x - 1}{3x^2} \tag*{（5 分）} \\
+      &= -\frac{1}{6}. \tag*{（6 分）}
+  \end{align*}
+
+  \item 求当 $x\to 0$ 时，无穷小量 $x - \arctan x$ 的主部与阶数.\\[0.3em]
+  解：设 $x\to 0$，$x - \arctan x$ 的主部为 $cx^k$，则
+  \[
+    \lim_{x\to 0}\frac{x - \arctan x}{x^k} = c. \tag*{（2 分）}
+  \]
+  而 $\lim\limits_{x\to 0}\dfrac{x - \arctan x}{x^k} = \lim\limits_{x\to 0}\dfrac{1 - \dfrac{1}{1+x^2}}{kx^{k-1}} = \lim\limits_{x\to 0}\dfrac{1}{kx^{k-3}}$，\\[0.3em]
+  $\lim\limits_{x\to 0}\dfrac{1}{kx^{k-3}} = c \qquad k = 3,\ c = \dfrac{1}{3}$ \score{4 分}\\[0.2em]
+  故主部为 $\dfrac{1}{3}x^3$，阶数是 $3$. \score{6 分}
+
+  \item 设 $b = \lim\limits_{x\to 0}\dfrac{x + a\cos x - 2}{\tan x}$ 为常数，求 $a, b$.\\[0.3em]
+  解：由 $b$ 是常数，$\lim\limits_{x\to 0}\tan x = 0$ 知，$\lim\limits_{x\to 0}(x + a\cos x - 2) = 0$，于是 $a = 2$， \score{3 分}\\[0.2em]
+  进而 $b = \lim\limits_{x\to 0}\dfrac{x + 2(\cos x - 1)}{x} = 1$，即 $a = 2,\ b = 1$. \score{6 分}
+
+  \item 设函数 $f(x) = \dfrac{\ln|x|}{|x-1|}\sin x$，求 $f(x)$ 的间断点并判断类型.\\[0.3em]
+  解：当 $x = 0, x = 1$ 时，$f(x)$ 无定义，故 $x = 0, x = 1$ 是 $f(x)$ 的间断点. \score{2 分}\\[0.2em]
+  因 $\lim\limits_{x\to 0^+} f(x) = \lim\limits_{x\to 0^+}\dfrac{\ln x}{\csc x}\cdot\dfrac{1}{|x-1|} = \lim\limits_{x\to 0^+}\dfrac{1/x}{-\csc x\cot x} = -\lim\limits_{x\to 0^+}\dfrac{\sin^2 x}{x\cos x} = 0$\\[0.2em]
+  类似可得 $\lim\limits_{x\to 0^-} f(x) = 0$，所以 $x = 0$ 是可去间断点. \score{4 分}\\[0.2em]
+  （或 $\lim\limits_{x\to 0} f(x) = \lim\limits_{x\to 0} x\ln|x|\cdot\dfrac{1}{|x-1|} = \lim\limits_{x\to 0} x\ln|x| = \lim\limits_{x\to 0}\dfrac{\ln|x|}{1/x} = \lim\limits_{x\to 0}\dfrac{1/x}{-1/x^2} = 0$）\\[0.3em]
+  又 $\lim\limits_{x\to 1^+} f(x) = \lim\limits_{x\to 1^+}\dfrac{\ln x}{x-1}\sin x = \lim\limits_{x\to 1^+}\dfrac{x-1}{x-1}\sin x = \sin 1$，\\[0.2em]
+  $\lim\limits_{x\to 1^-} f(x) = \lim\limits_{x\to 1^-}\dfrac{-\ln x}{x-1}\sin x = -\sin 1$，所以 $x = 1$ 是跳跃间断点. \score{6 分}
+
+  \item 设 $y(x) = \dfrac{\sqrt{1+x} - \sqrt{1-x}}{\sqrt{1+x} + \sqrt{1-x}}~(x\neq 0, x\neq\pm 1)$，求 $y'(x)$.\\[0.3em]
+  解：化简得 $y(x) = \dfrac{1 - \sqrt{1-x^2}}{x}$. \score{2 分}
+  \[
+    y'(x) = \frac{\dfrac{2x}{2\sqrt{1-x^2}}\cdot x - \left(1 - \sqrt{1-x^2}\right)}{x^2} = \frac{1 - \sqrt{1-x^2}}{x^2\sqrt{1-x^2}}. \tag*{（6 分）}
+  \]
+
+  \item 设二阶可导函数 $y = y(x)$ 由方程 $y = 1 + x\e^y$ 确定，则 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{x=0}$.\\[0.3em]
+  解：由题设有 $x = 0, y = 1$，方程两边关于 $x$ 求导得
+  \[
+    (1 - x\e^y)y' = \e^y \qquad (*)
+  \]
+  $y'(0) = \e$ \score{3 分}\\[0.2em]
+  方程 $(*)$ 两边再关于 $x$ 求导得
+  \[
+    (1 - x\e^y)y'' = 2y'\e^y + x(y')^2\e^y \tag*{（5 分）}
+  \]
+  $\therefore y''(0) = 2\e^2$，即 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{x=0} = 2\e^2$. \score{6 分}
+
+  \item 设 $y = (1+x^2)^{\sin x}$，求 $\dd y$.\\[0.3em]
+  解：因 $\ln y = \sin x \ln(1+x^2)$ \score{2 分}\\[0.2em]
+  所以 $\dfrac{1}{y}y' = \cos x\ln(1+x^2) + \sin x\cdot\dfrac{2x}{1+x^2}$\\[0.2em]
+  即 $y' = \left(\cos x\ln(1+x^2) + \dfrac{2x\sin x}{1+x^2}\right)y = (1+x^2)^{\sin x}\left(\cos x\ln(1+x^2) + \dfrac{2x\sin x}{1+x^2}\right)$ \score{5 分}\\[0.3em]
+  $\dd y = (1+x^2)^{\sin x}\left(\cos x\ln(1+x^2) + \dfrac{2x\sin x}{1+x^2}\right)\dd x$. \score{6 分}
+
+  \item 已知 $f(x) = x^3 \ln(1+x)$，求 $f^{(10)}(0)$.\\[0.3em]
+  解：取 $v(x) = x^3$，它的四阶以上的导数为零， \score{1 分}
+  \[
+    u^{(k)}(x) = \bigl(\ln(1+x)\bigr)^{(k)} = \frac{(-1)^{k-1}(k-1)!}{(1+x)^k},\quad k = 1, 2, \cdots, \tag*{（3 分）}
+  \]
+  用莱布尼茨公式：$(uv)^{(n)} = \sum\limits_{k=0}^{n} C_n^k u^{(n-k)} v^{(k)}$，
+  \[
+    f^{(10)}(x) = x^3\frac{(-1)^9 9!}{(1+x)^{10}} + 30x^2\frac{(-1)^8 8!}{(1+x)^9} + 3\times 10\times 9x\frac{(-1)^7 7!}{(1+x)^8} + 10\cdot 9\cdot 8\frac{(-1)^6 6!}{(1+x)^7}.
+  \]
+  所以 $f^{(10)}(0) = \dfrac{10!}{7}$. \score{6 分}
+
+  \item 求曲线 $r = 1 - \cos\theta$ 在 $\theta = \dfrac{\pi}{2}$ 处的切线方程.\\[0.3em]
+  解：曲线的参数方程为 $x = (1 - \cos\theta)\cos\theta$，$y = (1 - \cos\theta)\sin\theta$. \score{2 分}\\[0.2em]
+  于是得到
+  \[
+    \frac{\dd y}{\dd x} = \frac{\sin^2\theta + (1 - \cos\theta)\cos\theta}{2\sin\theta\cos\theta - \sin\theta}. \tag*{（4 分）}
+  \]
+  代入 $\theta = \dfrac{\pi}{2}$ 得到 $\dfrac{\dd y}{\dd x} = -1$，$x = 0,\ y = 1$，因此切线方程为 $y = -x + 1$. \score{6 分}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、综合题（每小题 6 分，共 30 分）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 研究函数 $f(x) = \lim\limits_{n\to\infty}\dfrac{x + x^2 \e^{nx}}{1 + \e^{nx}}$ 的连续性.\\[0.3em]
+  解：（1）当 $x > 0$ 时，$\e^{nx} \to +\infty\ (n\to\infty)$，因此 $\lim\limits_{n\to\infty}\dfrac{x + x^2\e^{nx}}{1 + \e^{nx}} = x^2$；\\[0.2em]
+  （2）当 $x < 0$ 时，$\e^{nx} \to 0\ (n\to\infty)$，因此 $\lim\limits_{n\to\infty}\dfrac{x + x^2\e^{nx}}{1 + \e^{nx}} = x$；\\[0.2em]
+  （3）当 $x = 0$ 时，$\lim\limits_{n\to\infty}\dfrac{x + x^2\e^{nx}}{1 + \e^{nx}} = 0$，\\[0.2em]
+  所以
+  \[
+    f(x) = \begin{cases} x^2, & x > 0, \\ x, & x \le 0. \end{cases} \tag*{（4 分）}
+  \]
+  当 $x\neq 0$ 时，$f(x) = x^2$ 及 $f(x) = x$ 均为幂函数，连续；\\[0.2em]
+  当 $x = 0$ 时，$\lim\limits_{x\to 0^+} f(x) = 0 = \lim\limits_{x\to 0^-} f(x)$，且 $f(0) = 0$，故 $f(x)$ 在 $x = 0$ 处连续，从而 $f(x)$ 在 $(-\infty, +\infty)$ 上处处连续. \score{6 分}
+
+  \item 设 $y = g(x)$ 是 $y = f(x)$ 的反函数，$f(1) = 2$，$f'(1) = -4$，求 $y = g(1+x^2)$ 在 $x = 1$ 的导数.\\[0.3em]
+  解：由题意得 $g'(2) = \dfrac{1}{f'(1)} = -\dfrac{1}{4}$， \score{2 分}\\[0.2em]
+  $y' = g'(1+x^2)\cdot 2x = 2xg'(1+x^2)$， \score{4 分}\\[0.2em]
+  $y'(1) = \left.[2xg'(1+x^2)]\right|_{x=1} = 2g'(2) = -\dfrac{1}{2}$. \score{6 分}
+
+  \item 设函数 $f(x)$ 在 $x = 1$ 处二阶可导，且 $f'(1) = 0$，$f''(1) = 0$，$y = f^2(x)$，求 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{x=1}$.\\[0.3em]
+  解：$y'(x) = 2f(x)f'(x)$ \score{3 分}
+  \begin{align*}
+    \left.\frac{\dd^2 y}{\dd x^2}\right|_{x=1} &= \lim_{x\to 1}\frac{y'(x) - y'(1)}{x - 1} \\
+    &= \lim_{x\to 1}\frac{2f(x)f'(x)}{x - 1} = \lim_{x\to 1}\frac{2f(x)\bigl(f'(x) - f'(1)\bigr)}{x - 1} \\
+    &= 2f(1)f''(1) = 0. \tag*{（6 分）}
+  \end{align*}
+
+  \item 设函数 $g(x) = \begin{cases} x^3 \sin\dfrac{1}{x}, & x\neq 0 \\[0.4em] 0, & x = 0 \end{cases}$，函数 $f(x)$ 可导，求 $F(x) = f(g(x))$ 的导数.\\[0.3em]
+  解：$F(x) = \begin{cases} f\!\left(x^3\sin\dfrac{1}{x}\right), & x\neq 0, \\[0.4em] f(0), & x = 0. \end{cases}$\\[0.3em]
+  当 $x\neq 0$ 时，$F'(x) = f'\!\left(x^3\sin\dfrac{1}{x}\right)\left(3x^2\sin\dfrac{1}{x} - x\cos\dfrac{1}{x}\right)$， \score{3 分}\\[0.4em]
+  当 $x = 0$ 时，$g'(0) = \lim\limits_{x\to 0}\dfrac{x^3\sin\dfrac{1}{x} - 0}{x} = 0$，$F'(0) = f'(g(0))\cdot g'(0) = f'(0)\cdot 0 = 0$. \score{6 分}
+
+  \item 将水以 $4\,\mathrm{m}^3/\mathrm{min}$ 的速率注入一个圆锥形容器中，容器顶朝下倒立，它的高度为 $8$ 米，底半径为 $4$ 米，当容器内的水深达 $5$ 米时，水面升高的速率是多少？\\[0.3em]
+  解：设时刻 $t$ 容器中水的体积为 $V\,\mathrm{m}^3$，水的高度为 $h\,\mathrm{m}$，水面半径为 $r$，则
+  \[
+    \frac{r}{4} = \frac{h}{8},\quad\text{即 } r = \frac{h}{2},\quad\text{因而 } V = \frac{1}{12}\pi h^3 \tag*{（2 分）}
+  \]
+  于是 $\dfrac{\dd V}{\dd t} = \dfrac{1}{4}\pi h^2\dfrac{\dd h}{\dd t}$ \score{4 分}\\[0.3em]
+  当 $h = 5\,\mathrm{m}$、$\dfrac{\dd V}{\dd t} = 4\,(\mathrm{m}^3/\mathrm{min})$ 时，$\dfrac{\dd h}{\dd t} = \dfrac{4}{25\pi}\cdot 4 = \dfrac{16}{25\pi}\,(\mathrm{m/min})$，\\[0.3em]
+  即水面升高的速率是 $\dfrac{16}{25\pi}\,\mathrm{m/min}$. \score{6 分}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、证明题（每小题 5 分，共 10 分）}
+
+\begin{enumerate}[label=\arabic*., start=16, leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 设 $x_n > 0$，$x_{n+1} + \dfrac{4}{x_n} < 4~(n = 1, 2, \cdots)$，证明 $\lim\limits_{n\to\infty} x_n$ 存在并求其值.\\[0.3em]
+  证：由均值不等式 $\sqrt{x_{n+1}\cdot\dfrac{4}{x_n}} \le \dfrac{x_{n+1} + \dfrac{4}{x_n}}{2}$ \score{1 分}\\[0.3em]
+  及 $x_{n+1} + \dfrac{4}{x_n} < 4$，得 $\sqrt{x_{n+1}\cdot\dfrac{4}{x_n}} < 2$ 即 $\dfrac{x_{n+1}}{x_n} < 1$，故 $\{x_n\}$ 单调递减. \score{2 分}\\[0.3em]
+  或 $x_{n+1} - x_n < 4 - \dfrac{4}{x_n} - x_n = -\left(\sqrt{x_n} - \dfrac{2}{\sqrt{x_n}}\right)^2 \le 0$ 得到 $\{x_n\}$ 单调递减.\\[0.2em]
+  又 $x_n > 0$，由单调有界准则知 $\{x_n\}$ 收敛，即 $\lim\limits_{n\to\infty} x_n$ 存在. \score{3 分}\\[0.2em]
+  设 $\lim\limits_{n\to\infty} x_n = A$，由 $x_{n+1} > 0$ 及 $x_{n+1} + \dfrac{4}{x_n} < 4$ 得 $x_n > 1$，则 $A \ge 1 > 0$. 由 $x_{n+1} + \dfrac{4}{x_n} < 4$ 得，$\lim\limits_{n\to\infty}\left(x_{n+1} + \dfrac{4}{x_n}\right) \le 4$\\[0.2em]
+  即 $A + \dfrac{4}{A} \le 4$，由此得 $(A - 2)^2 \le 0$，故 $A = 2$ 即 $\lim\limits_{n\to\infty} x_n = 2$. \score{5 分}
+
+  \item 设函数 $f(x)$ 在 $[0, b]$ 上具有二阶导数，且 $|f''(x)| \le M$，$f(x)$ 在 $(0, b)$ 上取得最大值，试证：$|f'(0)| + |f'(b)| \le Mb$.\\[0.3em]
+  证：设 $f(x)$ 在 $x_0 \in (0, b)$ 点取得最大值，则 $f'(x_0) = 0$. \score{1 分}\\[0.2em]
+  函数 $f'(x)$ 在 $[0, x_0],[x_0, b]$ 上分别应用拉格朗日中值定理
+  \begin{align*}
+    f'(x_0) - f'(0) &= f''(\eta)x_0, \qquad \exists\,\eta\in(0, x_0) \\
+    f'(b) - f'(x_0) &= f''(\xi)(b - x_0), \quad \exists\,\xi\in(x_0, b) \tag*{（3 分）}
+  \end{align*}
+  $|f'(0)| + |f'(b)| = |f''(\eta)|x_0 + |f''(\xi)|(b - x_0) \le Mx_0 + M(b - x_0) = Mb$. \score{5 分}
+\end{enumerate}
+
+\end{document}

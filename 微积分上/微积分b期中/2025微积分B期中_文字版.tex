@@ -1,0 +1,97 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\blank}[1][2.6cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2025～2026 学年第一学期}\\[0.35em]
+  {\Large\bfseries “微积分（B）”期中考试试卷（A 卷）}\\[0.6em]
+  {\normalsize
+    考试方式：\underline{\;\;闭卷\;\;}\quad
+    考试日期：\underline{\;\;2025-11-15\;\;}\quad
+    考试时间：8:30--11:00\quad
+    考试时长：\underline{\;\;150\;\;} 分钟\\[0.35em]
+    专业班级：\blank[3.0cm]\quad
+    学号：\blank[3.0cm]\quad
+    姓名：\blank[2.8cm]
+  }
+\end{center}
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{|c|*{4}{wc{1.75cm}|}}
+    \hline
+    题号 & 一 & 二 & 三 & 总分 \\
+    \hline
+    分数 & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、基本计算题（每小题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=1.05em, topsep=0.5em]
+  \item 求极限 $l = \lim\limits_{n\to\infty}\left(\dfrac{1}{n^2+1} + \dfrac{2}{n^2+\sqrt{2}} + \cdots + \dfrac{n}{n^2+\sqrt{n}}\right)$.
+
+  \item 求极限 $l = \lim\limits_{x\to 0}\dfrac{e^x - e^{\tan x}}{\ln(1+\sin^3 x)}$.
+
+  \item 设 $y = \arctan e^x - \ln\sqrt{\dfrac{e^{2x}}{1+e^{2x}}}$，求 $\left.dy\right|_{x=1}$.
+
+  \item 已知曲线的参数方程为 $\begin{cases} x = \dfrac{3t}{1+t^3}, \\[0.5em] y = \dfrac{3t^2}{1+t^3} \end{cases}$，求该曲线在对应 $t=1$ 的点 $P$ 处的切线方程.
+
+  \item 求当 $x\to 0$ 时，无穷小量 $u = \sqrt{1+x\arcsin x} - \sqrt{\cos x}$ 的主部和阶数.
+
+  \item 讨论函数 $f(x) = \lim\limits_{n\to\infty}\dfrac{x+e^{nx}}{1+e^{nx}}$ 的连续性，若有间断点，指出其类型.
+
+  \item 试确定常数 $a,b$，使得 $\lim\limits_{x\to 0}\dfrac{\sqrt{(1+x)^4+3}-(a+bx)}{x} = 0$.
+
+  \item 已知函数 $y = f(\sin^2 x)$，其中 $f(u)$ 二阶可导，求 $y''$.
+
+  \item 设 $f(x) = \begin{cases} x^n\cos\dfrac{1}{x}, & x\neq 0, \\ 0, & x=0, \end{cases}$ 要使 $f'(x)$ 在 $x=0$ 处连续，求正整数 $n$ 的取值范围.
+
+  \item 设 $f(x) = \cos^4 x + \sin^4 x$，求 $f^{(6)}(0)$.
+\end{enumerate}
+
+\vspace{1.0em}
+\textbf{二、综合题（每小题 6 分，共 30 分）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=1.05em, topsep=0.5em]
+  \item 设 $y = y(x)$ 由方程 $x = 1 + \dfrac{t}{2} + \dfrac{t^3}{6}$ 与 $e^y\sin t - y + 1 = 0$ 确定，求 $\dfrac{dy}{dx},\ \left.\dfrac{dy}{dx}\right|_{x=1}$.
+
+  \item 设 $f(x)$ 定义于 $(-\infty,+\infty)$，且 $f(x)\neq 0$. 若任给 $x,y$ 总有 $f(x+y)=f(x)f(y)$，且 $f'(0)=\lambda$，讨论 $f(x)$ 的可导性，并求 $f(x)$.
+
+  \item 设 $f(x)$ 二阶可导，且 $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=0,\ f''(0)=2$，求 $l = \lim\limits_{x\to 0}\left(1+\dfrac{f(x)}{x}\right)^{\frac{1}{x}}$.
+
+  \item 设函数 $f(u)$ 二阶可导且 $f'(u)\neq 0$，若 $x=\varphi(y)$ 为 $y=f(\ln x)$ 的反函数，求 $\dfrac{d^2x}{dy^2}$.
+
+  \item 利用不等式 $\dfrac{1}{n+1} < \ln\left(1+\dfrac{1}{n}\right) < \dfrac{1}{n}$，研究数列 $x_n = 1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}-\ln n$ 的收敛性.
+\end{enumerate}
+
+\vspace{1.0em}
+\textbf{三、证明题（每小题 5 分，共 10 分）}
+
+\begin{enumerate}[label=\arabic*., start=16, leftmargin=2em, itemsep=1.05em, topsep=0.5em]
+  \item 设常数 $\alpha > 1$，证明方程 $\alpha x = \tan x$ 在 $\left(0,\dfrac{\pi}{2}\right)$ 内至少有一个实根.
+
+  \item 设函数 $f(x)$ 在 $[0,1]$ 上连续，在 $(0,1)$ 内可导，并且 $f(0)=f(1)=0,\ f(\theta)=1,\ \theta\in(0,1)$，证明：存在 $\xi\in(0,1)$，使得 $f'(\xi)-f(\xi)+\xi=1$.
+\end{enumerate}
+
+\end{document}

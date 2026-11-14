@@ -1,0 +1,290 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\blank}[1][2.2cm]{\underline{\hspace{#1}}}
+\newcommand{\score}[1]{\hfill{\text{（#1 分）}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2018～2019 学年第一学期}\\[0.5em]
+  {\Large\bfseries 《微积分（一）》课程考试试卷（A 卷）解答}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、单项选择题（每小题 3 分，6 个小题共 18 分，将结果涂在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.6em]
+  \item 以下关于数列的命题，正确的是 \textbf{【A】}。
+
+  A. 一个有界数列与一个无界数列的和是无界数列 \quad
+  B. 两个无界数列的和是无界数列
+
+  C. 两个无界数列的乘积是无界数列 \quad
+  D. 一个有界数列与一个无界数列的乘积是无界数列
+
+  \item 设函数 $f(x)$ 在 $x=a$ 处可导，则函数 $\sqrt[3]{f(x)}$ 在 $x=a$ 处 \textbf{【C】}。
+
+  A. 可导 \qquad\quad
+  B. 不连续 \qquad\quad
+  C. 连续但不一定可导 \qquad\quad
+  D. 不可导
+
+  \item 设函数 $f(x)$ 在区间 $(a,b)$ 内连续，则 $f(x)$ 在区间 $(a,b)$ 内 \textbf{【D】}。
+
+  A. 有界 \qquad\quad
+  B. 可导 \qquad\quad
+  C. 存在最大值 \qquad\qquad\quad\ 
+  D. 原函数存在
+
+  \item 函数 $f(x)=x^4-2x^3$ 有 \textbf{【B】}。
+
+  A. 一个极小值和一个极大值 \qquad
+  B. 一个极小值 \qquad
+  C. 两个极小值 \qquad
+  D. 两个极大值
+
+  \item 设函数 $f(x)$ 在区间 $(a,b)$ 内满足 $f'(x)<0,\,f''(x)>0$。则在区间 $(a,b)$ 内 \textbf{【A】}。
+
+  A. $f(x)$ 单调减少，曲线 $y=f(x)$ 下凸。 \qquad
+  B. $f(x)$ 单调减少，曲线 $y=f(x)$ 上凸。
+
+  C. $f(x)$ 单调增加，曲线 $y=f(x)$ 下凸。 \qquad
+  D. $f(x)$ 单调增加，曲线 $y=f(x)$ 上凸。
+
+  \item 设 $M=\displaystyle\int_0^{\pi/4}\sqrt{\sin x}\dd x$，$N=\displaystyle\int_0^{\pi/4}\sqrt{\sec x}\dd x$，$K=\displaystyle\int_0^{\pi/4}\sqrt{\tan x}\dd x$，则 $M,N,K$ 的大小关系为 \textbf{【B】}。
+
+  A. $M<N<K$ \qquad\quad
+  B. $M<K<N$ \qquad\quad
+  C. $N<M<K$ \qquad\quad
+  D. $K<N<M$
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、填空题（每小题 4 分，4 个小题共 16 分，将计算结果写在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., start=7, leftmargin=2em, itemsep=0.9em, topsep=0.6em]
+  \item 设 $u=x+a\ln(1-x)+bx\sin(3x)$ 是 $x$ 的 3 阶无穷小，则 $a=\underline{\ 1\ }$，$b=\underline{\ 1/6\ }$。
+
+  \textbf{分析}：根据泰勒展开
+  \begin{align*}
+    u &= x + a\left(-x-\frac{x^2}{2}-\frac{x^3}{3}+o(x^3)\right) + bx\bigl(3x+o(x^2)\bigr) \\
+      &= (1-a)x + \left(3b-\frac{a}{2}\right)x^2 - \frac{a}{3}x^3 + o(x^3).
+  \end{align*}
+  因为 $u$ 是 $x$ 的 3 阶无穷小，所以 $1-a=0$，$3b-\dfrac{a}{2}=0$（且 $-\dfrac{a}{3}\neq 0$），解得 $a=1,\,b=\dfrac{1}{6}$。
+
+  \item 曲线 $y=x^3-6x^2+5x+3$ 的拐点坐标为 $\underline{\ (2,-3)\ }$。
+
+  \textbf{分析}：令 $y''=6x-12=0$，得 $x=2$（且在 $x=2$ 两侧 $y''$ 变号）。易知拐点坐标为 $(2,-3)$。
+
+  \item $\displaystyle\lim_{x\to 0}\frac{\displaystyle\int_0^{1-\cos x}\tan t\dd t}{\sin x^4}=\underline{\ 1/8\ }$。
+
+  \textbf{分析}：当 $x\to 0$ 时，$\sin x^4\sim x^4$，由洛必达法则得
+  \[
+    \lim_{x\to 0}\frac{\displaystyle\int_0^{1-\cos x}\tan t\dd t}{\sin x^4}
+    = \lim_{x\to 0}\frac{\displaystyle\int_0^{1-\cos x}\tan t\dd t}{x^4}
+    = \lim_{x\to 0}\frac{\tan(1-\cos x)\sin x}{4x^3}
+    = \lim_{x\to 0}\frac{\frac{1}{2}x^2\cdot x}{4x^3}
+    = \frac{1}{8}.
+  \]
+
+  \item 曲线 $x=2\cos^3 t$，$y=2\sin^3 t$，$0\le t\le 2\pi$ 的长度为 $\underline{\ 12\ }$。
+
+  \textbf{分析}：
+  \[
+    l = 4\int_0^{\pi/2}\sqrt{(x'_t)^2+(y'_t)^2}\dd t = 24\int_0^{\pi/2}\sin t\cos t\dd t = 12.
+  \]
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、基本计算题（每小题 7 分，6 个小题共 42 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=1.0em, topsep=0.6em]
+  \item 求曲线 $y=\sqrt{4x^2+2x+5}\ (x>0)$ 的渐近线。
+
+  \textbf{解}：
+  \begin{align*}
+    k &= \lim_{x\to+\infty}\frac{\sqrt{4x^2+2x+5}}{x} = \lim_{x\to+\infty}\sqrt{4+2x^{-1}+5x^{-2}} = 2, \tag*{（3 分）}\\
+    b &= \lim_{x\to+\infty}\left(\sqrt{4x^2+2x+5}-2x\right) = \lim_{x\to+\infty}\frac{2x+5}{\sqrt{4x^2+2x+5}+2x} \\
+      &= \lim_{x\to+\infty}\frac{2+5x^{-1}}{\sqrt{4+2x^{-1}+5x^{-2}}+2} = \frac{1}{2}, \tag*{（6 分）}
+  \end{align*}
+  于是得斜渐近线 $y=2x+\dfrac{1}{2}$，曲线没有其它渐近线。\score{7}
+
+  \item 写出 $f(x)=\ln(1+x)$ 带 Lagrange 余项的 $n$ 阶麦克劳林公式。
+
+  \textbf{解}：
+  \[
+    f'(x)=\frac{1}{1+x},\quad
+    f^{(n)}(x)=\frac{(-1)^{n-1}(n-1)!}{(1+x)^n},\quad
+    f^{(n+1)}(x)=\frac{(-1)^n n!}{(1+x)^{n+1}}, \tag*{（3 分）}
+  \]
+  \[
+    f(0)=0,\quad f'(0)=1,\quad f^{(n)}(0)=(-1)^{n-1}(n-1)!. \tag*{（5 分）}
+  \]
+  所以
+  \[
+    \ln(1+x)=x-\frac{x^2}{2}+\cdots+\frac{(-1)^{n-1}}{n}x^n+\frac{(-1)^n x^{n+1}}{(n+1)(1+\theta x)^{n+1}},\quad 0<\theta<1,\ x>-1. \tag*{（7 分）}
+  \]
+
+  \item 求不定积分 $I=\displaystyle\int\frac{\sqrt{x-3}}{2x}\dd x$。
+
+  \textbf{解}：作代换 $\sqrt{x-3}=t$，$x=t^2+3$，$t>0$，$\dd x=2t\dd t$，\score{2}
+
+  得到
+  \begin{align*}
+    I &= \int\frac{t^2}{t^2+3}\dd t = t - 3\int\frac{1}{t^2+3}\dd t \tag*{（5 分）}\\
+      &= \sqrt{x-3} - \sqrt{3}\arctan\frac{\sqrt{x-3}}{\sqrt{3}} + C. \tag*{（7 分）}
+  \end{align*}
+
+  \item 求定积分 $I=\displaystyle\int_0^{1/2} x\arcsin x\dd x$。
+
+  \textbf{解}：
+  \begin{align*}
+    I &= \left.\frac{1}{2}x^2\arcsin x\right|_0^{1/2} - \frac{1}{2}\int_0^{1/2}\frac{x^2}{\sqrt{1-x^2}}\dd x \tag*{（3 分）}\\
+      &= \frac{\pi}{48} - \frac{1}{2}\int_0^{\pi/6}\sin^2 t\dd t \tag*{（5 分）}\\
+      &= \frac{1}{4}\int_0^{\pi/6}\cos 2t\dd t - \frac{\pi}{48} = \frac{\sqrt{3}}{16} - \frac{\pi}{48}. \tag*{（7 分）}
+  \end{align*}
+
+  \item 求反常积分 $I=\displaystyle\int_0^{+\infty}\e^{-2x}\sin x\dd x$。
+
+  \textbf{解}：
+  \begin{align*}
+    J &= \int\e^{-2x}\sin x\dd x = \int\e^{-2x}\dd(-\cos x) = -\e^{-2x}\cos x - \int(-\cos x)(-2\e^{-2x})\dd x \\
+      &= -\e^{-2x}\cos x - 2\int\e^{-2x}\dd\sin x = -\e^{-2x}\cos x - 2\left(\e^{-2x}\sin x - \int\sin x(-2\e^{-2x})\dd x\right) \tag*{（4 分）}
+  \end{align*}
+  所以 $J=-\e^{-2x}\dfrac{2\sin x+\cos x}{5}+C$，从而
+  \[
+    I = \left[-\e^{-2x}\frac{2\sin x+\cos x}{5}\right]_0^{+\infty} = \frac{1}{5}. \tag*{（7 分）}
+  \]
+
+  \item 求微分方程 $y'+\dfrac{y}{x}=y^2\ln x$ 的通解。
+
+  \textbf{解}：这是一个伯努利方程。令 $u=1/y$，将原方程化为
+  \[
+    \frac{\dd u}{\dd x} - \frac{u}{x} = -\ln x. \tag*{（2 分）}
+  \]
+  这是一个一阶线性微分方程。根据通解公式得到
+  \[
+    u = x\left(\int -\frac{\ln x}{x}\dd x + C\right) = x\left(C - \frac{\ln^2 x}{2}\right). \tag*{（6 分）}
+  \]
+  所以当 $y\neq 0$ 时，原方程通解为
+  \[
+    xy\left(C - \frac{\ln^2 x}{2}\right) = 1. \tag*{（7 分）}
+  \]
+  另外，$y\equiv 0\ (x>0)$ 也是原方程的解。
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{四、应用题（每小题 7 分，2 个小题共 14 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=1.0em, topsep=0.6em]
+  \item 设函数 $f(x)=\begin{cases}(1+x)^{1/x}, & x\in(-1,0)\cup(0,+\infty),\\ \e, & x=0,\end{cases}$ 求 $f'(x)$ 并讨论 $f'(x)$ 的连续性。
+
+  \textbf{解}：当 $x\in(-1,0)\cup(0,+\infty)$ 时，
+  \[
+    f'(x) = (1+x)^{1/x}\frac{x-(1+x)\ln(1+x)}{x^2(1+x)}. \tag*{（2 分）}
+  \]
+  而
+  \[
+    f'(0) = \lim_{x\to 0}\frac{(1+x)^{1/x}-\e}{x}
+    = \e\lim_{x\to 0}\frac{\e^{\frac{\ln(1+x)}{x}-1}-1}{x}
+    = \e\lim_{x\to 0}\frac{\ln(1+x)-x}{x^2}
+    = -\frac{\e}{2}. \tag*{（4 分）}
+  \]
+  又因
+  \[
+    \lim_{x\to 0} f'(x) = \e\lim_{x\to 0}\frac{x-(1+x)\ln(1+x)}{x^2}
+    = \e\lim_{x\to 0}\frac{-\ln(1+x)}{2x} = -\frac{\e}{2} = f'(0).
+  \]
+  所以 $f'(x)$ 在 $x=0$ 连续。在其他地方 $f'(x)$ 显然连续。综上 $f'(x)$ 在 $(-1,+\infty)$ 处处连续。\score{7}
+
+  \item 求平面图形 $0\le y\le \cos x$，$0\le x\le\dfrac{\pi}{2}$ 绕 $y$ 轴旋转所得立体的体积。
+
+  \textbf{解法一}：按圆柱体积微元，得到
+  \begin{align*}
+    V &= 2\pi\int_0^{\pi/2} x\cos x\dd x \tag*{（4 分）}\\
+      &= 2\pi\bigl[x\sin x+\cos x\bigr]_0^{\pi/2} = \pi^2 - 2\pi. \tag*{（7 分）}
+  \end{align*}
+
+  \textbf{解法二}：按平行截面体体积公式得到
+  \begin{align*}
+    V &= \pi\int_0^1 \arccos^2 y\dd y \tag*{（4 分）}\\
+      &= \pi\int_0^{\pi/2} t^2\sin t\dd t = \pi\bigl[2t\sin t + (2-t^2)\cos t\bigr]_0^{\pi/2} = \pi^2 - 2\pi. \tag*{（7 分）}
+  \end{align*}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{五、综合题（每小题 5 分，2 个小题共 10 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=1.0em, topsep=0.6em]
+  \item 设函数 $f(x)$ 在区间 $[a,b]$ 上二阶可导，且 $f(a)=f(b)$，$|f''(x)|\le M$。证明：$|f'(a)+f'(b)|\le M(b-a)$。
+
+  \textbf{证法一}：由罗尔定理知存在 $c\in(a,b)$ 使得 $f'(c)=0$。再用拉格朗日中值定理可得 \score{2}
+  \begin{align*}
+    |f'(a)-f'(c)| &= |f''(\xi)(a-c)| \le M(c-a), \text{ 即 } |f'(a)|\le M(c-a), \\
+    |f'(b)-f'(c)| &= |f''(\eta)(b-c)| \le M(b-c), \text{ 即 } |f'(b)|\le M(b-c), \tag*{（4 分）}
+  \end{align*}
+  进而得
+  \[
+    |f'(a)+f'(b)| \le |f'(a)| + |f'(b)| \le M(b-a). \tag*{（5 分）}
+  \]
+
+  \textbf{证法二}：记 $c=\dfrac{a+b}{2}$，$h=c-a=b-c$，则由 Taylor 公式得
+  \begin{align*}
+    f(c) &= f(a) + f'(a)h + \frac{1}{2}f''(\xi)h^2, \\
+    f(c) &= f(b) - f'(b)h + \frac{1}{2}f''(\eta)h^2, \tag*{（4 分）}
+  \end{align*}
+  以上二式相减（注意 $f(a)=f(b)$）得
+  \[
+    [f'(a)+f'(b)]h = \frac{1}{2}[f''(\eta)-f''(\xi)]h^2.
+  \]
+  又 $|f''(x)|\le M$，所以有
+  \[
+    |f'(a)+f'(b)| \le Mh = \frac{1}{2}M(b-a) \le M(b-a). \tag*{（5 分）}
+  \]
+
+  \item 设 $f(x)$ 在区间 $[a,b]$ 上二阶可导，并且 $f''(x)\le 0$。证明 $\displaystyle\int_a^b f(x)\dd x \ge \frac{(b-a)\bigl(f(a)+f(b)\bigr)}{2}$。
+
+  \textbf{证法一}：设 $F(t)=\displaystyle\int_a^t f(x)\dd x - \frac{(t-a)\bigl(f(a)+f(t)\bigr)}{2}$，则 $F(a)=0$。\score{2}
+
+  对 $F(t)$ 求导得到
+  \[
+    F'(t) = \frac{f(t)-f(a)-(t-a)f'(t)}{2} = \frac{(t-a)\bigl(f'(\xi)-f'(t)\bigr)}{2} \ge 0, \tag*{（4 分）}
+  \]
+  从而 $F(t)$ 单调递增，$F(b)\ge F(a)=0$。即不等式成立。\score{5}
+
+  \textbf{证法二}：由已知，函数 $f(x)$ 为上凸函数。于是成立
+  \[
+    f\bigl((1-t)a+tb\bigr) \ge (1-t)f(a) + tf(b),\quad 0\le t\le 1. \tag*{（2 分）}
+  \]
+  对此不等式在 $[0,1]$ 上积分得
+  \[
+    \int_0^1 f\bigl((1-t)a+tb\bigr)\dd t \ge \int_0^1 \bigl((1-t)f(a)+tf(b)\bigr)\dd t \tag*{（4 分）}
+  \]
+  左边换元，右边计算即有
+  \[
+    \int_a^b f(x)\dd x \ge \frac{(b-a)\bigl(f(a)+f(b)\bigr)}{2}. \tag*{（5 分）}
+  \]
+\end{enumerate}
+
+\end{document}

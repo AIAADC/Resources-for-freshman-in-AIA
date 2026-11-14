@@ -1,0 +1,106 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2017--2018 学年第二学期}\\[0.4em]
+  {\Large\bfseries 《线性代数（一）》期末考试 A 卷}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、判断题（16 分，每题 2 分，共 8 题）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.55em, topsep=0.5em]
+  \item 若矩阵 $A$ 的所有 $r$ 阶子式都为 $0$，则 $A$ 的所有 $r+1$ 阶子式，如果存在，也都为 $0$.（\quad）
+
+  \item 两个 $n$ 维向量组等价的充分必要条件是它们有相同的秩.（\quad）
+
+  \item 初等矩阵的乘积仍然是初等矩阵.（\quad）
+
+  \item 若方阵 $A$ 的行列式 $|A| = 0$，则 $A$ 的列向量中一定有一列可由其余列线性表示.（\quad）
+
+  \item 设 $A$ 是一个 $n$ 阶方阵，$f(A)$ 是一个常数项不为 $0$ 的 $m$ 次多项式，其中 $m > 0$. 如果有 $f(A) = 0$，则 $A$ 一定可逆.（\quad）
+
+  \item 设 $A$ 是一个 $m \times n$ 矩阵，其秩为 $r$. 则非齐次线性方程组 $AX = \beta$ 的线性无关的解的个数不超过 $n - r$ 个.（\quad）
+
+  \item 由 $r$ 个 $n$ 维向量 $\alpha_1, \alpha_2, \cdots, \alpha_r$ 生成的向量空间 $L(\alpha_1, \alpha_2, \cdots, \alpha_r)$ 的维数为 $\min(r, n)$.（\quad）
+
+  \item 设 $n$ 阶方阵 $A, B$ 均为正交矩阵，则 $AB$ 也为正交矩阵.（\quad）
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{二、填空题（20 分，每题 4 分，共 5 题）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 已知一个 $4$ 阶行列式第一行元素依次是 $-4, 0, 1, 3$，第 $3$ 行元素的代数余子式依次为 $-2, 5, 1, x$，则 $x = \blank$.
+
+  \item 设 $A$ 是三阶方阵，将 $A$ 的第 $1$ 列与第 $2$ 列交换得矩阵 $B$，再把 $B$ 的第 $2$ 列加到第 $3$ 列得矩阵 $C$，则满足 $AQ = C$ 的可逆矩阵 $Q$ 为 $\blank$.
+
+  \item 设 $\lambda = 1$ 是方阵 $A = \begin{bmatrix} -4 & 0 & 4 \\ -2 & a & 2 \\ -2 & 0 & 3 \end{bmatrix}$ 的一个特征值，则 $a = \blank$.
+
+  \item 记 $5 \times 4$ 阶矩阵 $A$ 的列向量依次为 $\alpha_1, \alpha_2, \alpha_3, \alpha_4$，设矩阵 $A$ 的秩为 $3$ 且各行元素和为 $0$，又已知向量 $\beta = \alpha_1 - 2\alpha_2 - 3\alpha_3$，那么非齐次线性方程组 $AX = \beta$ 的通解为：$\blank$.
+
+  \item 设 $A_{n \times n}$ 是一个实对称矩阵，且存在整数 $m \geqslant 1$ 使得 $A^m = O$，则 $A = \blank$.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{三、（8 分）}计算 $n$ 阶行列式
+\[
+  D_n = \begin{vmatrix}
+    a_1 & 1 & 1 & \cdots & 1 \\
+    1 & a_2 & 1 & \cdots & 1 \\
+    1 & 1 & a_3 & \cdots & 1 \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    1 & 1 & 1 & \cdots & a_n
+  \end{vmatrix},
+  \quad\text{其中 } a_i \neq 1,\ i = 1, 2, \cdots, n.
+\]
+
+\vspace{0.7em}
+
+\textbf{四、（12 分）}设三维向量 $\alpha_1 = \begin{bmatrix} a + 3 \\ a \\ 3(a + 1) \end{bmatrix}$，$\alpha_2 = \begin{bmatrix} 1 \\ a - 1 \\ a \end{bmatrix}$，$\alpha_3 = \begin{bmatrix} 2 \\ 1 \\ a + 3 \end{bmatrix}$，$\beta = \begin{bmatrix} a \\ a \\ 3 \end{bmatrix}$，问：
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item $a$ 为何值时，$\beta$ 能由 $\alpha_1, \alpha_2, \alpha_3$ 唯一的线性表示？
+  \item $a$ 为何值时，$\beta$ 能由 $\alpha_1, \alpha_2, \alpha_3$ 线性表示，但表示不唯一？此时给出所有可能的表示.
+  \item $a$ 为何值时，$\beta$ 不能由 $\alpha_1, \alpha_2, \alpha_3$ 线性表示.
+\end{enumerate}
+
+\vspace{0.7em}
+
+\textbf{五、（10 分）}设矩阵 $A = \begin{bmatrix} -2 & 0 & 0 \\ 2 & a & 2 \\ 3 & 1 & b \end{bmatrix}$ 和矩阵 $B = \begin{bmatrix} -1 & & \\ & 2 & \\ & & c \end{bmatrix}$ 相似，求 $a, b, c$.
+
+\vspace{0.7em}
+
+\textbf{六、（12 分）}已知二次型 $f(x, y, z) = x^2 + 4xy + 4xz + y^2 + 4yz + z^2$，试用正交变换将此二次型化为标准型. 给出其标准型，及所使用的正交变换矩阵.
+
+\vspace{0.7em}
+
+\textbf{七、证明题（10 分）}设 $A, B, A + B$ 都是 $n$ 阶可逆矩阵，证明 $A^{-1} + B^{-1}$ 也是可逆矩阵.
+
+\vspace{0.7em}
+
+\textbf{八、证明题（10 分）}设 $A = (\alpha_1, \alpha_2, \cdots, \alpha_n)$，$B = (\beta_1, \beta_2, \cdots, \beta_n)$ 是两个 $m \times n$ 矩阵，已知存在 $n$ 阶方阵 $K$ 使得 $B = AK$，且矩阵 $A$ 的列向量组 $\{\alpha_1, \alpha_2, \cdots, \alpha_n\}$ 线性无关. 证明：矩阵 $B$ 的列向量组 $\{\beta_1, \beta_2, \cdots, \beta_n\}$ 也线性无关当且仅当 $K$ 是可逆矩阵.
+
+\end{document}

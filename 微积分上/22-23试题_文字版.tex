@@ -1,0 +1,136 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\blank}[1][2.2cm]{\underline{\hspace{#1}}}
+\newcommand{\choice}[1]{\text{【\quad】}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2022--1 期末试题}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、单项选择题（每小题 3 分，6 个小题共 18 分，将结果涂在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.65em, topsep=0.5em]
+  \item 若 $f'(x_0)=\dfrac{1}{2}$，则当 $\Delta x\to 0$ 时，函数 $y=f(x)$ 在 $x_0$ 处的微分 $\dd y$ 是与 $\Delta x$ \choice{} 的无穷小。
+
+  A. 高阶 \qquad\qquad\quad
+  B. 低阶 \qquad\qquad\quad
+  C. 同阶 \qquad\qquad\quad
+  D. 等价
+
+  \item 设 $f(x)$ 在 $x=0$ 处连续，则 $f(x)$ 在 $x=0$ 可导的充分条件是 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $\displaystyle\lim_{x\to 0}\frac{f(x)-f(-x)}{2x}$ 存在}B. $\displaystyle\lim_{x\to 0}\frac{f(x^2)-f(0)}{x^2}$ 存在
+
+  \vspace{0.4em}
+  \makebox[0.45\linewidth][l]{C. $\displaystyle\lim_{x\to 0}\frac{f(x)-f(0)}{\sqrt[3]{x}}$ 存在}D. $\displaystyle\lim_{x\to\infty}xf\left(\frac{1}{x}\right)$ 存在
+
+  \item 下列关于数列的描述中，正确的是 \choice{}。
+
+  A. 若 $\displaystyle\lim_{n\to\infty}x_n y_n=0$，则必有 $\displaystyle\lim_{n\to\infty}x_n=0$ 或 $\displaystyle\lim_{n\to\infty}y_n=0$
+
+  B. 若 $\{x_n y_n\}$ 有界，则必有 $\{x_n\}$ 有界或 $\{y_n\}$ 有界
+
+  C. 若 $\displaystyle\lim_{n\to\infty}(x_n-y_n)=0$，则 $\displaystyle\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n$
+
+  D. 若有区间 $I$ 内的数列 $x_n$，使 $|f(x_n)|$ 无界，则 $f(x)$ 在区间 $I$ 上无界
+
+  \item 设 $f(x)$ 在区间 $(a,+\infty)$ 内可导，且 $f'(x)>0$，若 $f(a)=0$，则在区间 $(a,+\infty)$ 内有 \choice{}。
+
+  A. $f(x)\ge 0$ \qquad\quad
+  B. $f(x)>0$ \qquad\quad
+  C. 不能确定 $f(x)$ 的符号 \qquad\quad
+  D. $f(x)$ 单调趋向于 $+\infty$
+
+  \item 已知 $f(x)$ 在 $x=0$ 处连续，且 $\displaystyle\lim_{x\to 0}\frac{f(x)}{x^2}=1$，则下列结论成立的是 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $f'(0)$ 存在，且 $f'(0)\neq 0$}B. $f'(0)$ 不存在
+
+  \makebox[0.45\linewidth][l]{C. $f(x)$ 在 $x=0$ 处取得极小值}D. $f(x)$ 在 $x=0$ 处取得极大值
+
+  \item $\displaystyle\lim_{n\to\infty}\ln\sqrt[n]{\left(1+\frac{1^2}{n^2}\right)\left(1+\frac{2^2}{n^2}\right)\cdots\left(1+\frac{n^2}{n^2}\right)}$ 等于 \choice{}。
+
+  A. $\displaystyle\int_1^2 \ln(1+x^2)\dd x$ \qquad
+  B. $2\displaystyle\int_1^2 \ln x\dd x$ \qquad
+  C. $\displaystyle\int_0^1 \ln(1+x^2)\dd x$ \qquad
+  D. $2\displaystyle\int_0^1 \ln x\dd x$
+\end{enumerate}
+
+\newpage
+
+\textbf{二、填空题（每小题 4 分，4 个小题共 16 分，将计算结果写在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., start=7, leftmargin=2em, itemsep=0.75em, topsep=0.45em]
+  \item 当 $x\to 0$ 时，无穷小量 $(1+x)^{x^2}-1$ 的阶数是 $\blank$。
+
+  \item 曲线 $\cot\!\left(x+y+\dfrac{\pi}{4}\right)=\e^y$ 在点 $(0,0)$ 处的切线方程为 $\blank$。
+
+  \item 若 $\displaystyle\int_0^x f(t)\dd t=x\e^{-x}$，则 $\displaystyle\int_1^{+\infty}\frac{f(\ln x)}{x}\dd x=\blank$。
+
+  \item 曲线 $y=\displaystyle\int_0^x \tan t\dd t\ \left(0\le x\le\frac{\pi}{4}\right)$ 的弧长 $s=\blank$。
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{三、计算题（每小题 7 分，6 个小题共 42 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.75em, topsep=0.45em]
+  \item 求曲线 $C: y=x\arctan x\ (x>0)$ 的渐近线。
+
+  \item 设 $f(x)$ 在点 $a$ 的邻域内可导，且 $f(a)=f'(a)=1$，求 $l=\displaystyle\lim_{x\to a}\left(\frac{1}{x-a}-\frac{1}{\displaystyle\int_a^x f(t)\dd t}\right)$。
+
+  \item 求 $I=\displaystyle\int\frac{1}{x(x^n+1)}\dd x$，$n$ 为正整数。
+
+  \item 求微分方程 $\dfrac{\dd y}{\dd x}=\dfrac{y}{2x+y^4}$ 的通解。
+
+  \item 设 $f(x)=\displaystyle\int_x^1 \sin t^2\dd t$，计算 $I=\displaystyle\int_0^1 f(x)\dd x$。
+
+  \item 求 $F(x)=\displaystyle\int_{-\frac{\pi}{2}}^x \e^{-t}\sin t\dd t$ 在区间 $\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right)$ 内的极值。
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{四、综合题（每小题 7 分，2 个小题共 14 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=0.75em, topsep=0.45em]
+  \item 已知函数 $f(x)=\displaystyle\int_1^x \sqrt{1+t^2}\dd t+\int_{x^2}^1 \sqrt{1+t}\dd t$，讨论方程 $f(x)=0$ 的实根个数。
+
+  \item 设 $f(x)$ 满足 $\displaystyle\int_0^x f(t-x)\dd t=-\frac{x^3}{3}-x^2$，求曲线 $y=f(x)$ 与 $x$ 轴所围成的图形绕 $y$ 轴旋转一周所得的旋转体的体积。
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{五、证明题（每小题 5 分，2 个小题共 10 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=0.75em, topsep=0.45em]
+  \item 设 $f(x),g(x)$ 在 $[0,1]$ 上连续，且 $g(x)\ge 0,\,f(x)>0$，证明：
+  \[
+    \lim_{n\to\infty}\int_0^1 g(x)\sqrt[n]{f(x)}\dd x=\int_0^1 g(x)\dd x.
+  \]
+
+  \item 设 $f(x)$ 在 $[0,2]$ 上二阶可导，且 $f'(0)=f'(2)=0$，试证：存在 $\xi\in(0,2)$，使
+  \[
+    |f''(\xi)|\ge |f(2)-f(0)|.
+  \]
+\end{enumerate}
+
+\end{document}

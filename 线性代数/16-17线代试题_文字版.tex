@@ -1,0 +1,139 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2016--2017 学年度第二学期}\\[0.4em]
+  {\Large\bfseries 《线性代数》考试试题（A）卷}\\[1.0em]
+  {\normalsize
+    院系\underline{\hspace{2.5cm}}\quad
+    专业班级\underline{\hspace{2.8cm}}\quad
+    学号\underline{\hspace{2.8cm}}\quad
+    姓名\underline{\hspace{2.5cm}}
+  }\\[0.5em]
+  {\normalsize \hfill 考试时间：2017 年 5 月 13 日}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、判断题（$2\text{ 分}\times 8 = 16\text{ 分}$）（判断题为计算机阅卷，请使用 2B 铅笔规范填涂，填涂区域要丰满、不要使用划线、打勾、打叉等错误填涂方式）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.6em, topsep=0.5em]
+  \item 设 $A$ 是 $n$ 阶方阵，如果 $A$ 的行列式非零，则对任意的 $1 \leqslant k \leqslant n$，$A$ 一定有一个非零的 $k$ 阶子式.
+
+  \item 两个同型矩阵等价当且仅当它们有相同的秩.
+
+  \item 任意一个可逆矩阵均可经过有限次行初等变换变为单位矩阵.
+
+  \item 若两个 $n$ 阶方阵 $A, B$ 相似，那么对任意的多项式 $f(x)$，均有 $f(A)$ 相似于 $f(B)$.
+
+  \item 设 $A = (a_{ij})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant n}}$ 是 $n$ 阶方阵，$\{\lambda_i : 1 \leqslant i \leqslant n\}$ 是 $A$ 的特征值，则有 $\displaystyle \sum_{1 \leqslant i \leqslant n} \lambda_i^2 = \sum_{1 \leqslant i \leqslant n} \sum_{1 \leqslant j \leqslant n} a_{ij}^2$.
+
+  \item 设向量组 $\{\alpha_1, \alpha_2, \alpha_3\}$ 线性无关，则向量组 $\{\alpha_1 + \alpha_2 + \alpha_3,\ \alpha_2 + \alpha_3,\ \alpha_3\}$ 也线性无关.
+
+  \item 设 $A$ 是实对称矩阵，如果 $A$ 的特征值均为 $0$，则 $A = 0$.
+
+  \item 设 $A$ 是 $n$ 阶实矩阵，则 $A^{\T} A$ 是正定矩阵，其中 $A^{\T}$ 表示 $A$ 的转置.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{二、填空题（$4\text{ 分}\times 5 = 20\text{ 分}$）（请将答案填写在答题卡指定位置上）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 设 $\alpha = (1, -1, 1)^{\T}$，$\beta = (1, 1, 1)^{\T}$，$A = \alpha \beta^{\T}$，那么 $A^n = \blank$.
+
+  \item 设 $A, B$ 是两个三阶可逆矩阵，如果将 $A$ 的第一行乘以 $5$ 加到第三行上就得到矩阵 $B$，则 $AB^{-1} = \blank$.
+
+  \item 设矩阵 $A = \begin{pmatrix} 1 & 5 & 9 \\ 0 & 2 & 8 \\ 0 & 0 & 2 \end{pmatrix}$，多项式 $f(x) = x^3 - x + 2$，则 $f(A)$ 的行列式为 $\blank$.
+
+  \item 设 $5 \times 4$ 矩阵 $A$ 的列向量表示为 $(\alpha_1, \alpha_2, \alpha_3, \alpha_4)$，其秩为 $4$. 设向量 $\beta = \alpha_1 - 2\alpha_2 - 3\alpha_3$，那么线性方程组 $AX = \beta$ 的解为 $\blank$.
+
+  \item 如果矩阵 $A = \begin{pmatrix} t & 1 & 2 \\ 1 & 1 & 0 \\ 2 & 0 & t - 1 \end{pmatrix}$ 是正定矩阵，则 $t$ 的取值范围为 $\blank$.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{三、（8 分）（请将答案填写在答题卡指定位置上）}
+
+计算 $n+1$ 阶行列式
+\[
+  D_{n+1} = \begin{vmatrix}
+    a_0 & b_1 & \cdots & b_n \\
+    c_1 & a_1 & & \\
+    \vdots & & \ddots & \\
+    c_n & & & a_n
+  \end{vmatrix},
+  \quad\text{其中 } a_i \neq 0,\ i = 1, 2, \cdots, n.
+\]
+
+\vspace{0.7em}
+
+\textbf{四、（12 分）（请将答案填写在答题卡指定位置上）}
+
+考虑线性方程组
+\[
+  \begin{cases}
+    (\lambda + 3)x_1 + x_2 + 2x_3 = \lambda, \\
+    \lambda x_1 + (\lambda - 1)x_2 + x_3 = \lambda, \\
+    3(\lambda + 1)x_1 + \lambda x_2 + (\lambda + 3)x_3 = 3,
+  \end{cases}
+\]
+其中 $\lambda$ 是参数. 问该方程组
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 当 $\lambda$ 取什么值时有唯一解？
+  \item 当 $\lambda$ 取什么值时无解？当 $\lambda$ 取什么值时有无穷多个解？当有无穷多个解时，求出其通解.
+\end{enumerate}
+
+\vspace{0.7em}
+
+\textbf{五、（10 分）（请将答案填写在答题卡指定位置上）}
+
+设三阶方阵 $A$ 的特征值为 $1, 1, -1$，属于它们的特征向量分别是 $\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}, \begin{pmatrix} 2 \\ 1 \\ 1 \end{pmatrix}$. 求矩阵 $A$.
+
+\vspace{0.7em}
+
+\textbf{六、（12 分）（请将答案填写在答题卡指定位置上）}
+
+用正交变换将三维空间中的二次曲面 $2xy + 2yz + 2zx = 1$ 化为标准方程，给出使用的正交变换矩阵，并指出曲面的类型.
+
+\vspace{0.7em}
+
+\textbf{七、（10 分）（请将答案填写在答题卡指定位置上）}
+
+设 $A$ 是一个 $m \times n$ 矩阵，$b$ 是一个 $m$ 维非零列向量. 设 $\alpha_1, \alpha_2, \cdots, \alpha_t$ 是齐次线性方程组 $AX = 0$ 的基础解系，$\beta$ 是非齐次线性方程组 $AX = b$ 的一个特解.
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 证明：$\beta,\ \beta + \alpha_1,\ \beta + \alpha_2,\ \cdots,\ \beta + \alpha_t$ 是 $AX = b$ 的 $t + 1$ 个线性无关的解.
+  \item 问 $AX = b$ 有可能有 $t + 2$ 个线性无关的解吗？说明理由.
+\end{enumerate}
+
+\vspace{0.7em}
+
+\textbf{八、（12 分）证明题（请将答案填写在答题卡指定位置上）}
+
+设 $A$ 是 $n$ 阶方阵，满足 $A^2 - 2A - 3I = 0$. 证明：
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item $A$ 是可逆的；
+  \item $A$ 可相似对角化.
+\end{enumerate}
+
+\end{document}

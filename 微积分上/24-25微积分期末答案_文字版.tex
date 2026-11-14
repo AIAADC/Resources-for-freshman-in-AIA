@@ -1,0 +1,386 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=2.1cm,bottom=1.8cm,left=2.1cm,right=2.1cm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[C]{\small\bfseries 考试日期：2025-1-06\quad 8:30--11:00}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\blank}[1][2.2cm]{\underline{\hspace{#1}}}
+\newcommand{\choice}[1]{\text{【\quad】}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2024～2025 学年第一学期}\\[0.5em]
+  {\Large\bfseries 《微积分（B）》课程考试（A 卷）参考解答}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、单项选择题（每小题 3 分，6 个小题共 18 分，将结果涂在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.75em, topsep=0.5em]
+  \item 当 $x\to 0$ 时，函数 $f(x)=\dfrac{1}{x}\sin\dfrac{1}{x}$ 是 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. 无界的但不是无穷大量}B. 无穷大量
+
+  \makebox[0.45\linewidth][l]{C. 有界的但不是无穷小量}D. 无穷小量
+
+  \textbf{解析}：取 $x_n=\dfrac{1}{2n\pi+\dfrac{\pi}{2}}$，$y_n=\dfrac{1}{2n\pi}$，则 $n\to\infty$ 时，$x_n\to 0,\,y_n\to 0$，
+  \[
+    f(x_n)=2n\pi+\frac{\pi}{2},\quad f(y_n)=0,\quad\text{于是 }\lim_{n\to\infty}f(x_n)=+\infty,\ \lim_{n\to\infty}f(y_n)=0.
+  \]
+  故当 $x\to 0$ 时，函数 $f(x)=\dfrac{1}{x}\sin\dfrac{1}{x}$ 是无界的但不是无穷大量。故答案：\textbf{A}。
+
+  \item 设 $\{a_n\},\,\{b_n\},\,\{c_n\}$ 均为非负数列，且 $\displaystyle\lim_{n\to\infty}a_n=0,\,\lim_{n\to\infty}b_n=1,\,\lim_{n\to\infty}c_n=+\infty$，则 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. 对任意正整数 $n$，有 $a_n<b_n$}B. 对任意正整数 $n$，有 $b_n<c_n$
+
+  \makebox[0.45\linewidth][l]{C. 数列 $\{a_n\cdot c_n\}$ 发散}D. 数列 $\{b_n\cdot c_n\}$ 发散
+
+  \textbf{解析}：根据数列极限的比较性质可知 A、B 都不对（将“任意”改为“充分大的”，就对了）。
+
+  取 $a_n=\sin\dfrac{1}{n},\,c_n=n$，显然 $\displaystyle\lim_{n\to\infty}a_n=\lim_{n\to\infty}\sin\frac{1}{n}=0,\,\lim_{n\to\infty}c_n=\lim_{n\to\infty}n=+\infty$，但
+  \[
+    \lim_{n\to\infty}a_n c_n=\lim_{n\to\infty}n\sin\frac{1}{n}=\lim_{n\to\infty}\frac{\sin\dfrac{1}{n}}{\dfrac{1}{n}}=1,
+  \]
+  数列 $\{a_n\cdot c_n\}$ 收敛，故 C 不对。
+
+  对于 D，假设 $\{b_n\cdot c_n\}$ 收敛，因充分大时 $b_n>0$ 且 $c_n=\dfrac{b_n c_n}{b_n}$，由收敛数列商的运算法则得数列 $\{c_n\}$ 收敛，与已知条件矛盾，因而 $\{b_n\cdot c_n\}$ 发散。故答案：\textbf{D}。
+
+  \item 设 $f'(x_0)=f''(x_0)=0,\,f'''(x_0)>0$，则 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $f'(x_0)$ 是 $f'(x)$ 的极大值}B. $f(x_0)$ 是 $f(x)$ 的极大值
+
+  \makebox[0.45\linewidth][l]{C. $f(x_0)$ 是 $f(x)$ 的极小值}D. $\bigl(x_0,f(x_0)\bigr)$ 是曲线 $y=f(x)$ 的拐点
+
+  \textbf{解析}：因 $f'''(x_0)=\displaystyle\lim_{x\to x_0}\frac{f''(x)-f''(x_0)}{x-x_0}=\lim_{x\to x_0}\frac{f''(x)}{x-x_0}>0$，所以在 $x_0$ 的某邻域内，$\dfrac{f''(x)}{x-x_0}>0$（$x\neq x_0$）。
+
+  当 $x>x_0$ 时，$f''(x)>0$，从而 $f'(x)$ 单调递增，因而 $f'(x)>f'(x_0)=0$；
+
+  当 $x<x_0$ 时，$f''(x)<0$，从而 $f'(x)$ 单调递减，因而 $f'(x)>f'(x_0)=0$。
+
+  故 $\bigl(x_0,f(x_0)\bigr)$ 是曲线 $y=f(x)$ 的拐点，$f'(x_0)$ 是 $f'(x)$ 的极小值，$f(x)$ 在 $x_0$ 的某邻域内单调递增，$f(x_0)$ 不是 $f(x)$ 的极值。故答案为：\textbf{D}。
+
+  \item 若 $f'(2x)=\e^{-x}$，且 $f(0)=1$，则 $\displaystyle\int f(x)\dd x=\blank$ \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $3x-\e^{-x}+C$}B. $3x-2\e^{-\frac{x}{2}}+C$
+
+  \makebox[0.45\linewidth][l]{C. $3x+4\e^{-\frac{x}{2}}+C$}D. $3x-4\e^{-\frac{x}{2}}+C$
+
+  \textbf{解析}：因 $f'(2x)=\e^{-x}=\e^{-\frac{1}{2}\cdot 2x}$，所以 $f'(u)=\e^{-\frac{1}{2}u}$，
+  \[
+    f(x)=\int f'(x)\dd x=\int\e^{-\frac{1}{2}x}\dd x=-2\e^{-\frac{1}{2}x}+C_1,\quad\text{又 }f(0)=1,\text{ 故可得 }C_1=3,
+  \]
+  \[
+    f(x)=-2\e^{-\frac{1}{2}x}+3,\quad \int f(x)\dd x=\int\left(3-2\e^{-\frac{1}{2}x}\right)\dd x=3x+4\e^{-\frac{x}{2}}+C.
+  \]
+  故答案：\textbf{C}。
+
+  \item 设函数 $f(x)$ 二阶可导，且 $f''(x)<0,\,f(0)=0$，则 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $f(2)<2f(1)$}B. $f(2)>2f(1)$
+
+  \makebox[0.45\linewidth][l]{C. $2f(2)<f(1)$}D. $2f(2)>f(1)$
+
+  \textbf{解析}：对 $f(x)$ 在 $[0,1]$ 和 $[1,2]$ 上应用拉格朗日中值公式得
+  \[
+    f(1)-f(0)=f'(\xi),\quad f(2)-f(1)=f'(\eta),\quad \xi\in(0,1),\ \eta\in(1,2).
+  \]
+  因 $f''(x)<0$，所以 $f'(x)$ 在 $[0,2]$ 上严格单调递减，于是有 $f'(\xi)>f'(\eta)$，
+
+  即有 $f(1)-f(0)>f(2)-f(1)$，又 $f(0)=0$，故 $2f(1)>f(2)$，答案为 \textbf{A}。
+
+  \item 下列反常积分收敛的是 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $\displaystyle\int_{\e}^{+\infty}\frac{\ln x}{x}\dd x$}B. $\displaystyle\int_{\e}^{+\infty}\frac{1}{x\ln x}\dd x$
+
+  \vspace{0.4em}
+  \makebox[0.45\linewidth][l]{C. $\displaystyle\int_{\e}^{+\infty}\frac{1}{x\sqrt{\ln x}}\dd x$}D. $\displaystyle\int_{\e}^{+\infty}\frac{1}{x(\ln x)^2}\dd x$
+
+  \textbf{解析}：
+  \begin{align*}
+    \int_{\e}^{+\infty}\frac{\ln x}{x}\dd x &= \int_{\e}^{+\infty}\ln x\dd\ln x = \left.\frac{1}{2}(\ln x)^2\right|_{\e}^{+\infty} = +\infty,\quad\text{所以 }\int_{\e}^{+\infty}\frac{\ln x}{x}\dd x\text{ 发散；} \\
+    \int_{\e}^{+\infty}\frac{1}{x\ln x}\dd x &= \int_{\e}^{+\infty}\frac{1}{\ln x}\dd\ln x = \left.\ln|\ln x|\right|_{\e}^{+\infty} = +\infty,\quad\text{所以 }\int_{\e}^{+\infty}\frac{1}{x\ln x}\dd x\text{ 发散；} \\
+    \int_{\e}^{+\infty}\frac{1}{x\sqrt{\ln x}}\dd x &= \int_{\e}^{+\infty}\frac{1}{\sqrt{\ln x}}\dd\ln x = \left.2\sqrt{\ln x}\right|_{\e}^{+\infty} = +\infty,\quad\text{所以 }\int_{\e}^{+\infty}\frac{1}{x\sqrt{\ln x}}\dd x\text{ 发散；} \\
+    \int_{\e}^{+\infty}\frac{1}{x(\ln x)^2}\dd x &= \int_{\e}^{+\infty}\frac{1}{(\ln x)^2}\dd\ln x = \left.-\frac{1}{\ln x}\right|_{\e}^{+\infty} = 1,\quad\text{所以 }\int_{\e}^{+\infty}\frac{1}{x(\ln x)^2}\dd x\text{ 收敛。}
+  \end{align*}
+  故答案为：\textbf{D}。
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{二、填空题（每小题 4 分，共 16 分）}
+
+\begin{enumerate}[label=\arabic*., start=7, leftmargin=2em, itemsep=0.85em, topsep=0.45em]
+  \item 设函数 $y=f(x)$ 由参数方程 $\begin{cases}x=t^2+1\\ y=4t-t^2\end{cases}(t\ge 0)$ 确定，则 $\displaystyle\lim_{n\to\infty}n\left[f\!\left(\frac{2n+1}{n}\right)-3\right]=\underline{\ 1\ }$。
+
+  \textbf{解}：由题意可得 $x=2$ 时，$t=1$，此时 $y=3$，从而有 $f(2)=3$。
+  \[
+    \frac{\dd y}{\dd t}=4-2t,\quad \frac{\dd x}{\dd t}=2t,\quad \frac{\dd y}{\dd x}=\frac{4-2t}{2t}=\frac{2-t}{t},\quad \left.\frac{\dd y}{\dd x}\right|_{t=1}=1,\text{ 即 }f'(2)=1.
+  \]
+  \[
+    \lim_{n\to\infty}n\left[f\!\left(\frac{2n+1}{n}\right)-3\right]=\lim_{n\to\infty}\frac{f\!\left(2+\dfrac{1}{n}\right)-f(2)}{\dfrac{1}{n}}=f'(2)=1.
+  \]
+
+  \item 设函数 $f(x)=\displaystyle\int_0^{3x}\e^{-t^2}\dd t+2$，$g(x)$ 是 $f(x)$ 的反函数，则 $g'(2)=\underline{\ 1/3\ }$。
+
+  \textbf{解}：$f(0)=2$，$f'(x)=3\e^{-9x^2}$，$f'(0)=3$，
+  \[
+    g'(2)=\frac{1}{f'(0)}=\frac{1}{3}.
+  \]
+
+  \item 设 $f(x)=\dfrac{1}{1+x^2}+\sqrt{1-x^2}\displaystyle\int_0^1 f(x)\dd x$，则 $\displaystyle\int_0^1 f(x)\dd x=\underline{\ \dfrac{\pi}{4-\pi}\ }$。
+
+  \textbf{解析}：设 $\displaystyle\int_0^1 f(x)\dd x=a$，则 $f(x)=\dfrac{1}{1+x^2}+a\sqrt{1-x^2}$，于是有
+  \[
+    \int_0^1\left(\frac{1}{1+x^2}+a\sqrt{1-x^2}\right)\dd x=a,
+  \]
+  而
+  \[
+    \int_0^1\left(\frac{1}{1+x^2}+a\sqrt{1-x^2}\right)\dd x = \int_0^1\frac{1}{1+x^2}\dd x+\int_0^1 a\sqrt{1-x^2}\dd x = \frac{\pi}{4}+\frac{\pi}{4}a,
+  \]
+  故有 $a=\dfrac{\pi}{4}+\dfrac{\pi}{4}a$，$a=\dfrac{\pi}{4-\pi}$，即 $\displaystyle\int_0^1 f(x)\dd x=\frac{\pi}{4-\pi}$。
+
+  \item 连续曲线段 $y=\displaystyle\int_0^x\sqrt{\sin t}\dd t\ (0\le x\le\pi)$ 的弧长为 $\underline{\ 4\ }$。
+
+  \textbf{解}：$y'=\sqrt{\sin x}$，
+  \begin{align*}
+    s &= \int_0^\pi\sqrt{1+(y')^2}\dd x = \int_0^\pi\sqrt{1+\sin x}\dd x = \int_0^\pi\left(\sin\frac{x}{2}+\cos\frac{x}{2}\right)\dd x \\
+      &= \left[-2\cos\frac{x}{2}+2\sin\frac{x}{2}\right]_0^\pi = 2-(-2) = 4.
+  \end{align*}
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{三、计算题（每小题 7 分，6 个小题共 42 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.9em, topsep=0.45em]
+  \item 求曲线 $y=\sqrt{\dfrac{x^3}{x-1}}\ (x>1)$ 的渐近线。
+
+  \textbf{解}：函数在 $(1,+\infty)$ 内有定义。
+
+  因 $\displaystyle\lim_{x\to 1^+}y=\lim_{x\to 1^+}\sqrt{\frac{x^3}{x-1}}=+\infty$，所以 $x=1$ 为曲线的铅直（垂直）渐近线。
+  \[
+    \lim_{x\to+\infty}\frac{y}{x} = \lim_{x\to+\infty}\frac{\sqrt{\dfrac{x^3}{x-1}}}{x} = \lim_{x\to+\infty}\frac{x\sqrt{\dfrac{x}{x-1}}}{x} = \lim_{x\to+\infty}\sqrt{\frac{x}{x-1}} = 1,
+  \]
+  \begin{align*}
+    \lim_{x\to+\infty}(y-x) &= \lim_{x\to+\infty}\left(x\sqrt{\frac{x}{x-1}}-x\right)
+    = \lim_{x\to+\infty}\frac{\sqrt{1+\dfrac{1}{x-1}}-1}{\dfrac{1}{x}} \\
+    &= \lim_{x\to+\infty}\frac{\dfrac{1}{2(x-1)}}{\dfrac{1}{x}}
+    = \lim_{x\to+\infty}\frac{x}{2(x-1)} = \frac{1}{2}.
+  \end{align*}
+  故曲线的斜渐近线为 $y=x+\dfrac{1}{2}$。
+
+  当 $x>1$ 时曲线连续，故没有其他的铅直渐近线，且曲线没有水平渐近线。
+
+  \item 求极限 $\displaystyle\lim_{n\to\infty}\left(\frac{1}{2n+\dfrac{1}{n}}+\frac{1}{2n+\dfrac{4}{n}}+\cdots+\frac{1}{2n+\dfrac{n^2}{n}}\right)$。
+
+  \textbf{解}：
+  \begin{align*}
+    \lim_{n\to\infty}\left(\frac{1}{2n+\dfrac{1}{n}}+\frac{1}{2n+\dfrac{4}{n}}+\cdots+\frac{1}{2n+\dfrac{n^2}{n}}\right)
+    &= \lim_{n\to\infty}\sum_{k=1}^n\frac{1}{2n+\dfrac{k^2}{n}}
+     = \lim_{n\to\infty}\sum_{k=1}^n\frac{1}{2+\dfrac{k^2}{n^2}}\cdot\frac{1}{n} \\
+    &= \int_0^1\frac{1}{2+x^2}\dd x \\
+    &= \left.\frac{1}{\sqrt{2}}\arctan\frac{x}{\sqrt{2}}\right|_0^1 = \frac{1}{\sqrt{2}}\arctan\frac{\sqrt{2}}{2}.
+  \end{align*}
+
+  \item 设方程 $\e^{xy}+\dfrac{1}{\sqrt{3}}\displaystyle\int_1^y\sqrt{4-t^2}\dd t=1$ 可确定函数 $y=y(x)$，求 $\left.\dfrac{\dd y}{\dd x}\right|_{x=0}$。
+
+  \textbf{解}：将 $x=0$ 代入方程得 $\dfrac{1}{\sqrt{3}}\displaystyle\int_1^y\sqrt{4-t^2}\dd t=0$，因此得 $y=1$。
+
+  方程两边关于 $x$ 求导得
+  \[
+    \e^{xy}(y+xy')+\frac{1}{\sqrt{3}}y'\sqrt{4-y^2}=0 \tag*{$(*)$}
+  \]
+  将 $x=0,\,y=1$ 代入方程 $(*)$ 得 $y'(0)=-1$，即 $\left.\dfrac{\dd y}{\dd x}\right|_{x=0}=-1$。
+
+  \item 求方程 $y''-3y'+2y=2\e^x$ 的积分曲线 $y=y(x)$，使其在点 $(0,1)$ 处的切线与曲线 $y=x^2-3x+1$ 在该点的切线重合。
+
+  \textbf{解}：由题意得 $y(0)=1$，$y'(0)=\left.(2x-3)\right|_{x=0}=-3$。
+
+  对应齐次方程的特征方程为 $r^2-3r+2=0$，特征根 $r_1=1,\,r_2=2$。
+
+  对应齐次方程的通解为 $Y(x)=C_1\e^x+C_2\e^{2x}$。
+
+  $\lambda=1$ 是特征方程的单根，故原微分方程的特解可设为 $y^*=ax\e^x$，代入微分方程得
+  \[
+    -a\e^x=2\e^x,\quad\text{即 }a=-2,
+  \]
+  故原方程特解为 $y^*=-2x\e^x$，通解为
+  \[
+    y(x)=C_1\e^x+C_2\e^{2x}-2x\e^x.
+  \]
+  因 $y(0)=1$，所以得 $C_1+C_2=1$\quad $(1)$
+
+  又 $y'(0)=-3$，$y'(x)=C_1\e^x+2C_2\e^{2x}-2\e^x-2x\e^x$，于是有 $C_1+2C_2=-1$\quad $(2)$
+
+  联立 $(1)$、$(2)$ 解得 $C_1=3,\,C_2=-2$。
+
+  故所求积分曲线为 $y(x)=(3-2x)\e^x-2\e^{2x}$。
+
+  \item 设 $f(x)=\displaystyle\int_0^x\e^{-t^2+2t}\dd t$，求 $I=\displaystyle\int_0^1(x-1)^2 f(x)\dd x$。
+
+  \textbf{解}：$f'(x)=\e^{-x^2+2x}$，$f(0)=0$。
+  \begin{align*}
+    I &= \int_0^1(x-1)^2 f(x)\dd x
+       = \left.\frac{(x-1)^3}{3}f(x)\right|_0^1 - \int_0^1\frac{(x-1)^3}{3}f'(x)\dd x
+       = -\int_0^1\frac{(x-1)^3}{3}f'(x)\dd x \\
+      &= -\int_0^1\frac{(x-1)^3}{3}\e^{-x^2+2x}\dd x
+       = -\frac{1}{6}\int_0^1(x-1)^2\e^{-(x-1)^2+1}\dd(x-1)^2 \\
+      &= \frac{\e}{6}\int_0^1 u\e^{-u}\dd u \qquad\bigl(\text{令 }u=(x-1)^2\bigr) \\
+      &= \frac{\e}{6}\left(\left.-u\e^{-u}\right|_0^1 + \int_0^1\e^{-u}\dd u\right)
+       = \frac{\e}{6}\left(-\e^{-1}+\left[-\e^{-u}\right]_0^1\right)
+       = \frac{1}{6}(\e-2).
+  \end{align*}
+
+  \item 设函数 $f(x)=\displaystyle\int_0^1|t^3-x^3|\dd t\ (0\le x\le 1)$，求 $f(x)$ 的最值。
+
+  \textbf{解}：$0\le x\le 1$ 时，
+  \begin{align*}
+    f(x) &= \int_0^1|t^3-x^3|\dd t = \int_0^x|t^3-x^3|\dd t+\int_x^1|t^3-x^3|\dd t \\
+         &= \int_0^x(x^3-t^3)\dd t+\int_x^1(t^3-x^3)\dd t
+          = \left[x^3 t-\frac{t^4}{4}\right]_0^x + \left[\frac{t^4}{4}-x^3 t\right]_x^1 \\
+         &= \frac{3}{2}x^4 - x^3 + \frac{1}{4}.
+  \end{align*}
+  $f'(x)=6x^3-3x^2$，令 $f'(x)=0,\,x\in(0,1)$，即 $6x^3-3x^2=0$，解得驻点为 $x=\dfrac{1}{2}$。
+  \[
+    f(0)=\frac{1}{4},\quad f(1)=\frac{3}{4},\quad f\!\left(\frac{1}{2}\right)=\frac{7}{32}.
+  \]
+  比较得 $f(x)$ 在 $[0,1]$ 上的最小值为 $\dfrac{7}{32}$，最大值为 $\dfrac{3}{4}$。
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{四、综合题（每小题 7 分，2 个小题共 14 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=0.9em, topsep=0.45em]
+  \item 设 $f(x)$ 连续，$\displaystyle\lim_{x\to 0}\frac{f(x)-\tan x}{x}=1$，$F(x)=\displaystyle\int_0^1 f(xt)\dd t$，求 $F'(x)$，并讨论 $F'(x)$ 的连续性。
+
+  \textbf{解}：由 $\displaystyle\lim_{x\to 0}\frac{f(x)-\tan x}{x}=1$ 得 $\displaystyle\lim_{x\to 0}\frac{f(x)}{x}=2$，从而有 $\displaystyle\lim_{x\to 0}f(x)=0$。
+
+  又 $f(x)$ 连续，所以 $f(0)=0$，由此得 $f'(0)=2$。
+
+  令 $u=xt$，则 $x\neq 0$ 时，$F(x)=\displaystyle\int_0^1 f(xt)\dd t=\frac{1}{x}\int_0^x f(u)\dd u$。
+
+  $F(0)=\displaystyle\int_0^1 f(0)\dd t=f(0)=0$，因此
+  \[
+    F(x)=\begin{cases}\dfrac{1}{x}\displaystyle\int_0^x f(u)\dd u, & x\neq 0,\\[0.5em] 0, & x=0.\end{cases}
+  \]
+  $x\neq 0$ 时，$F'(x)=\dfrac{xf(x)-\displaystyle\int_0^x f(u)\dd u}{x^2}=\dfrac{f(x)}{x}-\dfrac{\displaystyle\int_0^x f(u)\dd u}{x^2}$，
+  \[
+    F'(0)=\lim_{x\to 0}\frac{F(x)-F(0)}{x}
+    =\lim_{x\to 0}\frac{\displaystyle\int_0^x f(u)\dd u}{x^2}
+    =\lim_{x\to 0}\frac{f(x)}{2x}
+    =\lim_{x\to 0}\frac{f(x)-f(0)}{2x}
+    =\frac{1}{2}f'(0)=1.
+  \]
+  \[
+    F'(x)=\begin{cases}\dfrac{f(x)}{x}-\dfrac{\displaystyle\int_0^x f(u)\dd u}{x^2}, & x\neq 0,\\[0.8em] 1, & x=0.\end{cases}
+  \]
+  \begin{align*}
+    \lim_{x\to 0}F'(x)
+    &=\lim_{x\to 0}\left(\frac{f(x)}{x}-\frac{\displaystyle\int_0^x f(u)\dd u}{x^2}\right)
+    =\lim_{x\to 0}\frac{f(x)}{x}-\lim_{x\to 0}\frac{\displaystyle\int_0^x f(u)\dd u}{x^2} \\
+    &=f'(0)-\frac{1}{2}f'(0)=\frac{1}{2}f'(0)=1=F'(0).
+  \end{align*}
+  所以 $F'(x)$ 在 $x=0$ 连续，又 $x\neq 0$ 时，$F'(x)$ 连续，因此 $F'(x)$ 在 $(-\infty,+\infty)$ 上连续。
+
+  \item 设曲线 $y=y(x)$ 是第一象限内的连续曲线，点 $A(0,1),\,B(1,0)$ 分别为曲线与 $y$ 轴及 $x$ 轴的交点，点 $M(x,y)$ 为曲线 $AB$ 上的任意一点，过 $M(x,y)$ 作 $x$ 轴的垂线，与 $x$ 轴交于点 $C$，$O$ 为坐标原点，设梯形 $OCMA$ 的面积与曲边三角形 $CBM$ 的面积和为 $\dfrac{x^3}{6}+\dfrac{1}{3}$，求 $y=y(x)$ 与 $y$ 轴及 $x$ 轴所围成的平面图形绕 $y$ 轴旋转一周所得的旋转体的体积。
+
+  \textbf{解}：由题意可得
+  \[
+    x\frac{1+y}{2}+\int_x^1 y(t)\dd t=\frac{x^3}{6}+\frac{1}{3}.
+  \]
+  方程两边关于 $x$ 求导，得 $\dfrac{1+y}{2}+\dfrac{y'x}{2}-y=\dfrac{x^2}{2}$。
+
+  整理得 $y'-\dfrac{1}{x}y=x-\dfrac{1}{x}\ (x>0)$。
+
+  通解 $y=\e^{-\int\left(-\frac{1}{x}\right)\dd x}\left(C+\displaystyle\int\left(x-\frac{1}{x}\right)\e^{\int\left(-\frac{1}{x}\right)\dd x}\dd x\right)=x\left(C+x+\frac{1}{x}\right)\ (x>0)$。
+
+  将 $y(1)=0$ 代入得 $C=-2$，故 $y=x^2-2x+1$。
+
+  所求体积为
+  \[
+    V_y=\int_0^1 2\pi x(x^2-2x+1)\dd x = 2\pi\left[\frac{x^4}{4}-\frac{2}{3}x^3+\frac{1}{2}x^2\right]_0^1 = \frac{\pi}{6}.
+  \]
+\end{enumerate}
+
+\vspace{0.6em}
+
+\textbf{五、证明题（每小题 5 分，共 10 分）}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=0.9em, topsep=0.45em]
+  \item 设 $f(x)$ 在 $[0,2]$ 上连续，在 $(0,2)$ 内二阶可导，且 $\displaystyle\lim_{x\to\frac{1}{2}}\frac{f(x)}{x-\dfrac{1}{2}}=0$，$f(2)=2\displaystyle\int_1^{\frac{3}{2}}f(x)\dd x$，证明：$\exists\,\xi\in(0,2)$，使得 $f''(\xi)=0$。
+
+  \textbf{证明}：由 $\displaystyle\lim_{x\to\frac{1}{2}}\frac{f(x)}{x-\dfrac{1}{2}}=0$ 可得 $\displaystyle\lim_{x\to\frac{1}{2}}f(x)=0$，又 $f(x)$ 在 $[0,2]$ 上连续，
+
+  故有 $f\!\left(\dfrac{1}{2}\right)=\displaystyle\lim_{x\to\frac{1}{2}}f(x)=0$，于是
+  \[
+    f'\!\left(\frac{1}{2}\right)=\lim_{x\to\frac{1}{2}}\frac{f(x)-f\!\left(\dfrac{1}{2}\right)}{x-\dfrac{1}{2}}=\lim_{x\to\frac{1}{2}}\frac{f(x)}{x-\dfrac{1}{2}}=0.
+  \]
+  由积分中值定理可得
+  \[
+    f(2)=2\int_1^{\frac{3}{2}}f(x)\dd x=2f(\eta)\cdot\left(\frac{3}{2}-1\right)=f(\eta),\quad \eta\in\left[1,\frac{3}{2}\right].
+  \]
+  $f(x)$ 在 $[\eta,2]$ 上满足罗尔定理的条件，故 $\exists\,\eta_1\in(\eta,2)$，使得 $f'(\eta_1)=0$。
+
+  $f(x)$ 在 $(0,2)$ 内二阶可导，故 $f'(x)$ 在 $\left[\dfrac{1}{2},\eta_1\right]\subset(0,2)$ 上可导，且连续，应用罗尔定理得 $\exists\,\xi\in\left(\dfrac{1}{2},\eta_1\right)\subset(0,2)$，使得 $f''(\xi)=0$。
+
+  \item 设 $f(x)$ 在 $[0,1]$ 上有连续的二阶导数，且 $|f''(x)|\le 1$，证明：
+  \[
+    \left|\int_0^1 f(x)\dd x - f\!\left(\frac{1}{2}\right)\right|\le\frac{1}{24}.
+  \]
+
+  \textbf{证明}：将 $f(x)$ 在 $x=\dfrac{1}{2}$ 展开成泰勒公式为
+  \[
+    f(x)=f\!\left(\frac{1}{2}\right)+f'\!\left(\frac{1}{2}\right)\left(x-\frac{1}{2}\right)+\frac{f''(\xi)}{2!}\left(x-\frac{1}{2}\right)^2,\quad \left(\xi\text{ 介于 }x\text{ 与 }\frac{1}{2}\text{ 之间}\right)
+  \]
+  \begin{align*}
+    \int_0^1 f(x)\dd x &= \int_0^1 f\!\left(\frac{1}{2}\right)\dd x+\int_0^1 f'\!\left(\frac{1}{2}\right)\left(x-\frac{1}{2}\right)\dd x+\int_0^1\frac{f''(\xi)}{2!}\left(x-\frac{1}{2}\right)^2\dd x \\
+    &= f\!\left(\frac{1}{2}\right)+\left[\frac{1}{2}f'\!\left(\frac{1}{2}\right)\left(x-\frac{1}{2}\right)^2\right]_0^1+\int_0^1\frac{f''(\xi)}{2!}\left(x-\frac{1}{2}\right)^2\dd x \\
+    &= f\!\left(\frac{1}{2}\right)+\int_0^1\frac{f''(\xi)}{2!}\left(x-\frac{1}{2}\right)^2\dd x.
+  \end{align*}
+  故 $\displaystyle\int_0^1 f(x)\dd x - f\!\left(\frac{1}{2}\right) = \int_0^1\frac{f''(\xi)}{2!}\left(x-\frac{1}{2}\right)^2\dd x$。
+
+  于是
+  \[
+    \left|\int_0^1 f(x)\dd x-f\!\left(\frac{1}{2}\right)\right|
+    \le\int_0^1\left|\frac{f''(\xi)}{2!}\right|\left(x-\frac{1}{2}\right)^2\dd x
+    \le\frac{1}{2}\int_0^1\left(x-\frac{1}{2}\right)^2\dd x=\frac{1}{24}.
+  \]
+
+  \textbf{另证}：将原函数 $F(x)=\displaystyle\int_0^x f(t)\dd t$ 在 $x=\dfrac{1}{2}$ 处展开成泰勒公式
+  \[
+    F(x)=F\!\left(\frac{1}{2}\right)+f\!\left(\frac{1}{2}\right)\left(x-\frac{1}{2}\right)+\frac{1}{2}f'\!\left(\frac{1}{2}\right)\left(x-\frac{1}{2}\right)^2+\frac{1}{6}f''(\xi)\left(x-\frac{1}{2}\right)^3,
+  \]
+  其中 $\xi$ 介于 $x$ 与 $\dfrac{1}{2}$ 之间。
+  令 $x=0,\,x=1$ 得
+  \begin{align*}
+    0=F(0) &= F\!\left(\frac{1}{2}\right)-\frac{1}{2}f\!\left(\frac{1}{2}\right)+\frac{1}{8}f'\!\left(\frac{1}{2}\right)-\frac{1}{48}f''(\xi_1),\quad 0<\xi_1<\frac{1}{2}, \\
+    F(1) &= F\!\left(\frac{1}{2}\right)+\frac{1}{2}f\!\left(\frac{1}{2}\right)+\frac{1}{8}f'\!\left(\frac{1}{2}\right)+\frac{1}{48}f''(\xi_2),\quad \frac{1}{2}<\xi_2<1,
+  \end{align*}
+  以上两式相减得
+  \[
+    F(1)-F(0)=f\!\left(\frac{1}{2}\right)+\frac{1}{48}\bigl(f''(\xi_1)+f''(\xi_2)\bigr),
+  \]
+  即
+  \[
+    \int_0^1 f(x)\dd x-f\!\left(\frac{1}{2}\right)=\frac{1}{48}\bigl(f''(\xi_1)+f''(\xi_2)\bigr).
+  \]
+  由题设条件 $|f''(x)|\le 1$ 易得 $\left|\displaystyle\int_0^1 f(x)\dd x-f\!\left(\frac{1}{2}\right)\right|\le\dfrac{1}{24}$。
+\end{enumerate}
+
+\end{document}

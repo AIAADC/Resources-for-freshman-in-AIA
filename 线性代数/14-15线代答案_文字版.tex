@@ -1,0 +1,263 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\R}{\mathrm{R}}
+\newcommand{\T}{\mathrm{T}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2014～2015 学年度第二学期}\\[0.4em]
+  {\Large\bfseries 《线性代数》课程考试试卷 A 卷答案}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、判断题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.5em]
+  \item $\times$. 矩阵的伴随矩阵相关问题，记住公式即可. 即由公式 $(kA)^* = k^{n-1} A^*$ 知，对于一般方阵 $A$，当且仅当 $k = 1$（或 $k = 0$）时，题述公式对一般矩阵成立.
+
+  \item $\checkmark$. 矩阵秩的相关问题，记住公式即可. 即由公式 $\rk(A) = \rk(A^{\T}) = \rk(AA^{\T}) = \rk(A^{\T}A)$ 知 $\rk(A) = 0$，则 $A = 0$.
+
+  附常用矩阵秩的公式如下：
+  \begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=0.35em, topsep=0.4em]
+    \item $0 \leqslant \R(A_{m \times n}) \leqslant \min\{m, n\}$；
+    \item $\R(A) = \R(A^{\T}) = \R(A^{\T}A) = \R(AA^{\T})$；
+    \item 若 $A$ 等价于 $B$，即 $A \sim B$，则 $\R(A) = \R(B)$；
+    \item 设 $A$ 是 $m \times n$ 矩阵，$P, Q$ 分别为 $m, n$ 阶矩阵，若 $P, Q$ 可逆，则 $\R(PA) = \R(AQ) = \R(PAQ) = \R(A)$；
+    \item $\max\{\R(A), \R(B)\} \leqslant \R(A, B) \leqslant \R(A) + \R(B)$；
+    \item 设 $A, B$ 分别为 $m \times s$ 与 $n \times s$ 阶矩阵，则 $\R\begin{pmatrix} A \\ B \end{pmatrix} \leqslant \R(A) + \R(B)$；
+    \item 设 $A, B$ 为同型矩阵，则 $\R(A \pm B) \leqslant \R(A) + \R(B)$；
+    \item $\R(AB) \leqslant \min\{\R(A), \R(B)\}$，即 $\R(AB) \leqslant \R(A)$，$\R(AB) \leqslant \R(B)$；
+    \item 设 $A$ 为 $m \times n$ 阶矩阵，$B$ 为 $n \times s$ 阶矩阵，若 $AB = 0$，则 $\R(A) + \R(B) \leqslant n$；
+    \item 设 $A$ 是 $n$ 阶矩阵（$n \geqslant 2$），则
+    \[
+      \R(A^*) = \begin{cases}
+        n, & \R(A) = n, \\
+        1, & \R(A) = n - 1, \\
+        0, & \R(A) < n - 1.
+      \end{cases}
+    \]
+  \end{enumerate}
+
+  \item $\checkmark$. 此题表述也属于常用结论，且很容易理解（根据矩阵相似定义来证明即可，略）.
+
+  \item $\times$. 题目表述不易直接分析，考虑特殊法（举反例）：
+  取 $A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$，其中 $1$ 有 $3$ 个（大于 $2^2 - 2 = 2$ 个），符合题目要求，而 $A$ 对应行列式的值为 $1 \neq 0$.
+
+  \item $\times$. 典型错误表述. 这类题目表述形式变化多样，因此需要充分掌握相关概念及推论，具体题目具体分析. 此题中，由齐次线性方程组只有零解知，$A$ 的列向量线性无关；而对应非齐次线性方程组有唯一解等价于 $A$ 的秩等于对应增广矩阵的秩且 $A$ 为列满秩矩阵. 由以上分析，很容易得到反例：
+  取 $A = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$，$b = (0, 0, 1)^{\T}$，则 $AX = 0$ 只有零解，而方程组 $AX = b$ 无解.
+
+  \item $\times$. 将题中条件与结论反过来说，就是一个常见结论. 要说明该命题错误，举反例即可：
+  取 $A = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 0 \end{bmatrix}$，则 $A$ 的特征值为 $1, 1, 0$，满足要求. 而 $A^2 = \begin{bmatrix} 1 & 2 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 0 \end{bmatrix} \neq A$.
+
+  \item $\checkmark$. 由 $A$ 可逆知，$A$ 行向量线性无关，$A$ 的任何一行都不能由其余行线性组合来表示. 否则，$A$ 行向量线性相关，与已知矛盾.
+
+  \item $\checkmark$. 常见结论，记住即可. 附简单证明如下：
+  取 $n$ 阶列向量 $x = (1, 0, 0, \dots, 0)^{\T}$，根据正定矩阵性质，知 $x^{\T}Ax = a_{11} > 0$，同理，可证 $A$ 其他主对角元素均大于零.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、填空题}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item $D_4 = 1 - x^2 - y^2 - z^2$.
+
+  \textbf{分析：}此类题一般两种思路：根据行列式形式特征，对其进行变化以简化求解过程；在行列式阶数较小且一时不能很快发现化简方法时，则可直接展开，细心计算即可. 此题可使用后一种方法.
+
+  将 $D_4$ 按最后一列展开，得
+  \[
+    D_4 = -z \begin{vmatrix} x & 1 & 0 \\ y & 0 & 1 \\ z & 0 & 0 \end{vmatrix}
+        + \begin{vmatrix} 1 & x & y \\ x & 1 & 0 \\ y & 0 & 1 \end{vmatrix}
+        = -z^2 + y \begin{vmatrix} x & 1 \\ y & 0 \end{vmatrix} + (1 - x^2)
+        = 1 - x^2 - y^2 - z^2.
+  \]
+
+  \item $P = \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$.
+
+  \textbf{分析：}此类题很基础，可以直接得出结果. 一般这种求 $P$ 的问题不会单独考察，更多的是在解决某个复杂问题中，需要自己得到结果并应用.
+
+  \item $k(1, -1, 1, -1)^{\T}$（$k \neq 0$）（基础解系可取 $(1, -1, 1, -1)^{\T}$）.
+
+  \textbf{分析：}此题体现上题分析内容. 由已知得 $Ax = 0$，其中 $x = (1, -1, 1, -1)^{\T}$. 因为 $\rk(A) = 3$，则 $AX = 0$ 基础解系只含 $4 - 3 = 1$ 个线性无关向量. 故其基础解系可取 $(1, -1, 1, -1)^{\T}$（或其任意非零倍数 $k(1, -1, 1, -1)^{\T}$，$k \neq 0$）.
+
+  \item $-288$.
+
+  \textbf{分析：}关于特征值的基本应用问题. 由已知可得 $B$ 的三个特征值分别为 $1^3 - 5 \times 1^2 = -4$，$(-1)^3 - 5 \times (-1)^2 = -6$，$2^3 - 5 \times 2^2 = -12$. 则 $|B| = (-4) \times (-6) \times (-12) = -288$.
+
+  \item $(-1, 2)$.
+
+  \textbf{分析：}对于正定矩阵的应用，有很多思路，如配方法、顺序主子式法、特征值法等等. 此题中出现三阶正定矩阵，考虑用顺序主子式判别法进行讨论：
+
+  二次型对应矩阵为 $\begin{bmatrix} 1 & t & 1 \\ t & 4 & 2 \\ 1 & 2 & 4 \end{bmatrix}$，由顺序主子式大于零，即 $\begin{vmatrix} 1 & t \\ t & 4 \end{vmatrix} = 4 - t^2 > 0$，$\begin{vmatrix} 1 & t & 1 \\ t & 4 & 2 \\ 1 & 2 & 4 \end{vmatrix} = -4t^2 + 4t + 8 > 0$，化简并解得 $t \in (-1, 2)$.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、分析：}高阶行列式问题，一般可以利用行列式性质，对行列式进行变形、化简直到得出预期结果；也可以根据行列式具体特征，得到其递推式，再利用数学归纳法得到一般式. 下面采用第二种方法.
+
+\textbf{解答：}将 $D_n$ 按第一列展开，得 $D_n = (a+b)D_{n-1} - ab D_{n-2}$（$n \geqslant 3$）.
+
+(1) $a \neq b$ 时：
+\[
+  D_1 = a + b = \frac{a^2 - b^2}{a - b},\qquad D_2 = (a+b)^2 - ab = a^2 + b^2 + ab = \frac{a^3 - b^3}{a - b}.
+\]
+于是猜想 $D_n = \dfrac{a^{n+1} - b^{n+1}}{a - b}$，下面使用数学归纳法证明此猜想：
+
+当 $n = 1, 2$ 时等式均成立. 假设当 $n \leqslant k$（$k \geqslant 2$）时等式成立，则易得当 $n = k + 1$ 时，
+\[
+  D_{k+1} = (a+b)D_k - ab D_{k-1}
+  = (a+b)\frac{a^{k+1} - b^{k+1}}{a - b} - ab\frac{a^k - b^k}{a - b}
+  = \frac{a^{k+2} - b^{k+2}}{a - b},
+\]
+猜想成立.
+
+(2) $a = b$ 时：
+
+此时利用递推式也可得到正确结果，但过程较为繁琐. 下面展示一种利用极限求取答案的方法：
+
+$a \neq b$ 时，$D_n = \dfrac{a^{n+1} - b^{n+1}}{a - b} = \dfrac{(a-b)(a^n + a^{n-1}b + a^{n-2}b^2 + \cdots + b^n)}{a - b} = a^n + a^{n-1}b + \cdots + b^n$.
+
+令 $b \to a$，便可得 $D_n = (n + 1)a^n$.
+
+综上，可得
+\[
+  D_n = \begin{cases}
+    \dfrac{a^{n+1} - b^{n+1}}{a - b}, & a \neq b, \\[0.8em]
+    (n + 1)a^n, & a = b.
+  \end{cases}
+\]
+
+\vspace{0.8em}
+
+\textbf{四、分析：}应用矩阵公式 $(A^*)^{-1} = (A^{-1})^*$，然后根据定义直接求 $A^{-1}$ 的伴随矩阵即可.
+
+\textbf{解答：}
+\[
+  (A^*)^{-1} = (A^{-1})^* = \begin{bmatrix}
+    5 & -2 & -1 \\
+    -2 & 2 & 0 \\
+    -1 & 0 & 1
+  \end{bmatrix}.
+\]
+
+\vspace{0.8em}
+
+\textbf{五、分析：}概念性问题，按方程组解的条件进行分别的讨论即可.
+
+\textbf{解答：}对增广矩阵进行初等行变换，得矩阵如下所示：
+\[
+  \begin{bmatrix}
+    1 & 1 & 1 & 1 & 0 \\
+    0 & 1 & 2 & 2 & 1 \\
+    0 & 0 & a-1 & 0 & b+1 \\
+    0 & 0 & 0 & a-1 & 0
+  \end{bmatrix}.
+\]
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.4em, topsep=0.3em]
+  \item 由已知得 $\rk(A) = \rk(A \mid b) = 4$，则 $a - 1 \neq 0$，即 $a \neq 1$（此时对 $b$ 无取值要求）.
+  \item 由已知得 $\rk(A) < \rk(A \mid b)$，则 $a - 1 = 0$ 且 $b + 1 \neq 0$，即 $a = 1$ 且 $b \neq -1$.
+  \item 由已知得 $\rk(A) = \rk(A \mid b) < 4$，则 $a - 1 = 0$ 且 $b + 1 = 0$，即 $a = 1, b = -1$. 此时增广矩阵化为
+  \[
+    \begin{bmatrix}
+      1 & 1 & 1 & 1 & 0 \\
+      0 & 1 & 2 & 2 & 1 \\
+      0 & 0 & 0 & 0 & 0 \\
+      0 & 0 & 0 & 0 & 0
+    \end{bmatrix}.
+  \]
+  对应齐次线性方程组，基础解系由两个线性无关的解向量构成：\\
+  $\xi_1 = (1, -2, 0, 1)^{\T}$，$\xi_2 = (1, -2, 1, 0)^{\T}$.
+
+  非齐次方程组一特解 $\xi_3 = (-1, 1, 0, 0)^{\T}$.
+
+  故通解 $\xi = c_1 \xi_1 + c_2 \xi_2 + \xi_3$，其中 $c_1, c_2$ 为任意常数.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{六、分析：}对矩阵特征值的相关结论要熟悉，此题为基础题.
+
+\textbf{解答：}由已知得，矩阵 $A$ 特征值 $\lambda_1 = \lambda_2 = 2$，设其另一个特征值为 $\lambda_3$，由 $\lambda_1 + \lambda_2 + \lambda_3 = \tr(A) = 1 + 4 + 5 = 10$ 得 $\lambda_3 = 6$；
+
+特征方程 $(\lambda E - A)x = 0$，将 $\lambda = 2$ 代入，对系数矩阵 $2E - A$ 作初等行变换，得
+\[
+  A_1 = \begin{bmatrix}
+    1 & 1 & -1 \\
+    a & 2 & b \\
+    0 & 0 & 0
+  \end{bmatrix}.
+\]
+因为 $A$ 有三个线性无关的特征向量，那么对应于 $\lambda = 2$，$(\lambda E - A)x = 0$ 基础解系由两个线性无关解向量构成，可知 $\rk(A_1) = 1$，从而得到 $a = 2 = -b$，即 $a = 2, b = -2$.
+
+对应于 $\lambda = 2$，由 $(2E - A)x = 0$ 易得两个线性无关基础解系：
+$\xi_1 = (1, 0, 1)^{\T}$，$\xi_2 = (-1, 1, 0)^{\T}$.
+
+对应于 $\lambda = 6$，由 $(6E - A)x = 0$ 易得一基础解系：$\xi_3 = (1, -2, 3)^{\T}$.
+
+令 $P = (\xi_1, \xi_2, \xi_3) = \begin{bmatrix} 1 & -1 & 1 \\ 0 & 1 & -2 \\ 1 & 0 & 3 \end{bmatrix}$，满足 $P^{-1}AP = \Lambda$，其中 $\Lambda = \begin{bmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 6 \end{bmatrix}$.
+
+\vspace{0.8em}
+
+\textbf{七、分析：}概念性问题. 将实对称矩阵进行正交相似对角化即可.
+
+\textbf{解答：}二次型对应矩阵
+\[
+  A = \begin{bmatrix}
+    1 & 2 & 2 \\
+    2 & 1 & 2 \\
+    2 & 2 & 1
+  \end{bmatrix}.
+\]
+由特征行列式 $|\lambda E - A| = (\lambda - 5)(\lambda + 1)^2 = 0$ 得 $A$ 特征值 $\lambda_1 = \lambda_2 = -1$，$\lambda_3 = 5$.
+
+对应于 $\lambda = -1$，由 $(-E - A)x = 0$ 易得两个线性无关、正交的特征向量：$\xi_1 = (-1, 1, 0)^{\T}$，$\xi_2 = (1, 1, -2)^{\T}$.
+
+对应于 $\lambda = 5$，由 $(5E - A)x = 0$ 易得特征向量：$\xi_3 = (1, 1, 1)^{\T}$.
+
+将 $\xi_1, \xi_2, \xi_3$ 单位化，得标准正交向量组：
+\[
+  \eta_1 = \frac{1}{\sqrt{2}}(-1, 1, 0)^{\T},\quad
+  \eta_2 = \frac{1}{\sqrt{6}}(1, 1, -2)^{\T},\quad
+  \eta_3 = \frac{1}{\sqrt{3}}(1, 1, 1)^{\T}.
+\]
+故存在正交矩阵
+\[
+  C = (\eta_1, \eta_2, \eta_3) = \begin{bmatrix}
+    -\dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{6}} & \dfrac{1}{\sqrt{3}} \\[0.8em]
+    \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{6}} & \dfrac{1}{\sqrt{3}} \\[0.8em]
+    0 & -\dfrac{2}{\sqrt{6}} & \dfrac{1}{\sqrt{3}}
+  \end{bmatrix},
+\]
+使得在正交变换 $X = CY$ 下，二次型化为标准型：$f(y_1, y_2, y_3) = -y_1^2 - y_2^2 + 5y_3^2$.
+
+\vspace{0.8em}
+
+\textbf{八、分析：}证明题难度偏大，需要多加练习提高解题能力. 此题中需证明矩阵不可逆，那么就有相关思路（如行列式法、特征值法、矩阵秩法等……），此处用行列式法证明.
+
+\textbf{证明：}由 $A^2 = B^2 = I$，取行列式得 $|A|^2 = |B|^2 = 1$，又已知 $|A| = -|B|$，则必有 $|A| = -|B| = 1$ 或 $|A| = -|B| = -1$，即 $|A||B| = -1$.
+
+故
+\[
+  |A||B||A + B| = |A||A + B||B| = |A^2 + AB||B| = |A^2B + AB^2| = |A + B|,
+\]
+即 $-|A + B| = |A + B|$，则 $|A + B| = 0$，故 $A + B$ 不可逆，原命题得证.
+
+\end{document}

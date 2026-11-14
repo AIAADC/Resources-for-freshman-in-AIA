@@ -1,0 +1,132 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2021～2022 学年第一学期}\\[0.4em]
+  {\Large\bfseries “线性代数”课程考试试卷（A 卷）}\\[1.0em]
+  {\normalsize
+    考试方式：\underline{\ \ 闭卷\ \ }\quad
+    考试日期：\underline{\ 2022.01.07\ }\quad
+    考试时长：\underline{\ 150 分钟\ }
+  }
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、判断题（$2\text{ 分}\times 8 = 16\text{ 分}$）（判断题为计算机阅卷，请使用 2B 铅笔规范填涂，填涂区域要丰满、不要使用划线、打勾、打叉等错误填涂方式）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.5em, topsep=0.6em]
+  \item 设 $A, B$ 均为 $n$ 阶方阵且 $6AB = 3A + 2B$，则 $AB = BA$.
+
+  \item 设 $A$ 为 $n$ 阶方阵，则 $(aA)^* = a^n A^*$，其中 $a$ 为常数.
+
+  \item 已知 $n$ 维列向量 $\alpha = \left[\dfrac{1}{2}, 0, \dots, 0, \dfrac{1}{2}\right]^{\T}$，则 $A = I - 4\alpha\alpha^{\T}$ 的列向量是 $n$ 维向量空间的一组标准正交基.
+
+  \item 设 $A$ 为 $n$ 阶方阵，$\alpha$ 为 $n$ 维列向量，满足秩的等式：$\rk\left(\begin{bmatrix} A & \alpha \\ \alpha^{\T} & 0 \end{bmatrix}\right) = \rk(A)$，则齐次线性方程组 $\begin{bmatrix} A & \alpha \\ \alpha^{\T} & 0 \end{bmatrix} X = 0$ 只有零解.
+
+  \item 若 $A^2 = 0,\ A \neq 0$，则必不可相似于对角矩阵.
+
+  \item 设 $A$ 为 $n$ 阶方阵，$\rk(\lambda_0 I - A) = t$，则 $\lambda_0$ 必为 $A$ 的 $n - t$ 重特征值.
+
+  \item 设 $A, B$ 均为实对称矩阵，则存在正交矩阵 $Q$，使得 $Q^{\T} A Q = B$ 的充分必要条件是 $A, B$ 的特征多项式相同.
+
+  \item 若 $n$ 阶实对称矩阵 $A$ 正定，则 $A$ 的主对角线上元素都大于 $0$.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{二、填空题（$4\text{ 分}\times 5 = 20\text{ 分}$）（请将答案填写在答题卡指定位置上）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.8em, topsep=0.6em]
+  \item 已知 $3$ 维列向量 $\alpha_1, \alpha_2, \alpha_3$ 满足 $\alpha_1 + 2\alpha_2 + 3\alpha_3 = 0$，$\alpha_2, \alpha_3$ 线性无关，$3$ 阶方阵 $A = [\alpha_1, \alpha_2, \alpha_3]$，则齐次线性方程组 $AX = 0$ 的通解为 $\blank[3.0cm]$.
+
+  \item 设 $I$ 为 $n$ 阶单位阵，则 $\begin{bmatrix} I & I \\ 0 & I \end{bmatrix}^{-1} = \blank[2.8cm]$.
+
+  \item 设三维向量 $\alpha$ 在基 $\alpha_1, \alpha_2, \alpha_3$ 下的坐标为 $[3, 2, 1]^{\T}$，则 $\alpha$ 在基 $\beta_1 = \alpha_1$，$\beta_2 = \alpha_1 + \alpha_2$，$\beta_3 = \alpha_1 + \alpha_2 + \alpha_3$ 下的坐标为 $\blank[2.6cm]$.
+
+  \item 若 $A = \begin{bmatrix} 1 & -2 & 2 \\ -2 & a & -c \\ 2 & -c & b \end{bmatrix}$ 合同于 $\begin{bmatrix} 3 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$，则 $A$ 的迹 $\tr(A) = \blank[2.2cm]$.
+
+  \item 二次型 $f(x_1, x_2, x_3) = (-2x_1 + x_2 - x_3)(3x_1 - 2x_2 + 5x_3)$ 的正惯性指数为 $\blank[2.2cm]$.
+\end{enumerate}
+
+\newpage
+
+\textbf{三、（10 分）（请将答案填写在答题卡指定位置上）}
+
+$n(n \ge 2)$ 阶行列式 $D = \begin{vmatrix}
+  x & a & a & \cdots & a \\
+  a & x & a & \cdots & a \\
+  \vdots & \vdots & \vdots & \ddots & \vdots \\
+  a & a & a & \cdots & x
+\end{vmatrix}$，
+
+(1) 求 $D$；\qquad (2) 求 $D$ 的第一行元素对应的代数余子式之和 $\sum_{j=1}^n A_{1j}$.
+
+\vspace{0.8em}
+
+\textbf{四、（10 分）（请将答案填写在答题卡指定位置上）}
+
+已知 $A = \begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 1 & 1 & 1 \end{bmatrix}$， $B = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 \end{bmatrix}$，且矩阵 $X$ 满足：$AXA + BXB = AXB + BXA + I$.
+
+(1) 求 $(A - B)^{-1}$；\qquad (2) 求 $X$.
+
+\vspace{0.8em}
+
+\textbf{五、（12 分）（请将答案填写在答题卡指定位置上）}
+
+已知非齐次线性方程组 $\begin{cases} x_1 + x_2 + x_3 + x_4 = -1 \\ a x_1 + b x_2 + 5 x_3 - x_4 = -1 \\ 2 x_1 + x_2 + 3 x_3 - 3 x_4 = c \end{cases}$ 系数矩阵的秩为 $2$，且有解.
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 求 $a, b, c$ 的值及该非齐次线性方程组的通解.
+  \item 该非齐次线性方程组有多少线性无关的解？说明理由.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{六、（12 分）（请将答案填写在答题卡指定位置上）}
+
+设三阶实对称矩阵 $A = [\alpha_1, \alpha_2, \alpha_3]$ 有二重特征值 $\lambda_1 = \lambda_2 = 2$，且满足：
+\[
+  \alpha_1 - 2\alpha_3 = [-3, 0, 6]^{\T}.
+\]
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 证明 $A = \begin{bmatrix} 1 & 0 & 2 \\ 0 & 2 & 0 \\ 2 & 0 & -2 \end{bmatrix}$.
+  \item 求正交变换 $X = CY$，将 $f(x_1, x_2, x_3) = X^{\T}(A + A^{-1})X$ 化为标准形.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{七、（10 分）（请将答案填写在答题卡指定位置上）}
+
+已知 $A$ 为三阶方阵，$X_1, X_2$ 为齐次方程 $(I - A)X = 0$ 的基础解系，且 $|A - 2I| = 0$.
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.25em, topsep=0.3em]
+  \item 证明 $A$ 可以相似对角化；
+  \item 求 $(A - I)(A - 2I)$.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{八、（10 分）（请将答案填写在答题卡指定位置上）}
+
+设 $A$ 为 $n$ 阶实矩阵，证明 $A$ 为正交矩阵的充要条件是：对任意 $\alpha, \beta \in \mathbb{R}^n,\ (A\alpha, A\beta) = (\alpha, \beta)$. 其中 $(\alpha, \beta) = \alpha^{\T}\beta$ 为 $\mathbb{R}^n$ 中的内积.
+
+\end{document}

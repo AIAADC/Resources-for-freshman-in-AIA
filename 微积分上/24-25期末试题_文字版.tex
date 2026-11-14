@@ -1,0 +1,128 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=2.1cm,bottom=1.8cm,left=2.1cm,right=2.1cm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[C]{\small\bfseries 考试日期：2025-1-06\quad 8:30--11:00}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\blank}[1][2.2cm]{\underline{\hspace{#1}}}
+\newcommand{\choice}[1]{\text{【\quad】}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2024～2025 学年第一学期}\\[0.5em]
+  {\Large\bfseries 《微积分（一）》课程考试试卷（A 卷）}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、单项选择题（每小题 3 分，6 个小题共 18 分，将结果涂在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.65em, topsep=0.5em]
+  \item 当 $x\to 0$ 时，函数 $f(x)=\dfrac{1}{x}\sin\dfrac{1}{x}$ 是 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. 无界的但不是无穷大量}B. 无穷大量
+
+  \makebox[0.45\linewidth][l]{C. 有界的但不是无穷小量}D. 无穷小量
+
+  \item 设 $\{a_n\},\,\{b_n\},\,\{c_n\}$ 均为非负数列，且 $\displaystyle\lim_{n\to\infty}a_n=0,\,\lim_{n\to\infty}b_n=1,\,\lim_{n\to\infty}c_n=+\infty$，则 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. 对任意正整数 $n$，有 $a_n<b_n$}B. 对任意正整数 $n$，有 $b_n<c_n$
+
+  \makebox[0.45\linewidth][l]{C. 数列 $\{a_n\cdot c_n\}$ 发散}D. 数列 $\{b_n\cdot c_n\}$ 发散
+
+  \item 设 $f'(x_0)=f''(x_0)=0,\,f'''(x_0)>0$，则 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $f'(x_0)$ 是 $f'(x)$ 的极大值}B. $f(x_0)$ 是 $f(x)$ 的极大值
+
+  \makebox[0.45\linewidth][l]{C. $f(x_0)$ 是 $f(x)$ 的极小值}D. $\bigl(x_0,f(x_0)\bigr)$ 是曲线 $y=f(x)$ 的拐点
+
+  \item 若 $f'(2x)=\e^{-x}$，且 $f(0)=1$，则 $\displaystyle\int f(x)\dd x=\blank$ \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $3x-\e^{-x}+C$}B. $3x-2\e^{-\frac{x}{2}}+C$
+
+  \makebox[0.45\linewidth][l]{C. $3x+4\e^{-\frac{x}{2}}+C$}D. $3x-4\e^{-\frac{x}{2}}+C$
+
+  \item 设函数 $f(x)$ 二阶可导，且 $f''(x)<0,\,f(0)=0$，则 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $f(2)<2f(1)$}B. $f(2)>2f(1)$
+
+  \makebox[0.45\linewidth][l]{C. $2f(2)<f(1)$}D. $2f(2)>f(1)$
+
+  \item 下列反常积分收敛的是 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $\displaystyle\int_{\e}^{+\infty}\frac{\ln x}{x}\dd x$}B. $\displaystyle\int_{\e}^{+\infty}\frac{1}{x\ln x}\dd x$
+
+  \vspace{0.4em}
+  \makebox[0.45\linewidth][l]{C. $\displaystyle\int_{\e}^{+\infty}\frac{1}{x\sqrt{\ln x}}\dd x$}D. $\displaystyle\int_{\e}^{+\infty}\frac{1}{x(\ln x)^2}\dd x$
+\end{enumerate}
+
+\newpage
+
+\textbf{二、填空题（每小题 4 分，共 16 分）}
+
+\begin{enumerate}[label=\arabic*., start=7, leftmargin=2em, itemsep=0.4em, topsep=0.3em]
+  \item 设函数 $y=f(x)$ 由参数方程 $\begin{cases}x=t^2+1\\ y=4t-t^2\end{cases}(t\ge 0)$ 确定，\newline 则 $\displaystyle\lim_{n\to\infty}n\left[f\!\left(\frac{2n+1}{n}\right)-3\right]=\blank$。
+
+  \item 设函数 $f(x)=\displaystyle\int_0^{3x}\e^{-t^2}\dd t+2$，$g(x)$ 是 $f(x)$ 的反函数，则 $g'(2)=\blank$。
+
+  \item 设 $f(x)=\dfrac{1}{1+x^2}+\sqrt{1-x^2}\displaystyle\int_0^1 f(x)\dd x$，则 $\displaystyle\int_0^1 f(x)\dd x=\blank$。
+
+  \item 连续曲线段 $y=\displaystyle\int_0^x\sqrt{\sin t}\dd t\ (0\le x\le\pi)$ 的弧长为 $\blank$。
+\end{enumerate}
+
+\vspace{0.35em}
+
+\textbf{三、计算题（每小题 7 分，6 个小题共 42 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.4em, topsep=0.3em]
+  \item 求曲线 $y=\sqrt{\dfrac{x^3}{x-1}}\ (x>1)$ 的渐近线。
+
+  \item 求极限 $\displaystyle\lim_{n\to\infty}\left(\frac{1}{2n+\dfrac{1}{n}}+\frac{1}{2n+\dfrac{4}{n}}+\cdots+\frac{1}{2n+\dfrac{n^2}{n}}\right)$。
+
+  \item 设方程 $\e^{xy}+\dfrac{1}{\sqrt{3}}\displaystyle\int_1^y\sqrt{4-t^2}\dd t=1$ 可确定函数 $y=y(x)$，求 $\left.\dfrac{\dd y}{\dd x}\right|_{x=0}$。
+
+  \item 求方程 $y''-3y'+2y=2\e^x$ 的积分曲线 $y=y(x)$，使其在点 $(0,1)$ 处的切线与曲线 $y=x^2-3x+1$ 在该点的切线重合。
+
+  \item 设 $f(x)=\displaystyle\int_0^x\e^{-t^2+2t}\dd t$，求 $I=\displaystyle\int_0^1(x-1)^2 f(x)\dd x$。
+
+  \item 设函数 $f(x)=\displaystyle\int_0^1|t^3-x^3|\dd t\ (0\le x\le 1)$，求 $f(x)$ 的最值。
+\end{enumerate}
+
+\vspace{0.35em}
+
+\textbf{四、综合题（每小题 7 分，2 个小题共 14 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=0.4em, topsep=0.3em]
+  \item 设 $f(x)$ 连续，$\displaystyle\lim_{x\to 0}\frac{f(x)-\tan x}{x}=1$，$F(x)=\displaystyle\int_0^1 f(xt)\dd t$，求 $F'(x)$，并讨论 $F'(x)$ 的连续性。
+
+  \item 设曲线 $y=y(x)$ 是第一象限内的连续曲线，点 $A(0,1),\,B(1,0)$ 分别为曲线与 $y$ 轴及 $x$ 轴的交点，点 $M(x,y)$ 为曲线 $AB$ 上的任意一点，过 $M(x,y)$ 作 $x$ 轴的垂线，与 $x$ 轴交于点 $C$，$O$ 为坐标原点，设梯形 $OCMA$ 的面积与曲边三角形 $CBM$ 的面积和为 $\dfrac{x^3}{6}+\dfrac{1}{3}$，求 $y=y(x)$ 与 $y$ 轴及 $x$ 轴所围成的平面图形绕 $y$ 轴旋转一周所得的旋转体的体积。
+\end{enumerate}
+
+\vspace{0.35em}
+
+\textbf{五、证明题（每小题 5 分，共 10 分）}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=0.4em, topsep=0.3em]
+  \item 设 $f(x)$ 在 $[0,2]$ 上连续，在 $(0,2)$ 内二阶可导，且 $\displaystyle\lim_{x\to\frac{1}{2}}\frac{f(x)}{x-\dfrac{1}{2}}=0$，$f(2)=2\displaystyle\int_1^{\frac{3}{2}}f(x)\dd x$，证明：$\exists\,\xi\in(0,2)$，使得 $f''(\xi)=0$。
+
+  \item 设 $f(x)$ 在 $[0,1]$ 上有连续的二阶导数，且 $|f''(x)|\le 1$，证明：
+  \[
+    \left|\int_0^1 f(x)\dd x - f\!\left(\frac{1}{2}\right)\right| \le \frac{1}{24}.
+  \]
+\end{enumerate}
+
+\end{document}

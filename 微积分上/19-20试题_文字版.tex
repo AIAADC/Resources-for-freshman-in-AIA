@@ -1,0 +1,143 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\blank}[1][2.2cm]{\underline{\hspace{#1}}}
+\newcommand{\choice}[1]{\text{【\quad】}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2019～2020 学年第一学期}\\[0.5em]
+  {\Large\bfseries “微积分（一）”考试试卷（A 卷）}\\[0.9em]
+  {\normalsize
+    考试方式：\underline{\ \ 闭卷\ \ }\quad
+    考试日期：\underline{\ 2019.12.31\ }\quad
+    考试时长：\underline{\ 150 分钟\ }
+  }\\[0.8em]
+  {\normalsize
+    \begin{tabular}{@{}p{7.5cm}p{7.5cm}@{}}
+      院（系）：\underline{\hspace{4.8cm}} & 专业班级：\underline{\hspace{4.8cm}} \\[0.4em]
+      学\qquad 号：\underline{\hspace{4.8cm}} & 姓\qquad 名：\underline{\hspace{4.8cm}}
+    \end{tabular}
+  }
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、单项选择题（每小题 3 分，6 个小题共 18 分，将结果涂在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.6em]
+  \item 设 $0<a_n<1$，且 $\displaystyle\lim_{n\to\infty}a_n=1$，则以下数列中无界的是 \choice{}。
+
+  A. $\{a_n^2\}$ \qquad\quad
+  B. $\left\{\dfrac{1}{a_n}\right\}$ \qquad\quad
+  C. $\left\{\tan\dfrac{\pi a_n}{2}\right\}$ \qquad\quad
+  D. $\{\ln a_n\}$
+
+  \item 已知 $f(2)=3,\,f'(2)=5$，则极限 $\displaystyle\lim_{h\to 0}\frac{f^2(2+h)-9}{h}=$ \choice{}。
+
+  A. $30$ \qquad\qquad\ 
+  B. $10$ \qquad\qquad\quad\ 
+  C. $6$ \qquad\qquad\qquad\quad
+  D. $0$
+
+  \item 设函数 $f(x)$ 在闭区间 $[a,b]$ 上可导，则以下说法中\textbf{错误}的是 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $f(x)$ 必在 $[a,b]$ 上有界}B. $f(x)$ 必在 $[a,b]$ 上有连续的导数
+
+  \makebox[0.45\linewidth][l]{C. $f(x)$ 必在 $[a,b]$ 上连续}D. $f(x)$ 必在 $[a,b]$ 上可积
+
+  \item 曲线 $y=\dfrac{1}{x}+\ln(1+\e^x)$ 一共有 \choice{} 条渐近线。
+
+  A. $0$ \qquad\qquad\quad 
+  B. $1$ \qquad\qquad\quad\ 
+  C. $2$ \qquad\qquad\qquad\quad
+  D. $3$
+
+  \item 设函数 $f(x)$ 二阶可导，且 $f''(x)<0$，则以下不等式中一定成立的是 \choice{}。
+
+  \makebox[0.45\linewidth][l]{A. $f(1)+f(3)>2f(2)$}B. $f(1)+f(3)<2f(2)$
+
+  \makebox[0.45\linewidth][l]{C. $f(1)+f(2)>2f(3)$}D. $f(1)+f(2)<2f(3)$
+
+  \item 微分方程 $y'-\dfrac{y}{2x}=0$ 满足初值条件 $y(1)=2$ 的特解为 \choice{}。
+
+  A. $2\sqrt{x}$ \qquad\quad\ 
+  B. $1+\sqrt{x}$ \qquad\quad
+  C. $1+x$ \qquad\qquad\quad\ 
+  D. $\sqrt{x+3}$
+\end{enumerate}
+
+\newpage
+
+\textbf{二、填空题（每小题 4 分，4 个小题共 16 分，将计算结果写在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., start=7, leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item 极限 $\displaystyle\lim_{n\to\infty}\frac{1}{n^4}(1^3+2^3+\cdots+n^3)=\blank$。
+
+  \item 设函数 $y=x^2-x$。在 $x=2,\,\Delta x=0.01$ 时，微分 $\dd y=\blank$。
+
+  \item $\displaystyle\lim_{x\to 0}\frac{\displaystyle\int_0^{\sin^2 x}\sqrt{3+t^2}\dd t}{x^2}=\blank$。
+
+  \item 曲线 $y=1-x^4$ 与 $x$ 轴所围成图形的面积为 $\blank$。
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、基本计算题（每小题 7 分，6 个小题共 42 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item 已知当 $x\to 0$，$u=\e^{3x}-ax^2-(1+bx)\cos x$ 是与 $x^3$ 同阶的无穷小。求常数 $a,b$ 的值。
+
+  \item 求 $f(x)=x^3-3x^2-9x+5$ 在区间 $[-2,2]$ 上的最大值与最小值。
+
+  \item 求不定积分 $I=\displaystyle\int\frac{\e^{5x}}{\e^{2x}+1}\dd x$。
+
+  \item 求定积分 $I=\displaystyle\int_0^{\frac{\pi}{4}}\frac{x}{\cos^2 x}\dd x$。
+
+  \item 判定反常积分 $\displaystyle\int_0^1\frac{1}{x\sqrt{x^2+1}}\dd x$ 的敛散性，若收敛求其值。
+
+  \item 求微分方程 $y''=\dfrac{\sin y}{\cos^3 y}$ 满足初值条件 $y(2)=0,\,y'(2)=1$ 的特解。
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{四、应用题（每小题 7 分，2 个小题共 14 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item 设函数 $f(x)=\begin{cases}\dfrac{\ln(1+x)}{x}, & x\in(-1,0)\cup(0,+\infty),\\[0.5em] 1, & x=0,\end{cases}$
+
+  讨论 $f'(x)$ 在点 $x=0$ 的连续性（需说明理由）。
+
+  \item 求曲线 $y=\sqrt{x}-\dfrac{x\sqrt{x}}{3}$ 对应于 $1\le x\le 4$ 弧段的长度。
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{五、综合题（每小题 5 分，2 个小题共 10 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item 设 $n$ 为正整数，求方程 $(x+1)^{2n}=x^{2n}+1$ 所有的实根。并证明你的结论。
+
+  \item 设函数 $f(x)$ 在区间 $[a,b]$ 上有连续的导数。证明：
+  \[
+    f(x) \le \frac{1}{b-a}\left|\int_a^b f(x)\dd x\right| + \int_a^b |f'(x)|\dd x,\quad x\in[a,b].
+  \]
+\end{enumerate}
+
+\end{document}

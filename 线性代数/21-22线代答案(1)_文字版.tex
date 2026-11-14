@@ -1,0 +1,197 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\score}[1]{\hfill\text{#1 分}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 《线性代数》2021 秋 A 答案}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、判断题（$2\text{ 分}\times 8 = 16\text{ 分}$）}
+
+1.\ $\checkmark$\quad
+2.\ $\times$\quad
+3.\ $\checkmark$\quad
+4.\ $\times$\quad
+5.\ $\checkmark$\quad
+6.\ $\times$\quad
+7.\ $\checkmark$\quad
+8.\ $\checkmark$
+
+\vspace{0.8em}
+
+\textbf{二、填空题（$4\text{ 分}\times 5 = 20\text{ 分}$）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.35em, topsep=0.3em]
+  \item $k(1, 2, 3)^{\T},\ k \in \mathbb{R}$
+  \item $\begin{pmatrix} I & -I \\ 0 & I \end{pmatrix}$
+  \item $(1, 1, 1)^{\T}$
+  \item $9$
+  \item $1$
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、（10 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.35em, topsep=0.3em]
+  \item
+  $D = \bigl(x + (n - 1)a\bigr)\begin{vmatrix} 1 & 1 & \cdots & 1 \\ a & x & \cdots & a \\ \vdots & \vdots & \ddots & \vdots \\ a & a & \cdots & x \end{vmatrix}$
+
+  \qquad $= \bigl(x + (n - 1)a\bigr)\begin{vmatrix} 1 & 1 & \cdots & 1 \\ 0 & x - a & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & x - a \end{vmatrix}$ \score{3}
+
+  \qquad $= \bigl(x + (n - 1)a\bigr)(x - a)^{n-1}$. \score{5}
+
+  \item
+  $\sum_{j=1}^n A_{1j} = \begin{vmatrix} 1 & 1 & \cdots & 1 \\ a & x & \cdots & a \\ \vdots & \vdots & \ddots & \vdots \\ a & a & \cdots & x \end{vmatrix}$ \score{3}
+
+  \qquad $= \begin{vmatrix} 1 & 1 & \cdots & 1 \\ 0 & x - a & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & x - a \end{vmatrix} = (x - a)^{n-1}$. \score{5}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{四、（10 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.35em, topsep=0.3em]
+  \item $A - B = \begin{pmatrix} 1 & -1 & -1 \\ 0 & 1 & -1 \\ 0 & 0 & 1 \end{pmatrix}$ \score{2}
+
+  由初等行变换，有 $(A - B)^{-1} = \begin{pmatrix} 1 & 1 & 2 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$ \score{5}
+
+  \item 由 $AXA + BXB = AXB + BXA + I$ 有 $(A - B)X(A - B) = I$， \score{2}
+
+  所以，$X = \bigl((A - B)^{-1}\bigr)^2$ \score{4}
+
+  \qquad $= \begin{pmatrix} 1 & 2 & 5 \\ 0 & 1 & 2 \\ 0 & 0 & 1 \end{pmatrix}$. \score{5}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{五、（12 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.35em, topsep=0.3em]
+  \item 解：因为 $\rk(A) = 2$，所以 $\begin{vmatrix} 1 & 1 & 1 \\ a & 5 & -1 \\ 2 & 3 & -3 \end{vmatrix} = \begin{vmatrix} 1 & 1 & 1 \\ b & 5 & -1 \\ 1 & 3 & -3 \end{vmatrix} = 0$，（或直接用初等变换）
+
+  所以，$a = 4,\ b = 3$. \score{4}
+
+  由于非齐次线性方程组 $AX = b$ 系数矩阵的秩为 $2$，且有解，
+
+  所以，$\rk(A \mid b) = \rk(A) = 2$.
+
+  对增广矩阵作行初等变换，
+
+  $(A \mid b) = \left(\begin{array}{cccc|c} 1 & 1 & 1 & 1 & -1 \\ 4 & 3 & 5 & -1 & -1 \\ 2 & 1 & 3 & -3 & c \end{array}\right) \to \left(\begin{array}{cccc|c} 1 & 0 & 2 & -4 & 2 \\ 0 & 1 & -1 & 5 & -3 \\ 0 & 0 & 0 & 0 & c - 1 \end{array}\right)$，
+
+  所以，$c = 1$， \score{6}
+
+  且通解 $X = \begin{pmatrix} 2 \\ -3 \\ 0 \\ 0 \end{pmatrix} + k_1\begin{pmatrix} -2 \\ 1 \\ 1 \\ 0 \end{pmatrix} + k_2\begin{pmatrix} 4 \\ -5 \\ 0 \\ 1 \end{pmatrix}$. \score{8}
+
+  \item 取非齐次线性方程组 $AX = b$ 的一个特解 $\beta$，其导出齐次线性方程组 $AX = 0$ 的基础解系 $\alpha_1, \alpha_2$，
+
+  则 $\beta,\ \beta + \alpha_1,\ \beta + \alpha_2$ 为 $AX = b$ 的三个线性无关解， \score{2}
+
+  且 $AX = b$ 的任意解都可以由 $\beta,\ \beta + \alpha_1,\ \beta + \alpha_2$ 线性表出，
+
+  所以 $AX = b$ 有 $3$ 个线性无关解. \score{4}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{六、（12 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.35em, topsep=0.3em]
+  \item 证明：$\alpha_1 - 2\alpha_3 = [-3, 0, 6]^{\T}$，即 $(\alpha_1, \alpha_2, \alpha_3)\begin{pmatrix} 1 \\ 0 \\ -2 \end{pmatrix} = -3\begin{pmatrix} 1 \\ 0 \\ -2 \end{pmatrix}$，
+
+  所以 $\lambda_3 = -3$ 为 $A$ 的特征值，对应的特征向量为 $X_3 = \begin{pmatrix} 1 \\ 0 \\ -2 \end{pmatrix}$. \score{2}
+
+  由于 $A$ 为实对称矩阵，所以 $\lambda_1 = \lambda_2 = 2$ 对应的特征向量与 $X_3$ 正交，
+
+  解齐次线性方程组 $x_1 - 2x_3 = 0$，
+
+  得到其基础解系 $X_1 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix},\ X_2 = \begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix}$，且 $X_1$ 与 $X_2$ 正交， \score{4}
+
+  将 $X_1, X_2, X_3$ 标准化，得
+  \[
+    \varepsilon_1 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix},\quad
+    \varepsilon_2 = \begin{pmatrix} \dfrac{2}{\sqrt{5}} \\[0.6em] 0 \\[0.6em] \dfrac{1}{\sqrt{5}} \end{pmatrix},\quad
+    \varepsilon_3 = \begin{pmatrix} \dfrac{1}{\sqrt{5}} \\[0.6em] 0 \\[0.6em] -\dfrac{2}{\sqrt{5}} \end{pmatrix},
+  \]
+  取 $Q = (\varepsilon_1, \varepsilon_2, \varepsilon_3)$，则 $Q$ 正交且 $Q^{\T}AQ = \diag\{2, 2, -3\}$，
+
+  所以，$A = Q\diag\{2, 2, -3\}Q^{\T} = \begin{pmatrix} 1 & 0 & 2 \\ 0 & 2 & 0 \\ 2 & 0 & -2 \end{pmatrix}$. \score{6}
+
+  \item 由 $A = Q\diag\{2, 2, -3\}Q^{\T}$，有 $A^{-1} = Q\diag\left\{\dfrac{1}{2}, \dfrac{1}{2}, -\dfrac{1}{3}\right\}Q^{\T}$， \score{2}
+
+  所以 $Q^{\T}(A + A^{-1})Q = \diag\left\{\dfrac{5}{2}, \dfrac{5}{2}, -\dfrac{10}{3}\right\}$， \score{4}
+
+  对应的正交变换为 $X = QY$，将二次型化为标准形 $f = \dfrac{5}{2}y_1^2 + \dfrac{5}{2}y_2^2 - \dfrac{10}{3}y_3^2$. \score{6}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{七、（10 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=0.35em, topsep=0.3em]
+  \item 证明：因为 $X_1, X_2$ 为齐次方程 $(I - A)X = 0$ 的基础解系，
+
+  所以 $1$ 为 $A$ 的特征值，且有 $2$ 个线性无关的特征向量 $X_1, X_2$， \score{2}
+
+  又 $|A - 2I| = 0$，$2$ 也是 $A$ 的特征值，对应有一个特征向量 $X_3$，且 $X_1, X_2, X_3$ 线性无关， \score{4}
+
+  所以，$3$ 阶方阵 $A$ 有 $3$ 个线性无关的特征向量，$A$ 可以相似对角化. \score{5}
+
+  \item 解：取 $P = (X_1, X_2, X_3)$，则 $P$ 可逆，且 $P^{-1}AP = \diag\{1, 1, 2\}$， \score{2}
+
+  所以，$P^{-1}(A - I)(A - 2I)P = (P^{-1}AP - I)(P^{-1}AP - 2I)$ \score{4}
+
+  \qquad $= \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} -1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{pmatrix} = 0$，故 $(A - I)(A - 2I) = 0$. \score{5}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{八、（10 分）}
+
+证明：
+
+必要性：若 $A$ 为正交矩阵，则 $A^{\T}A = AA^{\T} = I$， \score{2}
+
+所以对任意 $\alpha, \beta \in \mathbb{R}^n$，
+\[
+  (A\alpha, A\beta) = (A\alpha)^{\T}(A\beta) = \alpha^{\T}A^{\T}A\beta = \alpha^{\T}\beta = (\alpha, \beta). \tag*{\text{5 分}}
+\]
+充分性：若对任意 $\alpha, \beta \in \mathbb{R}^n,\ (A\alpha, A\beta) = (\alpha, \beta)$.\qquad (1)
+
+取 $\mathbb{R}^n$ 的一组标准正交基 $\{\varepsilon_1, \varepsilon_2, \cdots, \varepsilon_n\}$，令 $B = (\varepsilon_1, \varepsilon_2, \cdots, \varepsilon_n)$，
+
+则 $B^{\T}B = BB^{\T} = I$，所以 $B$ 为正交矩阵， \score{2}
+
+再取 $\xi_i = A\varepsilon_i,\ i = 1, 2, \cdots, n$，由 (1)，$\{\xi_1, \xi_2, \cdots, \xi_n\}$ 也为 $\mathbb{R}^n$ 的一组标准正交基，
+
+令 $C = (\xi_1, \xi_2, \cdots, \xi_n)$，则 $C$ 也为正交矩阵， \score{4}
+
+因为 $A(\varepsilon_1, \varepsilon_2, \cdots, \varepsilon_n) = (A\varepsilon_1, A\varepsilon_2, \cdots, A\varepsilon_n) = (\xi_1, \xi_2, \cdots, \xi_n)$，
+
+所以 $A = CB^{-1} = CB^{\T}$，$A$ 为正交矩阵. \score{5}
+
+\end{document}

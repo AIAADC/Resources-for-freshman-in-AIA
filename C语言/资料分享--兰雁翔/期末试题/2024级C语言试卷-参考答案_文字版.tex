@@ -1,0 +1,404 @@
+\documentclass[a4paper,11pt]{ctexart}
+\usepackage[left=1.9cm,right=1.9cm,top=2.0cm,bottom=2.0cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\definecolor{ansred}{RGB}{185,28,28}
+\definecolor{noteblue}{RGB}{30,64,135}
+
+\lstset{
+  language=C,
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  keepspaces=true,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4,
+  aboveskip=3pt,
+  belowskip=3pt,
+  xleftmargin=1.5em,
+  escapeinside={(*@}{@*)},
+  moredelim=**[is][\color{ansred}]{@@}{@@},
+  commentstyle=\color{black!70}
+}
+
+\newcommand{\ansmark}[1]{\hfill(\,\textcolor{ansred}{\textbf{#1}}\,)}
+\newcommand{\ansfill}[1]{\underline{\textcolor{ansred}{\texttt{~#1~}}}}
+\newcommand{\secbox}[2]{%
+  \noindent\begin{tabular}{|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
+    \hline
+    得\quad 分 & \\ \hline
+    评卷人 & \\ \hline
+  \end{tabular}\hspace{0.8em}%
+  \begin{minipage}[c]{\dimexpr\textwidth-4.2cm\relax}
+    \textbf{#1}#2
+  \end{minipage}\par\vspace{0.5em}%
+}
+
+\begin{document}
+
+\begin{center}
+  {\large\textbf{华中科技大学 2024～2025 学年第一学期}}\\[4pt]
+  {\Large\textbf{“C 语言程序设计”考试试卷（A 卷）——参考答案}}\\[8pt]
+  考试方式：\underline{\quad 闭卷 \quad}\qquad
+  考试时间：\underline{\quad 2025 年 01 月 14 日上午 \quad}\qquad
+  考试时长：\underline{\quad 150 \quad} 分钟
+\end{center}
+
+\vspace{4pt}
+\begin{center}
+  \begin{tabular}{|>{\centering\arraybackslash}p{1.2cm}|*{7}{>{\centering\arraybackslash}p{1.15cm}|}>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|}
+    \hline
+    题号 & 一 & 二 & 三 & 四 & 五 & 六 & 总分 & 总分人 & 核对人 \\ \hline
+    分值 & 10 & 10 & 10 & 10 & 25 & 35 & 100 & & \\ \hline
+    得分 & & & & & & & & & \\[8pt] \hline
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \small 院系：\underline{\hspace{2.3cm}}\quad 专业班级：\underline{\hspace{2.2cm}}\quad 姓名：\underline{\hspace{2.0cm}}\quad 学号：\underline{\hspace{2.3cm}}
+\end{center}
+\vspace{6pt}
+
+% ==================== 一 ====================
+\secbox{一、判断下列语句或程序段的对错。}{（“$\times$”表示错，“$\checkmark$”表示对）（10 分）\\{\small (Judge the correctness of the following statements or program segments. (``$\times$'' indicates wrong, and ``$\checkmark$'' indicates correct.))}}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=4pt]
+  \item \texttt{struct AIA \{}\\
+        \hspace*{1.5em}\texttt{char name[30] = "Li Hua";}\\
+        \hspace*{1.5em}\texttt{int age = 20;}\\
+        \texttt{\}chen, gao, wang;} \hfill \textcolor{noteblue}{\small 定义结构时不能对成员初始化} \quad (\,\textcolor{ansred}{$\times$}\,)
+  \item \texttt{double *p=0xFFE0;} \hfill \textcolor{noteblue}{\small 只能用变量地址、数组名等初始化指针变量} \quad (\,\textcolor{ansred}{$\times$}\,)
+  \item \texttt{char *p\_str = "Econ";} \ansmark{$\checkmark$}
+  \item \texttt{float bb[5], *p=bb;}\\
+        \texttt{*p=10.0;} \ansmark{$\checkmark$}
+  \item \texttt{int aa[10] = \{0\} ;} \ansmark{$\checkmark$}
+  \item \texttt{int (*px)[3], x[3][5];}\\
+        \texttt{px = x;} \hfill \textcolor{noteblue}{\small 第二维大小不一致} \quad (\,\textcolor{ansred}{$\times$}\,)
+  \item \texttt{register int a;}\\
+        \texttt{scanf("\%d" , \&a);} \hfill \textcolor{noteblue}{\small \texttt{register} 存储类型的变量不能取地址} \quad (\,\textcolor{ansred}{$\times$}\,)
+  \item \texttt{char str[30]= " AIA", *ptr="ECON ";}\\
+        \texttt{strcat(str,ptr);} \ansmark{$\checkmark$}
+  \item \texttt{float xy\#1 = 80.0;} \hfill \textcolor{noteblue}{\small 标识符定义错误} \quad (\,\textcolor{ansred}{$\times$}\,)
+  \item \texttt{char *str = "\textbackslash\textbackslash abcd\textbackslash'efg\textbackslash"";} \ansmark{$\checkmark$}
+\end{enumerate}
+
+\vspace{8pt}
+
+% ==================== 二 ====================
+\secbox{二、计算下列表达式的值（10 分）}{{\small (Calculate the value of the following expressions.)}}
+
+\noindent 假设 \texttt{unsigned int a=4, b=5; int c=3, d=6; float e=1.0;}\\
+\phantom{假设 }\texttt{char s1[20]="ECON", s2[20]=\{'A','I','A','\textbackslash 0','H','U','S','T'\};}\\
+计算下列各表达式的值，假设 \texttt{int} 类型为 16 位长度，且各题彼此独立\\
+{\small (Suppose \texttt{unsigned int a = 4, b = 5; int c = 3, d = 6; float e = 1.0;}\\
+\phantom{(Suppose }\texttt{char s1[20] = "ECON", s2[20] = \{'A', 'I', 'A', '\textbackslash 0', 'H', 'U', 'S', 'T'\};}\\
+Calculate the value of each of the following expressions, assuming that the \texttt{int} type is 16 bits long and each question is independent of each other.)}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.4em, itemsep=4pt]
+  \item \texttt{d>>=1, a || -{}-d, d;} \hfill \textcolor{noteblue}{\small \texttt{d>>=1} 得 \texttt{d=3}，\texttt{a} 非 0 发生短路不执行 \texttt{-{}-d}} \quad (\,\textcolor{ansred}{\textbf{3}}\,)
+  \item \texttt{(int)(e/d + a/c) + (int)((e+b)/c);} \ansmark{3}
+  \item \texttt{c=strlen(strcat(s2 , s1));} \hfill \textcolor{noteblue}{\small \texttt{s2} 中间有 \texttt{'\textbackslash 0'}，原串为 \texttt{"AIA"}} \quad (\,\textcolor{ansred}{\textbf{7}}\,)
+  \item \texttt{a += (!b + a*c + 1);} \ansmark{17}
+  \item \texttt{b \&=0x55AA;} \hfill \textcolor{noteblue}{\small \texttt{0x0005 \& 0x55AA = 0}} \quad (\,\textcolor{ansred}{\textbf{0}}\,)
+\end{enumerate}
+
+\vspace{8pt}
+
+% ==================== 三 ====================
+\secbox{三、程序改错（10 分）}{要求：不得改变程序框架，不得重写程序，无需文字说明，直接在代码上添加、删除和修改。\\{\small (Program Debugging: Do not change the program framework, do not rewrite the program, and make additions, deletions, and modifications directly on the code without written explanations.)}}
+
+\noindent (1) 如下程序对已知的 5 个整数从小到大排序，其中在 \texttt{main()} 函数中初始化，在 \texttt{ssort} 函数中排序。\\
+{\small (The following program sorts 5 known integers in ascending order. The integers are initialized in the \texttt{main()} function and sorted in the \texttt{ssort} function.)}
+\begin{lstlisting}
+#include<stdio.h>
+@@#define N 5@@
+@@void ssort(int *pb, int m);@@
+
+void  main( )
+{
+    int i;
+    int  b[N]={888,666,999,333,777};
+    ssort(b,N);
+    for (i=0; i<N; i++)
+    {
+        @@printf("%d\n", b[i]);@@
+    }
+}
+
+void ssort(@@int@@ *pb, int m)
+{
+    int i, j , k;
+    @@int t;@@
+    for(i = 0 ; i < m ;  i++)
+    {
+        k = i;
+        for(@@j = i+1; j < m ; j++@@)
+        {
+            if(pb[k] > pb[j])  k = j ;
+        }
+        @@if(k != i)@@
+        {
+            t = pb[k];
+            pb[k] = pb[i];
+            pb[i] = t;
+        }
+    }
+}
+\end{lstlisting}
+
+\vspace{4pt}
+\noindent (2) 逐个比较 \texttt{a,b} 两个字符串中对应位置的字符，把 \texttt{a} 字符串中 ASCII 值大或等于 \texttt{b} 字符串中对应位置字符依次存放到 \texttt{c} 数组中，形成一个新的字符串，并在主函数中输出（5 分）\\
+{\small (Compare the characters at corresponding positions in the two strings \texttt{a} and \texttt{b} one by one, and store the characters in string \texttt{a} whose ASCII values are greater than or equal to the corresponding characters in string \texttt{b} into the \texttt{c} array in sequence to form a new string, and output it in the main function.)}
+\begin{lstlisting}
+#include<stdio.h>
+#include<string.h>
+@@void fun(char *a, char *b, char *c);@@
+
+void main( )
+{
+    char a[10]="aBCDefgh",b[10]="ABcd",c[80]={'\0'};
+    fun(a,b,c);
+    @@puts(c);@@
+}
+void fun(char *a,char *b,char *c)
+{
+    int k = @@0@@;
+    while(@@*a != '\0'@@)
+    {
+        if(*a < *b)
+            @@;@@
+        else
+        @@{@@
+            c[k] = *a;
+            @@k++;@@
+        @@}@@
+        if(*a)
+            a ++;
+        if(*b)
+            b ++;
+    }
+    @@c[k] = '\0';@@
+}
+\end{lstlisting}
+
+\vspace{8pt}
+
+% ==================== 四 ====================
+\secbox{四、程序填空}{（10 分）}
+
+\noindent (1) $x$ 从键盘输入，计算 $\cos(x) = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \dfrac{x^6}{6!} + \cdots + (-1)^n \dfrac{x^{2n}}{(2n)!}$，并使最后一项的绝对值小于 $0.000001$ 为止，最后输出 $x$ 和计算结果。\\
+{\small ($x$ is input from the keyboard, $\cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots + (-1)^n \frac{x^{2n}}{(2n)!}$ is calculated, and the calculation stops when the absolute value of the last term is less than $0.000001$. Finally, output $x$ and the calculation result.)}
+\begin{lstlisting}
+#include <stdio.h>
+void main( )
+{
+    int i = 1;
+    double x;
+    (*@\ansfill{double an, bn, sum=0}@*);
+    char s;
+    printf("input x :\n");
+    (*@\ansfill{scanf("\%lf", \&x)}@*);
+    s = 1;
+    an = 1.0;
+    bn = 1.0;
+    while(an/bn>=1e-6)
+    {
+        (*@\ansfill{sum += s*an/bn}@*);
+        an = an * x * x;
+        (*@\ansfill{bn = bn * (2*i - 1) * (2*i)}@*);
+        s *= -1;
+        i ++;
+    }
+    printf("cos(%f) = %f\n", (*@\ansfill{x, sum}@*) );
+}
+\end{lstlisting}
+
+\vspace{4pt}
+\noindent (2) 输入一行字符串，统计其中数字和各个小写字母出现的次数。\\
+{\small (Input a string and count the occurrences of numeric characters and each lowercase letter.)}
+\begin{lstlisting}
+#include<string.h>
+#include<stdio.h>
+void main( )
+{
+    char str[200];
+    int i, num@@ = 0@@, s_alpha[26]@@ = {0}@@ ;
+
+    gets(str);
+
+    for(i=0; (*@\ansfill{str[i] != '\textbackslash 0'}@*); i++)
+    {
+        if( (*@\ansfill{str[i] >= 'a' \&\& str[i] <= 'z'}@*) )
+            s_alpha[ (*@\ansfill{str[i] - 'a'}@*) ]++;
+        else if( (*@\ansfill{str[i] >= '0' \&\& str[i] <= '9'}@*) )
+            num ++;
+    }
+    for(i=0; i<26; i++)
+        printf("small letter %c : %d\n", (*@\ansfill{'a'+i, s\_alpha[i]}@*) );
+    printf("number : %d\n", num);
+}
+\end{lstlisting}
+
+\vspace{8pt}
+
+% ==================== 五 ====================
+\secbox{五、输出程序运行结果}{（25 分）\\{\small (Read the program and write the result.)}}
+
+\noindent (1)
+\begin{lstlisting}
+#include <stdio.h>
+void main( )
+{
+    int i;
+    for(i=2; i<10 ; i++)
+    {
+        if(i%4 == 0)
+        {
+            printf("to ");
+        }
+        else if(i%5 == 0)
+        {
+            break;
+        }
+        else
+        {
+            printf("Welcome ");
+            continue;
+        }
+    }
+    printf("HUST!");
+}
+\end{lstlisting}
+\noindent\hspace*{1.5em}\textcolor{ansred}{\textbf{运行结果：}\texttt{Welcome Welcome to HUST!}}
+
+\vspace{6pt}
+\noindent (2)
+\begin{lstlisting}
+#include <stdio.h>
+int n;
+void func( );
+void main( )
+{
+    int i;
+    for(i = 0; i <5; i++)
+    {
+        func(  );
+    }
+}
+void func( )
+{
+    int m = 2;
+    static int j = 1;
+    m *= 2;
+    j *= (n + 1);
+    printf("n=%d, m=%d, j=%d\n",++n, m, j);
+}
+\end{lstlisting}
+\noindent\hspace*{1.5em}\textcolor{ansred}{\textbf{运行结果：}}
+\begin{verbatim}
+    n=1, m=4, j=1
+    n=2, m=4, j=2
+    n=3, m=4, j=6
+    n=4, m=4, j=24
+    n=5, m=4, j=120
+\end{verbatim}
+
+\vspace{4pt}
+\noindent (3)
+\begin{lstlisting}
+#include<stdio.h>
+#define N 5
+void main( )
+{
+    int a[N][N];
+    int i,j;
+    for(i=0;i<N; i++)
+    {
+        a[i][0]=1;
+        a[i][i]=1;
+    }
+    for (i=2;i<N;i++)
+    {
+        for (j=1;j<i;j++)
+        {
+            a[i][j]=a[i-1][j-1]+a[i-1][j];
+        }
+    }
+    for(i=2;i<N;i++)
+    {
+        for(j=0;j<=i; j++)
+        {
+            printf("%5d",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+\end{lstlisting}
+\newpage
+\noindent\hspace*{1.5em}\textcolor{ansred}{\textbf{运行结果：}}
+\begin{verbatim}
+        1    2    1
+        1    3    3    1
+        1    4    6    4    1
+\end{verbatim}
+
+\vspace{4pt}
+\noindent (4)
+\begin{lstlisting}
+#include <stdio.h>
+struct TEST
+{
+    char *str ;
+    int num;
+};
+void main( )
+{
+    struct TEST a[ ] = {{"AIA", 987}, {"HUST", 654}, {"CHINA", 321},{"ASIA", 2025}} ;
+    struct TEST *p ;
+    int b=0, i=1;
+    char *ss ;
+    p = a + 3;
+    ss = ++ (p->str) ;
+    puts(ss);
+    for(p=a; p< a + 4; p++)
+    {
+        b = b*10 + (p->num/i)%10;
+        i *=10;
+    }
+    printf("b=%d\n", b) ;
+}
+\end{lstlisting}
+\noindent\hspace*{1.5em}\textcolor{ansred}{\textbf{运行结果：}}
+\begin{verbatim}
+    SIA
+    b=7532
+\end{verbatim}
+
+\vspace{4pt}
+\noindent (5)
+\begin{lstlisting}
+#include<stdio.h>
+void main( )
+{
+    char *str[ ] = {"HUST","WUHAN","HUBEI","_CHINA"};
+    char **p[ ] = {str+3, str+2,str+1,str};
+    char ***ppp = p;
+    printf("%s---", *(*++ppp));
+    printf("%s", *(*ppp+1)+1);
+}
+\end{lstlisting}
+\noindent\hspace*{1.5em}\textcolor{ansred}{\textbf{运行结果：}\texttt{HUBEI-{}-{}-CHINA}}\\
+\hspace*{1.5em}\textcolor{noteblue}{\small 解析：\texttt{*(*++ppp)} 使 \texttt{ppp=p+1}，解引用得 \texttt{*(p[1])=*(str+2)=str[2]}（指向 \texttt{"HUBEI"}）；\texttt{*(*ppp+1)+1} 为 \texttt{*(p[1]+1)+1=*(str+3)+1=str[3]+1}（指向 \texttt{"CHINA"}）。}
+
+\end{document}

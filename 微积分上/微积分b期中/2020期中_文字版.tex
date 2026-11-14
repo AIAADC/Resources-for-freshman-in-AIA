@@ -1,0 +1,304 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+\newcommand{\score}[1]{\hfill（#1）}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2020～2021 学年第一学期}\\[0.4em]
+  {\Large\bfseries “微积分（一）”期中考试试卷（A 卷）}\\[0.9em]
+  {\normalsize
+    考试方式：\underline{\ \ 闭卷\ \ }\quad
+    考试日期：\underline{\ 2020.11.28\ }\quad
+    考试时长：\underline{\ 150\ }分钟
+  }\\[0.6em]
+  {\normalsize
+    院（系）：\blank[4.2cm]\qquad
+    专业班级：\blank[4.2cm]\\[0.3em]
+    学\hspace{1em}号：\blank[4.2cm]\qquad
+    姓\hspace{1em}名：\blank[4.2cm]
+  }
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、单项选择题（每小题 3 分，6 个小题共 18 分，将结果涂在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.75em, topsep=0.5em]
+  \item 设数列 $\{x_n\}$ 收敛，则【\quad】.\\[0.3em]
+  \begin{tabular}{@{}p{0.47\linewidth}@{\hspace{1em}}p{0.47\linewidth}@{}}
+    A. 当 $\lim\limits_{n\to\infty}\sin x_n = 0$ 时，$\lim\limits_{n\to\infty} x_n = 0$ &
+    B. 当 $\lim\limits_{n\to\infty}\left(x_n + \sqrt{|x_n|}\right) = 0$ 时，$\lim\limits_{n\to\infty} x_n = 0$ \\[0.6em]
+    C. 当 $\lim\limits_{n\to\infty}(x_n + x_n^2) = 0$ 时，$\lim\limits_{n\to\infty} x_n = 0$ &
+    D. 当 $\lim\limits_{n\to\infty}(x_n + \sin x_n) = 0$ 时，$\lim\limits_{n\to\infty} x_n = 0$
+  \end{tabular}
+
+  \item 极限 $\lim\limits_{x\to\infty}\left[\dfrac{x^2}{(x-a)(x+b)}\right]^x = \text{【\quad】}$.\\[0.3em]
+  \begin{tabular}{@{}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}@{}}
+    A. $1$ & B. $\e$ & C. $\e^{a-b}$ & D. $\e^{b-a}$
+  \end{tabular}
+
+  \item 设 $F(x)=\begin{cases} \dfrac{f(x)}{x}, & x\neq 0, \\[0.4em] f(0), & x=0 \end{cases}$，其中 $f'(0)=1$，$f(0)=0$，则 $x=0$ 是 $F(x)$ 的【\quad】.\\[0.3em]
+  \begin{tabular}{@{}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}@{}}
+    A. 连续点 & B. 可去间断点 & C. 无穷型间断点 & D. 跳跃型间断点
+  \end{tabular}
+
+  \item 函数 $f(x)$ 在 $x=0$ 处可导，且 $f(0)=0$，则 $\lim\limits_{x\to 0}\dfrac{x^2 f(x) - 2 f(x^3)}{x^3} = \text{【\quad】}$.\\[0.3em]
+  \begin{tabular}{@{}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}@{}}
+    A. $-2f'(0)$ & B. $-f'(0)$ & C. $f'(0)$ & D. $0$
+  \end{tabular}
+
+  \item 设 $f(x)$ 具有一阶连续导数，$F(x)=f(x)(1+|\sin x|)$，则 $f(0)=0$ 是 $F(x)$ 在 $x=0$ 处\hspace{0pt}\mbox{可导的【\quad】}.\\[0.3em]
+  \begin{tabular}{@{}p{0.47\linewidth}@{\hspace{1em}}p{0.47\linewidth}@{}}
+    A. 充分必要条件 & B. 充分条件但非必要条件 \\[0.3em]
+    C. 必要条件但非充分条件 & D. 既非充分又非必要条件
+  \end{tabular}
+
+  \item 设 $f(x)$ 有二阶连续导数，且 $f'(0)=0$，$\lim\limits_{x\to 0}\dfrac{f''(x)}{|x|}=1$，则【\quad】.\\[0.3em]
+  \begin{tabular}{@{}p{0.47\linewidth}@{\hspace{1em}}p{0.47\linewidth}@{}}
+    A. $f(0)$ 是 $f(x)$ 的极大值 & B. $f(0)$ 是 $f(x)$ 的极小值 \\[0.3em]
+    C. $(0,f(0))$ 是曲线 $y=f(x)$ 的拐点 & D. $f'(0)$ 是 $f'(x)$ 的极值
+  \end{tabular}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、填空题（每小题 4 分，4 个小题共 16 分，将计算结果写在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., start=7, leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 极限 $\lim\limits_{x\to 0} x\left[\dfrac{1}{x}\right] = \blank$.
+
+  \item 设 $y = \dfrac{\cos x}{x^2}$，则 $\dfrac{\dd y}{\dd(\cos x)} = \blank$.
+
+  \item $\lim\limits_{x\to 0}\left(\dfrac{1}{\e^x - 1} - \dfrac{1}{\ln(1+x)}\right) = \blank$.
+
+  \item 曲线 $y = x\left(1 + \arcsin\dfrac{2}{x}\right)$ 的斜渐近线方程为 $\blank$.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、基本计算题（每小题 7 分，6 个小题共 42 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 设 $f(x) = x + a\ln(1+x) + bx\sin x$，$g(x) = cx^3$，在 $x\to 0$ 时，若 $f(x)$ 与 $g(x)$ 是等价无穷小，求常数 $a, b, c$ 的值.
+
+  \item 设函数 $f(x) = \begin{cases} x\arctan\dfrac{1}{x^2}, & x\neq 0, \\[0.4em] 0, & x=0 \end{cases}$，讨论 $f'(x)$ 在点 $x=0$ 的连续性.
+
+  \item 设 $\begin{cases} x = \sin t, \\ y = t\sin t + \cos t \end{cases}$，$t \in \left(0, \dfrac{\pi}{2}\right)$，求 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{t=\frac{\pi}{4}}$.
+
+  \item 设 $y = \dfrac{x^2}{2-x}$，计算 $y^{(50)}(0)$.
+
+  \item 设 $x = \varphi(y)$ 是函数 $y = x\ln x$ 的反函数，计算 $\varphi(y)$ 在 $x = \e$ 处的二阶导数 $\dfrac{\dd^2 x}{\dd y^2}$.
+
+  \item 求 $f(x) = x^3 - 3x^2 - 9x + 5$ 在区间 $[-2, 2]$ 上的最大值与最小值.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{四、应用题（每小题 7 分，2 个小题共 14 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 如果以每秒 $50\,\mathrm{cm}^3$ 的匀速给一个气球充气，假设气球内气压保持常值且形状始终为球形，问当气球的半径为 $5\,\mathrm{cm}$ 时，半径增加的速率是多少？
+
+  \item 设在 $(-\infty, +\infty)$ 内 $f''(x) > 0$，$f(0) < 0$，讨论 $F(x) = \dfrac{f(x)}{x}~(x\neq 0)$ 的单调性.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{五、综合题（每小题 5 分，2 个小题共 10 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=0.9em, topsep=0.5em]
+  \item 设 $x_n = \sqrt{a + \sqrt{a + \cdots + \sqrt{a}}}$（$n$ 个根式，$a > 0$），证明 $\{x_n\}$ 收敛，并求出极限值.
+
+  \item 设函数 $f(x)$ 在区间 $[0, 2]$ 上具有连续导数，$f(0) = f(2) = 0$，$M = \max\limits_{x\in(0,2)}\{|f(x)|\}$. 证明：存在 $\xi \in (0, 2)$，使得 $|f'(\xi)| \ge M$.
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+  {\Large\bfseries 2020～2021 学年第一学期}\\[0.4em]
+  {\Large\bfseries 《微积分（一）》课程考试试卷（A 卷）解答}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、单项选择题（每小题 3 分，6 个小题共 18 分，将结果涂在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.7em, topsep=0.5em]
+  \item 设数列 $\{x_n\}$ 收敛，则【\textbf{D}】.\\[0.25em]
+  \begin{tabular}{@{}p{0.47\linewidth}@{\hspace{1em}}p{0.47\linewidth}@{}}
+    A. 当 $\lim\limits_{n\to\infty}\sin x_n = 0$ 时，$\lim\limits_{n\to\infty} x_n = 0$ &
+    B. 当 $\lim\limits_{n\to\infty}\left(x_n + \sqrt{|x_n|}\right) = 0$ 时，$\lim\limits_{n\to\infty} x_n = 0$ \\[0.6em]
+    C. 当 $\lim\limits_{n\to\infty}(x_n + x_n^2) = 0$ 时，$\lim\limits_{n\to\infty} x_n = 0$ &
+    D. 当 $\lim\limits_{n\to\infty}(x_n + \sin x_n) = 0$ 时，$\lim\limits_{n\to\infty} x_n = 0$
+  \end{tabular}
+
+  \item 极限 $\lim\limits_{x\to\infty}\left[\dfrac{x^2}{(x-a)(x+b)}\right]^x = \text{【\textbf{C}】}$.\\[0.25em]
+  \begin{tabular}{@{}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}@{}}
+    A. $1$ & B. $\e$ & C. $\e^{a-b}$ & D. $\e^{b-a}$
+  \end{tabular}
+
+  \item 设 $F(x)=\begin{cases} \dfrac{f(x)}{x}, & x\neq 0, \\[0.4em] f(0), & x=0 \end{cases}$，其中 $f'(0)=1$，$f(0)=0$，则 $x=0$ 是 $F(x)$ 的【\textbf{B}】.\\[0.25em]
+  \begin{tabular}{@{}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}@{}}
+    A. 连续点 & B. 可去间断点 & C. 无穷型间断点 & D. 跳跃型间断点
+  \end{tabular}
+
+  \item 函数 $f(x)$ 在 $x=0$ 处可导，且 $f(0)=0$，则 $\lim\limits_{x\to 0}\dfrac{x^2 f(x) - 2 f(x^3)}{x^3} = \text{【\textbf{B}】}$.\\[0.25em]
+  \begin{tabular}{@{}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}@{}}
+    A. $-2f'(0)$ & B. $-f'(0)$ & C. $f'(0)$ & D. $0$
+  \end{tabular}
+
+  \item 设 $f(x)$ 具有一阶连续导数，$F(x)=f(x)(1+|\sin x|)$，则 $f(0)=0$ 是 $F(x)$ 在 $x=0$ 处\hspace{0pt}\mbox{可导的【\textbf{A}】}.\\[0.25em]
+  \begin{tabular}{@{}p{0.47\linewidth}@{\hspace{1em}}p{0.47\linewidth}@{}}
+    A. 充分必要条件 & B. 充分条件但非必要条件 \\[0.3em]
+    C. 必要条件但非充分条件 & D. 既非充分又非必要条件
+  \end{tabular}
+
+  \item 设 $f(x)$ 有二阶连续导数，且 $f'(0)=0$，$\lim\limits_{x\to 0}\dfrac{f''(x)}{|x|}=1$，则【\textbf{B}】.\\[0.25em]
+  \begin{tabular}{@{}p{0.47\linewidth}@{\hspace{1em}}p{0.47\linewidth}@{}}
+    A. $f(0)$ 是 $f(x)$ 的极大值 & B. $f(0)$ 是 $f(x)$ 的极小值 \\[0.3em]
+    C. $(0,f(0))$ 是曲线 $y=f(x)$ 的拐点 & D. $f'(0)$ 是 $f'(x)$ 的极值
+  \end{tabular}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、填空题（每小题 4 分，4 个小题共 16 分，将计算结果写在答题卡上。）}
+
+\begin{enumerate}[label=\arabic*., start=7, leftmargin=2em, itemsep=0.8em, topsep=0.5em]
+  \item 极限 $\lim\limits_{x\to 0} x\left[\dfrac{1}{x}\right] = \underline{\ 1\ }$.\\[0.3em]
+  解：因 $x\neq 0$ 时有 $\dfrac{1}{x} - 1 < \left[\dfrac{1}{x}\right] \le \dfrac{1}{x}$，由此当 $x > 0$ 时，$1 - x < x\left[\dfrac{1}{x}\right] \le 1$；当 $x < 0$ 时，$1 - x > x\left[\dfrac{1}{x}\right] \ge 1$，故 $\lim\limits_{x\to 0} x\left[\dfrac{1}{x}\right] = 1$.
+
+  \item 设 $y = \dfrac{\cos x}{x^2}$，则 $\dfrac{\dd y}{\dd(\cos x)} = \underline{\ \dfrac{1}{x^2} + \dfrac{2\cot x}{x^3}\ }$.\\[0.3em]
+  解：$\dfrac{\dd y}{\dd(\cos x)} = \dfrac{-\dfrac{x\sin x + 2\cos x}{x^3}\,\dd x}{-\sin x\,\dd x} = \dfrac{1}{x^2} + \dfrac{2\cot x}{x^3}$.
+
+  \item $\lim\limits_{x\to 0}\left(\dfrac{1}{\e^x - 1} - \dfrac{1}{\ln(1+x)}\right) = \underline{\ -1\ }$.\\[0.3em]
+  解：原式 $= \lim\limits_{x\to 0}\dfrac{\ln(1+x) - \e^x + 1}{(\e^x - 1)\ln(1+x)} = \lim\limits_{x\to 0}\dfrac{\ln(1+x) - \e^x + 1}{x^2} = \lim\limits_{x\to 0}\dfrac{\dfrac{1}{1+x} - \e^x}{2x} = -1$.
+
+  \item 曲线 $y = x\left(1 + \arcsin\dfrac{2}{x}\right)$ 的斜渐近线方程为 $\underline{\ y = x + 2\ }$.\\[0.3em]
+  解：$\lim\limits_{x\to\infty}\dfrac{y}{x} = \lim\limits_{x\to\infty}\left(1 + \arcsin\dfrac{2}{x}\right) = 1$，$\lim\limits_{x\to\infty}(y - x) = \lim\limits_{x\to\infty} x\arcsin\dfrac{2}{x} = 2$，故 $y = x + 2$.
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、基本计算题（每小题 7 分，6 个小题共 42 分，必须写出主要计算过程。）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 设 $f(x) = x + a\ln(1+x) + bx\sin x$，$g(x) = cx^3$，在 $x\to 0$ 时，若 $f(x)$ 与 $g(x)$ 是等价无穷小，求常数 $a, b, c$ 的值.\\[0.3em]
+  解：代入 $\ln(1+x) = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} + o(x^3)$，$\sin x = x - \dfrac{x^3}{3!} + o(x^3)$，得到 \score{3 分}
+  \[
+    x + a\ln(1+x) + bx\sin x = (1+a)x + \left(b - \frac{a}{2}\right)x^2 + \frac{a}{3}x^3 + o(x^3) \sim cx^3, \tag*{（5 分）}
+  \]
+  可得：$\begin{cases} 1+a = 0, \\ b - \dfrac{a}{2} = 0, \\ \dfrac{a}{3c} = 1, \end{cases}$ 所以 $\begin{cases} a = -1, \\ b = -\dfrac{1}{2}, \\ c = -\dfrac{1}{3}. \end{cases}$ \score{7 分}
+
+  \item 设函数 $f(x) = \begin{cases} x\arctan\dfrac{1}{x^2}, & x\neq 0, \\[0.4em] 0, & x=0 \end{cases}$，讨论 $f'(x)$ 在点 $x=0$ 的连续性.\\[0.3em]
+  解：$x\neq 0$ 时，$f'(x) = \arctan\dfrac{1}{x^2} + x\cdot\dfrac{-\dfrac{2}{x^3}}{1 + \dfrac{1}{x^4}} = \arctan\dfrac{1}{x^2} - \dfrac{2x^2}{1+x^4}$； \score{2 分}\\[0.3em]
+  $x = 0$ 时，$f'(0) = \lim\limits_{x\to 0}\dfrac{f(x)-f(0)}{x-0} = \lim\limits_{x\to 0}\dfrac{x\arctan\dfrac{1}{x^2} - 0}{x} = \dfrac{\pi}{2}$， \score{4 分}\\[0.3em]
+  又 $\lim\limits_{x\to 0} f'(x) = \lim\limits_{x\to 0}\left(\arctan\dfrac{1}{x^2} - \dfrac{2x^2}{1+x^4}\right) = \dfrac{\pi}{2} = f'(0)$，\\[0.3em]
+  所以 $f'(x)$ 在 $x=0$ 处连续. \score{7 分}
+
+  \item 设 $\begin{cases} x = \sin t, \\ y = t\sin t + \cos t \end{cases}$，$t \in \left(0, \dfrac{\pi}{2}\right)$，求 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{t=\frac{\pi}{4}}$.\\[0.3em]
+  解：$\dd x = \cos t\,\dd t$，$\dd y = t\cos t\,\dd t$，$\dfrac{\dd y}{\dd x} = t$， \score{3 分}\\[0.3em]
+  $\dfrac{\dd^2 y}{\dd x^2} = \dfrac{\dd t}{\cos t\,\dd t} = \dfrac{1}{\cos t} = \sec t$， \score{5 分}\\[0.3em]
+  所以 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{t=\frac{\pi}{4}} = \sqrt{2}$. \score{7 分}
+
+  \item 设 $y = \dfrac{x^2}{2-x}$，计算 $y^{(50)}(0)$.\\[0.3em]
+  解：方法一 \quad $y = -x - 2 + \dfrac{4}{2-x}$ \score{2 分}
+  \[
+    y^{(50)}(0) = \left.\left(-x - 2 + \frac{4}{2-x}\right)^{(50)}\right|_{x=0} = \left.\frac{4\times 50!}{(2-x)^{51}}\right|_{x=0} \tag*{（5 分）}
+  \]
+  $y^{(50)}(0) = \dfrac{50!}{2^{49}}$ \score{7 分}\\[0.4em]
+  方法二
+  \begin{align*}
+    y^{(50)}(0) &= \left[ x^2\left(\frac{1}{2-x}\right)^{(50)} + 50(2x)\left(\frac{1}{2-x}\right)^{(49)} + \frac{50\times 49}{2}\cdot 2\left(\frac{1}{2-x}\right)^{(48)} \right]_{x=0} \tag*{（3 分）} \\
+    &= \left[ x^2\frac{50!}{(2-x)^{51}} + 50(2x)\frac{49!}{(2-x)^{50}} + \frac{50\times 49}{2}\cdot 2\cdot\frac{48!}{(2-x)^{49}} \right]_{x=0} \tag*{（5 分）}
+  \end{align*}
+  $y^{(50)}(0) = \dfrac{50!}{2^{49}}$ \score{7 分}
+
+  \item 设 $x = \varphi(y)$ 是函数 $y = x\ln x$ 的反函数，计算 $\varphi(y)$ 在 $x = \e$ 处的二阶导数 $\dfrac{\dd^2 x}{\dd y^2}$.\\[0.3em]
+  解：由反函数求导公式，得 $\dfrac{\dd x}{\dd y} = \dfrac{1}{\dfrac{\dd y}{\dd x}} = \dfrac{1}{\ln x + 1}$， \score{3 分}\\[0.4em]
+  从而 $\dfrac{\dd^2 x}{\dd y^2} = \dfrac{\dd}{\dd x}\left(\dfrac{1}{\ln x + 1}\right)\dfrac{\dd x}{\dd y} = \dfrac{-1}{x(\ln x + 1)^3}$， \score{5 分}\\[0.4em]
+  故 $\left.\dfrac{\dd^2 x}{\dd y^2}\right|_{x=\e} = \dfrac{-1}{8\e}$. \score{7 分}
+
+  \item 求 $f(x) = x^3 - 3x^2 - 9x + 5$ 在区间 $[-2, 2]$ 上的最大值与最小值.\\[0.3em]
+  解：$f'(x) = 3x^2 - 6x - 9$. \score{2 分}\\[0.3em]
+  令 $f'(x) = 0$ 得到区间 $(-2, 2)$ 内驻点为 $x = -1$. \score{4 分}\\[0.3em]
+  直接计算得 $f(-2) = 3$，$f(2) = -17$，$f(-1) = 10$.\\[0.3em]
+  故 $\max = 10$，$\min = -17$. \score{7 分}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{四、应用题（每小题 7 分，2 个小题共 14 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=17, leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 如果以每秒 $50\,\mathrm{cm}^3$ 的匀速给一个气球充气，假设气球内气压保持常值且形状始终为球形，问当气球的半径为 $5\,\mathrm{cm}$ 时，半径增加的速率是多少？\\[0.3em]
+  解：设 $t$ 时刻气球的半径为 $r$，体积为 $V$，显然 $V$ 和 $r$ 都是 $t$ 的函数，且
+  \[
+    V = \frac{4}{3}\pi r^3. \tag*{（2 分）}
+  \]
+  将上式两边对 $t$ 求导得
+  \[
+    \frac{\dd V}{\dd t} = \frac{\dd V}{\dd r}\frac{\dd r}{\dd t} = 4\pi r^2 \frac{\dd r}{\dd t}, \tag*{（4 分）}
+  \]
+  将 $\dfrac{\dd V}{\dd t} = 50$，$r = 5$ 代入上式解得
+  \[
+    \frac{\dd r}{\dd t} = \frac{50}{4\pi\cdot 5^2} = \frac{1}{2\pi} \approx 0.159.
+  \]
+  故当气球半径为 $5\,\mathrm{cm}$ 时，半径的增加速率为每秒 $0.159\,\mathrm{cm}$. \score{7 分}
+
+  \item 设在 $(-\infty, +\infty)$ 内 $f''(x) > 0$，$f(0) < 0$，讨论 $F(x) = \dfrac{f(x)}{x}~(x\neq 0)$ 的单调性.\\[0.3em]
+  解：$F'(x) = \dfrac{x f'(x) - f(x)}{x^2}$. \score{2 分}\\[0.3em]
+  设 $G(x) = x f'(x) - f(x)$（$x\in(-\infty, +\infty)$），则 $G'(x) = x f''(x)$，因 $f''(x) > 0$， \score{4 分}\\[0.3em]
+  所以，当 $x < 0$ 时，$G'(x) < 0$，$G(x) > G(0) > 0$，$F'(x) > 0$；\\[0.2em]
+  当 $x > 0$ 时，$G'(x) > 0$，$G(x) > G(0) > 0$，$F'(x) > 0$.\\[0.3em]
+  故 $F(x)$ 在 $(-\infty, 0)$ 与 $(0, +\infty)$ 上均单调递增. \score{7 分}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{五、综合题（每小题 5 分，2 个小题共 10 分，必须写出主要过程。）}
+
+\begin{enumerate}[label=\arabic*., start=19, leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 设 $x_n = \sqrt{a + \sqrt{a + \cdots + \sqrt{a}}}$（$n$ 个根式，$a > 0$），证明 $\{x_n\}$ 收敛，并求出极限值.\\[0.3em]
+  证：$x_1 = \sqrt{a}$，$x_n = \sqrt{a + x_{n-1}}$，因此 $x_2 = \sqrt{a + x_1} > \sqrt{a} = x_1$，\\[0.3em]
+  假设 $x_k > x_{k-1}$，则 $x_{k+1} = \sqrt{a + x_k} > \sqrt{a + x_{k-1}} = x_k$，\\[0.3em]
+  因此 $\{x_n\}$ 是单调增的. 从而只需证明 $\{x_n\}$ 有上界. \score{2 分}\\[0.3em]
+  因 $x_1 = \sqrt{a} < a + 1$；$x_2 = \sqrt{a + x_1} < \sqrt{2a + 1} < \sqrt{a^2 + 2a + 1} = a + 1$；\\[0.3em]
+  假设 $x_k < a + 1$，则 $x_{k+1} = \sqrt{a + x_k} < \sqrt{2a + 1} < \sqrt{a^2 + 2a + 1} = a + 1$，\\[0.3em]
+  因此 $\{x_n\}$ 有上界，从而 $\lim\limits_{n\to\infty} x_n$ 存在. 记 $\lim\limits_{n\to\infty} x_n = l$，由 \score{4 分}\\[0.3em]
+  $x_n = \sqrt{a + x_{n-1}}$ 有 $l = \sqrt{a + l}$，解得 $l = \dfrac{1}{2}(1 + \sqrt{1+4a})$\\[0.25em]
+  （由 $x_n > 0$ 且 $\{x_n\}$ 单调增舍去负根）. \score{5 分}
+
+  \item 设函数 $f(x)$ 在区间 $[0, 2]$ 上具有连续导数，$f(0) = f(2) = 0$，$M = \max\limits_{x\in(0,2)}\{|f(x)|\}$. 证明：存在 $\xi \in (0, 2)$，使得 $|f'(\xi)| \ge M$.\\[0.3em]
+  证：若 $M = 0$，则 $f(x) \equiv 0$，结论自明. \score{1 分}\\[0.3em]
+  设 $M > 0$，在 $(0, 2)$ 内某点 $c$ 有 $|f(c)| = M$， \score{2 分}\\[0.3em]
+  若 $c \le 1$，由拉格朗日中值定理知至少存在一点 $\xi \in (0, c)$，使
+  \[
+    f'(\xi) = \frac{f(c) - f(0)}{c} = \frac{f(c)}{c}, \quad\text{从而 } |f'(\xi)| = \frac{|f(c)|}{c} = \frac{M}{c} \ge M, \tag*{（4 分）}
+  \]
+  若 $c > 1$，同理存在 $\xi \in (c, 2)$，使
+  \[
+    f'(\xi) = \frac{f(2) - f(c)}{2 - c} = \frac{-f(c)}{2 - c}, \quad\text{从而 } |f'(\xi)| = \frac{|f(c)|}{2 - c} = \frac{M}{2 - c} > M. \tag*{（5 分）}
+  \]
+\end{enumerate}
+
+\end{document}

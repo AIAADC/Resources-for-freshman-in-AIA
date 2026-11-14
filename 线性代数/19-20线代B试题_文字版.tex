@@ -1,0 +1,123 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\mathrm{r}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2019～2020 学年第二学期}\\[0.4em]
+  {\Large\bfseries “线性代数”考试试卷（B 卷）}\\[1.0em]
+  {\normalsize
+    考试方式：\underline{\ \ 闭卷\ \ }\quad
+    考试日期：\underline{\ 2020.09.23\ }\quad
+    考试时长：\underline{\ 150 分钟\ }
+  }
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、判断题（$2\text{ 分}\times 8 = 16\text{ 分}$）正确的打“$\checkmark$”，错误的打“$\times$”}
+
+\begin{enumerate}[label={(\quad)\ \arabic*.}, leftmargin=3.8em, itemsep=0.55em, topsep=0.6em]
+  \item 设 $A$ 是一个矩阵，$I$ 是单位矩阵. 若 $A^{\T} A = I$，则 $A$ 是可逆矩阵.
+
+  \item 任何一个可逆矩阵都可表示为有限多个初等矩阵的乘积.
+
+  \item 设 $\alpha_1, \alpha_2, \alpha_3, \alpha_4$ 均是 $n$ 维实向量. 如果 $\alpha_1$ 可由 $\alpha_2, \alpha_3$ 线性表示，但 $\alpha_2, \alpha_3, \alpha_4$ 线性无关，则 $\alpha_4$ 不能由 $\alpha_1, \alpha_2, \alpha_3$ 线性表示.
+
+  \item 设 $A, B$ 都是 $n$ 阶方阵，则关于矩阵的秩，有如下关系：$\rk(AB) = \rk(BA)$.
+
+  \item 两个具有相同特征值的同阶实对称矩阵必相似.
+
+  \item 设 $f(x) = a_n x^n + \cdots + a_1 x + a_0$（其中 $a_n \neq 0,\ n \ge 1$）是一个 $n$ 次多项式. 设 $A$ 是一个方阵，并且满足 $f(A) = 0$. 若 $a_0 \neq 0$，则 $A$ 可逆.
+
+  \item 设 $A$ 是一个 $m \times n$ 矩阵，$B$ 是一个 $m$ 阶方阵. 若矩阵 $A$ 的秩为 $m$，且 $BA = 0$，则 $B = 0$.
+
+  \item 设 $A$ 是一个 $n$ 阶实矩阵，$\mathbb{R}^n$ 表示 $n$ 维实向量的全体. 如果对任意的 $\beta \in \mathbb{R}^n$，线性方程组 $AX = \beta$ 均有解，则 $A$ 的行列式非零.
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{二、填空题（$4\text{ 分}\times 5 = 20\text{ 分}$）将答案填在指定的横线上}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.9em, topsep=0.6em]
+  \item 设 $A$ 是 $n$ 阶方阵，$A$ 的行列式 $|A| = 2$，则行列式 $|A^* + 6A^{-1}| = \blank[2.8cm]$.
+
+  \item 如果向量组 $\{\alpha_1, \alpha_2, \alpha_3, \alpha_4, \alpha_5\}$ 可以用行初等变换化为
+  \[
+    (\alpha_1, \alpha_2, \alpha_3, \alpha_4, \alpha_5) \to \begin{bmatrix}
+      1 & 0 & 2 & 5 & -2 \\
+      0 & 1 & 1 & 3 & 4 \\
+      0 & 0 & 0 & 2 & 1 \\
+      0 & 0 & 0 & 0 & 0
+    \end{bmatrix}
+  \]
+  则 $\alpha_5$ 和向量 $\{\alpha_1, \alpha_2, \alpha_3, \alpha_4\}$ 之间的一种线性关系为 $\blank[4.8cm]$.
+
+  \item 设三阶矩阵 $A = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 2 \\ 1 & 2 & 3 \end{pmatrix}$，记其特征值为 $\lambda_1, \lambda_2, \lambda_3$，则 $\lambda_1^2 + \lambda_2^2 + \lambda_3^2 = \blank[2.6cm]$.
+
+  \item 设 $\xi_1, \xi_2, \xi_3$ 为齐次线性方程组 $AX = O$ 的基础解系，则 $\lambda\xi_1 - \xi_2,\ \xi_2 - \xi_3,\ \xi_3 - \xi_1$ 也是 $AX = O$ 的基础解系的充要条件是 $\blank[3.2cm]$.
+
+  \item 设二次型 $f(x_1, x_2, x_3) = x_1^2 + k x_2^2 + 2x_1 x_2 + k^2 x_3^2$ 正定，则 $k$ 的取值范围为 $\blank[3.2cm]$.
+\end{enumerate}
+
+\vspace{1.0em}
+
+\textbf{三、计算 $n$ 阶行列式的值（8 分）}
+\[
+  D_n = \begin{vmatrix}
+    x & -1 & & & & \\
+    & x & -1 & & & \\
+    & & x & -1 & & \\
+    & & & \ddots & \ddots & \\
+    & & & & x & -1 \\
+    a_n & a_{n-1} & \cdots & \cdots & a_2 & a_1 + x
+  \end{vmatrix}
+\]
+
+\vspace{0.8em}
+
+\textbf{四、（12 分）}问 $a$ 为何值时，线性方程组
+\[
+  \begin{cases}
+    x_1 - a x_2 - 2x_3 = -1 \\
+    x_1 - x_2 + a x_3 = 2 \\
+    5x_1 - 5x_2 - 4x_3 = 1
+  \end{cases}
+\]
+有唯一解，无解，有无穷多解？在有无穷多解的情况下，求其通解.
+
+\vspace{0.8em}
+
+\textbf{五、（12 分）}设二次型 $f(x_1, x_2, x_3) = x_1^2 + 4x_1 x_2 + 4x_1 x_3 + x_2^2 + 4x_2 x_3 + a x_3^2$，通过正交变换化为标准形 $g(y_1, y_2, y_3) = -y_1^2 - y_2^2 + 5y_3^2$. 求 $a$ 及所使用的正交变换矩阵.
+
+\vspace{0.8em}
+
+\textbf{六、（12 分）}已知矩阵 $A = \begin{pmatrix} 3 & 2 & -1 \\ 0 & 0 & a \\ 0 & 0 & 0 \end{pmatrix}$ 可相似对角化，求 $a$ 的取值范围.
+
+\vspace{0.8em}
+
+\textbf{七、（10 分）}设矩阵 $A$ 为方阵，且 $(I + A)$ 可逆，记 $f(A) = (I + A)^{-1}(I - A)$，证明 $I + f(A)$ 可逆并求其逆.
+
+\vspace{0.8em}
+
+\textbf{八、（10 分）}设 $A$ 是一个 $m \times n$ 矩阵，其中 $m \ge n$. 证明：$A$ 的秩等于 $n$ 当且仅当存在 $n \times m$ 矩阵 $B$，使得 $BA = I$，其中 $I$ 是 $n$ 阶单位矩阵.
+
+\end{document}

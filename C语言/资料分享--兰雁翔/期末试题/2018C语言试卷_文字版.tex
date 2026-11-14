@@ -1,0 +1,346 @@
+\documentclass[UTF8,a4paper,10.5pt]{ctexart}
+\usepackage[left=1.9cm,right=1.9cm,top=1.9cm,bottom=2.0cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue!70!black}\bfseries,
+    commentstyle=\color{green!45!black},
+    stringstyle=\color{red!60!black},
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    showstringspaces=false,
+    aboveskip=3pt,
+    belowskip=3pt
+}
+
+\newcommand{\blank}[1][4cm]{\underline{\hspace{#1}}}
+\newcommand{\ansbox}{\hfill(\qquad)}
+
+\begin{document}
+
+\begin{center}
+    {\Large\bfseries 2018 级信息学院《C 语言程序设计》考试试题（A）}
+\end{center}
+
+\noindent
+\small
+院系：\underline{\hspace{2.4cm}}\quad
+班级：\underline{\hspace{2.4cm}}\quad
+姓名：\underline{\hspace{2.2cm}}\quad
+学号：\underline{\hspace{2.6cm}}\quad
+成绩：\underline{\hspace{1.8cm}}
+\normalsize
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|*{7}{>{\centering\arraybackslash}p{1.4cm}|}}
+\hline
+题号 & 1 & 2 & 3 & 4 & 5 & 6 & 总分 \\
+\hline
+得分 &   &   &   &   &   &   &      \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{一、判断下列概念、语句或程序段的对错。（“$\times$”表示错，“$\checkmark$”表示对）（10 分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=4pt]
+    \item \texttt{int x=0xabcd ; \quad // 对一个整型变量初始化} \ansbox
+    \item \texttt{int a = 012 + 87;} \\
+          \texttt{float b = 12.8e+10 ;} \ansbox
+    \item 一个 \texttt{int} 指针变量和一个 \texttt{int} 数组指针变量所占用的存储空间是一样的 \ansbox
+    \item \texttt{int **p, *pa[5];} \\
+          \texttt{p = pa ;} \ansbox
+    \item \texttt{int a[5][5];} \\
+          \texttt{int (*pa)[5]=a++;} \ansbox
+    \item \texttt{char *str[5];} \\
+          \texttt{scanf("\%s",str[0]);} \ansbox
+    \item \texttt{int x, *p =\&x , a[5][5];} \\
+          \texttt{*p = a[0][0] + 10 ;} \ansbox
+    \item \texttt{int a = (1e5, 0x1a, 0187);} \ansbox
+    \item \texttt{char x = '\textbackslash 177' ;} \ansbox
+    \item \texttt{char *str = "\textbackslash\textbackslash\textbackslash\textbackslash\textbackslash\textbackslash\textbackslash text\textbackslash";} \ansbox
+\end{enumerate}
+
+\section*{二、计算下列表达式的值（10 分）}
+
+\noindent 假设 \texttt{int} 和 \texttt{unsigned} 类型均为 16 位长度，且各题彼此独立。\\
+设：
+\begin{lstlisting}
+unsigned int a=1, b=2;
+int c=4, d=6;
+float f;
+char str[]= "HUST";
+char s1[10]={'A', 'I', 'A'};
+char s2[20]={'h', 'u', 's', 't', '\0', 'A', 'I', 'A'};
+\end{lstlisting}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=4pt]
+    \item \texttt{f = a>b ? a/b : d/c;} \ansbox
+    \item \texttt{!a \&\& --b || c/d;} \ansbox
+    \item \texttt{f = (a - c)/2} \ansbox
+    \item \texttt{f = sizeof(str);} \ansbox
+    \item \texttt{f = strlen(s1) + strlen(s2);} \ansbox
+\end{enumerate}
+
+\section*{三、程序改错（10 分）}
+
+\noindent 要求：不得改变程序框架，不得重写程序，无需文字说明，直接在代码上添加、删除和修改。
+
+\medskip
+\noindent 1、如下程序，删除给定字符串中的数字字符，主函数中输入和输出，调用函数完成删除功能。
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    char *string[80];
+    printf("input string:\n");
+    gets(string);
+    pstr=delnum(string);
+    puts(pstr);
+}
+char delnum(char **s)
+{
+    int i;
+    char *temp = *s;
+    for (i = 0; s[i] != '\0'; i++)
+    {
+        if (s[i] >= '0'&&s[i] <= '9')
+            strcpy(s+1, s );
+        else
+            i++;
+    }
+    return temp;
+}
+\end{lstlisting}
+
+\medskip
+\noindent 2、求 3 个浮点数的平方和与立方和
+\begin{lstlisting}
+#include <stdio.h>
+main()
+{
+    float a, b ;
+    flaot pingf_v, lif_v ;
+    scanf ( "%f%f%f" , a, b, c);
+    pingf_v = calc(a, b, c, lif_v);
+    printf("pingf_v=%f, lif_v=%f", pingf_v, lif_v);
+}
+calc(float x, float y, float s_v)
+{
+    float *temp ;
+    pingf_v = a*a+b*b+c*c;
+    s_v = a*a *a + b*b*b+c*c*c;
+    *temp=pingf_v
+    return *temp ;
+}
+\end{lstlisting}
+
+\section*{四、程序填空（10 分）}
+
+\noindent 1）编一程序实现一个最简单的计算器的功能，如输入 \texttt{3+5} 回车显示 \texttt{3+5=8}；输错就退出（输入的不是加减乘除的运算就算错）。
+\begin{lstlisting}[escapeinside={(*@}{@*)}]
+#include <stdio.h>
+#include <math.h>
+void main( )
+{
+    (*@\blank[4.2cm]@*) ;
+    char op ;
+    while((*@\blank[2.5cm]@*) )
+    {
+        scanf("%f %c %f", &a,&op, &b); //
+        if((*@\blank[9.2cm]@*) )
+        (*@\blank[2.8cm]@*);
+        switch(op)
+        {
+            case '+': printf("%f+%f=%f",a,b,a+b);
+                      break;
+            case '-': printf("%f-%f=%f",a, b, a-b);
+                      break;
+            case '*': printf("%f * %f=%f",a,b,a*b);
+                      break;
+            case '/': if((*@\blank[3.2cm]@*))
+                          printf("除法错");
+                      else
+                          printf("%f / %f = %f",a,b,a/b);
+                      break;
+        }
+    }
+}
+\end{lstlisting}
+
+\medskip
+\noindent 2）输入一行字符串，统计其中 26 个字母各自出现的次数（不分大小写）。
+\begin{lstlisting}[escapeinside={(*@}{@*)}]
+#include <string.h>
+#include <stdio.h>
+void main( )
+{
+    char str[256];
+    unsigned int i;
+    static int count[26];
+    gets(str);
+    for( i=0; str[i]!='\0' ; i++)
+    {
+        if( (*@\blank[5.8cm]@*) )
+        {
+            count[(*@\blank[2.5cm]@*)]++;
+        }
+        else if ( (*@\blank[5.8cm]@*) )
+        {
+            (*@\blank[6.2cm]@*) ;
+        }
+    }
+
+    for (i=0;i<26; i++)
+    printf("字母：%c 的个数=%d\n", (*@\blank[5.2cm]@*));
+}
+\end{lstlisting}
+
+\section*{五、写出程序运行结果（25 分，结果写在题目的右边）}
+
+\begin{enumerate}[label=\arabic*、, leftmargin=2em, itemsep=6pt]
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void main( )
+{
+    int a=3,b=4;
+    int c=5,d=6;
+    float f;
+    f = (a++,b++,a+b);
+    printf("f=%f\n",f);
+    f = b/a + d/c ;
+    printf("f=%f\n",f);
+    f = (a|b)^(c&d);
+    printf("f=%f\n",f);
+}
+\end{lstlisting}
+
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void fun( )
+{
+    int at= 0;
+    static int st=0;
+    printf("at=%d,  st=%d  st+at=%d\n",at++,st++,st+at);
+}
+void main( )
+{
+    int i;
+    for(i=0;i<5;i++)
+    {
+        fun( );
+    }
+}
+\end{lstlisting}
+
+\newpage
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void main( )
+{
+    char str[][20]={ "china",
+        "hubei",
+        "wuhan",
+        "hust-aia" ,
+        "c language" };
+    int i ;
+    for ( i=0 ; i < 5 ; i++)
+    {
+    printf("%s\n", str[4-i]+i);
+    }
+}
+\end{lstlisting}
+
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void main( )
+{
+    char *str[]={"china", "hubei", "wuhan", "hust-aia"};
+    char **p[] = {str+3 , str+2 , str+1 , str};
+    char ***pp = p ;
+    printf("%s---", **++pp);
+    printf("---%s---", *pp[1]);
+    printf("---%s", *--*++pp+2);
+}
+\end{lstlisting}
+
+\item
+\begin{lstlisting}
+#include<stdio.h>
+void main()
+{
+    int a[5][5];
+    int i, j;
+    for (i = 0; i < 5; i++)
+    {
+        a[i][0] = 1;
+        a[i][i] = 1;
+    }
+    for (i = 2; i < 5; i++)
+    {
+        for (j = 1; j < i; j++)
+        {
+            a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+        }
+    }
+    for (i = 0; i < 5; i++)
+    {
+        for (j = 0; j <= i; j++)
+        {
+            printf("%5d", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+\end{lstlisting}
+\end{enumerate}
+
+\section*{六、编程（35 分）注意：不得使用全局变量，注意程序结构}
+
+\noindent 1）编程，输入一个数值 $x$，计算 $y$ 的结果。（8~分）
+\[
+y = \begin{cases}
+x+1 & 0 \le x < 2 \\
+2x+2 & 2 \le x < 4 \\
+3x+3 & 4 \le x < 6 \\
+4x+4 & 6 \le x < 8
+\end{cases}
+\]
+
+\medskip
+\noindent 2、编程求序列：$\dfrac{1}{2}, \dfrac{3}{4}, \dfrac{5}{8}, \dfrac{7}{16}, \dfrac{9}{32} \cdots\cdots$，所有大于等于 $0.000001$ 的数据项之和，显示输出计算的结果。（8~分）
+
+\medskip
+\noindent 3、编程序，要求主函数中输入 $N$ 行英文，被调用的函数返回其中最长的那个单词（如有多个，返回最后出现的）并在主函数中输出。（10~分）
+
+\medskip
+\noindent 4、某班有学生 20 名参加期末考试，每名学生信息由姓名、学号、性别、外语、数学、C 课设和总分组成，试编程要求：（9~分）
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=2pt]
+    \item 学生信息由键盘输入；
+    \item 能按 C 课设成绩查找学生信息；
+    \item 按总分高低顺序输出 C 课设挂科的男生信息。
+\end{enumerate}
+\noindent （每小题写一函数，通过 \texttt{main} 函数调用实现）
+
+\end{document}

@@ -1,0 +1,284 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 2025～2026 学年第一学期}\\[0.35em]
+  {\Large\bfseries 《微积分（B）》课程期中试题解答}\\[0.5em]
+  {\normalsize 考试日期：2025-11-15\quad 考试时间：8:30--11:00}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、基本计算题（每小题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=1.05em, topsep=0.5em]
+  \item 求极限 $l = \lim\limits_{n\to\infty}\left(\dfrac{1}{n^2+1} + \dfrac{2}{n^2+\sqrt{2}} + \cdots + \dfrac{n}{n^2+\sqrt{n}}\right)$.
+
+  \textbf{解：}记和式 $\dfrac{1}{n^2+1} + \dfrac{2}{n^2+\sqrt{2}} + \cdots + \dfrac{n}{n^2+\sqrt{n}}$ 为 $A_n$，因为
+  \[
+    \frac{1}{2}\frac{n(n+1)}{n^2+\sqrt{n}} \le A_n \le \frac{1}{2}\frac{n(n+1)}{n^2+1}, \tag*{(3\text{ 分})}
+  \]
+  而 $\lim\limits_{n\to\infty}\dfrac{1}{2}\dfrac{n(n+1)}{n^2+\sqrt{n}} = \dfrac{1}{2}$，$\lim\limits_{n\to\infty}\dfrac{1}{2}\dfrac{n(n+1)}{n^2+1} = \dfrac{1}{2}$，由夹逼准则得
+  \[
+    l = \lim_{n\to\infty} A_n = \frac{1}{2}. \tag*{(6\text{ 分})}
+  \]
+
+  \item 求极限 $l = \lim\limits_{x\to 0}\dfrac{e^x - e^{\tan x}}{\ln(1+\sin^3 x)}$.
+
+  \textbf{解：}
+  \[
+    l = -\lim_{x\to 0} e^x \frac{e^{\tan x - x} - 1}{\sin^3 x}
+    = -\lim_{x\to 0}\frac{\tan x - x}{x^3} \tag*{(3\text{ 分})}
+  \]
+  \[
+    = -\lim_{x\to 0}\frac{\sec^2 x - 1}{3x^2}
+    = -\lim_{x\to 0}\frac{\tan^2 x}{3x^2} = -\frac{1}{3}. \tag*{(6\text{ 分})}
+  \]
+
+  \item 设 $y = \arctan e^x - \ln\sqrt{\dfrac{e^{2x}}{1+e^{2x}}}$，求 $\left.dy\right|_{x=1}$.
+
+  \textbf{解：}$y = \arctan e^x - x + \dfrac{1}{2}\ln(1+e^{2x})$， \hfill $(2\text{ 分})$
+  \[
+    dy = \frac{e^x}{1+e^{2x}}dx - dx + \frac{1}{2}\cdot\frac{1}{1+e^{2x}}\cdot e^{2x}\cdot 2dx = \frac{e^x - 1}{1+e^{2x}}dx, \tag*{(4\text{ 分})}
+  \]
+  \[
+    \left.dy\right|_{x=1} = \frac{e-1}{1+e^2}dx. \tag*{(6\text{ 分})}
+  \]
+
+  \item 已知曲线的参数方程为 $\begin{cases} x = \dfrac{3t}{1+t^3}, \\[0.5em] y = \dfrac{3t^2}{1+t^3} \end{cases}$，求该曲线在对应 $t=1$ 的点 $P$ 处的切线方程.
+
+  \textbf{解：}对应 $t=1$ 的点 $P$ 为 $\left(\dfrac{3}{2},\dfrac{3}{2}\right)$.
+  \[
+    \frac{dy}{dx} = \frac{y'_t}{x'_t} \tag*{(2\text{ 分})}
+  \]
+  \[
+    = \frac{\dfrac{6t(1+t^3)-9t^4}{(1+t^3)^2}}{\dfrac{3(1+t^3)-9t^3}{(1+t^3)^2}} = \frac{2t - t^4}{1 - 2t^3}. \tag*{(4\text{ 分})}
+  \]
+  曲线在点 $P$ 的切线斜率为 $k = \left.\dfrac{dy}{dx}\right|_{t=1} = -1$，故切线方程为
+  \[
+    y - \frac{3}{2} = -\left(x - \frac{3}{2}\right)\quad \text{或}\quad x + y = 3. \tag*{(6\text{ 分})}
+  \]
+
+  \item 求当 $x\to 0$ 时，无穷小量 $u = \sqrt{1+x\arcsin x} - \sqrt{\cos x}$ 的主部和阶数.
+
+  \textbf{解法一：}设 $u$ 的主部为 $cx^k\ (c\neq 0,\,k>0)$，则有
+  \[
+    \lim_{x\to 0}\frac{\sqrt{1+x\arcsin x}-\sqrt{\cos x}}{cx^k} = 1. \tag*{(2\text{ 分})}
+  \]
+  而
+  \begin{align*}
+    \lim_{x\to 0}\frac{\sqrt{1+x\arcsin x}-\sqrt{\cos x}}{cx^k}
+    &= \lim_{x\to 0}\frac{1-\cos x+x\arcsin x}{cx^k(\sqrt{1+x\arcsin x}+\sqrt{\cos x})} \\
+    &= \frac{1}{2c}\lim_{x\to 0}\frac{1-\cos x+x\arcsin x}{x^k} \\
+    &= \frac{1}{2c}\lim_{x\to 0}\frac{\frac{1}{2}x^2+x^2}{x^k}
+    = \frac{3}{4c}\lim_{x\to 0}\frac{x^2}{x^k}, \tag*{(4\text{ 分})}
+  \end{align*}
+  要使 $\dfrac{3}{4c}\lim\limits_{x\to 0}\dfrac{x^2}{x^k}=1$，必有 $k=2,\ c=\dfrac{3}{4}$.
+
+  综上所述，无穷小量 $u = \sqrt{1+x\arcsin x}-\sqrt{\cos x}$ 的主部为 $\dfrac{3}{4}x^2$，阶数为 $2$. \hfill $(6\text{ 分})$
+
+  \textbf{解法二：}当 $x\to 0$ 时，
+  \[
+    u = \sqrt{1+x\arcsin x}-\sqrt{\cos x}
+    = \frac{1-\cos x+x\arcsin x}{\sqrt{1+x\arcsin x}+\sqrt{\cos x}} \tag*{(2\text{ 分})}
+  \]
+  \[
+    \sim \frac{1}{2}(1-\cos x+x\arcsin x)
+    \sim \frac{1}{2}\left(\frac{1}{2}x^2+x^2\right) = \frac{3}{4}x^2. \tag*{(4\text{ 分})}
+  \]
+  综上所述，无穷小量 $u = \sqrt{1+x\arcsin x}-\sqrt{\cos x}$ 的主部为 $\dfrac{3}{4}x^2$，阶数为 $2$. \hfill $(6\text{ 分})$
+
+  \item 讨论函数 $f(x) = \lim\limits_{n\to\infty}\dfrac{x+e^{nx}}{1+e^{nx}}$ 的连续性，若有间断点，指出其类型.
+
+  \textbf{解：}当 $x<0$ 时，$\lim\limits_{n\to\infty}e^{nx}=0$，$f(x)=\lim\limits_{n\to\infty}\dfrac{x+e^{nx}}{1+e^{nx}}=x$；
+
+  当 $x=0$ 时，$f(0)=\dfrac{1}{2}$；
+
+  当 $x>0$ 时，$\lim\limits_{n\to\infty}e^{-nx}=0$，$f(x)=\lim\limits_{n\to\infty}\dfrac{x+e^{nx}}{1+e^{nx}}=\lim\limits_{n\to\infty}\dfrac{xe^{-nx}+1}{e^{-nx}+1}=1$. \hfill $(3\text{ 分})$
+
+  因此
+  \[
+    f(x) = \begin{cases}
+      1, & x > 0, \\
+      \dfrac{1}{2}, & x = 0, \\
+      x, & x < 0,
+    \end{cases}
+  \]
+  在区间 $(-\infty,0)\cup(0,+\infty)$ 连续.
+
+  因 $f(0^-)=0,\ f(0^+)=1$，故 $x=0$ 是 $f(x)$ 的跳跃间断点. \hfill $(6\text{ 分})$
+
+  \item 试确定常数 $a,b$，使得 $\lim\limits_{x\to 0}\dfrac{\sqrt{(1+x)^4+3}-(a+bx)}{x} = 0$.
+
+  \textbf{解：}由题意知 $\sqrt{(1+x)^4+3}-(a+bx) = o(x)\ (x\to 0)$.
+
+  首先，$\lim\limits_{x\to 0}\bigl(\sqrt{(1+x)^4+3}-(a+bx)\bigr) = 0$，计算极限可得 $a=2$. \hfill $(3\text{ 分})$
+
+  其次，$\lim\limits_{x\to 0}\dfrac{\sqrt{(1+x)^4+3}-(2+bx)}{x} = \lim\limits_{x\to 0}\left(\dfrac{\sqrt{(1+x)^4+3}-2}{x} - b\right) = 0$，可得
+  \[
+    b = \lim_{x\to 0}\frac{\sqrt{(1+x)^4+3}-2}{x}
+    = \lim_{x\to 0}\frac{(1+x)^4-1}{x}\cdot\frac{1}{\sqrt{(1+x)^4+3}+2} = 1. \tag*{(6\text{ 分})}
+  \]
+
+  \item 已知函数 $y = f(\sin^2 x)$，其中 $f(u)$ 二阶可导，求 $y''$.
+
+  \textbf{解：}$y' = f'(\sin^2 x)\cdot 2\sin x\cos x = f'(\sin^2 x)\cdot\sin 2x$， \hfill $(3\text{ 分})$
+  \[
+    y'' = f''(\sin^2 x)\cdot\sin^2 2x + 2\cos 2x\cdot f'(\sin^2 x). \tag*{(6\text{ 分})}
+  \]
+
+  \item 设 $f(x) = \begin{cases} x^n\cos\dfrac{1}{x}, & x\neq 0, \\ 0, & x=0, \end{cases}$ 要使 $f'(x)$ 在 $x=0$ 处连续，求正整数 $n$ 的取值范围.
+
+  \textbf{解：}要使 $f'(x)$ 在 $x=0$ 处连续，必有 $\lim\limits_{x\to 0}f'(x) = f'(0)$.
+
+  要使 $f'(0) = \lim\limits_{x\to 0}\dfrac{f(x)-f(0)}{x} = \lim\limits_{x\to 0} x^{n-1}\cos\dfrac{1}{x}$ 存在，必有 $n>1$，此时 $f'(0)=0$. \hfill $(2\text{ 分})$
+
+  $x\neq 0$ 时，$f'(x) = nx^{n-1}\cos\dfrac{1}{x} + x^{n-2}\sin\dfrac{1}{x}$. \hfill $(4\text{ 分})$
+
+  当 $n>1$ 时，$\lim\limits_{x\to 0} nx^{n-1}\cos\dfrac{1}{x} = 0$，故欲使 $\lim\limits_{x\to 0}f'(x)=0$，当且仅当 $\lim\limits_{x\to 0} x^{n-2}\sin\dfrac{1}{x} = 0$，必有正整数 $n>2$.
+
+  综上所述，当且仅当正整数 $n>2$ 时，$f'(x)$ 在 $x=0$ 处连续. \hfill $(6\text{ 分})$
+
+  \item 设 $f(x) = \cos^4 x + \sin^4 x$，求 $f^{(6)}(0)$.
+
+  \textbf{解：}因为
+  \[
+    f(x) = 1 - 2\cos^2 x\sin^2 x = 1 - \frac{1}{2}\sin^2 2x = \frac{3}{4} + \frac{1}{4}\cos 4x, \tag*{(2\text{ 分})}
+  \]
+  所以
+  \[
+    f^{(6)}(x) = 4^5\cos\left(4x + \frac{6\pi}{2}\right) = -4^5\cos 4x,
+  \]
+  \[
+    f^{(6)}(0) = -1024. \tag*{(6\text{ 分})}
+  \]
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{二、综合题（每小题 6 分，共 30 分）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=1.05em, topsep=0.5em]
+  \item 设 $y = y(x)$ 由方程 $x = 1 + \dfrac{t}{2} + \dfrac{t^3}{6}$ 与 $e^y\sin t - y + 1 = 0$ 确定，求 $\dfrac{dy}{dx},\ \left.\dfrac{dy}{dx}\right|_{x=1}$.
+
+  \textbf{解：}当 $t=0$ 时，$x=1,\ y=1$. $x'_t = \dfrac{1}{2} + \dfrac{t^2}{2} \neq 0$.
+
+  对方程 $e^y\sin t - y + 1 = 0$ 两边关于 $t$ 求导得
+  \[
+    e^y\frac{dy}{dt}\sin t + e^y\cos t - \frac{dy}{dt} = 0,
+  \]
+  解得 $\dfrac{dy}{dt} = \dfrac{e^y\cos t}{1 - e^y\sin t}$. \hfill $(3\text{ 分})$
+  \[
+    \frac{dy}{dx} = \frac{y'_t}{x'_t} = \frac{2e^y\cos t}{(1-e^y\sin t)(1+t^2)},
+  \]
+  \[
+    \left.\frac{dy}{dx}\right|_{x=1} = \left.\frac{2e^y\cos t}{(1-e^y\sin t)(1+t^2)}\right|_{t=0} = 2e. \tag*{(6\text{ 分})}
+  \]
+
+  \item 设 $f(x)$ 定义于 $(-\infty,+\infty)$，且 $f(x)\neq 0$. 若任给 $x,y$ 总有 $f(x+y)=f(x)f(y)$，且 $f'(0)=\lambda$，讨论 $f(x)$ 的可导性，并求 $f(x)$.
+
+  \textbf{解：}由条件 $f(x+y)=f(x)f(y)$ 得 $f(0)=f^2(0)$，$f(x)=f^2(x/2)$. 因 $f(x)\neq 0$，故 $f(x)>0$，$f(0)=1$.
+  \begin{align*}
+    \lim_{y\to 0}\frac{f(x+y)-f(x)}{y}
+    &= \lim_{y\to 0}\frac{f(x)f(y)-f(x)}{y} \\
+    &= f(x)\lim_{y\to 0}\frac{f(y)-f(0)}{y} = f(x)f'(0) = \lambda f(x),
+  \end{align*}
+  因此函数 $f(x)$ 处处可导，且 $f'(x)=\lambda f(x)$. \hfill $(4\text{ 分})$
+
+  因为 $f'(x)-\lambda f(x)=0$，所以
+  \[
+    \bigl(e^{-\lambda x}f(x)\bigr)' = e^{-\lambda x}f'(x) - \lambda e^{-\lambda x}f(x) = 0,
+  \]
+  从而 $e^{-\lambda x}f(x)\equiv k$. 由 $f(0)=1$ 得 $k=1$，$f(x)=e^{\lambda x}$. \hfill $(6\text{ 分})$
+
+  \item 设 $f(x)$ 二阶可导，且 $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=0,\ f''(0)=2$，求 $l = \lim\limits_{x\to 0}\left(1+\dfrac{f(x)}{x}\right)^{\frac{1}{x}}$.
+
+  \textbf{解：}由题设条件得 $f(0)=0,\ f'(0)=0$. \hfill $(2\text{ 分})$
+
+  因为
+  \begin{align*}
+    \lim_{x\to 0}\ln\left(1+\frac{f(x)}{x}\right)^{\frac{1}{x}}
+    &= \lim_{x\to 0}\frac{1}{x}\ln\left(1+\frac{f(x)}{x}\right) = \lim_{x\to 0}\frac{f(x)}{x^2} \\
+    &\overset{\text{洛}}{=} \lim_{x\to 0}\frac{f'(x)}{2x} = \frac{1}{2}\lim_{x\to 0}\frac{f'(x)-f'(0)}{x} = \frac{1}{2}f''(0) = 1, \tag*{(4\text{ 分})}
+  \end{align*}
+  所以
+  \[
+    l = \lim_{x\to 0}\left(1+\frac{f(x)}{x}\right)^{\frac{1}{x}} = e. \tag*{(6\text{ 分})}
+  \]
+
+  \item 设函数 $f(u)$ 二阶可导且 $f'(u)\neq 0$，若 $x=\varphi(y)$ 为 $y=f(\ln x)$ 的反函数，求 $\dfrac{d^2x}{dy^2}$.
+
+  \textbf{解法一：}因 $\dfrac{dy}{dx} = f'(\ln x)\cdot\dfrac{1}{x}$，所以 $\dfrac{dx}{dy} = \dfrac{1}{\dfrac{dy}{dx}} = \dfrac{x}{f'(\ln x)}$. \hfill $(3\text{ 分})$
+  \begin{align*}
+    \frac{d^2x}{dy^2}
+    &= \frac{d}{dy}\left(\frac{x}{f'(\ln x)}\right)
+    = \frac{d}{dx}\left(\frac{x}{f'(\ln x)}\right)\cdot\frac{dx}{dy} \\
+    &= \frac{f'(\ln x) - x\left(f''(\ln x)\cdot\dfrac{1}{x}\right)}{(f'(\ln x))^2}\cdot\frac{x}{f'(\ln x)} \\
+    &= \frac{x\bigl(f'(\ln x) - f''(\ln x)\bigr)}{(f'(\ln x))^3}. \tag*{(6\text{ 分})}
+  \end{align*}
+
+  \textbf{解法二：}对 $y=f(\ln x)$ 两边关于 $y$ 求导得
+  \[
+    1 = f'(\ln x)\cdot\frac{1}{x}\cdot\frac{dx}{dy}, \tag{$*$}
+  \]
+  解得 $\dfrac{dx}{dy} = \dfrac{x}{f'(\ln x)}$. \hfill $(3\text{ 分})$
+
+  式 $(*)$ 变形得 $x = f'(\ln x)\cdot\dfrac{dx}{dy}$，两边关于 $y$ 再求导得
+  \[
+    \frac{dx}{dy} = f'(\ln x)\frac{d^2x}{dy^2} + f''(\ln x)\cdot\frac{1}{x}\cdot\left(\frac{dx}{dy}\right)^2,
+  \]
+  解得
+  \[
+    \frac{d^2x}{dy^2}
+    = \frac{\dfrac{dx}{dy} - \dfrac{f''(\ln x)}{x}\left(\dfrac{dx}{dy}\right)^2}{f'(\ln x)}
+    = \frac{x\bigl(f'(\ln x) - f''(\ln x)\bigr)}{(f'(\ln x))^3}. \tag*{(6\text{ 分})}
+  \]
+
+  \item 利用不等式 $\dfrac{1}{n+1} < \ln\left(1+\dfrac{1}{n}\right) < \dfrac{1}{n}$，研究数列 $x_n = 1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}-\ln n$ 的收敛性.
+
+  \textbf{解：}$x_{n+1} - x_n = \dfrac{1}{n+1} - \ln(n+1) + \ln n = \dfrac{1}{n+1} - \ln\left(1+\dfrac{1}{n}\right) < 0$，因此数列 $\{x_n\}$ 单调减少. \hfill $(2\text{ 分})$
+  \begin{align*}
+    x_n &= 1+\frac{1}{2}+\cdots+\frac{1}{n} - \ln n \\
+    &> \ln\left(1+\frac{1}{1}\right) + \ln\left(1+\frac{1}{2}\right) + \cdots + \ln\left(1+\frac{1}{n}\right) - \ln n \\
+    &= \ln(n+1) - \ln n > 0,
+  \end{align*}
+  即数列 $\{x_n\}$ 有下界 $0$，由单调有界收敛准则知数列 $\{x_n\}$ 收敛. \hfill $(6\text{ 分})$
+\end{enumerate}
+
+\vspace{0.8em}
+\textbf{三、证明题（每小题 5 分，共 10 分）}
+
+\begin{enumerate}[label=\arabic*., start=16, leftmargin=2em, itemsep=1.05em, topsep=0.5em]
+  \item 设常数 $\alpha > 1$，证明方程 $\alpha x = \tan x$ 在 $\left(0,\dfrac{\pi}{2}\right)$ 内至少有一个实根.
+
+  \textbf{证明：}设 $f(x) = \dfrac{\sin x}{x} - \alpha\cos x$，则 $f(x)$ 在 $\left(0,\dfrac{\pi}{2}\right]$ 上连续. \hfill $(1\text{ 分})$
+
+  因为 $f(0^+) = 1-\alpha < 0$，由函数极限的保号性，存在 $x_1\in\left(0,\dfrac{\pi}{2}\right)$，使得 $f(x_1) < 0$. \hfill $(3\text{ 分})$
+
+  而 $f\left(\dfrac{\pi}{2}\right) = \dfrac{2}{\pi} > 0$，显然 $f(x)$ 在 $\left[x_1,\dfrac{\pi}{2}\right]$ 上连续，由零点定理知存在 $\xi\in\left(x_1,\dfrac{\pi}{2}\right)$ 使得 $f(\xi)=0$，即 $\alpha\xi=\tan\xi$，故方程 $\alpha x=\tan x$ 在 $\left(0,\dfrac{\pi}{2}\right)$ 内至少有一个实根. \hfill $(5\text{ 分})$
+
+  \item 设函数 $f(x)$ 在 $[0,1]$ 上连续，在 $(0,1)$ 内可导，并且 $f(0)=f(1)=0,\ f(\theta)=1,\ \theta\in(0,1)$，证明：存在 $\xi\in(0,1)$，使得 $f'(\xi)-f(\xi)+\xi=1$.
+
+  \textbf{证明：}令 $F(x) = f(x) - x$，则 $F(x)$ 在 $[0,1]$ 上连续，在 $(0,1)$ 内可导，且 \mbox{$F(\theta) = 1-\theta > 0$}，\mbox{$F(1) = -1 < 0$}，于是 $F(\theta)F(1) = -(1-\theta) < 0$，由零点定理可得，存在 $c\in(\theta,1)$，使得 $F(c)=0$. \hfill $(2\text{ 分})$
+
+  再令 $G(x) = e^{-x}F(x)$，因为 $G(0)=G(c)=0$，由罗尔定理得存在 $\xi\in(0,c)\subset(0,1)$，使得 $G'(\xi)=0$.
+
+  注意 $G'(x) = e^{-x}\bigl(f'(x) - 1 - f(x) + x\bigr)$，有 $f'(\xi)-f(\xi)+\xi=1$. \hfill $(5\text{ 分})$
+\end{enumerate}
+
+\end{document}

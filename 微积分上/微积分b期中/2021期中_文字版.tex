@@ -1,0 +1,291 @@
+\documentclass[a4paper,11pt]{ctexart}
+
+\usepackage[top=1.8cm,bottom=1.8cm,left=2.1cm,right=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small 第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\linespread{1.28}
+\setlength{\parindent}{0pt}
+
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+\newcommand{\score}[1]{\hfill（#1）}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 华中科技大学 2021～2022 学年第一学期}\\[0.4em]
+  {\Large\bfseries “微积分（一）”期中考试试卷（A 卷）}\\[0.9em]
+  {\normalsize
+    考试方式：\underline{\ \ 闭卷\ \ }\quad
+    考试日期：\underline{\ 2021-11-21\ }\quad
+    考试时长：\underline{\ 150\ }分钟
+  }\\[0.5em]
+  {\normalsize
+    专业班级：\blank[3.6cm]\quad
+    学\hspace{1em}号：\blank[3.4cm]\quad
+    姓\hspace{1em}名：\blank[3.0cm]
+  }\\[0.7em]
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \rule[-0.5em]{0pt}{1.7em}\makebox[2.2cm]{题号} & \makebox[2.0cm]{一} & \makebox[2.0cm]{二} & \makebox[2.0cm]{三} & \makebox[2.0cm]{总分} \\
+    \hline
+    \rule[-0.6em]{0pt}{1.9em}分数 & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\vspace{0.8em}
+
+\textbf{一、基本计算题（每小题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=0.95em, topsep=0.5em]
+  \item 求极限 $\lim\limits_{n\to+\infty}\left(\dfrac{a^n + b^n + c^n}{3}\right)^{\frac{1}{n}}~(a, b, c > 0)$.
+
+  \item 求当 $x\to 0^+$ 时，无穷小量 $u = \sqrt{1 + x\sqrt{x}} - \e^{2x}$ 的主部与阶数.
+
+  \item 求极限 $l = \lim\limits_{x\to 0}\dfrac{1}{x^3}\left[\left(\dfrac{3 + \cos x}{4}\right)^x - 1\right]$.
+
+  \item 已知 $\lim\limits_{x\to+\infty}\left(\sqrt{2x^2 + 4x - 1} - ax - b\right) = 0$，求 $a, b$.
+
+  \item 求极限 $l = \lim\limits_{x\to 0}\left(\dfrac{\ln(1+x)}{x}\right)^{\frac{1}{\e^x - 1}}$.
+
+  \item 确定 $f(x) = \e^{\frac{|x|}{\tan x}}$ 的间断点及其类型.
+
+  \item 设函数 $y = y(x)$ 由参数方程 $\begin{cases} x = t + \e^t \\ y = \sin t \end{cases}$ 确定，则 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{t=0}$.
+
+  \item 设 $y = x^{x^x}$，求 $y'$.
+
+  \item 求 $y = x^2 \ln(1+x)$ 在 $x = 0$ 处的 $n$ 阶导数.
+
+  \item 设 $y = \dfrac{\cos x}{x^2}$，求 $\dfrac{\dd y}{\dd(\cos x)}$，$\dfrac{\dd y}{\dd(x^3)}$.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{二、综合题（每小题 6 分，共 30 分）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=0.95em, topsep=0.5em]
+  \item 设 $x = \varphi(y)$ 是 $f(x) = \ln x + \arctan x$ 的反函数，求 $\varphi'\left(\dfrac{\pi}{4}\right)$.
+
+  \item 设曲线 $y = y(x)$ 由方程 $\e^{xy} + \ln\dfrac{y}{x+1} = 2$ 确定，求曲线在 $x = 0$ 处的切线方程.
+
+  \item 设函数 $f(x)$ 在 $x = 0$ 处可导，且 $f(0) = 0$，$f'(0) = 2$，计算 $\lim\limits_{x\to 0}\dfrac{x^2 f(x) - 2 f(x^3)}{x^3}$.
+
+  \item 有一长度为 $5\,\mathrm{m}$ 的梯子贴靠在铅直的墙上，假设其下端沿地板离开墙角而滑动. 当梯子下端离开墙角 $3\,\mathrm{m}$ 时，已知梯子的下端离开墙角滑动速率为 $2.2\,\mathrm{m/s}$，问此时梯子的上端向下滑的速率为多少？
+
+  \item 设函数 $f(x) = \begin{cases} x^2 \cos\dfrac{1}{x}, & x\neq 0 \\[0.4em] 0, & x = 0 \end{cases}$，求 $f'(x)$，并讨论 $f'(x)$ 的连续性.
+\end{enumerate}
+
+\vspace{0.9em}
+
+\textbf{三、证明题（每小题 5 分，共 10 分）}
+
+\begin{enumerate}[label=\arabic*., start=16, leftmargin=2em, itemsep=0.95em, topsep=0.5em]
+  \item 设 $x_1 > 0$，$x_{n+1} = 3 + \dfrac{4}{x_n}~(n = 1, 2, \cdots)$，证明：$\lim\limits_{n\to\infty} x_n$ 存在并求其值.
+
+  \item 设函数 $f(x)$ 在 $[0, 1]$ 上连续，$(0, 1)$ 内可导，$c \in (0, 1)$，证明：$\exists\,\xi, \eta \in [0, 1]$，使得
+  \[
+    2\eta f(1) + (c^2 - 1)f'(\eta) = f(\xi).
+  \]
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+  {\small 考试日期：2021-11-21\quad 8:30--11:00}\\[0.6em]
+  {\Large\bfseries 2021～2022 学年第一学期}\\[0.4em]
+  {\Large\bfseries 《微积分（一）》课程期中试题解答}
+\end{center}
+
+\vspace{0.6em}
+
+\textbf{一、基本计算题（每小题 6 分，共 60 分）}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 求极限 $\lim\limits_{n\to+\infty}\left(\dfrac{a^n + b^n + c^n}{3}\right)^{\frac{1}{n}}~(a, b, c > 0)$.\\[0.3em]
+  解：令 $A = \max\{a, b, c\}$，则
+  \[
+    \frac{1}{3}A^n \le \frac{a^n + b^n + c^n}{3} \le A^n,\qquad
+    \frac{1}{\sqrt[n]{3}}A \le \left(\frac{a^n + b^n + c^n}{3}\right)^{\frac{1}{n}} \le A, \tag*{（3 分）}
+  \]
+  由夹逼准则知，原式 $= A = \max\{a, b, c\}$. \score{6 分}
+
+  \item 求当 $x\to 0^+$ 时，无穷小量 $u = \sqrt{1 + x\sqrt{x}} - \e^{2x}$ 的主部与阶数.\\[0.3em]
+  解：$u = \sqrt{1 + x\sqrt{x}} - \e^{2x} = (\sqrt{1 + x\sqrt{x}} - 1) - (\e^{2x} - 1)\quad (x\to 0^+)$\\[0.2em]
+  $= \dfrac{1}{2}x\sqrt{x} + o(x) - (2x + o(x))$ \score{3 分}\\[0.2em]
+  $= -2x + o(x) \sim -2x\quad (x\to 0^+)$.\\[0.2em]
+  故主部为 $-2x$，阶数是 $1$. \score{6 分}
+
+  \item 求极限 $l = \lim\limits_{x\to 0}\dfrac{1}{x^3}\left[\left(\dfrac{3 + \cos x}{4}\right)^x - 1\right]$.\\[0.3em]
+  解：
+  \vspace{-1.8em}
+  \begin{align*}
+    l &= \lim_{x\to 0}\frac{\e^{x\ln\frac{3+\cos x}{4}} - 1}{x^3} \tag*{（2 分）} \\
+      &= \lim_{x\to 0}\frac{x\ln\dfrac{3+\cos x}{4}}{x^3} = \lim_{x\to 0}\frac{\dfrac{3+\cos x}{4} - 1}{x^2} \tag*{（4 分）} \\
+      &= \frac{1}{4}\lim_{x\to 0}\frac{\cos x - 1}{x^2} = -\frac{1}{8}. \tag*{（6 分）}
+  \end{align*}
+
+  \item 已知 $\lim\limits_{x\to+\infty}\left(\sqrt{2x^2 + 4x - 1} - ax - b\right) = 0$，求 $a, b$.\\[0.3em]
+  解：要使 $\lim\limits_{x\to+\infty}\left(\sqrt{2x^2 + 4x - 1} - ax - b\right) = 0$ 成立，必须
+  \[
+    \lim_{x\to+\infty}\left(\frac{\sqrt{2x^2 + 4x - 1}}{x} - a - \frac{b}{x}\right) = 0,
+  \]
+  从而得
+  \[
+    a = \lim_{x\to+\infty}\frac{\sqrt{2x^2 + 4x - 1}}{x} = \lim_{x\to+\infty}\sqrt{2 + \frac{4}{x} - \frac{1}{x^2}} = \sqrt{2}, \tag*{（3 分）}
+  \]
+  \begin{align*}
+    b &= \lim_{x\to+\infty}\left(\sqrt{2x^2 + 4x - 1} - ax\right) = \lim_{x\to+\infty}\left(\sqrt{2x^2 + 4x - 1} - \sqrt{2}x\right) \\
+    &= \lim_{x\to+\infty}\sqrt{2}x\left[\sqrt{1 + \left(\frac{2}{x} - \frac{1}{2x^2}\right)} - 1\right]
+    = \lim_{x\to+\infty}\sqrt{2}x \cdot \frac{1}{2}\left(\frac{2}{x} - \frac{1}{2x^2}\right) = \sqrt{2}. \tag*{（6 分）}
+  \end{align*}
+
+  \item 求极限 $l = \lim\limits_{x\to 0}\left(\dfrac{\ln(1+x)}{x}\right)^{\frac{1}{\e^x - 1}}$.\\[0.3em]
+  解：$l = \lim\limits_{x\to 0}\e^{\frac{1}{\e^x - 1}\ln\frac{\ln(1+x)}{x}} = \e^{\lim\limits_{x\to 0}\frac{1}{\e^x - 1}\ln\frac{\ln(1+x)}{x}}$. \score{2 分}\\[0.3em]
+  而 $\lim\limits_{x\to 0}\dfrac{1}{\e^x - 1}\ln\dfrac{\ln(1+x)}{x} = \lim\limits_{x\to 0}\dfrac{1}{\e^x - 1}\left[\dfrac{\ln(1+x)}{x} - 1\right] = \lim\limits_{x\to 0}\dfrac{\ln(1+x) - x}{x^2}$ \score{4 分}\\[0.3em]
+  $= \lim\limits_{x\to 0}\dfrac{\dfrac{1}{1+x} - 1}{2x} = \lim\limits_{x\to 0}\dfrac{1}{1+x}\cdot\dfrac{1 - 1 - x}{2x} = -\dfrac{1}{2}$，\quad $l = \e^{-\frac{1}{2}}$. \score{6 分}
+
+  \item 确定 $f(x) = \e^{\frac{|x|}{\tan x}}$ 的间断点及其类型.\\[0.3em]
+  解：$f(x)$ 的间断点为 $x = k\pi$，$x = k\pi + \dfrac{\pi}{2}$，$k = 0, \pm 1, \pm 2, \cdots$.\\[0.3em]
+  （1）$x = 0$ 是跳跃间断点（或者说是第一类）. 因为
+  \[
+    \lim_{x\to 0^+}\e^{\frac{|x|}{\tan x}} = \e^{\lim\limits_{x\to 0^+}\frac{x}{\tan x}} = \e,\qquad
+    \lim_{x\to 0^-}\e^{\frac{|x|}{\tan x}} = \e^{\lim\limits_{x\to 0^-}\frac{-x}{\tan x}} = \e^{-1}, \tag*{（2 分）}
+  \]
+  （2）$x = k\pi$，$k = \pm 1, \pm 2, \cdots$ 是第二类间断点. 因为这些点的右极限
+  \[
+    \lim_{x\to k\pi^+}\e^{\frac{|x|}{\tan x}} \quad\text{是无穷大；} \tag*{（4 分）}
+  \]
+  （3）$x = k\pi + \dfrac{\pi}{2}$，$k = 0, \pm 1, \pm 2, \cdots$ 是可去间断点（或者说是第一类）. 因为
+  \[
+    \lim_{x\to k\pi + \frac{\pi}{2}}\e^{\frac{|x|}{\tan x}} = 1. \tag*{（6 分）}
+  \]
+
+  \item 设函数 $y = y(x)$ 由参数方程 $\begin{cases} x = t + \e^t \\ y = \sin t \end{cases}$ 确定，则 $\left.\dfrac{\dd^2 y}{\dd x^2}\right|_{t=0}$.\\[0.3em]
+  解：$\dfrac{\dd y}{\dd x} = \dfrac{\cos t}{1 + \e^t}$， \score{3 分}
+  \[
+    \frac{\dd^2 y}{\dd x^2} = \frac{\dfrac{-\sin t(1+\e^t) - \cos t \cdot \e^t}{(1+\e^t)^2}}{1+\e^t} = \frac{-\sin t(1+\e^t) - \cos t \cdot \e^t}{(1+\e^t)^3}, \tag*{（5 分）}
+  \]
+  \[
+    \left.\frac{\dd^2 y}{\dd x^2}\right|_{t=0} = -\frac{1}{8}. \tag*{（6 分）}
+  \]
+
+  \item 设 $y = x^{x^x}$，求 $y'$.\\[0.3em]
+  解：因 $(x^x)' = (\e^{x\ln x})' = x^x(1 + \ln x)$， \score{2 分}\\[0.2em]
+  又 $\ln y = x^x \ln x$， \score{3 分}\\[0.2em]
+  所以 $\dfrac{1}{y}y' = (x^x)'\ln x + x^x \cdot \dfrac{1}{x}$，\\[0.2em]
+  即 $y' = x^{x^x} x^x\left(\dfrac{1}{x} + \ln x + \ln^2 x\right)$. \score{6 分}
+
+  \item 求 $y = x^2 \ln(1+x)$ 在 $x = 0$ 处的 $n$ 阶导数.\\[0.3em]
+  解：取 $v(x) = x^2$，它的三阶以上的导数为零， \score{1 分}
+  \[
+    u^{(k)}(x) = [\ln(1+x)]^{(k)} = \frac{(-1)^{k-1}(k-1)!}{(1+x)^k},\quad k = 1, 2, \cdots, \tag*{（3 分）}
+  \]
+  用莱布尼茨公式：$(uv)^{(n)} = \sum\limits_{k=0}^{n} C_n^k u^{(n-k)} v^{(k)}$：
+  \[
+    y^{(n)} = x^2\frac{(-1)^{n-1}(n-1)!}{(1+x)^n} + 2nx\frac{(-1)^{n-2}(n-2)!}{(1+x)^{n-1}} + n(n-1)\frac{(-1)^{n-3}(n-3)!}{(1+x)^{n-2}}.
+  \]
+  所以 $y^{(n)}(0) = (-1)^{n-3}n(n-1)(n-3)! = \dfrac{(-1)^{n-1} n!}{n - 2}~(n > 2)$. \score{6 分}\\[0.3em]
+  而 $y'(0) = y''(0) = 0$.
+
+  \item 设 $y = \dfrac{\cos x}{x^2}$，求 $\dfrac{\dd y}{\dd(\cos x)}$，$\dfrac{\dd y}{\dd(x^3)}$.\\[0.3em]
+  解：$\dfrac{\dd y}{\dd x} = \dfrac{-x^2\sin x - 2x\cos x}{x^4} = -\dfrac{x\sin x + 2\cos x}{x^3}$；
+  \[
+    \frac{\dd y}{\dd(\cos x)} = \frac{-\dfrac{x\sin x + 2\cos x}{x^3}\,\dd x}{-\sin x\,\dd x} = \frac{x + 2\cot x}{x^3}, \tag*{（3 分）}
+  \]
+  \[
+    \frac{\dd y}{\dd(x^3)} = \frac{-\dfrac{x\sin x + 2\cos x}{x^3}\,\dd x}{3x^2\,\dd x} = -\frac{x\sin x + 2\cos x}{3x^5}. \tag*{（6 分）}
+  \]
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{二、综合题（每小题 6 分，共 30 分）}
+
+\begin{enumerate}[label=\arabic*., start=11, leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 设 $x = \varphi(y)$ 是 $f(x) = \ln x + \arctan x$ 的反函数，求 $\varphi'\left(\dfrac{\pi}{4}\right)$.\\[0.3em]
+  解：当 $x = 1$ 时，$y = f(1) = \dfrac{\pi}{4}$， \score{2 分}\\[0.2em]
+  $f'(x) = (\ln x + \arctan x)' = \dfrac{1}{x} + \dfrac{1}{1+x^2}$， \score{4 分}\\[0.2em]
+  得 $f'(1) = \dfrac{3}{2}$，故 $\varphi'\left(\dfrac{\pi}{4}\right) = \dfrac{1}{f'(1)} = \dfrac{2}{3}$. \score{6 分}
+
+  \item 设曲线 $y = y(x)$ 由方程 $\e^{xy} + \ln\dfrac{y}{x+1} = 2$ 确定，求曲线在 $x = 0$ 处的切线方程.\\[0.3em]
+  解：原方程变为 $\e^{xy} + \ln y - \ln(x+1) = 2$，\\[0.2em]
+  对 $x$ 求导：$\e^{xy}(y + xy') + \dfrac{y'}{y} - \dfrac{1}{x+1} = 0$， \score{3 分}\\[0.2em]
+  将 $x = 0, y = \e$ 代入，得 $\e + \dfrac{y'(0)}{\e} = 1$，故 $y'(0) = \e(1 - \e)$.\\[0.2em]
+  切线方程为 $y = \e(1 - \e)x + \e$. \score{6 分}
+
+  \item 设函数 $f(x)$ 在 $x = 0$ 处可导，且 $f(0) = 0$，$f'(0) = 2$，计算 $\lim\limits_{x\to 0}\dfrac{x^2 f(x) - 2 f(x^3)}{x^3}$.\\[0.3em]
+  解：$\lim\limits_{x\to 0}\dfrac{x^2 f(x) - 2 f(x^3)}{x^3} = \lim\limits_{x\to 0}\left[\dfrac{f(x) - f(0)}{x} - 2\dfrac{f(x^3) - f(0)}{x^3}\right]$ \score{3 分}\\[0.3em]
+  $= f'(0) - 2f'(0) = -f'(0) = -2$. \score{6 分}
+
+  \item 有一长度为 $5\,\mathrm{m}$ 的梯子贴靠在铅直的墙上，假设其下端沿地板离开墙角而滑动. 当梯子下端离开墙角 $3\,\mathrm{m}$ 时，已知梯子的下端离开墙角滑动速率为 $2.2\,\mathrm{m/s}$，问此时梯子的上端向下滑的速率为多少？\\[0.3em]
+  解：设梯子上端离墙角距离为 $s\,(\mathrm{m})$，下端离开墙角的距离为 $x\,(\mathrm{m})$，有
+  \[
+    s = \sqrt{5^2 - x^2}, \tag*{（2 分）}
+  \]
+  于是
+  \[
+    \frac{\dd s}{\dd t} = -\frac{x}{\sqrt{25 - x^2}}\frac{\dd x}{\dd t}, \tag*{（4 分）}
+  \]
+  当 $x = 3\,\mathrm{m}$，$\dfrac{\dd x}{\dd t} = 2.2\,(\mathrm{m/s})$ 时，$\dfrac{\dd s}{\dd t} = -\dfrac{3}{\sqrt{25 - 3^2}} \cdot 2.2 = -1.65\,(\mathrm{m/s})$，\\[0.2em]
+  即梯子上端下滑的速率为 $1.65\,(\mathrm{m/s})$. \score{6 分}
+
+  \item 设函数 $f(x) = \begin{cases} x^2 \cos\dfrac{1}{x}, & x\neq 0 \\[0.4em] 0, & x = 0 \end{cases}$，求 $f'(x)$，并讨论 $f'(x)$ 的连续性.\\[0.3em]
+  解：因 $f'(0) = \lim\limits_{x\to 0}\dfrac{f(x) - f(0)}{x} = \lim\limits_{x\to 0}\dfrac{x^2\cos\frac{1}{x}}{x} = \lim\limits_{x\to 0} x\cos\dfrac{1}{x} = 0$，\\[0.3em]
+  且 $x\neq 0$ 时，$f'(x) = 2x\cos\dfrac{1}{x} + \sin\dfrac{1}{x}$，所以
+  \[
+    f'(x) = \begin{cases} 2x\cos\dfrac{1}{x} + \sin\dfrac{1}{x}, & x\neq 0, \\[0.4em] 0, & x = 0. \end{cases} \tag*{（3 分）}
+  \]
+  当 $x\neq 0$ 时，初等函数 $f'(x) = 2x\cos\dfrac{1}{x} + \sin\dfrac{1}{x}$ 有定义，所以连续；\\[0.2em]
+  而 $\lim\limits_{x\to 0}\left(2x\cos\dfrac{1}{x} + \sin\dfrac{1}{x}\right)$ 不存在，所以 $f'(x)$ 在 $x = 0$ 处不连续. \score{6 分}
+\end{enumerate}
+
+\vspace{0.8em}
+
+\textbf{三、证明题（每小题 5 分，共 10 分）}
+
+\begin{enumerate}[label=\arabic*., start=16, leftmargin=2em, itemsep=1.0em, topsep=0.5em]
+  \item 设 $x_1 > 0$，$x_{n+1} = 3 + \dfrac{4}{x_n}~(n = 1, 2, \cdots)$，证明：$\lim\limits_{n\to\infty} x_n$ 存在并求其值.\\[0.3em]
+  证：由题设知 $n > 1$ 时，$x_n > 3$；$n > 2$ 时，$x_n < 3 + \dfrac{4}{3}$，即 $\{x_n\}$ 有界. \score{1 分}\\[0.3em]
+  由 $x_{n+1} - x_n = \dfrac{4}{x_n} - \dfrac{4}{x_{n-1}} = \dfrac{4(x_{n-1} - x_n)}{x_n x_{n-1}}$ 知不能确定 $\{x_n\}$ 的单调性，但由
+  \[
+    x_{n+1} - x_{n-1} = \frac{4}{x_n} - \frac{4}{x_{n-2}} = \frac{4(x_{n-2} - x_n)}{x_n x_{n-2}} = \frac{16(x_{n-1} - x_{n-3})}{x_n x_{n-1} x_{n-2} x_{n-3}}
+  \]
+  知奇子列 $\{x_{2k-1}\}$ 与偶子列 $\{x_{2k}\}$ 分别单调. \score{3 分}\\[0.3em]
+  由单调有界原理知奇子列 $\{x_{2k-1}\}$ 与偶子列 $\{x_{2k}\}$ 均收敛，设其极限分别为 $l_1$ 与 $l_2$，\\[0.2em]
+  在 $x_{2k+1} = 3 + \dfrac{4}{x_{2k}}$，$x_{2k} = 3 + \dfrac{4}{x_{2k-1}}$ 两边取极限，得 $l_1 = 3 + \dfrac{4}{l_2}$ 以及 $l_2 = 3 + \dfrac{4}{l_1}$，\\[0.2em]
+  解此方程组得 $l_1 = l_2 = 4$，因此数列 $\{x_n\}$ 的极限存在，且 $\lim\limits_{n\to\infty} x_n = 4$. \score{5 分}\\[0.5em]
+  另证：常数 $l = 4$ 满足 $l = 3 + \dfrac{4}{l}$，下证数列 $\{x_n\}$ 以 $l$ 为极限.
+  \begin{align*}
+    0 \le |x_{n+1} - l| &= \left|\left(3 + \frac{4}{x_n}\right) - 4\right| = \frac{|x_n - 4|}{x_n} \le \frac{1}{3}|x_n - 4| \quad (n > 1\text{ 时，}x_n > 3) \\
+    &\le \cdots \le \frac{1}{3^{n-1}}|x_2 - 4|,
+  \end{align*}
+  由迫敛性知 $|x_n - l|$ 收敛到零，故 $\{x_n\}$ 以 $l$ 为极限.
+
+  \item 设函数 $f(x)$ 在 $[0, 1]$ 上连续，$(0, 1)$ 内可导，$c \in (0, 1)$，证明：$\exists\,\xi, \eta \in [0, 1]$，使得
+  \[
+    2\eta f(1) + (c^2 - 1)f'(\eta) = f(\xi).
+  \]
+  证：构造函数 $F(x) = x^2 f(1) + (c^2 - 1)f(x)$， \score{1 分}\\[0.2em]
+  则 $F(x)$ 在 $[0, 1]$ 上连续，$(0, 1)$ 内可导，由拉格朗日中值定理，$\exists\,\eta \in (0, 1)$，使得
+  \[
+    F(1) - F(0) = F'(\eta),
+  \]
+  即 $2\eta f(1) + (c^2 - 1)f'(\eta) = (1 - c^2)f(0) + c^2 f(1)$， \score{3 分}\\[0.2em]
+  因 $(1 - c^2)f(0) + c^2 f(1)$ 是 $f(0)$ 与 $f(1)$ 的加权平均值，由介值定理知，$\exists\,\xi \in [0, 1]$，使得 $f(\xi) = (1 - c^2)f(0) + c^2 f(1)$，故 $\exists\,\xi, \eta \in [0, 1]$，使得
+  \[
+    2\eta f(1) + (c^2 - 1)f'(\eta) = f(\xi). \tag*{（5 分）}
+  \]
+\end{enumerate}
+
+\end{document}

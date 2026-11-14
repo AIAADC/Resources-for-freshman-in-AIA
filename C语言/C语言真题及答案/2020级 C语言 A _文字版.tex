@@ -1,0 +1,371 @@
+\documentclass[UTF8,a4paper,10.5pt]{ctexart}
+\usepackage[left=1.9cm,right=1.9cm,top=1.9cm,bottom=2.0cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{第~\thepage~页\quad 共~\pageref{LastPage}~页}
+
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue!70!black}\bfseries,
+    commentstyle=\color{green!45!black},
+    stringstyle=\color{red!60!black},
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    showstringspaces=false,
+    escapeinside={(*@}{@*)},
+    aboveskip=3pt,
+    belowskip=3pt
+}
+
+\newcommand{\blank}[1][2.8cm]{\underline{\hspace{#1}}}
+\newcommand{\scorebox}[1]{%
+    \noindent
+    \begin{tabular}{|c|c|}
+        \hline
+        分\quad 数 & \hspace{1.1cm} \\
+        \hline
+        评卷人 & \hspace{1.1cm} \\
+        \hline
+    \end{tabular}%
+    \hspace{0.8em}%
+    \parbox[c]{\dimexpr\linewidth-4.4cm\relax}{\textbf{#1}}%
+    \par\medskip
+}
+\newcommand{\parenans}{\hfill(\hspace{1.4cm})}
+
+\begin{document}
+
+\begin{center}
+    {\large\bfseries 华中科技大学人工智能与自动化学院 2020\textasciitilde 2021 学年第一学期}\\[4pt]
+    {\Large\bfseries “C语言程序设计”考试试卷（A 卷）}\\[8pt]
+    考试方式：\underline{\hspace{0.6em}闭卷\hspace{0.6em}}\qquad
+    考试日期：\underline{\hspace{0.6em}2021-01-08\hspace{0.6em}}\qquad
+    考试时长：\underline{\hspace{0.5em}150\hspace{0.5em}} 分钟\\[8pt]
+    \begin{tabular}{|*{8}{>{\centering\arraybackslash}p{1.4cm}|}}
+        \hline
+        题号 & 一 & 二 & 三 & 四 & 五 & 六 & 总分 \\
+        \hline
+        分数 & & & & & & & \\[4pt]
+        \hline
+    \end{tabular}
+\end{center}
+
+\bigskip
+
+\scorebox{一、判断下列语句或程序段的对错。（“$\times$”表示错，“$\checkmark$”表示对）（10分）}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=2pt]
+    \item \texttt{int x=05678;} \parenans
+    \item \texttt{int x = 0x177f;}\\
+          \texttt{float y = 1.8e+5;} \parenans
+    \item \lstinline|char _a01='\101';| \parenans
+    \item \texttt{int **p, (*pa)[10];}\\
+          \texttt{p = pa;} \parenans
+    \item \texttt{int (*pa)[5],a[5][5];}\\
+          \texttt{pa = a++;} \parenans
+    \item \texttt{char *str[10];}\\
+          \texttt{gets(str[0]);} \parenans
+    \item \texttt{int *p, a[5][5];}\\
+          \texttt{p = *a+1;} \parenans
+    \item \texttt{int a[5]=\{0, 1, 2,3,4,5\};} \parenans
+    \item \texttt{char **p, *pa[10];}\\
+          \texttt{p = pa;} \parenans
+    \item \lstinline|char *str = "\\tabcd\123\\n";| \parenans
+\end{enumerate}
+
+\bigskip
+
+\scorebox{二、计算下列表达式的值（10分）}
+
+\noindent 假设 \texttt{int} 和 \texttt{unsigned int} 类型均为 16 位长度，且各题彼此独立。
+
+\noindent 设 \texttt{unsigned int a=2, b=3; int c=4, d=5; float f; char str[10]="hust";}
+\begin{enumerate}[label=(\arabic*), leftmargin=2.2em, itemsep=2pt]
+    \item \texttt{f = c/b + d/a;} \parenans
+    \item \texttt{--a || --a \&\& a;} \parenans
+    \item \texttt{(a\^{}c) \& (b|d)} \parenans
+    \item \texttt{f = sizeof(str) + strlen(str);} \parenans
+    \item \texttt{a-c > d - b ? a : b;} \parenans
+\end{enumerate}
+
+\bigskip
+
+\scorebox{三、程序改错（10分）要求：不得改变程序框架，不得重写程序，无需文字说明，直接在代码上添加、删除和修改。}
+
+\noindent 1、如下程序对已知的 \texttt{N} 个字符串排序，其中在 \texttt{main()} 函数中初始化，在 \texttt{sort} 函数中排序（使用指针数组）。
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    int i;
+    char str[N][80] = {"basic", "pascal", "colbol", "losp", "agol"};
+    char *pstr[N];
+    sort(pstr);
+    for (i = 0; i < N; i++)
+    {
+        printf("%s\n", str[i]);
+    }
+}
+
+void sort(char (*p)[80])
+{
+    int i, j;
+    char *temp;
+    for (i = 0; i < N; i++)
+        for (j = 0; j < N - 1; j++)
+            if (p[j] > p[j + 1])
+            {
+                temp = p[j];
+                p[j] = p[j + 1];
+                p[j + 1] = temp;
+            }
+}
+\end{lstlisting}
+
+\medskip
+\noindent 2、设有 4 个候选人，\texttt{N} 个人参加选举，每次输入一个得票的候选人的名字，要求最后输出个人的得票结果。
+\begin{lstlisting}
+#include <stdio.h>
+
+#define N 10
+struct person
+{
+    char name;
+    int count;
+};
+
+void main()
+{
+    struct person leader[4] = {{"wang", 0},
+                               {"zhao", 0},
+                               {"mao",  0},
+                               {"gao",  0}};
+    int i, j;
+    for (i = 0; i < N; i++)
+    {
+        gets(name);
+        for (j = 0; j < 4; j++)
+            if (name == leader[i].name)
+            {
+                count++;
+                continue;
+            }
+    }
+    printf("\n");
+    for (j = 0; j < 4; j++)
+        printf("%s:%d\n", leader[j].name, leader[j].count);
+}
+\end{lstlisting}
+
+\bigskip
+
+\scorebox{四、程序填空（10分）}
+
+\noindent (1)~求已知两个正整数的最大公约数。
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    (*@\blank[3.2cm]@*);
+    int a, b;
+
+    printf("please input a ,b:");
+    scanf("%d%d", (*@\blank[3.2cm]@*));
+
+    for (i = (*@\blank[3.2cm]@*); i > 0; i--)  // i 初值为 a,b 中的较小值
+    {
+        if ((*@\blank[3.8cm]@*))
+        {
+            printf("the max  = %d ", i);
+            (*@\blank[3.2cm]@*);
+        }
+    }
+}
+\end{lstlisting}
+
+\medskip
+\noindent (2)~求序列：$1!,\ 2!,\ 3!,\ 4!\cdots\cdots$ 的前 10 项之和。
+\begin{lstlisting}
+(*@\blank[3.5cm]@*)
+
+void main()
+{
+    int i;
+    long int sum, t;  // sum 代表和, t 代表某项
+
+    sum = 0;
+    t = 1;
+
+    for (i = 1; (*@\blank[3.2cm]@*); i++)
+    {
+        sum = (*@\blank[3.2cm]@*);
+        (*@\blank[4.2cm]@*);
+    }
+    printf(" sum = %ld", (*@\blank[3.2cm]@*));
+}
+\end{lstlisting}
+
+\bigskip
+
+\scorebox{五、输出程序运行结果（25分，每题5分，结果写在题目的右边）}
+
+\noindent 1、
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    int i;
+    for (i = 1; i < 10; i++)
+    {
+        if (i % 3)
+        {
+            putchar('W');
+        }
+        else if (i % 6 == 0) break;
+        else continue;
+        printf("U  HAN\n");
+    }
+    printf("I  love you");
+}
+\end{lstlisting}
+
+\medskip
+\noindent 2、
+\begin{lstlisting}
+#include <stdio.h>
+
+int n;
+
+void display()
+{
+    int a = 1;
+    static int b = 1;
+    printf("a=%d,  b=%d  c=%d\n", a++, b++, ++n);
+}
+
+void main()
+{
+    int i;
+    for (i = 0; i < 5; i++)
+    {
+        display();
+    }
+}
+\end{lstlisting}
+
+\newpage
+\noindent 3、
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    char str[][20] = {"china",
+                      "hubei",
+                      "wuhan",
+                      "hust-aia",
+                      "c language"};
+    int i;
+    for (i = 0; i < 5; i++)
+    {
+        printf("%s\n", str[4 - i] + 4 - i);
+    }
+}
+\end{lstlisting}
+
+\medskip
+\noindent 4、
+\begin{lstlisting}
+#include <stdio.h>
+
+void main()
+{
+    char *str[] = {"pascal", "cobol", "fortran", "lisp", "java"};
+    char **p[] = {str + 4, str + 3, str + 2, str + 1, str};
+    char ***pp = p;
+
+    printf("%s---", **(pp++) + 1);
+    printf("%s---", **(pp++) + 2);
+    printf("%s---", **(pp++) + 1);
+    printf("%s",    **(pp++) + 2);
+    printf("---%s", **(pp));
+}
+\end{lstlisting}
+
+\medskip
+\noindent 5、
+\begin{lstlisting}
+#include <stdio.h>
+#define N 6
+
+void main()
+{
+    int a[N][N];
+    int i, j;
+
+    for (i = 0; i < N; i++)
+    {
+        a[i][0] = 1;
+        a[i][i] = 1;
+    }
+    for (i = 2; i < N; i++)
+    {
+        for (j = 1; j < i; j++)
+        {
+            a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+        }
+    }
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j <= i; j++)
+        {
+            printf("%5d", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+\end{lstlisting}
+
+\bigskip
+\scorebox{六、编程（35分）注意：不得使用全局变量，注意程序结构}
+
+\noindent 1、(1) 编一程序，输入 $x$ 的值，输出 $y$ 的值。（6分）
+\[
+y = \begin{cases}
+x + 10, & x < 10 \\
+2x + 200, & 10 \le x < 100 \\
+3x + 300, & x \ge 100
+\end{cases}
+\]
+
+\medskip
+\noindent 2、编写一猜数游戏程序，随机产生某个小于 $N$ 的正整数，从键盘反复输入整数进行猜数，当未猜中时，提示输入过大或过小。猜中时，指出猜的次数。最多允许猜 20 次。（8分）
+
+\medskip
+\noindent 3、编一程序，要求主函数中输入一行英文和一个字母，被调用的函数返回删除该字母后的那行英文（如有多个，一并删除）并在主函数中输出。（9分）
+
+\medskip
+\noindent 4、某班有学生 $N$ 名，每名学生信息由姓名、性别、学号、成绩 1、成绩 2 和成绩 3 组成，试编程要求：
+\begin{enumerate}[label=（\arabic*）, leftmargin=2.4em, itemsep=2pt]
+    \item 学生信息由键盘输入
+    \item 求每人平均分
+    \item 按平均分数从高到低排序
+    \item 按平均分从高到低显示所有平均分不及格的男生信息。
+\end{enumerate}
+\noindent （每小题写一函数，通过 \texttt{main} 函数调用实现）（12分）
+
+\end{document}
